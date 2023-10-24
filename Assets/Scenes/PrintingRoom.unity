@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 383949622}
   - component: {fileID: 383949623}
   - component: {fileID: 383949624}
+  - component: {fileID: 383949625}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -311,6 +312,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &383949625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383949620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fde3cd98f1da74bb80ff42733f234c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 5917662536098192051, guid: 493ae09969db39449b92fcb91efeaed1, type: 3}
+  arrowOrigin: {fileID: 383949622}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6351,6 +6366,10 @@ PrefabInstance:
     - target: {fileID: 5349817106763685876, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_Name
       value: Intern
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349817106763685876, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8975767868933776503, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_LocalPosition.x
