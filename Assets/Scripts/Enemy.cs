@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Animator animator;
+    public GameObject player;
+    public EnemyGameConstants constants;
 
     public float Health {
         set {
@@ -21,8 +23,10 @@ public class Enemy : MonoBehaviour
 
     public float health = 1;
 
+    private float speed;
     private void Start() {
         animator = GetComponent<Animator>();
+        speed = constants.speed;
     }
 
     public void Defeated(){
@@ -31,5 +35,10 @@ public class Enemy : MonoBehaviour
 
     public void RemoveEnemy() {
         Destroy(gameObject);
+    }
+
+    void Update()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }
