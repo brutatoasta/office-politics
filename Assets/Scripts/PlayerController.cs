@@ -7,9 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
+    public float maxMoveSpeed = 3f;
     public float collisionOffset = 0.05f;
     public ContactFilter2D movementFilter;
     public SwordAttack swordAttack;
+    public BoxCollider2D interactionCollider;
 
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
@@ -17,6 +19,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+
+    private bool interacting = false;
     bool canMove = true;
 
     // Start is called before the first frame update
@@ -35,19 +39,23 @@ public class PlayerController : MonoBehaviour
             if (movementInput != Vector2.zero)
             {
 
-                bool success = TryMove(movementInput);
+                // bool success = TryMove(movementInput);
 
-                if (!success)
+                // if (!success)
+                // {
+                //     success = TryMove(new Vector2(movementInput.x, 0));
+                // }
+
+                // if (!success)
+                // {
+                //     success = TryMove(new Vector2(0, movementInput.y));
+                // }
+                if (rb.velocity.magnitude < maxMoveSpeed)
                 {
-                    success = TryMove(new Vector2(movementInput.x, 0));
+                    rb.AddForce(movementInput * moveSpeed);
                 }
 
-                if (!success)
-                {
-                    success = TryMove(new Vector2(0, movementInput.y));
-                }
-
-                animator.SetBool("isMoving", success);
+                animator.SetBool("isMoving", true);
             }
             else
             {
@@ -95,15 +103,52 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void MoveCheck(Vector2 movement)
+    {
+        Debug.Log(movement);
+        movementInput = movement;
+    }
+
     void OnMove(InputValue movementValue)
     {
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnFire()
+    void OnInteract(InputValue val)
     {
-        animator.SetTrigger("interact");
+        if (val.isPressed)
+        {
+            interacting = true;
+            interactionCollider.enabled = true;
+        }
+        else
+        {
+            interacting = false;
+            canMove = true;
+            interactionCollider.enabled = false;
+        }
+        // animator.SetTrigger("interact");
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.layer == 8)
+        {
+            canMove = false;
+            rb.velocity = new Vector3();
+            Interactable inter = col.gameObject.GetComponent<Interactable>();
+            inter.Interact();
+        }
+    }
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.layer == 8)
+        {
+            Interactable inter = col.gameObject.GetComponent<Interactable>();
+            inter.Interact();
+        }
+    }
+
 
     public void SwordAttack()
     {
