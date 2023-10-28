@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,16 +63,22 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isMoving", false);
             }
 
-            // Set direction of sprite to movement direction
-            if (movementInput.x < 0)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else if (movementInput.x > 0)
-            {
-                spriteRenderer.flipX = false;
-            }
+            // // Set direction of sprite to movement direction
+            // if (movementInput.x < 0)
+            // {
+            //     spriteRenderer.flipX = true;
+            // }
+            // else if (movementInput.x > 0)
+            // {
+            //     spriteRenderer.flipX = false;
+            // }
         }
+    }
+
+    void Update() {
+        animator.SetFloat("playerVelocityX", rb.velocity.x);
+        animator.SetFloat("playerVelocityY", rb.velocity.y);
+        animator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
     }
 
     private bool TryMove(Vector2 direction)
