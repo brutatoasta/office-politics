@@ -56,11 +56,11 @@ public class PlayerController : MonoBehaviour
                     rb.AddForce(movementInput * moveSpeed);
                 }
 
-                animator.SetBool("isMoving", true);
+                // animator.SetBool("isMoving", true);
             }
             else
             {
-                animator.SetBool("isMoving", false);
+                // animator.SetBool("isMoving", false);
             }
 
             // // Set direction of sprite to movement direction
