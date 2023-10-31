@@ -9,5 +9,6 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
     }
 
+
     public UnityEvent<Interactable> interact;
 }

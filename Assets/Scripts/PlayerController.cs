@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
     {
         interactionCollider.enabled = true;
     }
+    public void ReleaseInteract()
+    {
+        interactionCollider.enabled = false;
+    }
 
     public void StopInteract()
     {

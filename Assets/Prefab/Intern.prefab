@@ -397,6 +397,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7185380654519326318}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: ReleaseInteract
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7185380654519326318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,20 +426,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 30
   maxMoveSpeed: 60
-  collisionOffset: 0.09
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  swordAttack: {fileID: 0}
   interactionCollider: {fileID: 66819581075452138}
