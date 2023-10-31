@@ -5,10 +5,12 @@ using UnityEngine.Events;
 
 public class GameManager : Singleton<GameManager>
 {
-    override  public  void  Awake(){
+    override public void Awake()
+    {
         base.Awake();
     }
 
 
     public UnityEvent<Interactable> interact;
+    public GameObject held;
 }

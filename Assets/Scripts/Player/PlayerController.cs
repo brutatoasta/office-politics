@@ -9,17 +9,20 @@ public class PlayerController : MonoBehaviour
 {
     // Player Constants
     public PlayerConstants playerConstants;
-    
+
 
     Vector2 movementInput;
-    public BoxCollider2D interactionCollider;
+
     SpriteRenderer spriteRenderer;
+    SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
+    public bool touching = false;
+    new Collider2D collider;
 
 
     bool canMove = true;
-
+    bool interactLock = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        heldSprite = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -63,40 +67,66 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerInteract()
     {
-        interactionCollider.enabled = true;
-    }
-    public void ReleaseInteract()
-    {
-        interactionCollider.enabled = false;
-    }
+        if (touching && !interactLock)
+        {
+            animator.SetTrigger("interact");
+            canMove = false;
+            rb.velocity = new Vector3();
+            if (collider.gameObject.layer == 8)
+            {
+                // check type of interactable
+                // if collider.gameObject.
+                IInteractables inter = collider.gameObject.GetComponent<IInteractables>();
+                inter.OnInteract();
 
-    public void StopInteract()
+
+            }
+        }
+
+    }
+    public void AcquireInteractLock()
     {
+        interactLock = true;
+    }
+    public void ReleaseInteractLock()
+    {
+        interactLock = false;
         canMove = true;
-        interactionCollider.enabled = false;
     }
 
 
     // Interact with objects
-    void OnTriggerEnter2D(Collider2D col)
+    // nervous system, tells you if you're touching
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.layer == 8)
-        {
-            canMove = false;
-            animator.SetTrigger("interact");
-
-            rb.velocity = new Vector3();
-            Interactable inter = col.gameObject.GetComponent<Interactable>();
-            inter.OnInteract();
-        }
+        touching = true;
+        collider = col;
     }
+    // void OnTriggerEnter2D(Collider2D col)
+    // {   
+
+    //     if (col.gameObject.layer == 8 && touching)
+    //     {
+    //         canMove = false;
+    //         rb.velocity = new Vector3();
+    //         Interactable inter = col.gameObject.GetComponent<Interactable>();
+    //         inter.OnInteract();
+    //         // change held sprite if holdable
+
+    //     }
+    // }
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.layer == 8)
-        {
-            Interactable inter = col.gameObject.GetComponent<Interactable>();
-            inter.OnInteract();
-        }
+        touching = false;
+        collider = null;
+        // if (col.gameObject.layer == 8)
+        // {
+        //     Interactable inter = col.gameObject.GetComponent<Interactable>();
+        //     inter.OnInteract();
+        //     // change held sprite if holdable
+        //     // heldSprite.sprite = null;
+
+        // }
     }
 
 }

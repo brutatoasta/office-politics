@@ -6,3 +6,9 @@ public interface IInteractables
 {
     public void OnInteract();
 }
+public enum InteractableType
+{
+    Interactable = 0,
+    Holdable = 1
+
+}
