@@ -424,6 +424,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d218fc04e5af9cd47ad12c9c8efc2b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 30
-  maxMoveSpeed: 60
+  playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   interactionCollider: {fileID: 66819581075452138}

@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 1f;
-    public float maxMoveSpeed = 3f;
+    // Player Constants
+    public PlayerConstants playerConstants;
+    
 
     Vector2 movementInput;
     public BoxCollider2D interactionCollider;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -34,9 +37,9 @@ public class PlayerController : MonoBehaviour
             // If movement input is not 0, move player
             if (movementInput != Vector2.zero)
             {
-                if (rb.velocity.magnitude < maxMoveSpeed)
+                if (rb.velocity.magnitude < playerConstants.maxMoveSpeed)
                 {
-                    rb.AddForce(movementInput * moveSpeed);
+                    rb.AddForce(movementInput * playerConstants.moveSpeed);
                 }
             }
             else
