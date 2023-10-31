@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 // Takes and handles input and movement for a player character
-public class InteractableTrigger : MonoBehaviour
+public class InteractableHighlight : MonoBehaviour
 {
     private SpriteRenderer map;
     
-
     void Start()
     {
         map = transform.parent.gameObject.GetComponent<SpriteRenderer>();

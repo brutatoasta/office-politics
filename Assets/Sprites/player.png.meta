@@ -3470,7 +3470,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_177
+      name: player_interact_r0
       rect:
         serializedVersion: 2
         x: 0
@@ -4226,7 +4226,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_213
+      name: player_interact_d0
       rect:
         serializedVersion: 2
         x: 576
@@ -4247,7 +4247,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_214
+      name: player_interact_d1
       rect:
         serializedVersion: 2
         x: 592
@@ -4268,7 +4268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_215
+      name: player_interact_d2
       rect:
         serializedVersion: 2
         x: 608
@@ -4289,7 +4289,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_216
+      name: player_interact_d3
       rect:
         serializedVersion: 2
         x: 624
@@ -4310,7 +4310,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_217
+      name: player_interact_d4
       rect:
         serializedVersion: 2
         x: 640
@@ -4331,7 +4331,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_218
+      name: player_interact_d5
       rect:
         serializedVersion: 2
         x: 656
@@ -4352,7 +4352,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_219
+      name: player_interact_d6
       rect:
         serializedVersion: 2
         x: 672
@@ -4373,7 +4373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_220
+      name: player_interact_d7
       rect:
         serializedVersion: 2
         x: 688
@@ -4394,7 +4394,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_221
+      name: player_interact_d8
       rect:
         serializedVersion: 2
         x: 704
@@ -4415,7 +4415,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_222
+      name: player_interact_d9
       rect:
         serializedVersion: 2
         x: 720
@@ -4436,7 +4436,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_223
+      name: player_interact_d10
       rect:
         serializedVersion: 2
         x: 736
@@ -4457,7 +4457,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_224
+      name: player_interact_d11
       rect:
         serializedVersion: 2
         x: 752
@@ -11589,7 +11589,6 @@ TextureImporter:
       player_174: -1529758281
       player_175: 704557345
       player_176: 528381089
-      player_177: -1101388494
       player_178: 1558416477
       player_179: -208818044
       player_18: -379642971
@@ -11630,19 +11629,7 @@ TextureImporter:
       player_210: 701077580
       player_211: -550321974
       player_212: -137880522
-      player_213: -1256581393
-      player_214: 1705130738
-      player_215: -814422481
-      player_216: 861125224
-      player_217: -125598524
-      player_218: 946079347
-      player_219: 377403147
       player_22: 1463300745
-      player_220: 1685810528
-      player_221: -479938806
-      player_222: 1273018463
-      player_223: -449278394
-      player_224: -605435547
       player_225: -1502081733
       player_226: 467631850
       player_227: -142940099
@@ -12037,6 +12024,19 @@ TextureImporter:
       player_idle_3: -539785273
       player_idle_4: 754176373
       player_idle_5: 1075372399
+      player_interact_d0: -1256581393
+      player_interact_d1: 1705130738
+      player_interact_d10: -449278394
+      player_interact_d11: -605435547
+      player_interact_d2: -814422481
+      player_interact_d3: 861125224
+      player_interact_d4: -125598524
+      player_interact_d5: 946079347
+      player_interact_d6: 377403147
+      player_interact_d7: 1685810528
+      player_interact_d8: -479938806
+      player_interact_d9: 1273018463
+      player_interact_r0: -1101388494
       player_run_d0: 1639532925
       player_run_d1: 85020522
       player_run_d2: -1699356881

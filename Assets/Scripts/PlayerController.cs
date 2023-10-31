@@ -4,24 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Takes and handles input and movement for a player character
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 1f;
     public float maxMoveSpeed = 3f;
-    public float collisionOffset = 0.05f;
-    public ContactFilter2D movementFilter;
-    public SwordAttack swordAttack;
-    public BoxCollider2D interactionCollider;
 
     Vector2 movementInput;
+    public BoxCollider2D interactionCollider;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
-    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
 
-    private bool interacting = false;
     bool canMove = true;
 
     // Start is called before the first frame update
@@ -36,115 +31,56 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            // If movement input is not 0, try to move
+            // If movement input is not 0, move player
             if (movementInput != Vector2.zero)
             {
-
-                // bool success = TryMove(movementInput);
-
-                // if (!success)
-                // {
-                //     success = TryMove(new Vector2(movementInput.x, 0));
-                // }
-
-                // if (!success)
-                // {
-                //     success = TryMove(new Vector2(0, movementInput.y));
-                // }
                 if (rb.velocity.magnitude < maxMoveSpeed)
                 {
                     rb.AddForce(movementInput * moveSpeed);
                 }
-
-                // animator.SetBool("isMoving", true);
             }
             else
             {
-                // animator.SetBool("isMoving", false);
+                rb.velocity = Vector2.zero;
             }
-
-            // // Set direction of sprite to movement direction
-            // if (movementInput.x < 0)
-            // {
-            //     spriteRenderer.flipX = true;
-            // }
-            // else if (movementInput.x > 0)
-            // {
-            //     spriteRenderer.flipX = false;
-            // }
         }
     }
 
-    void Update() {
+    void Update()
+    {
         animator.SetFloat("playerVelocityX", rb.velocity.x);
         animator.SetFloat("playerVelocityY", rb.velocity.y);
         animator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
     }
 
-    private bool TryMove(Vector2 direction)
-    {
-        if (direction != Vector2.zero)
-        {
-            // Check for potential collisions
-            int count = rb.Cast(
-                direction, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
-                movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
-                castCollisions, // List of collisions to store the found collisions into after the Cast is finished
-                moveSpeed * Time.fixedDeltaTime + collisionOffset); // The amount to cast equal to the movement plus an offset
-
-            if (count == 0)
-            {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            // Can't move if there's no direction to move in
-            return false;
-        }
-
-    }
-
     public void MoveCheck(Vector2 movement)
     {
-        Debug.Log(movement);
         movementInput = movement;
     }
 
-    void OnMove(InputValue movementValue)
+    public void TriggerInteract()
     {
-        movementInput = movementValue.Get<Vector2>();
+        interactionCollider.enabled = true;
     }
 
-    void OnInteract(InputValue val)
+    public void StopInteract()
     {
-        if (val.isPressed)
-        {
-            interacting = true;
-            interactionCollider.enabled = true;
-        }
-        else
-        {
-            interacting = false;
-            canMove = true;
-            interactionCollider.enabled = false;
-        }
-        // animator.SetTrigger("interact");
+        canMove = true;
+        interactionCollider.enabled = false;
     }
 
+
+    // Interact with objects
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.layer == 8)
         {
             canMove = false;
+            animator.SetTrigger("interact");
+
             rb.velocity = new Vector3();
             Interactable inter = col.gameObject.GetComponent<Interactable>();
-            inter.Interact();
+            inter.OnInteract();
         }
     }
     void OnTriggerExit2D(Collider2D col)
@@ -152,38 +88,8 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.layer == 8)
         {
             Interactable inter = col.gameObject.GetComponent<Interactable>();
-            inter.Interact();
+            inter.OnInteract();
         }
     }
 
-
-    public void SwordAttack()
-    {
-        LockMovement();
-
-        if (spriteRenderer.flipX == true)
-        {
-            swordAttack.AttackLeft();
-        }
-        else
-        {
-            swordAttack.AttackRight();
-        }
-    }
-
-    public void EndSwordAttack()
-    {
-        UnlockMovement();
-        swordAttack.StopAttack();
-    }
-
-    public void LockMovement()
-    {
-        canMove = false;
-    }
-
-    public void UnlockMovement()
-    {
-        canMove = true;
-    }
 }
