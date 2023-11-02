@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7616305652816618990}
   - component: {fileID: 1987008028130426107}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: JobArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

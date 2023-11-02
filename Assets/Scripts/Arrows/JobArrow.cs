@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
+public class JobArrow : MonoBehaviour
 {
     public Rigidbody2D rb;
 

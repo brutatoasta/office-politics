@@ -1,1 +1,4 @@
-// TODO: Implement interface/ABC for arrows
+using UnityEngine;
+public interface IArrow {
+    void SpawnArrow();
+}
