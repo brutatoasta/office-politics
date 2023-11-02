@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LineController : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     private Transform[] points;
 
+    public UnityEvent launchArrow;
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -20,6 +22,15 @@ public class LineController : MonoBehaviour
     void Start()
     {
         
+    }
+    
+    public void turnOff()
+    {
+        lineRenderer.enabled = false;
+    }
+    public void turnOn()
+    {
+        lineRenderer.enabled = true;
     }
 
     // Update is called once per frame
