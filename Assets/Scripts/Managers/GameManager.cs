@@ -11,6 +11,6 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    public UnityEvent<Interactable> interact;
+    public UnityEvent<BaseInteractable> interact;
     public GameObject held;
 }
