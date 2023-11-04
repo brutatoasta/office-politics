@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        heldSprite = GetComponent<SpriteRenderer>();
+        heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        Debug.Log(heldSprite.sprite);
     }
 
     private void FixedUpdate()
@@ -74,11 +75,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector3();
             if (collider.gameObject.layer == 8)
             {
-                // check type of interactable
+                // check type of interactable through another script?
                 // if collider.gameObject.
-                IInteractables inter = collider.gameObject.GetComponent<IInteractables>();
-                inter.OnInteract();
-
+                BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
+                inter.OnInteract(heldSprite);
 
             }
         }
@@ -101,6 +101,8 @@ public class PlayerController : MonoBehaviour
     {
         touching = true;
         collider = col;
+
+        // dont allow holding more stuff if already holding something
     }
     // void OnTriggerEnter2D(Collider2D col)
     // {   
