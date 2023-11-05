@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -68,17 +66,40 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerInteract()
     {
+        // the object player is interacting with
+        BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
+
+
+        // check if player is touching object and not currently animating
         if (touching && !interactLock)
         {
+
+            // check if held object is valid
             animator.SetTrigger("interact");
             canMove = false;
             rb.velocity = new Vector3();
             if (collider.gameObject.layer == 8)
             {
-                // check type of interactable through another script?
-                // if collider.gameObject.
-                BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
-                inter.OnInteract(heldSprite);
+                // get script component and cast according to type field
+                switch (inter.type)
+                {
+                    case InteractableType.Receivable:
+                        Receivable re = (Receivable)inter;
+                     
+                        re.OnInteract(heldSprite);
+      
+                        
+                        // check if player is holding object and allowed to deposit
+                        break;
+                    case InteractableType.Holdable:
+                        Holdable ho = (Holdable)inter;
+                        ho.OnInteract(heldSprite);
+                        // check if player is holding object and allowed to pickup another
+                        break;
+                    default:
+                    inter.OnInteract(heldSprite);
+                        break;
+                }   
 
             }
         }
