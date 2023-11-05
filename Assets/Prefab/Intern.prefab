@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2670764534922000859}
   - component: {fileID: 3265215980486700150}
   - component: {fileID: 7185380654519326318}
+  - component: {fileID: 7777093372494719401}
   m_Layer: 7
   m_Name: Intern
   m_TagString: Player
@@ -426,3 +427,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   interactionCollider: {fileID: 66819581075452138}
+--- !u!114 &7777093372494719401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5349817106763685876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5683747fcd087b34bbe8737bb671682d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stressPointText: {fileID: 0}
