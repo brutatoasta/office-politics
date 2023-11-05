@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class LineController : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    private Transform[] points;
+    //private Transform[] points;
+    private Transform[] points = new Transform[2];
 
-    public UnityEvent launchArrow;
+    //public UnityEvent launchArrow;
     private void Awake()
     {
         lineRenderer = GetComponent<LineRenderer>();
@@ -21,15 +22,18 @@ public class LineController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
     
-    public void turnOff()
+    public void turnOff(Transform bossCoords)
     {
-        lineRenderer.enabled = false;
+        Destroy(gameObject);
     }
-    public void turnOn()
+    public void turnOn(Transform bossCoords)
     {
+        Transform playerCoords = GameObject.FindGameObjectWithTag("Player").transform;
+        this.points[0] = playerCoords;
+        this.points[1] = bossCoords;
         lineRenderer.enabled = true;
     }
 

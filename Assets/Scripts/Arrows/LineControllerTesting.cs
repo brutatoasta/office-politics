@@ -16,20 +16,20 @@ public class LineControllerTesting : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 2)
-        {
-            lineController.SetUpLine(points);
-            lineController.turnOn();
-        }
-        if (timer > 4)
-        {
-            lineController.turnOff();
-        }
-        if (timer > 4.1)
-        {
-            launchArrow.Invoke();
-            timer = -2;
-        }
+        //if (timer > 2)
+        //{
+        //    lineController.SetUpLine(points);
+        //    lineController.turnOn();
+        //}
+        //if (timer > 4)
+        //{
+        //    lineController.turnOff();
+        //}
+        //if (timer > 4.1)
+        //{
+        //    launchArrow.Invoke();
+        //    timer = -2;
+        //}
     }
 
 }

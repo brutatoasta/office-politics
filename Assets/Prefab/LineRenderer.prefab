@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7907879597495581142}
   - component: {fileID: 3780318528051599643}
   - component: {fileID: 325312951329878504}
+  - component: {fileID: 5455947544628918560}
+  - component: {fileID: -3605530679972246019}
   m_Layer: 0
   m_Name: LineRenderer
   m_TagString: Untagged
@@ -149,3 +151,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94e0f2dd249ba94bbddf5fe290a1993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5455947544628918560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319745848702399258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef3b77de1d274c48aa09cd0d48140e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 9ac89b0122850c340827dc27bfa6ea4b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 325312951329878504}
+        m_TargetAssemblyTypeName: LineController, Assembly-CSharp
+        m_MethodName: turnOn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-3605530679972246019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319745848702399258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef3b77de1d274c48aa09cd0d48140e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: d027714e7a3f46a48a0a458a16d00258, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 325312951329878504}
+        m_TargetAssemblyTypeName: LineController, Assembly-CSharp
+        m_MethodName: turnOff
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

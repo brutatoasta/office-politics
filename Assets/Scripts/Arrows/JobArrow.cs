@@ -9,10 +9,14 @@ public class JobArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    public void Shoot(Transform bossCoords)
+    {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
-        Vector3 direction = player.transform.position - transform.position;
+        Vector3 direction = player.transform.position - bossCoords.position;
         rb.velocity = new Vector2(direction.x, direction.y);
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
@@ -20,7 +24,7 @@ public class JobArrow : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Arrow has hit " + collision.gameObject.name);
+        Debug.Log("Job Arrow has hit " + collision.gameObject.name);
         Destroy(gameObject);
     }
 }

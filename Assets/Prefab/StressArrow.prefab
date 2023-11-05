@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6538105418302097073}
   - component: {fileID: 6035054181871697743}
   - component: {fileID: 5244647888977062789}
-  - component: {fileID: 6162307020515949914}
+  - component: {fileID: 5385012489436257907}
+  - component: {fileID: 7906586927072531003}
   m_Layer: 0
   m_Name: StressArrow
   m_TagString: Untagged
@@ -159,7 +160,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &6162307020515949914
+--- !u!114 &5385012489436257907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,3 +173,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  lineRenderer: {fileID: 2319745848702399258, guid: 4f7d90d2dcf9b3b44accc89498af3510, type: 3}
+  StartLineRenderer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9ac89b0122850c340827dc27bfa6ea4b, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Vector2, UnityEngine
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  StopLineRenderer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d027714e7a3f46a48a0a458a16d00258, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Vector2, UnityEngine
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7906586927072531003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917662536098192051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef3b77de1d274c48aa09cd0d48140e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8893d50b5debc26449311a9b558b9f63, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5385012489436257907}
+        m_TargetAssemblyTypeName: StressArrow, Assembly-CSharp
+        m_MethodName: SpawnArrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

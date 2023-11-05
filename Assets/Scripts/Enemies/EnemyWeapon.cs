@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyWeapon : MonoBehaviour
 {
@@ -9,18 +10,20 @@ public class EnemyWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InvokeRepeating("StartArrowSequence",0f,4.1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //timer += Time.deltaTime;
-        //if (timer > 2)
-        //{
-        //    timer = 0;
-        //    Shoot();
-        //}
+
+    }
+
+    public UnityEvent<Transform> Spawn;
+    private void StartArrowSequence()
+    {
+        Instantiate(arrow, this.transform);
+        Spawn.Invoke(transform);
     }
     public void Shoot()
     {

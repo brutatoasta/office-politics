@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6772904936735920148}
   - component: {fileID: 7616305652816618990}
   - component: {fileID: 1987008028130426107}
+  - component: {fileID: 3521849166475594086}
   m_Layer: 0
   m_Name: JobArrow
   m_TagString: Untagged
@@ -172,3 +173,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &3521849166475594086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917662536098192051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ef3b77de1d274c48aa09cd0d48140e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 8893d50b5debc26449311a9b558b9f63, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6772904936735920148}
+        m_TargetAssemblyTypeName: JobArrow, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
