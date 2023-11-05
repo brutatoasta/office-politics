@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 30
   maxMoveSpeed: 60
+  stressPoint: 20
+  maxStressPoint: 50
+  sanityPoint: 0
+  performancePoint: 0
