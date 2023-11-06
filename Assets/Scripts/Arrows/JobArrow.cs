@@ -20,7 +20,7 @@ public class JobArrow : MonoBehaviour
         rb.velocity = new Vector2(direction.x, direction.y);
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot);
+        transform.rotation = Quaternion.Euler(0, 0, rot + 45);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +28,7 @@ public class JobArrow : MonoBehaviour
         {
             Debug.Log("Job Arrow has hit " + collision.gameObject.name);
             Destroy(gameObject);
+
         }
     }
 }
