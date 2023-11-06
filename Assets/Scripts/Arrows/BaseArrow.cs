@@ -11,13 +11,14 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-    public void Shoot(Transform bossCoords)
+    public void Shoot(Transform bossCoords, float speed)
     {
+        Debug.Log("shoot!");
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - bossCoords.position;
-        rb.velocity = new Vector2(direction.x, direction.y);
+        rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 45);

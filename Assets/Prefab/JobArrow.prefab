@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca279c2ae53303c40973510d7899a315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
+  weaponGameConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
   rb: {fileID: 7616305652816618990}
 --- !u!50 &7616305652816618990
 Rigidbody2D:
@@ -191,7 +193,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6772904936735920148}
         m_TargetAssemblyTypeName: JobArrow, Assembly-CSharp
-        m_MethodName: Shoot
+        m_MethodName: SpawnArrow
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
