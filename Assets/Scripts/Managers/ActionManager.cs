@@ -23,7 +23,7 @@ public class ActionManager : MonoBehaviour
         }
         if (context.canceled)
         {
-            moveCheck.Invoke(new Vector2(0,0));
+            moveCheck.Invoke(new Vector2(0, 0));
         }
 
     }

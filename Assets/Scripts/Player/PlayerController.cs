@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour
     public InventoryVariable inventory;
     
 
+
     Vector2 movementInput;
-    public BoxCollider2D interactionCollider;
+
     SpriteRenderer spriteRenderer;
+    SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
     public TrailRenderer trail;
@@ -23,14 +25,17 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool canDash = true;
 
+    public bool touching = false;
+    new Collider2D collider;
+    bool interactLock = false;
     // Start is called before the first frame update
     void Start()
     {
-
-
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        Debug.Log(heldSprite.sprite);
     }
 
     private void FixedUpdate()
@@ -66,17 +71,53 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerInteract()
     {
-        interactionCollider.enabled = true;
-    }
-    public void ReleaseInteract()
-    {
-        interactionCollider.enabled = false;
-    }
+        // the object player is interacting with
+        BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
 
-    public void StopInteract()
+
+        // check if player is touching object and not currently animating
+        if (touching && !interactLock)
+        {
+
+            // check if held object is valid
+            animator.SetTrigger("interact");
+            canMove = false;
+            rb.velocity = new Vector3();
+            if (collider.gameObject.layer == 8)
+            {
+                // get script component and cast according to type field
+                switch (inter.type)
+                {
+                    case InteractableType.Receivable:
+                        Receivable re = (Receivable)inter;
+                     
+                        re.OnInteract(heldSprite);
+      
+                        
+                        // check if player is holding object and allowed to deposit
+                        break;
+                    case InteractableType.Holdable:
+                        Holdable ho = (Holdable)inter;
+                        ho.OnInteract(heldSprite);
+                        // check if player is holding object and allowed to pickup another
+                        break;
+                    default:
+                    inter.OnInteract(heldSprite);
+                        break;
+                }   
+
+            }
+        }
+
+    }
+    public void AcquireInteractLock()
     {
+        interactLock = true;
+    }
+    public void ReleaseInteractLock()
+    {
+        interactLock = false;
         canMove = true;
-        interactionCollider.enabled = false;
     }
 
     public void Evade() {
@@ -114,25 +155,39 @@ public class PlayerController : MonoBehaviour
 
 
     // Interact with objects
-    void OnTriggerEnter2D(Collider2D col)
+    // nervous system, tells you if you're touching
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.layer == 8)
-        {
-            canMove = false;
-            animator.SetTrigger("interact");
+        touching = true;
+        collider = col;
 
-            rb.velocity = new Vector3();
-            Interactable inter = col.gameObject.GetComponent<Interactable>();
-            inter.OnInteract();
-        }
+        // dont allow holding more stuff if already holding something
     }
+    // void OnTriggerEnter2D(Collider2D col)
+    // {   
+
+    //     if (col.gameObject.layer == 8 && touching)
+    //     {
+    //         canMove = false;
+    //         rb.velocity = new Vector3();
+    //         Interactable inter = col.gameObject.GetComponent<Interactable>();
+    //         inter.OnInteract();
+    //         // change held sprite if holdable
+
+    //     }
+    // }
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.layer == 8)
-        {
-            Interactable inter = col.gameObject.GetComponent<Interactable>();
-            inter.OnInteract();
-        }
+        touching = false;
+        collider = null;
+        // if (col.gameObject.layer == 8)
+        // {
+        //     Interactable inter = col.gameObject.GetComponent<Interactable>();
+        //     inter.OnInteract();
+        //     // change held sprite if holdable
+        //     // heldSprite.sprite = null;
+
+        // }
     }
 
 }

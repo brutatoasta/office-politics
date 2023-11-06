@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class GameManager : Singleton<GameManager>
 {
-    override  public  void  Awake(){
+    override public void Awake()
+    {
         base.Awake();
     }
 
@@ -45,4 +46,6 @@ public class GameManager : Singleton<GameManager>
     }
 
 
+    public UnityEvent<BaseInteractable> interact;
+    public GameObject held;
 }
