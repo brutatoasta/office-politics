@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 20010927}
   - component: {fileID: 20010926}
   - component: {fileID: 20010928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Furnitures_above_table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 75762797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Furnitures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1995,7 +1995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 105359877}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Meeting Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2112,7 +2112,7 @@ GameObject:
   - component: {fileID: 124057508}
   - component: {fileID: 124057507}
   - component: {fileID: 124057506}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2523,7 +2523,7 @@ GameObject:
   - component: {fileID: 141016910}
   - component: {fileID: 141016909}
   - component: {fileID: 141016908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2942,7 +2942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 165932872}
   - component: {fileID: 165932873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3021,7 +3021,7 @@ GameObject:
   - component: {fileID: 214659927}
   - component: {fileID: 214659926}
   - component: {fileID: 214659928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shred & Laminate path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3742,7 +3742,7 @@ GameObject:
   - component: {fileID: 234539111}
   - component: {fileID: 234539110}
   - component: {fileID: 234539109}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4163,7 +4163,7 @@ GameObject:
   - component: {fileID: 238076698}
   - component: {fileID: 238076697}
   - component: {fileID: 238076696}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4581,7 +4581,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242191341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4626,7 +4626,7 @@ GameObject:
   - component: {fileID: 261167662}
   - component: {fileID: 261167661}
   - component: {fileID: 261167663}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,7 +4817,7 @@ GameObject:
   - component: {fileID: 263512813}
   - component: {fileID: 263512812}
   - component: {fileID: 263512811}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5238,7 +5238,7 @@ GameObject:
   - component: {fileID: 270021892}
   - component: {fileID: 270021891}
   - component: {fileID: 270021890}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shred Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5483,7 +5483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292268830}
   - component: {fileID: 292268831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5562,7 +5562,7 @@ GameObject:
   - component: {fileID: 459800685}
   - component: {fileID: 459800684}
   - component: {fileID: 459800683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5983,7 +5983,7 @@ GameObject:
   - component: {fileID: 464528434}
   - component: {fileID: 464528433}
   - component: {fileID: 464528432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6394,7 +6394,7 @@ GameObject:
   - component: {fileID: 488029230}
   - component: {fileID: 488029229}
   - component: {fileID: 488029231}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coffee Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6712,7 +6712,7 @@ GameObject:
   - component: {fileID: 575460043}
   - component: {fileID: 575460042}
   - component: {fileID: 575460041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7133,7 +7133,7 @@ GameObject:
   - component: {fileID: 676837686}
   - component: {fileID: 676837685}
   - component: {fileID: 676837687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Meeting Notes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7338,7 +7338,7 @@ GameObject:
   - component: {fileID: 698119046}
   - component: {fileID: 698119045}
   - component: {fileID: 698119047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11429,7 +11429,7 @@ GameObject:
   - component: {fileID: 706217158}
   - component: {fileID: 706217157}
   - component: {fileID: 706217156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laminate Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11675,7 +11675,7 @@ GameObject:
   - component: {fileID: 713969755}
   - component: {fileID: 713969757}
   - component: {fileID: 713969756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24050,7 +24050,7 @@ GameObject:
   - component: {fileID: 721887827}
   - component: {fileID: 721887826}
   - component: {fileID: 721887828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24238,7 +24238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 724871822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shred & Laminate Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24407,6 +24407,10 @@ MonoBehaviour:
   useConsumable:
     m_PersistentCalls:
       m_Calls: []
+  interact:
+    m_PersistentCalls:
+      m_Calls: []
+  held: {fileID: 0}
 --- !u!4 &778183384
 Transform:
   m_ObjectHideFlags: 0
@@ -24434,7 +24438,7 @@ GameObject:
   - component: {fileID: 782742048}
   - component: {fileID: 782742047}
   - component: {fileID: 782742046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24852,7 +24856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 793627977}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24888,7 +24892,7 @@ GameObject:
   - component: {fileID: 807270332}
   - component: {fileID: 807270331}
   - component: {fileID: 807270333}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25093,7 +25097,7 @@ GameObject:
   - component: {fileID: 901113402}
   - component: {fileID: 901113401}
   - component: {fileID: 901113400}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25514,7 +25518,7 @@ GameObject:
   - component: {fileID: 923099354}
   - component: {fileID: 923099353}
   - component: {fileID: 923099352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25932,7 +25936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928032710}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25970,7 +25974,7 @@ GameObject:
   - component: {fileID: 949789285}
   - component: {fileID: 949789284}
   - component: {fileID: 949789283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26391,7 +26395,7 @@ GameObject:
   - component: {fileID: 953335264}
   - component: {fileID: 953335263}
   - component: {fileID: 953335262}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26810,7 +26814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029623669}
   - component: {fileID: 1029623670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26889,7 +26893,7 @@ GameObject:
   - component: {fileID: 1058312891}
   - component: {fileID: 1058312890}
   - component: {fileID: 1058312892}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Photocopy machine_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27091,7 +27095,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1059401044}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27124,7 +27128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1073742970}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27157,7 +27161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1117872488}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27191,7 +27195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129024223}
   - component: {fileID: 1129024224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27270,7 +27274,7 @@ GameObject:
   - component: {fileID: 1162032038}
   - component: {fileID: 1162032037}
   - component: {fileID: 1162032036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27691,7 +27695,7 @@ GameObject:
   - component: {fileID: 1175966957}
   - component: {fileID: 1175966956}
   - component: {fileID: 1175966955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coffee Pot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27879,7 +27883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1189061200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27946,7 +27950,7 @@ GameObject:
   - component: {fileID: 1204421791}
   - component: {fileID: 1204421790}
   - component: {fileID: 1204421789}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28364,7 +28368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1235605933}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pantry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28404,7 +28408,7 @@ GameObject:
   - component: {fileID: 1266913943}
   - component: {fileID: 1266913942}
   - component: {fileID: 1266913941}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28815,7 +28819,7 @@ GameObject:
   - component: {fileID: 1291425532}
   - component: {fileID: 1291425531}
   - component: {fileID: 1291425530}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29233,7 +29237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1303924912}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coffee Cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29257,6 +29261,380 @@ Transform:
   - {fileID: 488029228}
   m_Father: {fileID: 1235605933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1325797001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325797013}
+  - component: {fileID: 1325797012}
+  - component: {fileID: 1325797011}
+  - component: {fileID: 1325797010}
+  - component: {fileID: 1325797009}
+  - component: {fileID: 1325797008}
+  - component: {fileID: 1325797007}
+  - component: {fileID: 1325797006}
+  - component: {fileID: 1325797005}
+  - component: {fileID: 1325797004}
+  - component: {fileID: 1325797003}
+  - component: {fileID: 1325797002}
+  m_Layer: 0
+  m_Name: Boss
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!50 &1325797002
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &1325797003
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.059603572}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.375}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.3807929}
+  m_EdgeRadius: 0
+--- !u!114 &1325797004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 260105128}
+--- !u!114 &1325797005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+  radius: 1.09
+  height: 2
+  canMove: 1
+  maxSpeed: 1
+  gravity: {x: 0, y: 0, z: 0}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  repathRateCompatibility: NaN
+  canSearchCompability: 0
+  orientation: 1
+  enableRotation: 0
+  autoRepath:
+    mode: 2
+    interval: 0.5
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 0
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 0.6
+  pickNextWaypointDist: 2
+  endReachedDistance: 0.2
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
+--- !u!114 &1325797006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &1325797007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b1c8784ff694ed47bbae6b7808179f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: edd7db51a10b29e4e86b5af793d5e70c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1325797009}
+        m_TargetAssemblyTypeName: EnemyWeapon, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1325797008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d18aa9f19e5b56409fb727e48c64014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 1325797013}
+  - {fileID: 0}
+  lineController: {fileID: 0}
+  launchArrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: edd7db51a10b29e4e86b5af793d5e70c, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Object, UnityEngine
+        m_MethodName: Raise
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1325797009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fde3cd98f1da74bb80ff42733f234c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 5917662536098192051, guid: 4e8a20f87375c8b4b9a51eed7c6a12f5, type: 3}
+  arrowOrigin: {fileID: 1325797013}
+  Spawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 8893d50b5debc26449311a9b558b9f63, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Transform, UnityEngine
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1325797010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e900c406701f004bbb75c1a86864e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  constants: {fileID: 11400000, guid: e5b693a5c08a31445894c75e0f6a596d, type: 2}
+  health: 1
+--- !u!95 &1325797011
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dcbd63af49429884dbf1c8c8fd9c5139, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!212 &1325797012
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 1640753725, guid: 03c27ef53d7a7354fb23432f6d2e582a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1325797013
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325797001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.62, y: -3.5, z: -0.0029631555}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342591090
 GameObject:
   m_ObjectHideFlags: 0
@@ -29267,7 +29645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342591091}
   - component: {fileID: 1342591092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29343,7 +29721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352985302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29376,7 +29754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357811633}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tea cup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29412,7 +29790,7 @@ GameObject:
   - component: {fileID: 1363500873}
   - component: {fileID: 1363500872}
   - component: {fileID: 1363500874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Laminate Documents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29830,7 +30208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367887514}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29854,11 +30232,6 @@ Transform:
   - {fileID: 165932872}
   m_Father: {fileID: 105359877}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1369544103 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5349817106763685876, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
-  m_PrefabInstance: {fileID: 1942054760}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1415926727
 GameObject:
   m_ObjectHideFlags: 0
@@ -29871,7 +30244,7 @@ GameObject:
   - component: {fileID: 1415926731}
   - component: {fileID: 1415926730}
   - component: {fileID: 1415926729}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30292,7 +30665,7 @@ GameObject:
   - component: {fileID: 1430303433}
   - component: {fileID: 1430303432}
   - component: {fileID: 1430303434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Photocopy machine_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30497,7 +30870,7 @@ GameObject:
   - component: {fileID: 1457999432}
   - component: {fileID: 1457999431}
   - component: {fileID: 1457999430}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30918,7 +31291,7 @@ GameObject:
   - component: {fileID: 1469300291}
   - component: {fileID: 1469300290}
   - component: {fileID: 1469300292}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Refreshment_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31239,7 +31612,7 @@ GameObject:
   - component: {fileID: 1481144378}
   - component: {fileID: 1481144377}
   - component: {fileID: 1481144376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31658,7 +32031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1504723455}
   - component: {fileID: 1504723456}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31737,7 +32110,7 @@ GameObject:
   - component: {fileID: 1514170885}
   - component: {fileID: 1514170884}
   - component: {fileID: 1514170883}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32155,7 +32528,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1574696016}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32191,7 +32564,7 @@ GameObject:
   - component: {fileID: 1586499526}
   - component: {fileID: 1586499525}
   - component: {fileID: 1586499524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32609,7 +32982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1614006075}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32642,7 +33015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1620815855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Photocopy Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32678,7 +33051,7 @@ GameObject:
   - component: {fileID: 1714386050}
   - component: {fileID: 1714386052}
   - component: {fileID: 1714386051}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50113,7 +50486,7 @@ GameObject:
   - component: {fileID: 1762641323}
   - component: {fileID: 1762641322}
   - component: {fileID: 1762641321}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tea Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50318,7 +50691,7 @@ GameObject:
   - component: {fileID: 1767922488}
   - component: {fileID: 1767922487}
   - component: {fileID: 1767922486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Furnitures
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53333,7 +53706,7 @@ GameObject:
   - component: {fileID: 1770677794}
   - component: {fileID: 1770677793}
   - component: {fileID: 1770677795}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Refreshment_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53565,219 +53938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1776664122
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1776664129}
-  - component: {fileID: 1776664128}
-  - component: {fileID: 1776664127}
-  - component: {fileID: 1776664126}
-  - component: {fileID: 1776664125}
-  - component: {fileID: 1776664124}
-  - component: {fileID: 1776664123}
-  m_Layer: 0
-  m_Name: Boss
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1776664123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b1c8784ff694ed47bbae6b7808179f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: edd7db51a10b29e4e86b5af793d5e70c, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1776664125}
-        m_TargetAssemblyTypeName: EnemyWeapon, Assembly-CSharp
-        m_MethodName: Shoot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1776664124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d18aa9f19e5b56409fb727e48c64014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  points:
-  - {fileID: 1776664129}
-  - {fileID: 0}
-  lineController: {fileID: 0}
-  launchArrow:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: edd7db51a10b29e4e86b5af793d5e70c, type: 2}
-        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Object, UnityEngine
-        m_MethodName: Raise
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1776664125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67fde3cd98f1da74bb80ff42733f234c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrow: {fileID: 5917662536098192051, guid: 4e8a20f87375c8b4b9a51eed7c6a12f5, type: 3}
-  arrowOrigin: {fileID: 1776664129}
-  Spawn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 8893d50b5debc26449311a9b558b9f63, type: 2}
-        m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Transform, UnityEngine
-        m_MethodName: Raise
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1776664126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e900c406701f004bbb75c1a86864e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1369544103}
-  constants: {fileID: 11400000, guid: e5b693a5c08a31445894c75e0f6a596d, type: 2}
-  health: 1
---- !u!95 &1776664127
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dcbd63af49429884dbf1c8c8fd9c5139, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!212 &1776664128
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: 1640753725, guid: 03c27ef53d7a7354fb23432f6d2e582a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!4 &1776664129
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776664122}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.62, y: -3.5, z: -0.0029631555}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818321685
 GameObject:
   m_ObjectHideFlags: 0
@@ -53788,7 +53948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818321686}
   - component: {fileID: 1818321687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53867,7 +54027,7 @@ GameObject:
   - component: {fileID: 1840752954}
   - component: {fileID: 1840752953}
   - component: {fileID: 1840752955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tea Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54058,7 +54218,7 @@ GameObject:
   - component: {fileID: 1850264307}
   - component: {fileID: 1850264306}
   - component: {fileID: 1850264305}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Coffee Machine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54263,7 +54423,7 @@ GameObject:
   - component: {fileID: 1853165682}
   - component: {fileID: 1853165681}
   - component: {fileID: 1853165683}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Photocopy machine_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54468,7 +54628,7 @@ GameObject:
   - component: {fileID: 1874920741}
   - component: {fileID: 1874920740}
   - component: {fileID: 1874920739}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Colleagues (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54889,7 +55049,7 @@ GameObject:
   - component: {fileID: 1891355226}
   - component: {fileID: 1891355225}
   - component: {fileID: 1891355227}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shred Documents
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55383,7 +55543,7 @@ GameObject:
   - component: {fileID: 1955016266}
   - component: {fileID: 1955016265}
   - component: {fileID: 1955016267}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57200,6 +57360,93 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1976138506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976138508}
+  - component: {fileID: 1976138507}
+  m_Layer: 0
+  m_Name: Pathfinding
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1976138507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976138506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  data:
+    dataString: UEsDBBQAAAgIAABAIewwt9N1XgIAABMFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjnPCR3logpIckTEgnF1+EtcYaZMkjyQGS4b93V7axS6cnxHtvd9+uVv5iUrsSUm/sykrxZASw7wNGZ/Zt0JGPcOQ7ozfyE1rNuxQ+JxEPmlfupUF8RGHOFOCtTH/onSJxhGClZWZssRQ7mBvnHcIZVw6QssZTtEboa8CO+DO8p5ATnuIpnT7xdB8NznhMQXuwnbQVtrJaVelU8aIEQZY78XTcqMfjINPYTKMg46lRSrrGCfOnMnS6KXOwQK0KybGxUH10Q6lykLvck81+9EuWOfCNJ8tPC2lxQnVa9tPUYyu429fGPriqqNB4FAdTddKnf/jhKNCZNcVjW3cUUQ2fy3T/yk8pd7431z686FkP8zlwtedbBe856GezsqbSAklvKwqtHMSL7u+ltXkO6b7Da6tXYFX+/3aoh3Po/jhXstgSdXNXAxtlwsDD3YPFq/mFhsNmuCYFouTit4M3vuuvUEM8SOs8Uk2XmuxtTWVJypZhZtRN5efGaghwY7oEzZU/rTGNv77CK65X9op54PRYmuIN176Bq5AAd/oouqLW5nC5LJebwxO4/KXySmroTBPxjHOaG63rDevPpA3bVDbjaS9sV0nx92qx2ziOR9FsNotTMY0gHk6jLJpMtzNxP53c3sGEhd2TGvvkal0bbcaDt6a75Br3rP2GDFaWl2HbheWHlfwsTG/kUmdmk1oA/VJnuBgHi0XwWYqlkDigDXgvdbhv9pUwZdI9iOSSKAmdLo/e8qTLkrBSfhhPSMLm4aORMIIvu7y28CHhQMXbZGd2/gNQSwMEFAAACAgAAEAh7HVLMwZtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTXUVBKL0osyCgGihiCOKWZKSB2tJKxkZGRoYGFhYVRcoq5QaqRrrlBmoGZeZJFiqW5mbFJqplSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAEAh7DC303VeAgAAEwUAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAEAh7HVLMwZtAAAAeAAAAAkAJAAAAAAAAAAAAAAAqwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABjAwAAAAA=
+    upgradeData: 
+    file_cachedStartup: {fileID: 0}
+    data_cachedStartup: 
+    cacheStartup: 0
+  showNavGraphs: 1
+  showUnwalkableNodes: 1
+  debugMode: 0
+  debugFloor: 0
+  debugRoof: 1
+  manualDebugFloorRoof: 0
+  showSearchTree: 0
+  unwalkableNodeDebugSize: 0.3
+  logPathResults: 1
+  maxNearestNodeDistance: 100
+  scanOnStartup: 1
+  fullGetNearestSearch: 0
+  prioritizeGraphs: 0
+  prioritizeGraphsLimit: 1
+  colorSettings:
+    _SolidColor: {r: 0.11764706, g: 0.4, b: 0.7882353, a: 0.9}
+    _UnwalkableNode: {r: 1, g: 0, b: 0, a: 0.5}
+    _BoundsHandles: {r: 0.29, g: 0.454, b: 0.741, a: 0.9}
+    _ConnectionLowLerp: {r: 0, g: 1, b: 0, a: 0.5}
+    _ConnectionHighLerp: {r: 1, g: 0, b: 0, a: 0.5}
+    _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
+    _AreaColors:
+    - {r: 0, g: 0, b: 0, a: 0}
+  tagNames: []
+  heuristic: 2
+  heuristicScale: 1
+  threadCount: 1
+  maxFrameTime: 1
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: 0.2
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
+  showGraphs: 1
+--- !u!4 &1976138508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976138506}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1990699341
 GameObject:
   m_ObjectHideFlags: 0
@@ -57209,7 +57456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1990699342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Office
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57258,7 +57505,7 @@ GameObject:
   - component: {fileID: 2009051082}
   - component: {fileID: 2009051081}
   - component: {fileID: 2009051083}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Furnitures_below_table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58653,7 +58900,7 @@ GameObject:
   - component: {fileID: 2012006263}
   - component: {fileID: 2012006262}
   - component: {fileID: 2012006264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Furnitures_above_table (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59272,7 +59519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2044165799}
   - component: {fileID: 2044165800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Interactables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59350,4 +59597,5 @@ SceneRoots:
   - {fileID: 778183384}
   - {fileID: 1942054760}
   - {fileID: 750319937}
-  - {fileID: 1776664129}
+  - {fileID: 1976138508}
+  - {fileID: 1325797013}
