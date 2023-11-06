@@ -793,6 +793,33 @@
                     "processors": "",
                     "interactions": "Press(behavior=2)",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "cycleConsumable",
+                    "type": "Button",
+                    "id": "88452cb0-55dc-4bde-81c7-5312682ccb2f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "useConsumable",
+                    "type": "Button",
+                    "id": "ec2172b2-ee34-47f6-a6cc-e141936c1efa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "evade",
+                    "type": "Button",
+                    "id": "aa92cd4d-b114-48b1-9ba7-4cd9e2583acb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -914,6 +941,39 @@
                     "processors": "",
                     "groups": "OfficePolitics;Keyboard&Mouse;Touch;Gamepad;Joystick;XR",
                     "action": "interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70d251bf-7878-44f4-b96b-c1e5ea17b791",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "cycleConsumable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9c5fbc8-2ab5-400a-a8c6-46ce858cb7a9",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "useConsumable",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c40b169a-4203-486e-948c-27ba0b84200c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "evade",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

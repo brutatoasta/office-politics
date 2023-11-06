@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     // Player Constants
     public PlayerConstants playerConstants;
+    public InventoryVariable inventory;
     
 
     Vector2 movementInput;
@@ -16,9 +17,11 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
     Animator animator;
+    public TrailRenderer trail;
 
 
     bool canMove = true;
+    bool canDash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +77,39 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
         interactionCollider.enabled = false;
+    }
+
+    public void Evade() {
+        if (inventory.evadeType == EvadeType.Dash)
+        {
+            if(canDash && canMove)
+            {
+                StartCoroutine(Dash());
+            }
+        }
+        else
+        {
+            StartCoroutine(Parry());
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        canMove=false;
+        canDash=false;
+        rb.velocity = movementInput.normalized *  20f;
+        trail.emitting = true;
+        
+        yield return new WaitForSecondsRealtime(0.5f);
+        trail.emitting=false;
+        canMove=true;
+        yield return new WaitForSecondsRealtime(1);
+        canDash=true;
+    }
+
+    IEnumerator Parry()
+    {
+        yield return null;
     }
 
 

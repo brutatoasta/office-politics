@@ -815,6 +815,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""cycleConsumable"",
+                    ""type"": ""Button"",
+                    ""id"": ""88452cb0-55dc-4bde-81c7-5312682ccb2f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""useConsumable"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec2172b2-ee34-47f6-a6cc-e141936c1efa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""evade"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa92cd4d-b114-48b1-9ba7-4cd9e2583acb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -938,6 +965,39 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70d251bf-7878-44f4-b96b-c1e5ea17b791"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""cycleConsumable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9c5fbc8-2ab5-400a-a8c6-46ce858cb7a9"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""useConsumable"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c40b169a-4203-486e-948c-27ba0b84200c"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""evade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1042,6 +1102,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerMap = asset.FindActionMap("PlayerMap", throwIfNotFound: true);
         m_PlayerMap_move = m_PlayerMap.FindAction("move", throwIfNotFound: true);
         m_PlayerMap_interact = m_PlayerMap.FindAction("interact", throwIfNotFound: true);
+        m_PlayerMap_cycleConsumable = m_PlayerMap.FindAction("cycleConsumable", throwIfNotFound: true);
+        m_PlayerMap_useConsumable = m_PlayerMap.FindAction("useConsumable", throwIfNotFound: true);
+        m_PlayerMap_evade = m_PlayerMap.FindAction("evade", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1285,12 +1348,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IPlayerMapActions> m_PlayerMapActionsCallbackInterfaces = new List<IPlayerMapActions>();
     private readonly InputAction m_PlayerMap_move;
     private readonly InputAction m_PlayerMap_interact;
+    private readonly InputAction m_PlayerMap_cycleConsumable;
+    private readonly InputAction m_PlayerMap_useConsumable;
+    private readonly InputAction m_PlayerMap_evade;
     public struct PlayerMapActions
     {
         private @PlayerInputActions m_Wrapper;
         public PlayerMapActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @move => m_Wrapper.m_PlayerMap_move;
         public InputAction @interact => m_Wrapper.m_PlayerMap_interact;
+        public InputAction @cycleConsumable => m_Wrapper.m_PlayerMap_cycleConsumable;
+        public InputAction @useConsumable => m_Wrapper.m_PlayerMap_useConsumable;
+        public InputAction @evade => m_Wrapper.m_PlayerMap_evade;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1306,6 +1375,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @interact.started += instance.OnInteract;
             @interact.performed += instance.OnInteract;
             @interact.canceled += instance.OnInteract;
+            @cycleConsumable.started += instance.OnCycleConsumable;
+            @cycleConsumable.performed += instance.OnCycleConsumable;
+            @cycleConsumable.canceled += instance.OnCycleConsumable;
+            @useConsumable.started += instance.OnUseConsumable;
+            @useConsumable.performed += instance.OnUseConsumable;
+            @useConsumable.canceled += instance.OnUseConsumable;
+            @evade.started += instance.OnEvade;
+            @evade.performed += instance.OnEvade;
+            @evade.canceled += instance.OnEvade;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -1316,6 +1394,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @interact.started -= instance.OnInteract;
             @interact.performed -= instance.OnInteract;
             @interact.canceled -= instance.OnInteract;
+            @cycleConsumable.started -= instance.OnCycleConsumable;
+            @cycleConsumable.performed -= instance.OnCycleConsumable;
+            @cycleConsumable.canceled -= instance.OnCycleConsumable;
+            @useConsumable.started -= instance.OnUseConsumable;
+            @useConsumable.performed -= instance.OnUseConsumable;
+            @useConsumable.canceled -= instance.OnUseConsumable;
+            @evade.started -= instance.OnEvade;
+            @evade.performed -= instance.OnEvade;
+            @evade.canceled -= instance.OnEvade;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -1410,5 +1497,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnCycleConsumable(InputAction.CallbackContext context);
+        void OnUseConsumable(InputAction.CallbackContext context);
+        void OnEvade(InputAction.CallbackContext context);
     }
 }

@@ -7,6 +7,7 @@ public class ActionManager : MonoBehaviour
     public UnityEvent<Vector2> moveCheck;
     public UnityEvent interact;
     public UnityEvent interactRelease;
+    public UnityEvent evade;
 
     public void OnInteractAction(InputAction.CallbackContext context)
     {
@@ -25,6 +26,21 @@ public class ActionManager : MonoBehaviour
             moveCheck.Invoke(new Vector2(0,0));
         }
 
+    }
+
+    public void OnUseConsumableAction(InputAction.CallbackContext context)
+    {
+        if (context.started) GameManager.instance.UseCurrentConsumable();
+    }
+
+    public void OnCycleConsumableAction(InputAction.CallbackContext context)
+    {
+        if (context.started) GameManager.instance.CycleInventory();
+    }
+
+    public void OnEvadeAction(InputAction.CallbackContext context)
+    {
+        if (context.started) evade.Invoke();
     }
 
 
