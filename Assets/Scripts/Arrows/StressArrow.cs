@@ -12,6 +12,7 @@ public class StressArrow : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
     public UnityEvent<Transform> StartLineRenderer;
     public UnityEvent<Transform> StopLineRenderer;
@@ -23,6 +24,8 @@ public class StressArrow : MonoBehaviour
         yield return new WaitForSeconds(2f);
         StopLineRenderer.Invoke(bossCoords);
         yield return new WaitForSeconds(0.1f);
+        Rigidbody2D arrowRigidBody = gameObject.AddComponent<Rigidbody2D>();
+        arrowRigidBody.gravityScale = 0;
         Shoot(bossCoords, player.transform);
     }
 
@@ -44,7 +47,10 @@ public class StressArrow : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Stress Arrow has hit " + collision.gameObject.name);
-        Destroy(gameObject);
+        if (collision.tag != "Enemy")
+        {
+            Debug.Log("Job Arrow has hit " + collision.gameObject.name);
+            Destroy(gameObject);
+        }
     }
 }

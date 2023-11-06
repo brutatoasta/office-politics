@@ -24,7 +24,10 @@ public class JobArrow : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Job Arrow has hit " + collision.gameObject.name);
-        Destroy(gameObject);
+        if (collision.tag != "Enemy")
+        {
+            Debug.Log("Job Arrow has hit " + collision.gameObject.name);
+            Destroy(gameObject);
+        }
     }
 }
