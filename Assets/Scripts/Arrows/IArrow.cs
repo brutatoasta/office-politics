@@ -1,4 +1,4 @@
 using UnityEngine;
 public interface IArrow {
-    void SpawnArrow();
+    void Shoot(Transform bossCoords);
 }
