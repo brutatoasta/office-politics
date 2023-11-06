@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23985d61f71e93f4199dbf5818197605, type: 3}
   m_Name: WeaponGameConstants
   m_EditorClassIdentifier: 
-  stressArrowSpeed: 2
+  stressArrowSpeed: 3
   jobArrowSpeed: 1
