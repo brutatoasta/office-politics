@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     // Player Constants
     public PlayerConstants playerConstants;
     public InventoryVariable inventory;
-    
+
 
 
     Vector2 movementInput;
@@ -72,40 +72,40 @@ public class PlayerController : MonoBehaviour
         // the object player is interacting with
         if (collider != null)
         {
-        BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
-        // check if player is touching object and not currently animating
-        if (touching && !interactLock)
-        {
-
-            // check if held object is valid
-            animator.SetTrigger("interact");
-            canMove = false;
-            rb.velocity = new Vector3();
-            if (collider.gameObject.layer == 8)
+            BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
+            // check if player is touching object and not currently animating
+            if (touching && !interactLock)
             {
-                // get script component and cast according to type field
-                switch (inter.type)
-                {
-                    case InteractableType.Receivable:
-                        Receivable re = (Receivable)inter;
-                     
-                        re.OnInteract(heldSprite);
-      
-                        
-                        // check if player is holding object and allowed to deposit
-                        break;
-                    case InteractableType.Holdable:
-                        Holdable ho = (Holdable)inter;
-                        ho.OnInteract(heldSprite);
-                        // check if player is holding object and allowed to pickup another
-                        break;
-                    default:
-                    inter.OnInteract(heldSprite);
-                        break;
-                }   
 
+                // check if held object is valid
+                animator.SetTrigger("interact");
+                canMove = false;
+                rb.velocity = new Vector3();
+                if (collider.gameObject.layer == 8)
+                {
+                    // get script component and cast according to type field
+                    switch (inter.type)
+                    {
+                        case InteractableType.Receivable:
+                            Receivable re = (Receivable)inter;
+
+                            re.OnInteract(heldSprite);
+
+
+                            // check if player is holding object and allowed to deposit
+                            break;
+                        case InteractableType.Holdable:
+                            Holdable ho = (Holdable)inter;
+                            ho.OnInteract(heldSprite);
+                            // check if player is holding object and allowed to pickup another
+                            break;
+                        default:
+                            inter.OnInteract(heldSprite);
+                            break;
+                    }
+
+                }
             }
-        }
         }
 
 
@@ -123,10 +123,11 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
-    public void Evade() {
+    public void Evade()
+    {
         if (inventory.evadeType == EvadeType.Dash)
         {
-            if(canDash && canMove)
+            if (canDash && canMove)
             {
                 StartCoroutine(Dash());
             }
@@ -139,16 +140,16 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        canMove=false;
-        canDash=false;
-        rb.velocity = movementInput.normalized *  20f;
+        canMove = false;
+        canDash = false;
+        rb.velocity = movementInput.normalized * 20f;
         trail.emitting = true;
-        
+
         yield return new WaitForSecondsRealtime(0.5f);
-        trail.emitting=false;
-        canMove=true;
+        trail.emitting = false;
+        canMove = true;
         yield return new WaitForSecondsRealtime(1);
-        canDash=true;
+        canDash = true;
     }
 
     IEnumerator Parry()
