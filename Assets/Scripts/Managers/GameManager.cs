@@ -51,9 +51,6 @@ public class GameManager : Singleton<GameManager>
         invent.consumableObjects[currentInventorySlot].Consume();
         useConsumable.Invoke();
     }
-
-
-    // public UnityEvent<BaseInteractable> interact;
     public GameObject held;
 
     public void PlayPause()
