@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
 
-    SpriteRenderer spriteRenderer;
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
@@ -33,7 +32,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         Debug.Log(heldSprite.sprite);
     }
@@ -168,31 +166,10 @@ public class PlayerController : MonoBehaviour
 
         // dont allow holding more stuff if already holding something
     }
-    // void OnTriggerEnter2D(Collider2D col)
-    // {   
-
-    //     if (col.gameObject.layer == 8 && touching)
-    //     {
-    //         canMove = false;
-    //         rb.velocity = new Vector3();
-    //         Interactable inter = col.gameObject.GetComponent<Interactable>();
-    //         inter.OnInteract();
-    //         // change held sprite if holdable
-
-    //     }
-    // }
     void OnTriggerExit2D(Collider2D col)
     {
         touching = false;
         collider = null;
-        // if (col.gameObject.layer == 8)
-        // {
-        //     Interactable inter = col.gameObject.GetComponent<Interactable>();
-        //     inter.OnInteract();
-        //     // change held sprite if holdable
-        //     // heldSprite.sprite = null;
-
-        // }
     }
 
 }
