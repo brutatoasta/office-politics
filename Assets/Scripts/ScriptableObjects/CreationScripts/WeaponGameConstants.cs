@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "WeaponGameConstants", menuName = "ScriptableObjects/WeaponGameConstants", order = 2)]
+[CreateAssetMenu(fileName = "WeaponGameConstants", menuName = "ScriptableObjects/WeaponGameConstants", order = 5)]
 public class WeaponGameConstants : ScriptableObject
 {
     // Arrow speeds
