@@ -72,9 +72,9 @@ public class PlayerController : MonoBehaviour
     public void TriggerInteract()
     {
         // the object player is interacting with
+        if (collider != null)
+        {
         BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
-
-
         // check if player is touching object and not currently animating
         if (touching && !interactLock)
         {
@@ -108,6 +108,11 @@ public class PlayerController : MonoBehaviour
 
             }
         }
+        }
+
+
+
+
 
     }
     public void AcquireInteractLock()
