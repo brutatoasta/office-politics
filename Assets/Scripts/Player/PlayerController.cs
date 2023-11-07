@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
+    AudioSource audioSource;
     public TrailRenderer trail;
 
 
@@ -35,7 +36,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         Debug.Log(heldSprite.sprite);
+
+        GameManager.instance.useConsumable.AddListener(UseConsumable);
+        GameManager.instance.cycleInventory.AddListener(CycleConsumable);
     }
 
     private void FixedUpdate()
@@ -149,6 +154,7 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
+        audioSource.PlayOneShot(playerConstants.dashAudio);
 
         yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
@@ -160,6 +166,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Parry()
     {
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
+        // audioSource.PlayOneShot(playerConstants.parryAudio);
 
         Collider2D[] parriedArrows = Physics2D.OverlapCircleAll(transform.position, playerConstants.parryRange);
 
@@ -172,6 +179,16 @@ public class PlayerController : MonoBehaviour
             }
         }
         yield return null;
+    }
+
+    void UseConsumable()
+    {
+        audioSource.PlayOneShot(playerConstants.useConsumeableClip);
+    }
+
+    void CycleConsumable(int _)
+    {
+        audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
     }
 
 

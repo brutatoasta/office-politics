@@ -17,10 +17,14 @@ MonoBehaviour:
   dashPower: 30
   dashTime: 0.2
   dashCooldown: 0.5
+  dashAudio: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}
   parryRange: 2
   parryStartupTime: 0.1
   parryCooldown: 0.2
-  stressPoint: 20
+  parryAudio: {fileID: 0}
+  useConsumeableClip: {fileID: 8300000, guid: fd26e8620e8ad41409c3972fcc63f00e, type: 3}
+  cycleConsumeableClip: {fileID: 8300000, guid: 8b739406e2ec3354b807432cc076afe4, type: 3}
+  stressPoint: 0
   maxStressPoint: 50
   sanityPoint: 0
   performancePoint: 0
