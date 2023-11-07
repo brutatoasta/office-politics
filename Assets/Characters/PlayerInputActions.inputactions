@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PlayPause",
+                    "type": "Button",
+                    "id": "0da16507-2195-40df-b3b3-6debb9ced59e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -251,6 +260,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8a83072f-eb65-4761-9fa9-92ca7967e397",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PlayPause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -786,6 +806,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "PlayPause",
+                    "type": "Button",
+                    "id": "dec4df0d-9978-4843-8716-7d51cf85bdbd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "interact",
                     "type": "Button",
                     "id": "3ecee67b-67fd-4c60-b56e-345de4cd56a9",
@@ -974,6 +1003,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "evade",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "286a4a00-2f8b-4c08-bfc6-cf5042acecd7",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PlayPause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
