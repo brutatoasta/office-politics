@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
     bool canDash = true;
+    bool canParry = true;
 
     public bool touching = false;
     new Collider2D collider;
@@ -134,7 +136,10 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(Parry());
+            if (canParry)
+            {
+                StartCoroutine(Parry());
+            }
         }
     }
 
@@ -142,18 +147,30 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         canDash = false;
-        rb.velocity = movementInput.normalized * 20f;
+        rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
 
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
         canMove = true;
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(playerConstants.dashCooldown);
         canDash = true;
     }
 
     IEnumerator Parry()
     {
+        yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
+
+        Collider2D[] parriedArrows = Physics2D.OverlapCircleAll(transform.position, playerConstants.parryRange);
+
+        foreach (Collider2D arrow in parriedArrows)
+        {
+            if (arrow.gameObject.CompareTag("Arrow")) {
+                Rigidbody2D arrowRb = arrow.attachedRigidbody;
+                Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
+                arrow.attachedRigidbody.velocity = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
+            }
+        }
         yield return null;
     }
 

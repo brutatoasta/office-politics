@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 30
   maxMoveSpeed: 60
+  dashPower: 30
+  dashTime: 0.2
+  dashCooldown: 0.5
+  parryRange: 2
+  parryStartupTime: 0.1
+  parryCooldown: 0.2
   stressPoint: 20
   maxStressPoint: 50
   sanityPoint: 0
