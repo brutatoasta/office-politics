@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 8985323883665084123}
   - component: {fileID: 4458250649425932936}
   - component: {fileID: 5970015046487322647}
-  - component: {fileID: 66819581075452138}
   - component: {fileID: 2670764534922000859}
   - component: {fileID: 3265215980486700150}
   - component: {fileID: 7185380654519326318}
@@ -270,51 +269,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.4631938}
-  m_EdgeRadius: 0
---- !u!61 &66819581075452138
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349817106763685876}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.02026361}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.375}
-    oldSize: {x: 1, y: 2}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.963194}
   m_EdgeRadius: 0
 --- !u!114 &2670764534922000859
 MonoBehaviour:
@@ -532,21 +486,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactRelease:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7185380654519326318}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ReleaseInteract
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   evade:
     m_PersistentCalls:
       m_Calls:
@@ -562,6 +501,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  playPause:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7185380654519326318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,8 +518,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
-  interactionCollider: {fileID: 66819581075452138}
   trail: {fileID: 601554962093554315}
+  touching: 0
 --- !u!114 &7777093372494719401
 MonoBehaviour:
   m_ObjectHideFlags: 0

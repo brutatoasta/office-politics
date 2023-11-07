@@ -6,27 +6,28 @@ using UnityEngine.Tilemaps;
 // Takes and handles input and movement for a player character
 public class InteractableHighlight : MonoBehaviour
 {
-    private SpriteRenderer map;
-    
-    void Start()
-    {
-        map = transform.parent.gameObject.GetComponent<SpriteRenderer>();
-        map.color = Color.gray;
-    }
+    // TODO use shader instead of color
+    // private SpriteRenderer map;
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.layer == 7)
-        {
-            map.color = Color.white;
-        }
-    }
+    // void Start()
+    // {
+    //     map = transform.parent.gameObject.GetComponent<SpriteRenderer>();
+    //     map.color = Color.gray;
+    // }
 
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.gameObject.layer == 7)
-        {
-            map.color = Color.gray;
-        }
-    }
+    // void OnTriggerEnter2D(Collider2D col)
+    // {
+    //     if (col.gameObject.layer == 7)
+    //     {
+    //         map.color = Color.white;
+    //     }
+    // }
+
+    // void OnTriggerExit2D(Collider2D col)
+    // {
+    //     if (col.gameObject.layer == 7)
+    //     {
+    //         map.color = Color.gray;
+    //     }
+    // }
 }
