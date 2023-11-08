@@ -11676,7 +11676,7 @@ SpriteRenderer:
   m_Size: {x: 0.32, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &713969754
@@ -29337,7 +29337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1325797002
 Rigidbody2D:
   serializedVersion: 4
@@ -60019,3 +60019,4 @@ SceneRoots:
   - {fileID: 750319937}
   - {fileID: 1976138508}
   - {fileID: 5703592345734390654}
+  - {fileID: 1325797013}
