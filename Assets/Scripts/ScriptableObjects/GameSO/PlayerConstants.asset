@@ -18,8 +18,8 @@ MonoBehaviour:
   dashTime: 0.2
   dashCooldown: 0.5
   dashAudio: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}
-  parryRange: 2
-  parryStartupTime: 0.1
+  parryRange: 4
+  parryStartupTime: 0
   parryCooldown: 0.2
   parryAudio: {fileID: 0}
   useConsumeableClip: {fileID: 8300000, guid: fd26e8620e8ad41409c3972fcc63f00e, type: 3}
