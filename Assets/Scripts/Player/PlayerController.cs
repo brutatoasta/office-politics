@@ -83,42 +83,20 @@ public class PlayerController : MonoBehaviour
             // check if player is touching object and not currently animating
             if (touching && !interactLock)
             {
-
-                // check if held object is valid
-                animator.SetTrigger("interact");
-                canMove = false;
-                rb.velocity = new Vector3();
                 if (collider.gameObject.layer == 8)
                 {
                     // get script component and cast according to type field
-                    switch (inter.type)
+                    // check if held object is valid
+                    if (inter.CastAndInteract(heldSprite))
                     {
-                        case InteractableType.Receivable:
-                            Receivable re = (Receivable)inter;
-
-                            re.OnInteract(heldSprite);
-
-
-                            // check if player is holding object and allowed to deposit
-                            break;
-                        case InteractableType.Holdable:
-                            Holdable ho = (Holdable)inter;
-                            ho.OnInteract(heldSprite);
-                            // check if player is holding object and allowed to pickup another
-                            break;
-                        default:
-                            inter.OnInteract(heldSprite);
-                            break;
+                        animator.SetTrigger("interact");
+                        canMove = false;
+                        rb.velocity = new Vector3();
                     }
-
                 }
+
             }
         }
-
-
-
-
-
     }
     public void AcquireInteractLock()
     {
