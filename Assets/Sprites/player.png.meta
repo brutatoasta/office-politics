@@ -194,7 +194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_4
+      name: player_idle_r0
       rect:
         serializedVersion: 2
         x: 0
@@ -215,7 +215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_5
+      name: player_idle_r1
       rect:
         serializedVersion: 2
         x: 16
@@ -236,7 +236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_6
+      name: player_idle_r2
       rect:
         serializedVersion: 2
         x: 32
@@ -257,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_7
+      name: player_idle_r3
       rect:
         serializedVersion: 2
         x: 48
@@ -278,7 +278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_8
+      name: player_idle_r4
       rect:
         serializedVersion: 2
         x: 64
@@ -299,7 +299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_9
+      name: player_idle_r5
       rect:
         serializedVersion: 2
         x: 80
@@ -320,7 +320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_10
+      name: player_idle_u0
       rect:
         serializedVersion: 2
         x: 96
@@ -341,7 +341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_11
+      name: player_idle_u1
       rect:
         serializedVersion: 2
         x: 112
@@ -362,7 +362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_12
+      name: player_idle_u2
       rect:
         serializedVersion: 2
         x: 128
@@ -383,7 +383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_13
+      name: player_idle_u3
       rect:
         serializedVersion: 2
         x: 144
@@ -404,7 +404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_14
+      name: player_idle_u4
       rect:
         serializedVersion: 2
         x: 160
@@ -425,7 +425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_15
+      name: player_idle_u5
       rect:
         serializedVersion: 2
         x: 176
@@ -446,7 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_16
+      name: player_idle_l0
       rect:
         serializedVersion: 2
         x: 192
@@ -467,7 +467,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_17
+      name: player_idle_l1
       rect:
         serializedVersion: 2
         x: 208
@@ -488,7 +488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_18
+      name: player_idle_l2
       rect:
         serializedVersion: 2
         x: 224
@@ -509,7 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_19
+      name: player_idle_l3
       rect:
         serializedVersion: 2
         x: 240
@@ -530,7 +530,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_20
+      name: player_idle_l4
       rect:
         serializedVersion: 2
         x: 256
@@ -551,7 +551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_21
+      name: player_idle_l5
       rect:
         serializedVersion: 2
         x: 272
@@ -11504,7 +11504,6 @@ TextureImporter:
     nameFileIdTable:
       player_0: 1069638331
       player_1: -2097782205
-      player_10: -275133255
       player_100: 1214373971
       player_101: -2121548623
       player_102: -2096749979
@@ -11515,7 +11514,6 @@ TextureImporter:
       player_107: 987535175
       player_108: 75771675
       player_109: -1538473456
-      player_11: -1471141914
       player_110: -1772272218
       player_111: 801239099
       player_112: -1597573905
@@ -11526,7 +11524,6 @@ TextureImporter:
       player_117: -688741275
       player_118: 147006050
       player_119: 1668906039
-      player_12: -2114395507
       player_120: -1058869242
       player_121: 441055161
       player_122: 1640977921
@@ -11537,7 +11534,6 @@ TextureImporter:
       player_127: -639817598
       player_128: -569078169
       player_129: 534505953
-      player_13: 24340906
       player_130: 806742876
       player_131: -1638758169
       player_132: -1852386505
@@ -11548,7 +11544,6 @@ TextureImporter:
       player_137: 597049891
       player_138: 1070025732
       player_139: 744056163
-      player_14: 1100415
       player_140: -679006898
       player_141: -1016011593
       player_142: 1761430343
@@ -11559,7 +11554,6 @@ TextureImporter:
       player_147: -1622449780
       player_148: -1739337382
       player_149: 1071613940
-      player_15: -1967863814
       player_150: 1198575167
       player_151: 258347279
       player_152: -743182217
@@ -11570,7 +11564,6 @@ TextureImporter:
       player_157: -634991499
       player_158: -1231771751
       player_159: -942168950
-      player_16: 1616858135
       player_160: 1660975689
       player_161: 150933801
       player_162: 156010521
@@ -11581,7 +11574,6 @@ TextureImporter:
       player_167: 1809280423
       player_168: 1279976836
       player_169: 1455529052
-      player_17: -2140159884
       player_170: 549710202
       player_171: 797670006
       player_172: 1798802319
@@ -11591,7 +11583,6 @@ TextureImporter:
       player_176: 528381089
       player_178: 1558416477
       player_179: -208818044
-      player_18: -379642971
       player_180: 170706220
       player_181: -2112513025
       player_182: -1785256004
@@ -11602,7 +11593,6 @@ TextureImporter:
       player_187: 2068146318
       player_188: 1872332802
       player_189: 1884980976
-      player_19: -1240814801
       player_190: 1020687940
       player_191: -2143647127
       player_192: 1032928479
@@ -11614,7 +11604,6 @@ TextureImporter:
       player_198: 1074456061
       player_199: -1851324727
       player_2: 423121898
-      player_20: 1954165320
       player_200: 391979880
       player_201: 5735251
       player_202: -408232614
@@ -11625,7 +11614,6 @@ TextureImporter:
       player_207: 667133187
       player_208: 1693486463
       player_209: 1681522210
-      player_21: 683506535
       player_210: 701077580
       player_211: -550321974
       player_212: -137880522
@@ -11817,7 +11805,6 @@ TextureImporter:
       player_397: -1348055651
       player_398: 681508729
       player_399: 1257333319
-      player_4: 701021075
       player_40: -2051270465
       player_400: -1488626548
       player_401: 1481540076
@@ -11923,7 +11910,6 @@ TextureImporter:
       player_497: 1346153136
       player_498: 1686204679
       player_499: 926507662
-      player_5: 1354395207
       player_500: -2125771222
       player_501: -1292508925
       player_502: 648399538
@@ -11974,7 +11960,6 @@ TextureImporter:
       player_57: -920859109
       player_58: -1283602529
       player_59: -1390051106
-      player_6: -567704983
       player_60: -216800817
       player_61: 1543011488
       player_62: -501011613
@@ -11985,7 +11970,6 @@ TextureImporter:
       player_67: -256630596
       player_68: -858082412
       player_69: -1920588222
-      player_7: 1816419698
       player_70: 1823483070
       player_71: -1434393556
       player_72: 90928499
@@ -11996,7 +11980,6 @@ TextureImporter:
       player_77: -2094587101
       player_78: 387511424
       player_79: 1233217718
-      player_8: 981729173
       player_80: 1621311980
       player_81: 1000491460
       player_82: 787352454
@@ -12007,7 +11990,6 @@ TextureImporter:
       player_87: -928669192
       player_88: -506021518
       player_89: 1607408050
-      player_9: -1581867721
       player_90: 2060955944
       player_91: 1223756304
       player_92: -1466008879
@@ -12024,6 +12006,24 @@ TextureImporter:
       player_idle_3: -539785273
       player_idle_4: 754176373
       player_idle_5: 1075372399
+      player_idle_l0: 1616858135
+      player_idle_l1: -2140159884
+      player_idle_l2: -379642971
+      player_idle_l3: -1240814801
+      player_idle_l4: 1954165320
+      player_idle_l5: 683506535
+      player_idle_r0: 701021075
+      player_idle_r1: 1354395207
+      player_idle_r2: -567704983
+      player_idle_r3: 1816419698
+      player_idle_r4: 981729173
+      player_idle_r5: -1581867721
+      player_idle_u0: -275133255
+      player_idle_u1: -1471141914
+      player_idle_u2: -2114395507
+      player_idle_u3: 24340906
+      player_idle_u4: 1100415
+      player_idle_u5: -1967863814
       player_interact_d0: -1256581393
       player_interact_d1: 1705130738
       player_interact_d10: -449278394
