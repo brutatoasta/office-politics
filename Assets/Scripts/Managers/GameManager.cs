@@ -70,4 +70,5 @@ public class GameManager : Singleton<GameManager>
             // show menu
         }
     }
+
 }
