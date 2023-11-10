@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Laminator
+  m_Name: MeetingRoom Floor_4
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1429163954, guid: ead44e92acb250e4fa1a9c7b463602e4, type: 3}
+  m_Sprite: {fileID: 1444830155, guid: 5726a23abec903c4b9739ff685bd82fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

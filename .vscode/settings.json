@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "office-politics.sln"
+    "dotnet.defaultSolution": "office-politics.sln",
+    "dotnet.preferCSharpExtension": true
 }
