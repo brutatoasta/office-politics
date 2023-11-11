@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 {
     // Player Constants
     public PlayerConstants playerConstants;
+
+    public WeaponGameConstants arrowConstants;
     public InventoryVariable inventory;
 
 
@@ -21,7 +23,6 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     AudioSource audioSource;
     public TrailRenderer trail;
-
 
     bool canMove = true;
     bool canDash = true;
@@ -38,9 +39,11 @@ public class PlayerController : MonoBehaviour
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         Debug.Log(heldSprite.sprite);
+        playerConstants.stressPoint = 0;
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
+        GameManager.instance.increaseStress.AddListener(ArrowCollision);
     }
 
     private void FixedUpdate()
@@ -150,7 +153,8 @@ public class PlayerController : MonoBehaviour
 
         foreach (Collider2D arrow in parriedArrows)
         {
-            if (arrow.gameObject.CompareTag("Arrow")) {
+            if (arrow.gameObject.CompareTag("Arrow"))
+            {
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
                 Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
                 arrow.attachedRigidbody.velocity = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
@@ -158,6 +162,7 @@ public class PlayerController : MonoBehaviour
         }
         yield return null;
     }
+
 
     void UseConsumable()
     {
@@ -167,6 +172,18 @@ public class PlayerController : MonoBehaviour
     void CycleConsumable(int _)
     {
         audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
+    }
+
+    void ArrowCollision()
+    {
+        playerConstants.stressPoint += arrowConstants.stressArrowDamage;
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Arrow"))
+        {
+            GameManager.instance.increaseStress.Invoke();
+        }
     }
 
 

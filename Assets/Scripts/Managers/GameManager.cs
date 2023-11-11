@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -23,6 +24,8 @@ public class GameManager : Singleton<GameManager>
 
     public Sprite kitKatSprite;
     public Sprite coffeeSprite;
+
+
 
     void Start()
     {
@@ -52,6 +55,7 @@ public class GameManager : Singleton<GameManager>
         useConsumable.Invoke();
     }
     public GameObject held;
+    public UnityEvent increaseStress;
 
     public void PlayPause()
     {

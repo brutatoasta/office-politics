@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 2670764534922000859}
   - component: {fileID: 3265215980486700150}
   - component: {fileID: 7185380654519326318}
-  - component: {fileID: 7777093372494719401}
   - component: {fileID: 601554962093554315}
   - component: {fileID: 1282071784404689657}
   m_Layer: 7
@@ -310,70 +309,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 1faedca3-bedf-4655-95d5-9954e6dbd9b3
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 503eaa47-71a7-49b4-9277-dd1b08dbf84e
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e5c9d28b-b528-4fd9-9922-1cc2f5d39be4
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b2a99c72-4664-4482-93f9-ce550db3089b
-    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2fe95de0-4d50-488d-9b66-d2d2840494dc
-    m_ActionName: UI/Submit[/Keyboard/enter]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fcf57cf3-ef36-41aa-b502-da6e6ce7ba89
-    m_ActionName: UI/Cancel[/Keyboard/escape]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a0d94899-9843-4ca4-979a-af99699ac355
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bc3d81e3-72af-41e6-ac55-4f79e8f655e3
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 97aeb10b-2619-4b54-9b93-b4215017982a
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f1d43b26-cdce-4453-8a44-8f45aa036be1
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3f216516-40ad-4282-83cb-e971e2bae02f
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 20904e5d-c2b1-4e4b-8386-f484802aa884
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f580300d-5484-484a-a803-0b67c5cb95c7
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3265215980486700150}
-        m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
-        m_MethodName: OnMoveAction
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 604dbd9b-1597-4cb9-9a21-6e837ddf1ba4
     m_ActionName: PlayerMap/move[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
@@ -440,6 +375,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: aa92cd4d-b114-48b1-9ba7-4cd9e2583acb
     m_ActionName: PlayerMap/evade[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dec4df0d-9978-4843-8716-7d51cf85bdbd
+    m_ActionName: PlayerMap/PlayPause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: OfficePolitics
   m_DefaultActionMap: PlayerMap
@@ -518,24 +457,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
+  arrowConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
   inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   trail: {fileID: 601554962093554315}
   touching: 0
---- !u!114 &7777093372494719401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5349817106763685876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5683747fcd087b34bbe8737bb671682d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
-  stressPointText: {fileID: 0}
-  slider: {fileID: 0}
 --- !u!96 &601554962093554315
 TrailRenderer:
   serializedVersion: 3

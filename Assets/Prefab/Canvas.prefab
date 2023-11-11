@@ -946,6 +946,8 @@ MonoBehaviour:
   nextGroup: {fileID: 5770405573126536997}
   fade: {fileID: 8281516524247524587}
   countText: {fileID: 9154882400586178001}
+  slider: {fileID: 351882637677100014}
+  playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
 --- !u!1 &8188175062215615970
 GameObject:
   m_ObjectHideFlags: 0

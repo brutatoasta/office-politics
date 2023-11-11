@@ -15,11 +15,14 @@ public class HUDManager : MonoBehaviour
     private int nextSlot;
     public CanvasGroup fade;
     public GameObject countText;
+    public Slider slider;
+    public PlayerConstants playerConstants;
 
     void Start()
     {
         GameManager.instance.cycleInventory.AddListener(CycleInventory);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
+        GameManager.instance.increaseStress.AddListener(StressBarSlider);
 
         current.sprite = inventory.consumableObjects[0].sprite;
         next.sprite = inventory.consumableObjects[1].sprite;
@@ -63,7 +66,7 @@ public class HUDManager : MonoBehaviour
         next.sprite = (inventory.consumableObjects[nextSlot].count > 0 && nextSlot != currSlot) ?
                             inventory.consumableObjects[nextSlot].sprite :
                             null;
-                            
+
         currentGroup.alpha = (current.sprite == null) ? 0 : 1;
         nextGroup.alpha = (next.sprite == null) ? 0 : 1;
         StartCoroutine(Fade());
@@ -79,4 +82,9 @@ public class HUDManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.05f);
         }
     }
+    public void StressBarSlider()
+    {
+        slider.value = playerConstants.stressPoint;
+    }
+
 }
