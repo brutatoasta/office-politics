@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stressArrowSpeed: 3
   jobArrowSpeed: 1
+  stressArrowDamage: 5
+  jobArrowDamage: 5
