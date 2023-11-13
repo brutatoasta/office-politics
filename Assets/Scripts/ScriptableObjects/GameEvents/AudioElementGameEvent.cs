@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-// no arguments
+
 [CreateAssetMenu(fileName = "AudioElementGameEvent", menuName = "ScriptableObjects/AudioElementGameEvent", order = 3)]
 public class AudioElementGameEvent : GameEvent<AudioElement>
 {
