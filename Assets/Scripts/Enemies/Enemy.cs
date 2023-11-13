@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,14 @@ public class Enemy : MonoBehaviour
     Animator animator;
     public GameObject player;
     public EnemyGameConstants constants;
+
+    bool isChasing = false;
+
+    private void Awake()
+    {
+        gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
+        gameObject.GetComponent<AIPath>().enabled = isChasing;
+    }
 
     public float Health {
         set {
@@ -37,8 +46,15 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void toggleState()
+    {
+        isChasing = !isChasing;
+    }
+
     void Update()
     {
         //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
+        gameObject.GetComponent<AIPath>().enabled = isChasing;
     }
 }

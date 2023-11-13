@@ -22,8 +22,11 @@ public class EnemyWeapon : MonoBehaviour
     public UnityEvent<Transform> Spawn;
     private void StartArrowSequence()
     {
-        Instantiate(arrow, this.transform);
-        Spawn.Invoke(transform);
+        if (gameObject.GetComponent<EnemyWeapon>().enabled)
+        {
+            Instantiate(arrow, this.transform);
+            Spawn.Invoke(transform);
+        }
     }
     public void Shoot()
     {
