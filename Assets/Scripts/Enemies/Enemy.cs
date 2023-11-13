@@ -103,8 +103,9 @@ public class Enemy : MonoBehaviour
             }
             else //returning to original spot before patrolling again
             {
-                if (Mathf.Abs(gameObject.transform.position.x - originalTransform.position.x) < 0.5 && 
-                    Mathf.Abs(gameObject.transform.position.y - originalTransform.position.y) < 0.5)
+                // margin of error because the object will not return to exactly the original transform
+                if (Mathf.Abs(gameObject.transform.position.x - originalTransform.position.x) < 0.2 && 
+                    Mathf.Abs(gameObject.transform.position.y - originalTransform.position.y) < 0.2)
                 {
                     gameObject.GetComponent<AIPath>().enabled = false;
                     isReturning = false;
