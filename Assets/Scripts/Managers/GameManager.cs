@@ -20,6 +20,12 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gamePlay;
     public UnityEvent gameOver;
 
+
+    public UnityEvent TimerStart;
+    public UnityEvent TimerStop;
+    public UnityEvent<float> TimerUpdate;
+
+
     public bool isPaused = false;
     public InventoryVariable invent;
     private int currentInventorySlot = 0;
@@ -90,4 +96,8 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0;
         gameOver.Invoke();
     }
+
+    public void StartTimer() => TimerStart.Invoke();
+    public void StopTimer() => TimerStop.Invoke();
+    public void UpdateTimer(float value) => TimerUpdate.Invoke(value);
 }

@@ -18,31 +18,23 @@ public class Timer : MonoBehaviour
 
     private void Awake() => _timerText = GetComponent<TextMeshProUGUI>();
 
-    private void OnEnable()
+    void Start()
     {
-        EventManager.TimerStart += EventManagerOnTimerStart;
-        EventManager.TimerStop += EventManagerOnTimerStop;
-        EventManager.TimerUpdate += EventManagerOnTimerUpdate;
+        GameManager.instance.TimerStart.AddListener(OnTimerStart);
+        GameManager.instance.TimerStop.AddListener(OnTimerStop);
+        GameManager.instance.TimerUpdate.AddListener(OnTimerUpdate);
     }
 
-    private void OnDisable()
-    {
-        EventManager.TimerStart -= EventManagerOnTimerStart;
-        EventManager.TimerStop -= EventManagerOnTimerStop;
-        EventManager.TimerUpdate -= EventManagerOnTimerUpdate;
-    }
-
-    private void EventManagerOnTimerStart() => _isRunning = true;
-    private void EventManagerOnTimerStop() => _isRunning = false;
-    private void EventManagerOnTimerUpdate(float value) => timeToDisplay += value;
+    private void OnTimerStart() => _isRunning = true;
+    private void OnTimerStop() => _isRunning = false;
+    private void OnTimerUpdate(float value) => timeToDisplay += value;
 
     private void Update()
     {   
-        Debug.Log("timer!!");
         if (!_isRunning) return;
         if (timerType == TimerType.Countdown && timeToDisplay < 0.0f)
         {
-            EventManager.OnTimerStop();
+            GameManager.instance.StopTimer();
             return;
         }
 
