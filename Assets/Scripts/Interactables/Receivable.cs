@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 // Takes and handles input and movement for a player character
 public class Receivable : BaseInteractable
 {
+    public InventoryVariable inventory;
     public InteractableType validInput;
     public new void OnInteract(SpriteRenderer heldSprite)
     {
@@ -22,11 +23,14 @@ public class Receivable : BaseInteractable
             if (validInput != held.GetComponent<Holdable>().holdableType)
             {
                 //decrease score
+                inventory.stressPoint += 1;
                 Debug.Log("decrease score");
             }
             else
             {
                 //increase score
+                inventory.stressPoint = (inventory.stressPoint>10)? inventory.stressPoint-10: 0; 
+                inventory.performancePoint += 1;
                 Debug.Log("increase score");
             }
 

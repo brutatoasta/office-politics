@@ -12,6 +12,7 @@ public class PlayerConstants : ScriptableObject
     public float parryRange;
     public float parryStartupTime;
     public float parryCooldown;
+    public int overtimeTick;
     // public AudioClip parryAudio;
 
 
@@ -19,10 +20,7 @@ public class PlayerConstants : ScriptableObject
     // public AudioClip cycleConsumeableClip;
 
 
-    public int stressPoint;
-    public int maxStressPoint;
-    public int sanityPoint;
-    public int performancePoint;
+    
 
 
 }

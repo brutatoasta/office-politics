@@ -27,15 +27,16 @@ public class Timer : MonoBehaviour
 
     private void OnTimerStart() => _isRunning = true;
     private void OnTimerStop() => _isRunning = false;
-    private void OnTimerUpdate(float value) => timeToDisplay += value;
+    private void OnTimerUpdate(float value) => timeToDisplay = value;
 
     private void Update()
     {   
         if (!_isRunning) return;
+
+        // Overtime
         if (timerType == TimerType.Countdown && timeToDisplay < 0.0f)
         {
-            GameManager.instance.StopTimer();
-            return;
+            GameManager.instance.OnStopTimer();
         }
 
         timeToDisplay += timerType == TimerType.Countdown ? -Time.deltaTime : Time.deltaTime;

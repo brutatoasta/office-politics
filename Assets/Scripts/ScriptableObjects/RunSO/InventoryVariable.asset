@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: InventoryVariable
   m_EditorClassIdentifier: 
   evadeType: 0
+  stressPoint: 1
+  maxStressPoint: 50
+  sanityPoint: 0
+  performancePoint: 3

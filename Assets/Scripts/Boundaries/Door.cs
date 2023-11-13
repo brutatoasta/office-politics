@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             toggleBossBehaviour.Invoke();
+            GameManager.instance.StartTimer();
         }
     }
 

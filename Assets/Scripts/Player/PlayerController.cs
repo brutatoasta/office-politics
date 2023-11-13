@@ -41,11 +41,10 @@ public class PlayerController : MonoBehaviour
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
         // Debug.Log(heldSprite.sprite);
-        playerConstants.stressPoint = 0;
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
-        GameManager.instance.increaseStress.AddListener(ArrowCollision);
+        GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
     private void FixedUpdate()
@@ -165,7 +164,7 @@ public class PlayerController : MonoBehaviour
             {
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
                 Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
-                
+
 
                 if (Vector2.Dot(arrowRb.velocity, reflectionNormal) >= 0)
                 {
@@ -177,6 +176,12 @@ public class PlayerController : MonoBehaviour
                 {
                     arrow.attachedRigidbody.velocity = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
                 }
+            }
+
+            else if (arrow.gameObject.CompareTag("Enemy"))
+            {
+                Vector2 reflectionNormal = (arrow.attachedRigidbody.position - rb.position).normalized;
+                arrow.attachedRigidbody.AddForce(reflectionNormal * 10, ForceMode2D.Impulse);
             }
         }
         yield return null;
@@ -195,16 +200,25 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
     }
 
-    void ArrowCollision()
-    {
-        playerConstants.stressPoint += arrowConstants.stressArrowDamage;
-    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Arrow"))
         {
+            inventory.stressPoint += arrowConstants.stressArrowDamage;
             GameManager.instance.increaseStress.Invoke();
         }
+    }
+
+    public void OnOvertime()
+    {
+        InvokeRepeating("TickOvertime", 0, 1.0f);
+    }
+
+    public void TickOvertime()
+    {
+        inventory.stressPoint += playerConstants.overtimeTick;
+        GameManager.instance.increaseStress.Invoke();
     }
 
 

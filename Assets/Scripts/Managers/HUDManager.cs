@@ -84,7 +84,7 @@ public class HUDManager : MonoBehaviour
     }
     public void StressBarSlider()
     {
-        slider.value = playerConstants.stressPoint;
+        slider.value = inventory.stressPoint;
     }
 
 }

@@ -144,4 +144,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   validInput: 3
