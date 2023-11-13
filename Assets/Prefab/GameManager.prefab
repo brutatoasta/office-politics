@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2433276769315285771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7499237431579041326}
+  - component: {fileID: 2249239137134158026}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7499237431579041326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433276769315285771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.9996676, y: -4.1204476, z: -0.32314372}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2249239137134158026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2433276769315285771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0dcc81b80676341a3901f19da97fec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameStart:
+    m_PersistentCalls:
+      m_Calls: []
+  gameRestart:
+    m_PersistentCalls:
+      m_Calls: []
+  gamePause:
+    m_PersistentCalls:
+      m_Calls: []
+  gamePlay:
+    m_PersistentCalls:
+      m_Calls: []
+  isPaused: 0
+  invent: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
+  kitKatSprite: {fileID: 693650443, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  coffeeSprite: {fileID: 971501781, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  cycleInventory:
+    m_PersistentCalls:
+      m_Calls: []
+  useConsumable:
+    m_PersistentCalls:
+      m_Calls: []
+  held: {fileID: 0}
+  increaseStress:
+    m_PersistentCalls:
+      m_Calls: []
