@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -17,6 +18,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gameRestart;
     public UnityEvent gamePause;
     public UnityEvent gamePlay;
+    public UnityEvent gameOver;
 
     public bool isPaused = false;
     public InventoryVariable invent;
@@ -74,5 +76,18 @@ public class GameManager : Singleton<GameManager>
             // show menu
         }
     }
+    public void GameRestart()
+    {
+        // reset score
 
+        gameRestart.Invoke();
+        Time.timeScale = 1;
+
+        isPaused = false;
+    }
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOver.Invoke();
+    }
 }
