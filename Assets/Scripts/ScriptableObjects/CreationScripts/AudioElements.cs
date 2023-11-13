@@ -36,7 +36,7 @@ public class AudioElements : ScriptableObject
     public AudioElement useConsumable;
 
     // Enemy SFX
-    public AudioElement stressArrow;
+    public AudioElement throwStressArrow;
 
     // NPC SFX
 
