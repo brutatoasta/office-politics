@@ -43,4 +43,5 @@ public class AudioElements : ScriptableObject
 
     // Interaction SFX
     public AudioElement pourCoffeeAudio;
+    public AudioElement pickUpPaper;
 }

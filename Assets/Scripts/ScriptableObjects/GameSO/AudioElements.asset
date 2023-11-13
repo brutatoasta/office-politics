@@ -39,9 +39,15 @@ MonoBehaviour:
   useConsumable:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 78dbaa4c5cae3ac46b81e33b949d0488, type: 3}
-  stressArrow:
+  playerGetHit:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: b1aa01f115c9545408a994918fee2b11, type: 3}
+  throwStressArrow:
     audioType: 6
-    audioClip: {fileID: 8300000, guid: 97ecf302f496db74ab1d0612b23bfb7d, type: 3}
+    audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
   pourCoffeeAudio:
     audioType: 8
     audioClip: {fileID: 8300000, guid: fd26e8620e8ad41409c3972fcc63f00e, type: 3}
+  pickUpPaper:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: cb09fd84c8a675341ae715e1d9bf1eb0, type: 3}
