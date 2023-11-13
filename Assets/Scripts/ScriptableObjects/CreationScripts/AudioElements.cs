@@ -14,6 +14,12 @@ public class AudioElements : ScriptableObject
     "PlayAudioElement(AudioElement audioElement)" function.
     */
 
+    /* Note:
+    For this class, abbreviations like SFX are kept fully capitalised for better readability in Unity's Inspector.
+     - e.g., using "playerSFX" (instead of "playerSfx") in the script results in "Player SFX" (instead of
+     "Player Sfx") in the Inspector 
+    */
+
     // BGM
     public AudioElement startMenuBGM;
     public AudioElement pantryBGM;
@@ -22,18 +28,18 @@ public class AudioElements : ScriptableObject
     public AudioElement gameplayBgmIntensity3;
 
     // UI SFX
-    public AudioElement cycleConsumableAudioClip;
+    public AudioElement cycleConsumable;
 
     // Player SFX
-    public AudioElement dashAudioClip;
-    public AudioElement parryAudioClip;
-    public AudioElement useConsumableAudioClip;
+    public AudioElement playerDash;
+    public AudioElement playerParry;
+    public AudioElement useConsumable;
 
     // Enemy SFX
-    public AudioElement stressArrowAudioClip;
+    public AudioElement stressArrow;
 
     // NPC SFX
 
     // Interaction SFX
-    public AudioElement pourCoffeeAudioClip;
+    public AudioElement pourCoffeeAudio;
 }

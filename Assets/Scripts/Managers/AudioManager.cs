@@ -44,6 +44,10 @@ public class AudioManager : MonoBehaviour
         enemySfxAudioSource = transform.Find("Enemy SFX").GetComponent<AudioSource>();
         nonPlayableCharacterSfxAudioSource = transform.Find("NPC SFX").GetComponent<AudioSource>();
         interactionSfxAudioSource = transform.Find("Interaction SFX").GetComponent<AudioSource>();
+
+        // temporary: for starting BGM in the main gameplay scene
+        bgmAudioSource.clip = audioElements.startMenuBGM.audioClip;
+        bgmAudioSource.Play();
     }
 
     // Update is called once per frame

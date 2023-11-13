@@ -10,18 +10,18 @@ public class PlayerController : MonoBehaviour
 {
     // Player Constants
     public PlayerConstants playerConstants;
-
     public WeaponGameConstants arrowConstants;
     public InventoryVariable inventory;
-
-
+    public AudioElements audioElements;
 
     Vector2 movementInput;
 
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
-    AudioSource audioSource;
+    // AudioSource audioSource;
+
+
     public TrailRenderer trail;
 
     bool canMove = true;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
         Debug.Log(heldSprite.sprite);
         playerConstants.stressPoint = 0;
 
@@ -135,7 +135,8 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
-        audioSource.PlayOneShot(playerConstants.dashAudio);
+        // audioSource.PlayOneShot(playerConstants.dashAudio);
+        GameManager.instance.PlayAudioElement(audioElements.playerDash);
 
         yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
@@ -166,12 +167,14 @@ public class PlayerController : MonoBehaviour
 
     void UseConsumable()
     {
-        audioSource.PlayOneShot(playerConstants.useConsumeableClip);
+        // audioSource.PlayOneShot(playerConstants.useConsumeableClip);
+        GameManager.instance.PlayAudioElement(audioElements.useConsumable);
     }
 
     void CycleConsumable(int _)
     {
-        audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
+        // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
+        GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
     }
 
     void ArrowCollision()
