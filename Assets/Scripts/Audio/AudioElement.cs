@@ -8,8 +8,7 @@ public struct AudioElement
     This struct is used in each AudioElementGameEvent (scriptable object event) to pass information to the
     AudioManager about which AudioType and AudioClip needs to be played.
 
-    This struct is also used in the AudioElements scriptable object, which stores all the audio elements used in the
-    game.
+    This struct is also used in the AudioElements scriptable object, which stores every AudioElement used in the game.
     */
 
     public AudioType audioType;

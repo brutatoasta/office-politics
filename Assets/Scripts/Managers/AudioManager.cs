@@ -6,15 +6,25 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     /* Description:
-    Each AudioSource is responsible for routing the AudioClip to the appropriate Audio Mixer
-    group via its assigned outputAudioMixerGroup.
+    This AudioManager is subscribed to the "onPlayAudioElement" AudioElementGameEvent.
+
+    Any script that needs an AudioClip to be played would reference the respective AudioElement from the
+    "AudioElements" scriptable object when raising the "onPlayAudioElement" AudioElementGameEvent through the
+    GameManager's "PlayAudioElement(AudioElement audioElement)" function.
+
+    The AudioManager chooses the appropriate AudioSource to play the raised AudioElement's AudioClip based on the
+    AudioElement's AudioType. Each AudioSource is responsible for routing the AudioClip to the appropriate Audio Mixer
+    group via its assigned outputAudioMixerGroup in Unity's Inspector.
+    */
+
+    /* Note:
+    For this class, abbreviations like SFX are treated as normal words for better readability in the code editor.
+     - e.g., "playerSfxAudioSource" instead of "playerSFXAudioSource"
     */
 
     public AudioElements audioElements;
 
     // audio sources
-    // note: abbreviations like SFX are treated as normal words for readability in code editor
-    //   - e.g., "playerSfxAudioSource" instead of "playerSFXAudioSource"
     private AudioSource bgmAudioSource;
     private AudioSource gameplayBgmIntensity1AudioSource;
     private AudioSource gameplayBgmIntensity2AudioSource;

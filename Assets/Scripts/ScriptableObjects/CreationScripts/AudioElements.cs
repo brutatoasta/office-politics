@@ -4,12 +4,14 @@ using UnityEngine;
 public class AudioElements : ScriptableObject
 {
     /* Description:
-    This scriptable object serves as a container to hold all every AudioElement used in the game. Each AudioElement's
+    This class is used to create the "AudioElements" scriptable object.
+
+    "AudioElements" serves as a container to hold all every AudioElement used in the game. Each AudioElement's
     AudioType and AudioClip need to be assigned via Unity Inspector.
     
-    Any script that needs an AudioClip to be played would reference the respective AudioElement from this scriptable
-    object when raising an AudioElementGameEvent through the GameManager's "PlayAudioElement(AudioElement
-    audioElement)" function.
+    Any script that needs an AudioClip to be played would reference the respective AudioElement from "AudioElements"
+    when raising the "onPlayAudioElement" AudioElementGameEvent through the GameManager's
+    "PlayAudioElement(AudioElement audioElement)" function.
     */
 
     // BGM

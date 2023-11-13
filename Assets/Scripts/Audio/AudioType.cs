@@ -10,8 +10,8 @@ public enum AudioType
 
     /* Note:
     For this enum, abbreviations like SFX are kept fully capitalised for better readability in Unity's Inspector.
-      - e.g., using "playerSFX" (instead of "playerSfx") in the script results in "Player SFX" (instead of
-      "Player Sfx") in the Inspector 
+     - e.g., using "playerSFX" (instead of "playerSfx") in the script results in "Player SFX" (instead of
+     "Player Sfx") in the Inspector 
     */
 
     BGM,
