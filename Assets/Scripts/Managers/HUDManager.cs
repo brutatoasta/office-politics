@@ -17,12 +17,15 @@ public class HUDManager : MonoBehaviour
     public GameObject countText;
     public Slider slider;
     public PlayerConstants playerConstants;
+    public GameObject performancePointText;
 
     void Start()
     {
         GameManager.instance.cycleInventory.AddListener(CycleInventory);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
+        GameManager.instance.increasePerformancePoint.AddListener(PerformancePoint);
+
 
         current.sprite = inventory.consumableObjects[0].sprite;
         next.sprite = inventory.consumableObjects[1].sprite;
@@ -85,6 +88,10 @@ public class HUDManager : MonoBehaviour
     public void StressBarSlider()
     {
         slider.value = playerConstants.stressPoint;
+    }
+    public void PerformancePoint()
+    {
+        performancePointText.GetComponent<TextMeshProUGUI>().text = "Performance Point: " + playerConstants.performancePoint;
     }
 
 }

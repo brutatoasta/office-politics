@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         Debug.Log(heldSprite.sprite);
         playerConstants.stressPoint = 0;
+        playerConstants.performancePoint = 0;
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
@@ -70,6 +71,7 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("playerVelocityX", rb.velocity.x);
         animator.SetFloat("playerVelocityY", rb.velocity.y);
         animator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
+        GameManager.instance.increasePerformancePoint.Invoke();
     }
 
     public void MoveCheck(Vector2 movement)

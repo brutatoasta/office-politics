@@ -14,5 +14,13 @@ public enum InteractableType
 
     ToShred = 3,
     ToLaminate = 4,
-
+    ToFetchCoffee = 5,
+    ToRefillCoffee = 6,
+    ToFetchTea = 7,
+    ToFetchDoc = 8,
+    ToDeliverDoc = 9,
+    ToChargeMic = 10,
+    ToPrepMeeting = 11,
+    ToPrepRefreshment = 12,
+    ToReturnDoc = 13,
 }

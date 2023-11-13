@@ -7,9 +7,14 @@ using UnityEngine.Tilemaps;
 public class Receivable : BaseInteractable
 {
     public InteractableType validInput;
+    public PlayerConstants playerConstants;
+    public TaskConstants taskConstants;
+
+
     public new void OnInteract(SpriteRenderer heldSprite)
     {
         // called when player presses interact key
+        taskConstants.currentInput = validInput;
         if (GameManager.instance.held != null)
         {
             // maybe check other conditions
@@ -22,12 +27,16 @@ public class Receivable : BaseInteractable
             if (validInput != held.GetComponent<Holdable>().holdableType)
             {
                 //decrease score
+                playerConstants.performancePoint -= 5;
                 Debug.Log("decrease score");
             }
             else
             {
-                //increase score
+                //TODO
+                playerConstants.performancePoint += 5;
                 Debug.Log("increase score");
+                GameManager.instance.switchTasks.Invoke();
+
             }
 
         }

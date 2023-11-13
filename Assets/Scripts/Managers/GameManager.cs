@@ -56,6 +56,9 @@ public class GameManager : Singleton<GameManager>
     }
     public GameObject held;
     public UnityEvent increaseStress;
+    public UnityEvent increasePerformancePoint;
+
+    public UnityEvent switchTasks;
 
     public void PlayPause()
     {
