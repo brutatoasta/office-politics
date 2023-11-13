@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Arrow"))
         {
             inventory.stressPoint += arrowConstants.stressArrowDamage;
-            GameManager.instance.increaseStress.Invoke();
+            GameManager.instance.IncreaseStress();
         }
     }
 
@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
     public void TickOvertime()
     {
         inventory.stressPoint += playerConstants.overtimeTick;
-        GameManager.instance.increaseStress.Invoke();
+        GameManager.instance.IncreaseStress();
     }
 
 

@@ -21,9 +21,12 @@ public class GameManager : Singleton<GameManager>
     public AudioElementGameEvent audioElementGameEvent;
     public UnityEvent gameOver;
 
+    public UnityEvent doorOpen;
+
 
     public UnityEvent TimerStart;
     public UnityEvent TimerStop;
+    public bool overtime = false;
     public UnityEvent<float> TimerUpdate;
 
 
@@ -70,7 +73,7 @@ public class GameManager : Singleton<GameManager>
 
     public void IncreaseStress()
     {
-        if (inventory.stressPoint > 50) GameOver(); 
+        if (inventory.stressPoint > 50) GameOver();
         increaseStress.Invoke();
     }
 
@@ -92,7 +95,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    
+
     public void PlayAudioElement(AudioElement audioElement)
     {
         audioElementGameEvent.Raise(audioElement);
@@ -113,6 +116,40 @@ public class GameManager : Singleton<GameManager>
     }
 
     public void StartTimer() => TimerStart.Invoke();
-    public void OnStopTimer() => TimerStop.Invoke();
+    public void OnStopTimer()
+    {
+        overtime = true;
+        TimerStop.Invoke();
+
+        bool quotaComplete = true;
+        foreach (TaskItem taskItem in inventory.taskQuotas)
+        {
+            if (taskItem.quota > 0)
+            {
+                quotaComplete = false;
+                break;
+            }
+        }
+        if (quotaComplete) doorOpen.Invoke();
+    }
     public void UpdateTimer(float value) => TimerUpdate.Invoke(value);
+
+
+    public void DecreaseQuota()
+    {
+        if (overtime)
+        {
+            bool quotaComplete = true;
+            foreach (TaskItem taskItem in inventory.taskQuotas)
+            {
+                if (taskItem.quota > 0)
+                {
+                    quotaComplete = false;
+                    break;
+                }
+            }
+            Debug.LogError(quotaComplete);
+            if (quotaComplete) doorOpen.Invoke();
+        }
+    }
 }

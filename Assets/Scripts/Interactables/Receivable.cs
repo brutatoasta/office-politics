@@ -23,7 +23,7 @@ public class Receivable : BaseInteractable
             if (validInput != held.GetComponent<Holdable>().holdableType)
             {
                 //decrease score
-                inventory.stressPoint += 1;
+                inventory.stressPoint += 5;
                 Debug.Log("decrease score");
             }
             else
@@ -31,6 +31,16 @@ public class Receivable : BaseInteractable
                 //increase score
                 inventory.stressPoint = (inventory.stressPoint>10)? inventory.stressPoint-10: 0; 
                 inventory.performancePoint += 1;
+
+                // TODO: High Importance, Its hardcoded
+                if (held.GetComponent<Holdable>().holdableType == InteractableType.ToShred)
+                {
+                    inventory.taskQuotas[0].quota -= 1;
+                }
+                else {
+                    inventory.taskQuotas[1].quota -= 1;
+                }
+                GameManager.instance.DecreaseQuota();
                 Debug.Log("increase score");
             }
 
