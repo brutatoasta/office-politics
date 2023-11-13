@@ -29,9 +29,9 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         bgmAudioSource = transform.Find("BGM").GetComponent<AudioSource>();
-        gameplayBgmIntensity1AudioSource = transform.Find("Gameplay BGM Intensity 1").GetComponent<AudioSource>();
-        gameplayBgmIntensity2AudioSource = transform.Find("Gameplay BGM Intensity 2").GetComponent<AudioSource>();
-        gameplayBgmIntensity3AudioSource = transform.Find("Gameplay BGM Intensity 3").GetComponent<AudioSource>();
+        gameplayBgmIntensity1AudioSource = transform.Find("BGM").transform.Find("Gameplay BGM Intensity 1").GetComponent<AudioSource>();
+        gameplayBgmIntensity2AudioSource = transform.Find("BGM").transform.Find("Gameplay BGM Intensity 2").GetComponent<AudioSource>();
+        gameplayBgmIntensity3AudioSource = transform.Find("BGM").transform.Find("Gameplay BGM Intensity 3").GetComponent<AudioSource>();
         userInterfaceSfxAudioSource = transform.Find("UI SFX").GetComponent<AudioSource>();
         playerSfxAudioSource = transform.Find("Player SFX").GetComponent<AudioSource>();
         enemySfxAudioSource = transform.Find("Enemy SFX").GetComponent<AudioSource>();
