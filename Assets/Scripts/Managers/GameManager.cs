@@ -17,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gameRestart;
     public UnityEvent gamePause;
     public UnityEvent gamePlay;
+    public AudioElementGameEvent audioElementGameEvent;
 
     public bool isPaused = false;
     public InventoryVariable invent;
@@ -75,4 +76,8 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void PlayAudioElement(AudioElement audioElement)
+    {
+        audioElementGameEvent.Raise(audioElement);
+    }
 }
