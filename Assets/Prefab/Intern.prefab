@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5530988599946955594}
   - component: {fileID: 1796874817028722848}
+  - component: {fileID: 5016020371209259614}
   m_Layer: 7
   m_Name: Hand
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5016020371209259614
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4752329236150799824}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df8358ba2f9a1c8458ceee69359a188a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5349817106763685876
 GameObject:
   m_ObjectHideFlags: 0
