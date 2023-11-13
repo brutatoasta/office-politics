@@ -4672,7 +4672,7 @@ GameObject:
   - component: {fileID: 450632352}
   - component: {fileID: 450632351}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4741,7 +4741,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 450632352}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6290294752409637513}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &450632352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5989,8 +6001,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Intern #1005485
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6077,7 +6089,7 @@ GameObject:
   - component: {fileID: 524652785}
   - component: {fileID: 524652784}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ResumeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6790,8 +6802,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -27127,6 +27139,42 @@ PrefabInstance:
       propertyPath: m_MinValue
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 1199313258182284151, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199313258182284151, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199313258182284151, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035392190506461628, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035392190506461628, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035392190506461628, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035392190506461628, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035392190506461628, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035392190506461628, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2067138516973065212, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.00062561035
@@ -27211,6 +27259,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2933645968511385198, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: timerType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3331187446551087720, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -27226,6 +27278,14 @@ PrefabInstance:
     - target: {fileID: 7837635378903992681, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033602571786007596, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 871.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033602571786007596, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 505.4
       objectReference: {fileID: 0}
     - target: {fileID: 8799787717877300837, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Camera
@@ -27245,7 +27305,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
   m_PrefabInstance: {fileID: 6290294752409637512}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6290294752409637513}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf0dcc81b80676341a3901f19da97fec, type: 3}
@@ -30865,8 +30925,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Resume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -35292,7 +35352,7 @@ GameObject:
   - component: {fileID: 1487948858}
   - component: {fileID: 1487948857}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: GlossaryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35419,7 +35479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1490701726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36271,8 +36331,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Glossary
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -63668,8 +63728,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TaiChill Games
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -64286,6 +64346,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
+--- !u!1 &6290294752409637513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2433276769315285771, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
+  m_PrefabInstance: {fileID: 6290294752409637512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
