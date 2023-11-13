@@ -34,6 +34,7 @@ public class AudioElements : ScriptableObject
     public AudioElement playerDash;
     public AudioElement playerParry;
     public AudioElement useConsumable;
+    public AudioElement playerGetHit;
 
     // Enemy SFX
     public AudioElement throwStressArrow;
