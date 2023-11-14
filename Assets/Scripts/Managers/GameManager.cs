@@ -59,7 +59,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent increasePerformancePoint;
 
     public UnityEvent switchTasks;
-    public UnityEvent showMeetingDocs;
+
 
     public void PlayPause()
     {

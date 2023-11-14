@@ -11,10 +11,12 @@ public class Receivable : BaseInteractable
     public TaskConstants taskConstants;
 
 
+
     public new void OnInteract(SpriteRenderer heldSprite)
     {
         // called when player presses interact key
         taskConstants.currentInput = validInput;
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         if (GameManager.instance.held != null)
         {
             // maybe check other conditions
@@ -34,9 +36,9 @@ public class Receivable : BaseInteractable
             {
                 playerConstants.performancePoint += 5;
                 Debug.Log("increase score");
-                if (validInput == InteractableType.ToPrepMeeting)
+                if (validInput == InteractableType.ToPrepMeeting || validInput == InteractableType.ToPrepRefreshment)
                 {
-                    GameManager.instance.showMeetingDocs.Invoke();
+                    sprite.enabled = true;
                 }
                 GameManager.instance.switchTasks.Invoke();
             }
