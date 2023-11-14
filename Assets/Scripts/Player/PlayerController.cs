@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-        Debug.Log(heldSprite.sprite);
+        //Debug.Log(heldSprite.sprite);
         playerConstants.stressPoint = 0;
         playerConstants.performancePoint = 0;
 

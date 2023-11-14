@@ -23,18 +23,21 @@ public class TaskGenerator : MonoBehaviour
     string laminateDocumentTaskString;
     string returnDocumentTaskString;
 
+    int initialize;
+
     void Start()
     {
         taskDescription.GetComponent<TextMeshProUGUI>().text = "";
-        InitializeDescription();
+        generateDescription();
+        initialize = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        InitializeDescription();
+        UpdateDescription();
     }
-    void InitializeDescription()
+    void generateDescription()
     {
         fetchCoffeeTaskString = GenerateTaskString("Fetch Coffee for Anna", taskConstants.fetchCoffeeTask);
         refillCoffeeTaskString = GenerateTaskString("Refill Coffee in the pantry", taskConstants.refillCoffeeTask);
@@ -68,7 +71,7 @@ public class TaskGenerator : MonoBehaviour
     }
     void UpdateDescription()
     {
-        // taskDescription.GetComponent<TextMeshProUGUI>().text;
+        generateDescription();
     }
     private string GenerateTaskString(string taskName, int taskCount)
     {
@@ -76,6 +79,11 @@ public class TaskGenerator : MonoBehaviour
         {
             return $"{taskName} x{taskCount}\n";
         }
-        return "";
+        else if (initialize == 0)
+        {
+            return "";
+        }
+        return $"<s>{taskName} </s>\n";
+
     }
 }

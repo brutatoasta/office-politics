@@ -24,3 +24,4 @@ MonoBehaviour:
   shredDocumentsTask: 1
   laminateDocumentTask: 1
   returnDocumentTask: 1
+  currentInput: 8
