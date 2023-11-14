@@ -20,7 +20,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
   gameplayBgmIntensity1:
     audioType: 0
-    audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
+    audioClip: {fileID: 8300000, guid: 0347ac1b850f29a4a8c90117e0aa68dd, type: 3}
   gameplayBgmIntensity2:
     audioType: 0
     audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}

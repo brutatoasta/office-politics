@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 public abstract class BaseArrow : MonoBehaviour, IArrow
 {
     public ArrowTypes type;
     public WeaponGameConstants weaponGameConstants;
+    public AudioElements audioElements;
+    public AudioElement throwArrowAudioElement;
+
     public Rigidbody2D rb;
     [System.NonSerialized]
     public GameObject player;
@@ -22,5 +26,7 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 45);
+
+        GameManager.instance.PlayAudioElement(throwArrowAudioElement);
     }
 }

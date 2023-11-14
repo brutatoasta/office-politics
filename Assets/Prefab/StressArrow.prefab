@@ -147,6 +147,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   weaponGameConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
+  audioElements: {fileID: 11400000, guid: 1494f76509bb89143befbd26d67ba5f4, type: 2}
+  throwArrowAudioElement:
+    audioType: 0
+    audioClip: {fileID: 0}
   rb: {fileID: 0}
   lineRenderer: {fileID: 2319745848702399258, guid: 4f7d90d2dcf9b3b44accc89498af3510, type: 3}
   StartLineRenderer:

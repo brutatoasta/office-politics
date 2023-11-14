@@ -4,9 +4,13 @@ public class JobArrow : BaseArrow
 {
     // Start is called before the first frame update
     private float speed;
+
     private void Awake()
     {
-        speed = weaponGameConstants.jobArrowSpeed;   
+        speed = weaponGameConstants.jobArrowSpeed;
+
+        // temporary
+        throwArrowAudioElement = audioElements.throwStressArrow;
     }
     public void SpawnArrow(Transform bossCoords)
     {
