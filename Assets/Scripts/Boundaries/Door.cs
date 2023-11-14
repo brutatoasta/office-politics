@@ -7,8 +7,9 @@ public class Door : MonoBehaviour
 {
     // Start is called before the first frame update
     public UnityEvent toggleBossBehaviour;
-    private bool hasEntered = false;
+    private bool fromInside = false;
     private bool isOutside = true;
+    public bool rightIsInside = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,12 +19,15 @@ public class Door : MonoBehaviour
         }
     }
 
+    private bool playerIsLeftOfDoor;
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            isOutside = collision.transform.position.x - gameObject.transform.position.x < 0;
-            if (!hasEntered)
+            // implement xnor logic for sideways first
+            playerIsLeftOfDoor = collision.transform.position.x - gameObject.transform.position.x < 0;
+            isOutside = playerIsLeftOfDoor == rightIsInside;
+            if (!fromInside)
             {
                 if (isOutside)
                 {
@@ -31,7 +35,7 @@ public class Door : MonoBehaviour
                 }
                 else
                 {
-                    hasEntered = true;
+                    fromInside = !fromInside;
                 }
             } else
             {
@@ -41,7 +45,7 @@ public class Door : MonoBehaviour
                 }
                 else
                 {
-                    hasEntered = false;
+                    fromInside = !fromInside;
                 }
             }
         }

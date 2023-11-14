@@ -60,12 +60,16 @@ MonoBehaviour:
   gameOver:
     m_PersistentCalls:
       m_Calls: []
+  doorOpen:
+    m_PersistentCalls:
+      m_Calls: []
   TimerStart:
     m_PersistentCalls:
       m_Calls: []
   TimerStop:
     m_PersistentCalls:
       m_Calls: []
+  overtime: 0
   TimerUpdate:
     m_PersistentCalls:
       m_Calls: []
