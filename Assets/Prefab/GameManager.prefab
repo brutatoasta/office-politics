@@ -56,25 +56,8 @@ MonoBehaviour:
   gamePlay:
     m_PersistentCalls:
       m_Calls: []
-  audioElementGameEvent: {fileID: 0}
-  gameOver:
-    m_PersistentCalls:
-      m_Calls: []
-  doorOpen:
-    m_PersistentCalls:
-      m_Calls: []
-  TimerStart:
-    m_PersistentCalls:
-      m_Calls: []
-  TimerStop:
-    m_PersistentCalls:
-      m_Calls: []
-  overtime: 0
-  TimerUpdate:
-    m_PersistentCalls:
-      m_Calls: []
   isPaused: 0
-  inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
+  invent: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   kitKatSprite: {fileID: 693650443, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
   coffeeSprite: {fileID: 971501781, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
   cycleInventory:

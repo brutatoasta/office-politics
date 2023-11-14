@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PlayerConstants", menuName = "ScriptableObjects/PlayerConstants", order = 1)]
-public class PlayerConstants : ScriptableObject
+[CreateAssetMenu(fileName = "AudioConstants", menuName = "ScriptableObjects/AudioConstants", order = 6)]
+public class AudioConstants : ScriptableObject
 {
     public int moveSpeed;
     public int maxMoveSpeed;

@@ -15,17 +15,12 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void toggleOnState()
     {
         isActive = !isActive;
         gameObject.SetActive(isActive);
-    }
-
-    public void onClickMainMenu()
-    {
-        GameManager.instance.GameOver();
     }
 }

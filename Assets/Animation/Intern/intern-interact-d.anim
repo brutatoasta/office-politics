@@ -32,6 +32,18 @@ AnimationClip:
       value: {fileID: -125598524, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
     - time: 0.625
       value: {fileID: 946079347, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - time: 0.75
+      value: {fileID: 377403147, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - time: 0.875
+      value: {fileID: 1685810528, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - time: 1
+      value: {fileID: -479938806, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - time: 1.125
+      value: {fileID: 1273018463, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - time: 1.25
+      value: {fileID: -449278394, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - time: 1.375
+      value: {fileID: -605435547, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -60,12 +72,18 @@ AnimationClip:
     - {fileID: 861125224, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
     - {fileID: -125598524, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
     - {fileID: 946079347, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - {fileID: 377403147, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - {fileID: 1685810528, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - {fileID: -479938806, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - {fileID: 1273018463, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - {fileID: -449278394, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
+    - {fileID: -605435547, guid: abf14a2b15b3af845936c51325e39b5a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.75
+    m_StopTime: 1.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -92,7 +110,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.625
+  - time: 1.375
     functionName: ReleaseInteractLock
     data: 
     objectReferenceParameter: {fileID: 0}
