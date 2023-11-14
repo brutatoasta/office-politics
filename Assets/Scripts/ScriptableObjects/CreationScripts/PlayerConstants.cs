@@ -8,21 +8,19 @@ public class PlayerConstants : ScriptableObject
     public float dashPower;
     public float dashTime;
     public float dashCooldown;
-    public AudioClip dashAudio;
+    // public AudioClip dashAudio;
     public float parryRange;
     public float parryStartupTime;
     public float parryCooldown;
-    public AudioClip parryAudio;
+    public int overtimeTick;
+    // public AudioClip parryAudio;
 
 
-    public AudioClip useConsumeableClip;
-    public AudioClip cycleConsumeableClip;
+    // public AudioClip useConsumeableClip;
+    // public AudioClip cycleConsumeableClip;
 
 
-    public int stressPoint;
-    public int maxStressPoint;
-    public int sanityPoint;
-    public int performancePoint;
+    
 
 
 }
