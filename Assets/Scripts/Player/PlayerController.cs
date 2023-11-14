@@ -10,18 +10,19 @@ public class PlayerController : MonoBehaviour
 {
     // Player Constants
     public PlayerConstants playerConstants;
-
     public WeaponGameConstants arrowConstants;
     public InventoryVariable inventory;
-
-
+    public AudioElements audioElements;
 
     Vector2 movementInput;
 
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
-    AudioSource audioSource;
+    Animator handAnimator;
+    // AudioSource audioSource;
+
+
     public TrailRenderer trail;
 
     bool canMove = true;
@@ -37,14 +38,17 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
         //Debug.Log(heldSprite.sprite);
         playerConstants.stressPoint = 0;
         playerConstants.performancePoint = 0;
+        handAnimator = transform.GetChild(0).GetComponent<Animator>();
+        // audioSource = GetComponent<AudioSource>();
+        // Debug.Log(heldSprite.sprite);
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
-        GameManager.instance.increaseStress.AddListener(ArrowCollision);
+        // GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
     private void FixedUpdate()
@@ -72,6 +76,12 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("playerVelocityY", rb.velocity.y);
         animator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
         GameManager.instance.increasePerformancePoint.Invoke();
+        animator.SetBool("holding", GameManager.instance.held != null);
+
+        // control hand position
+        handAnimator.SetFloat("playerVelocityX", rb.velocity.x);
+        handAnimator.SetFloat("playerVelocityY", rb.velocity.y);
+        handAnimator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
     }
 
     public void MoveCheck(Vector2 movement)
@@ -94,7 +104,6 @@ public class PlayerController : MonoBehaviour
                     // check if held object is valid
                     if (inter.CastAndInteract(heldSprite))
                     {
-                        animator.SetTrigger("interact");
                         canMove = false;
                         rb.velocity = new Vector3();
                     }
@@ -137,7 +146,8 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
-        audioSource.PlayOneShot(playerConstants.dashAudio);
+        // audioSource.PlayOneShot(playerConstants.dashAudio);
+        GameManager.instance.PlayAudioElement(audioElements.playerDash);
 
         yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
@@ -149,7 +159,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Parry()
     {
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
-        // audioSource.PlayOneShot(playerConstants.parryAudio);
+        GameManager.instance.PlayAudioElement(audioElements.playerParry);
 
         Collider2D[] parriedArrows = Physics2D.OverlapCircleAll(transform.position, playerConstants.parryRange);
 
@@ -159,7 +169,24 @@ public class PlayerController : MonoBehaviour
             {
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
                 Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
-                arrow.attachedRigidbody.velocity = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
+
+
+                if (Vector2.Dot(arrowRb.velocity, reflectionNormal) >= 0)
+                {
+                    Vector2 velSurfaceReflect = arrowRb.velocity;
+                    Vector2 newVel = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
+                    arrow.attachedRigidbody.velocity = -newVel - 2 * Vector2.Dot(-newVel, velSurfaceReflect.normalized) * velSurfaceReflect.normalized;
+                }
+                else
+                {
+                    arrow.attachedRigidbody.velocity = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
+                }
+            }
+
+            else if (arrow.gameObject.CompareTag("Enemy"))
+            {
+                Vector2 reflectionNormal = (arrow.attachedRigidbody.position - rb.position).normalized;
+                arrow.attachedRigidbody.AddForce(reflectionNormal * 10, ForceMode2D.Impulse);
             }
         }
         yield return null;
@@ -168,25 +195,36 @@ public class PlayerController : MonoBehaviour
 
     void UseConsumable()
     {
-        audioSource.PlayOneShot(playerConstants.useConsumeableClip);
+        // audioSource.PlayOneShot(playerConstants.useConsumeableClip);
+        GameManager.instance.PlayAudioElement(audioElements.useConsumable);
     }
 
     void CycleConsumable(int _)
     {
-        audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
+        // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
+        GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
     }
 
-    void ArrowCollision()
-    {
-        playerConstants.stressPoint += arrowConstants.stressArrowDamage;
-    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Arrow"))
         {
-            GameManager.instance.increaseStress.Invoke();
+            inventory.stressPoint += arrowConstants.stressArrowDamage;
+            GameManager.instance.IncreaseStress();
         }
     }
+
+    // public void OnOvertime()
+    // {
+    //     InvokeRepeating("TickOvertime", 0, 1.0f);
+    // }
+
+    // public void TickOvertime()
+    // {
+    //     // inventory.stressPoint += playerConstants.overtimeTick;
+    //     GameManager.instance.IncreaseStress();
+    // }
 
 
     // Interact with objects

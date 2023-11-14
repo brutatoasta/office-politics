@@ -9,6 +9,13 @@ public class InventoryVariable : ScriptableObject
 
     public ABCConsumable[] consumableObjects;
     public EvadeType evadeType;
+
+    public TaskItem[] taskQuotas;
+
+    public int stressPoint;
+    public int maxStressPoint;
+    public int sanityPoint;
+    public int performancePoint;
 }
 
 public enum EvadeType {

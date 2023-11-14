@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 // Takes and handles input and movement for a player character
 public class Receivable : BaseInteractable
 {
+    public InventoryVariable inventory;
     public InteractableType validInput;
     public PlayerConstants playerConstants;
     public TaskConstants taskConstants;

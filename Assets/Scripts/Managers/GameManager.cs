@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -17,9 +18,20 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gameRestart;
     public UnityEvent gamePause;
     public UnityEvent gamePlay;
+    public AudioElementGameEvent audioElementGameEvent;
+    public UnityEvent gameOver;
+
+    public UnityEvent doorOpen;
+
+
+    public UnityEvent TimerStart;
+    public UnityEvent TimerStop;
+    public bool overtime = false;
+    public UnityEvent<float> TimerUpdate;
+
 
     public bool isPaused = false;
-    public InventoryVariable invent;
+    public InventoryVariable inventory;
     private int currentInventorySlot = 0;
 
     public Sprite kitKatSprite;
@@ -29,7 +41,9 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        invent.consumableObjects = new ABCConsumable[] { new KitKat(2, kitKatSprite), new Coffee(1, coffeeSprite), new KitKat(3, kitKatSprite) };
+        inventory.consumableObjects = new ABCConsumable[] { new KitKat(2, kitKatSprite), new Coffee(1, coffeeSprite), new KitKat(3, kitKatSprite) };
+        inventory.stressPoint = 0;
+
     }
 
 
@@ -40,10 +54,10 @@ public class GameManager : Singleton<GameManager>
     public void CycleInventory()
     {
         // find next slot that contains an item
-        for (int i = 0; i < invent.consumableObjects.Length; i++)
+        for (int i = 0; i < inventory.consumableObjects.Length; i++)
         {
-            currentInventorySlot = (currentInventorySlot + 1) % invent.consumableObjects.Length;
-            if (invent.consumableObjects[currentInventorySlot].count != 0) break;
+            currentInventorySlot = (currentInventorySlot + 1) % inventory.consumableObjects.Length;
+            if (inventory.consumableObjects[currentInventorySlot].count != 0) break;
         }
 
         cycleInventory.Invoke(currentInventorySlot);
@@ -51,7 +65,7 @@ public class GameManager : Singleton<GameManager>
 
     public void UseCurrentConsumable()
     {
-        invent.consumableObjects[currentInventorySlot].Consume();
+        inventory.consumableObjects[currentInventorySlot].Consume();
         useConsumable.Invoke();
     }
     public GameObject held;
@@ -60,6 +74,12 @@ public class GameManager : Singleton<GameManager>
 
     public UnityEvent switchTasks;
 
+
+    public void IncreaseStress()
+    {
+        if (inventory.stressPoint > 50) GameOver();
+        increaseStress.Invoke();
+    }
 
     public void PlayPause()
     {
@@ -79,4 +99,61 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+
+    public void PlayAudioElement(AudioElement audioElement)
+    {
+        audioElementGameEvent.Raise(audioElement);
+    }
+    public void GameRestart()
+    {
+        // reset score
+
+        gameRestart.Invoke();
+        Time.timeScale = 1;
+
+        isPaused = false;
+    }
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        gameOver.Invoke();
+    }
+
+    public void StartTimer() => TimerStart.Invoke();
+    public void OnStopTimer()
+    {
+        overtime = true;
+        TimerStop.Invoke();
+
+        bool quotaComplete = true;
+        foreach (TaskItem taskItem in inventory.taskQuotas)
+        {
+            if (taskItem.quota > 0)
+            {
+                quotaComplete = false;
+                break;
+            }
+        }
+        if (quotaComplete) doorOpen.Invoke();
+    }
+    public void UpdateTimer(float value) => TimerUpdate.Invoke(value);
+
+
+    public void DecreaseQuota()
+    {
+        if (overtime)
+        {
+            bool quotaComplete = true;
+            foreach (TaskItem taskItem in inventory.taskQuotas)
+            {
+                if (taskItem.quota > 0)
+                {
+                    quotaComplete = false;
+                    break;
+                }
+            }
+            Debug.LogError(quotaComplete);
+            if (quotaComplete) doorOpen.Invoke();
+        }
+    }
 }
