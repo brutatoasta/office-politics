@@ -5,14 +5,14 @@ using UnityEngine;
 public class Meetings : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public GameObject documentSprite;
     void Start()
     {
-        
+        GameManager.instance.showMeetingDocs.AddListener(ShowDocument);
     }
-
-    // Update is called once per frame
-    void Update()
+    void ShowDocument()
     {
-        
+        documentSprite.SetActive(true);
     }
 }

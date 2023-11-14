@@ -29,6 +29,7 @@ public class TaskGenerator : MonoBehaviour
     {
         taskDescription.GetComponent<TextMeshProUGUI>().text = "";
         generateDescription();
+        InitializeConstants();
         initialize = 0;
     }
 
@@ -73,16 +74,31 @@ public class TaskGenerator : MonoBehaviour
     {
         generateDescription();
     }
+    void InitializeConstants()
+    {
+        taskConstants.fetchCoffeeTask = 1;
+        taskConstants.refillCoffeeTask = 1;
+        taskConstants.fetchTeaTask = 1;
+        taskConstants.fetchDocumentTask = 1;
+        taskConstants.deliverDocumentTask = 1;
+        taskConstants.chargeMicrophoneTask = 1;
+        taskConstants.prepMeetingMaterialsTask = 1;
+        taskConstants.refereshmentsTask = 1;
+        taskConstants.collectDocumentsTask = 1;
+        taskConstants.shredDocumentsTask = 1;
+        taskConstants.laminateDocumentTask = 1;
+        taskConstants.returnDocumentTask = 1;
+    }
     private string GenerateTaskString(string taskName, int taskCount)
     {
         if (taskCount > 0)
         {
             return $"{taskName} x{taskCount}\n";
         }
-        else if (initialize == 0)
-        {
-            return "";
-        }
+        // else if (initialize == 0)
+        // {
+        //     return "";
+        // }
         return $"<s>{taskName} </s>\n";
 
     }

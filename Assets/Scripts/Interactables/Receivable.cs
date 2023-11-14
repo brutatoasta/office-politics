@@ -32,11 +32,13 @@ public class Receivable : BaseInteractable
             }
             else
             {
-                //TODO
                 playerConstants.performancePoint += 5;
                 Debug.Log("increase score");
+                if (validInput == InteractableType.ToPrepMeeting)
+                {
+                    GameManager.instance.showMeetingDocs.Invoke();
+                }
                 GameManager.instance.switchTasks.Invoke();
-
             }
 
         }
