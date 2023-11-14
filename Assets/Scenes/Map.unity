@@ -27530,7 +27530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933645968511385198, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: timeToDisplay
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3331187446551087720, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_AnchorMax.x
