@@ -88,14 +88,14 @@ public class GameManager : Singleton<GameManager>
             Time.timeScale = 1;
             isPaused = false;
             gamePlay.Invoke();
-            // hide menu
+            // hide pause menu
         }
         else
         {
             Time.timeScale = 0;
             isPaused = true;
             gamePause.Invoke();
-            // show menu
+            // show pause menu
         }
     }
 

@@ -5,11 +5,9 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    private bool isActive;
     void Start()
     {
-        isActive = false;
-        gameObject.SetActive(isActive);
+        gameObject.SetActive(GameManager.instance.isPaused);
     }
 
     // Update is called once per frame
@@ -20,8 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     public void toggleOnState()
     {
-        isActive = !isActive;
-        gameObject.SetActive(isActive);
+
+        gameObject.SetActive(GameManager.instance.isPaused);
     }
 
     public void onClickMainMenu()
