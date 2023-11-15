@@ -12,7 +12,6 @@ public class ActionManager : MonoBehaviour
     public void OnInteractAction(InputAction.CallbackContext context)
     {
         if (context.performed) interact.Invoke();
-
     }
 
     public void OnMoveAction(InputAction.CallbackContext context)
@@ -44,7 +43,6 @@ public class ActionManager : MonoBehaviour
     }
     public void OnPlayPauseAction(InputAction.CallbackContext context)
     {
-        Debug.Log("PAUSE");
         if (context.performed) playPause.Invoke();
     }
     // Started - The button press has been initiated.

@@ -41,9 +41,9 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
+        // start of whole game, not level
         inventory.consumableObjects = new ABCConsumable[] { new KitKat(2, kitKatSprite), new Coffee(1, coffeeSprite), new KitKat(3, kitKatSprite) };
         inventory.stressPoint = 0;
-
     }
 
 
@@ -87,6 +87,7 @@ public class GameManager : Singleton<GameManager>
         {
             Time.timeScale = 1;
             isPaused = false;
+            // check if in a level
             gamePlay.Invoke();
             // hide pause menu
         }
@@ -119,11 +120,11 @@ public class GameManager : Singleton<GameManager>
         gameOver.Invoke();
     }
 
-    public void StartTimer() => TimerStart.Invoke();
+    public void StartTimer() => TimerStart?.Invoke();
     public void OnStopTimer()
     {
         overtime = true;
-        TimerStop.Invoke();
+        TimerStop?.Invoke();
 
         bool quotaComplete = true;
         foreach (TaskItem taskItem in inventory.taskQuotas)
@@ -136,7 +137,7 @@ public class GameManager : Singleton<GameManager>
         }
         if (quotaComplete) doorOpen.Invoke();
     }
-    public void UpdateTimer(float value) => TimerUpdate.Invoke(value);
+    public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);
 
 
     public void DecreaseQuota()
