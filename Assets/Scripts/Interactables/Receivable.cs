@@ -11,7 +11,11 @@ public class Receivable : BaseInteractable
     public PlayerConstants playerConstants;
     public TaskConstants taskConstants;
 
+    Animator animator;
 
+    void Awake(){
+        animator = GetComponent<Animator>();
+    }
 
     public new void OnInteract(SpriteRenderer heldSprite)
     {
@@ -23,6 +27,7 @@ public class Receivable : BaseInteractable
             // maybe check other conditions
             // drop the item in!
             Debug.Log("Dropped something into me!");
+            animator.SetTrigger("doWiggle");
             GameObject held = GameManager.instance.held;
             GameManager.instance.held = null;
             heldSprite.sprite = null;
