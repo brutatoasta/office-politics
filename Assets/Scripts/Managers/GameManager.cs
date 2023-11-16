@@ -13,31 +13,41 @@ public class GameManager : Singleton<GameManager>
         base.Awake();
     }
 
-    //events
-    public UnityEvent gameStart;
-    public UnityEvent gameRestart;
-    public UnityEvent gamePause;
-    public UnityEvent gamePlay;
-    public AudioElementGameEvent audioElementGameEvent;
-    public UnityEvent gameOver;
+    // events
+    public UnityEvent gameStart; // start the level (not pantry or hostel)
+    public UnityEvent gameRestart; // go back to main menu
+    public UnityEvent gamePause; // 
+    public UnityEvent gamePlay; // 
 
+    public UnityEvent gameOver;
     public UnityEvent doorOpen;
 
+    // Inventory
+    public UnityEvent<int> cycleInventory;
+    public UnityEvent useConsumable;
 
+    // Timer
     public UnityEvent TimerStart;
     public UnityEvent TimerStop;
-    public bool overtime = false;
+
     public UnityEvent<float> TimerUpdate;
 
+    public UnityEvent increaseStress;
+    public UnityEvent<int, Transform> increasePerformancePoint;
+    public UnityEvent switchTasks;
 
-    public bool isPaused = false;
+    // Scriptable Objects
+    public AudioElementGameEvent audioElementGameEvent;
+    public PlayerConstants playerConstants;
     public InventoryVariable inventory;
+    public bool isPaused = false;
+    public bool overtime = false;
     private int currentInventorySlot = 0;
 
     public Sprite kitKatSprite;
     public Sprite coffeeSprite;
 
-
+    public GameObject held;
 
     void Start()
     {
@@ -45,10 +55,6 @@ public class GameManager : Singleton<GameManager>
         inventory.consumableObjects = new ABCConsumable[] { new KitKat(2, kitKatSprite), new Coffee(1, coffeeSprite), new KitKat(3, kitKatSprite) };
         inventory.stressPoint = 0;
     }
-
-
-    public UnityEvent<int> cycleInventory;
-    public UnityEvent useConsumable;
 
     // Raise event to cycle inventory slot
     public void CycleInventory()
@@ -68,11 +74,6 @@ public class GameManager : Singleton<GameManager>
         inventory.consumableObjects[currentInventorySlot].Consume();
         useConsumable.Invoke();
     }
-    public GameObject held;
-    public UnityEvent increaseStress;
-    public UnityEvent increasePerformancePoint;
-
-    public UnityEvent switchTasks;
 
 
     public void IncreaseStress()
@@ -81,6 +82,10 @@ public class GameManager : Singleton<GameManager>
         increaseStress.Invoke();
     }
 
+    public void PlayAudioElement(AudioElement audioElement)
+    {
+        audioElementGameEvent.Raise(audioElement);
+    }
     public void PlayPause()
     {
         if (isPaused)
@@ -101,10 +106,7 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    public void PlayAudioElement(AudioElement audioElement)
-    {
-        audioElementGameEvent.Raise(audioElement);
-    }
+
     public void GameRestart()
     {
         // reset score
@@ -120,6 +122,7 @@ public class GameManager : Singleton<GameManager>
         gameOver.Invoke();
     }
 
+    // Timer
     public void StartTimer() => TimerStart?.Invoke();
     public void OnStopTimer()
     {
@@ -156,5 +159,12 @@ public class GameManager : Singleton<GameManager>
             Debug.LogError(quotaComplete);
             if (quotaComplete) doorOpen.Invoke();
         }
+    }
+    void OnSceneLoaded()
+    {
+        // check which scene
+        // if Map.scene, start timer after 3 seconds
+        // invoke gameplay event?
+
     }
 }

@@ -9,7 +9,7 @@ public class Receivable : BaseInteractable
 {
     public InventoryVariable inventory;
     public InteractableType[] validInputs;
-    private HashSet<InteractableType> _validInputs; // hahset for faster checks
+    private HashSet<InteractableType> _validInputs; // hashset for faster checks
     public PlayerConstants playerConstants;
     public TaskConstants taskConstants;
 
@@ -18,7 +18,7 @@ public class Receivable : BaseInteractable
     void Awake()
     {
         animator = GetComponent<Animator>();
-        _validInputs = new HashSet<InteractableType>(validInputs);
+        _validInputs = new HashSet<InteractableType>(validInputs); // TODO no need multiple inputs
     }
 
     public new void OnInteract(SpriteRenderer heldSprite)
@@ -37,16 +37,17 @@ public class Receivable : BaseInteractable
             Debug.Log($"Dropped {held.name} into me!");
 
             // calculate score
-            if (isValidInput(held.GetComponent<Holdable>().holdableType))
+            if (!isValidInput(held.GetComponent<Holdable>().holdableType))
             {
                 // decrease score
-                playerConstants.performancePoint -= 5;
+                // playerConstants.performancePoint -= 5;
+                GameManager.instance.increasePerformancePoint.Invoke(-5, transform);
                 Debug.Log("decrease score");
                 animator.SetTrigger("doFlinch");
             }
             else
             {
-                playerConstants.performancePoint += 5;
+                GameManager.instance.increasePerformancePoint.Invoke(5, transform);
                 Debug.Log("increase score");
                 // TODO if machine and not a person
                 animator.SetTrigger("doWiggle");
@@ -55,7 +56,7 @@ public class Receivable : BaseInteractable
                 {
                     sprite.enabled = true;
                 }
-                GameManager.instance.switchTasks.Invoke(); // what is switch tasks
+                GameManager.instance.switchTasks.Invoke(); // TODO what is switch tasks
             }
 
         }

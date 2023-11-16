@@ -13,6 +13,7 @@ public class TaskController : MonoBehaviour
     }
     public void TaskManager()
     {
+        
         switch (taskConstants.currentInput)
         {
             case InteractableType.ToShred:

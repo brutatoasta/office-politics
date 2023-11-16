@@ -23,7 +23,7 @@ public class BaseInteractable : InteractableHighlight, IInteractables
                 return true;
             case InteractableType.Holdable:
                 ((Holdable)this).OnInteract(heldSprite);
-                // TODO check if player is holding object and allowed to pickup another
+                // TODO check if player is holding object and allowed to pickup another (FIXME bug pick up and drop back into the same holdable)
                 return true;
             default:
                 OnInteract(heldSprite);

@@ -18,7 +18,7 @@ public class TaskConstants : ScriptableObject
     public int laminateDocumentTask;
     public int returnDocumentTask;
     public InteractableType currentInput;
-
-
+    // TODO change task count to an array
+    public int[] taskCount;
 
 }
