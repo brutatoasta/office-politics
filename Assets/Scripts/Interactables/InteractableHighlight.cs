@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 // Takes and handles input and movement for a player character
 public class InteractableHighlight : MonoBehaviour
 {
-    // TODO use shader instead of color
+    // : use shader instead of color
     // private SpriteRenderer map;
 
     // void Start()

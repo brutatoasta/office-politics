@@ -19,6 +19,8 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gamePause; // 
     public UnityEvent gamePlay; // 
 
+    public UnityEvent interact;
+
     public UnityEvent gameOver;
     public UnityEvent doorOpen;
 
@@ -32,9 +34,10 @@ public class GameManager : Singleton<GameManager>
 
     public UnityEvent<float> TimerUpdate;
 
+    // scoring and tasks system
     public UnityEvent increaseStress;
     public UnityEvent<int, Transform> increasePerformancePoint;
-    public UnityEvent switchTasks;
+    public UnityEvent<TaskName> switchTasks;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
@@ -121,6 +124,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 0;
         gameOver.Invoke();
     }
+
 
     // Timer
     public void StartTimer() => TimerStart?.Invoke();

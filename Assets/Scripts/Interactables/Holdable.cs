@@ -7,13 +7,13 @@ using UnityEngine.Tilemaps;
 public class Holdable : BaseInteractable
 {
     public InteractableType holdableType;
-    public new void OnInteract(SpriteRenderer heldSprite)
+    public void OnInteract(SpriteRenderer heldSprite)
     {
         // called when player presses interact key
 
 
         // if empty hand, put object into hand
-        if (!GameManager.instance.held)
+        if (GameManager.instance.held == null)
         {
             Debug.Log("Held me!");
             // add self to GameManager
@@ -22,10 +22,5 @@ public class Holdable : BaseInteractable
             heldSprite.color = GetComponent<SpriteRenderer>().color;
 
         }
-
-
-
-
-
     }
 }

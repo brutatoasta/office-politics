@@ -39,13 +39,11 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         // audioSource = GetComponent<AudioSource>();
-        //Debug.Log(heldSprite.sprite);
         playerConstants.stressPoint = 0;
         playerConstants.performancePoint = 0;
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
-        // Debug.Log(heldSprite.sprite);
-
+        GameManager.instance.interact.AddListener(TriggerInteract);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
         // GameManager.instance.TimerStop.AddListener(OnOvertime);
@@ -75,7 +73,6 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("playerVelocityX", rb.velocity.x);
         animator.SetFloat("playerVelocityY", rb.velocity.y);
         animator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
-        GameManager.instance.increasePerformancePoint.Invoke();
         animator.SetBool("holding", GameManager.instance.held != null);
 
         // control hand position
@@ -91,26 +88,32 @@ public class PlayerController : MonoBehaviour
 
     public void TriggerInteract()
     {
-        // the object player is interacting with
-        if (collider != null)
+        if (!interactLock)
         {
-            BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
-            // check if player is touching object and not currently animating
-            if (touching && !interactLock)
-            {
-                if (collider.gameObject.layer == 8)
-                {
-                    // get script component and cast according to type field
-                    // check if held object is valid
-                    if (inter.CastAndInteract(heldSprite))
-                    {
-                        canMove = false;
-                        rb.velocity = new Vector3();
-                    }
-                }
-
-            }
+            canMove = false;
+            rb.velocity = new Vector3();
         }
+
+
+        // // the object player is interacting with
+        // if (collider != null)
+        // {
+        //     BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
+        //     // check if player is touching object and not currently animating
+        //     if (touching && !interactLock)
+        //     {
+        //         if (collider.gameObject.layer == 8)
+        //         {
+        //             // get script component and cast according to type field
+        //             // check if held object is valid
+        //             if (inter.CastAndInteract(heldSprite))
+        //             {
+
+        //             }
+        //         }
+
+        //     }
+        // }
     }
     public void AcquireInteractLock()
     {

@@ -2,30 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-// Takes and handles input and movement for a player character
+// Represents an interactable object that can receive items from players.
+// Shredder and Laminator
 public class Receivable : BaseInteractable
 {
     public InventoryVariable inventory;
-    public InteractableType[] validInputs;
+    public InteractableType[] validInputs; // can change when tasks get added
     private HashSet<InteractableType> _validInputs; // hashset for faster checks
     public PlayerConstants playerConstants;
     public TaskConstants taskConstants;
 
-    Animator animator;
-
-    void Awake()
+    new void Awake()
     {
-        animator = GetComponent<Animator>();
-        _validInputs = new HashSet<InteractableType>(validInputs); // TODO no need multiple inputs
+        base.Awake();
+        _validInputs = new HashSet<InteractableType>(validInputs); // TODO: no need multiple inputs
     }
+    bool CanInteract()
+    {
+        GameObject held = GameManager.instance.held;
 
-    public new void OnInteract(SpriteRenderer heldSprite)
+        if (held == null) // nothing in hand
+        {
+            return false;
+            if (iType == InteractableType.Receivable)
+            {   // you need a holdable item to interact with this object.
+                // printers need you to have an empty hand to interact with them.
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        else
+        {
+            //something in hand
+            // check what it is
+            // if its holdable of appropriate type, return true
+            // no other scripts or interactables can be held anyway?
+            // TODO
+            return isValidInput(held.GetComponent<Holdable>().iType);
+        }
+
+    }
+    public void OnInteract(SpriteRenderer heldSprite)
     {
         // called when player presses interact key
-        taskConstants.currentInput = validInputs; // TODO why is this line co opting what we put into the receivable via the editor? // what is tasks?
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>(); // TODO: what for?
+
+
         if (GameManager.instance.held != null)
         {
             // maybe check other conditions
@@ -36,27 +63,28 @@ public class Receivable : BaseInteractable
 
             Debug.Log($"Dropped {held.name} into me!");
 
-            // calculate score
-            if (!isValidInput(held.GetComponent<Holdable>().holdableType))
+            // calculate score and tasks
+            InteractableType heldType = held.GetComponent<Holdable>().holdableType;
+            if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
-                // decrease score
-                // playerConstants.performancePoint -= 5;
-                GameManager.instance.increasePerformancePoint.Invoke(-5, transform);
-                Debug.Log("decrease score");
-                animator.SetTrigger("doFlinch");
-            }
-            else
-            {
-                GameManager.instance.increasePerformancePoint.Invoke(5, transform);
+                // decrease task count
+                taskConstants.succeed((TaskName)heldType);
                 Debug.Log("increase score");
-                // TODO if machine and not a person
+
+                // TODO: if machine and not a person
                 animator.SetTrigger("doWiggle");
                 // putting papers/refreshment has no fail condition, but maybe put this in another method/switch statement based on validInputs
                 if (anyAreValidInput(new[] { InteractableType.ToPrepMeeting, InteractableType.ToPrepRefreshment }))
                 {
                     sprite.enabled = true;
                 }
-                GameManager.instance.switchTasks.Invoke(); // TODO what is switch tasks
+            }
+            else
+            {
+                // decrease score
+                taskConstants.fail((TaskName)heldType);
+                Debug.Log("decrease score");
+                animator.SetTrigger("doFlinch");
             }
 
         }

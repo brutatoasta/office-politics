@@ -6,7 +6,7 @@ using System.Text;
 
 public class TaskGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // creates strings for each task
     public GameObject taskDescription;
     public TaskConstants taskConstants;
     StringBuilder stringBuilder = new StringBuilder();
@@ -33,7 +33,6 @@ public class TaskGenerator : MonoBehaviour
         initialize = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateDescription();
@@ -102,4 +101,13 @@ public class TaskGenerator : MonoBehaviour
         return $"<s>{taskName} </s>\n";
 
     }
+    private string StrikeOut(string textToStrike)
+    {
+        const string STRIKE_START = "<s>";
+        const string STRIKE_END = "</s>";
+        return STRIKE_START + textToStrike + STRIKE_END;
+    }
+
+
+
 }
