@@ -7,34 +7,21 @@ using UnityEngine;
 // Shredder and Laminator
 public class Receivable : BaseInteractable
 {
-    public RunVariables inventory;
     public InteractableType[] validInputs; // can change when tasks get added
     private HashSet<InteractableType> _validInputs; // hashset for faster checks
-    public PlayerConstants playerConstants;
-    public TaskConstants taskConstants;
 
     new void Awake()
     {
         base.Awake();
         _validInputs = new HashSet<InteractableType>(validInputs); // TODO: no need multiple inputs
     }
-    public bool CanInteract()
+    protected override bool CanInteract()
     {
         GameObject held = GameManager.instance.held;
 
         if (held == null) // nothing in hand
         {
             return false;
-            if (iType == InteractableType.Receivable)
-            {   // you need a holdable item to interact with this object.
-                // printers need you to have an empty hand to interact with them.
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-
         }
         else
         {
@@ -43,11 +30,11 @@ public class Receivable : BaseInteractable
             // if its holdable of appropriate type, return true
             // no other scripts or interactables can be held anyway?
             // TODO
-            return isValidInput(held.GetComponent<Holdable>().iType);
+            return isValidInput(held.GetComponent<Holdable>().holdableType);
         }
 
     }
-    public void OnInteract(SpriteRenderer heldSprite)
+    protected override void OnInteract()
     {
         // called when player presses interact key
         SpriteRenderer sprite = GetComponent<SpriteRenderer>(); // TODO: what for?
@@ -59,7 +46,7 @@ public class Receivable : BaseInteractable
             // drop the item in!
             GameObject held = GameManager.instance.held;
             GameManager.instance.held = null;
-            heldSprite.sprite = null;
+            playerHand.sprite = null;
 
             Debug.Log($"Dropped {held.name} into me!");
 

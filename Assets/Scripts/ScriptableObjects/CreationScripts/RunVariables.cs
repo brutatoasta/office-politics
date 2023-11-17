@@ -7,9 +7,8 @@ using UnityEngine.TextCore.Text;
 public class RunVariables : ScriptableObject
 {
     // Tracks dynamic values for each Run
-
     public ABCConsumable[] consumableObjects;
-    public ConsumableData[] consumableDatas;
+
 
     public int performancePoints;
 
@@ -17,7 +16,7 @@ public class RunVariables : ScriptableObject
     {
         // start of whole game, not level
         consumableObjects = new ABCConsumable[]
-        { new KitKat(consumableDatas[0]), new Coffee(consumableDatas[1]), new KitKat(consumableDatas[0]) };
+        { new KitKat(2), new Coffee(4), new KitKat(1) };
     }
 }
 

@@ -5,24 +5,29 @@ using UnityEngine;
 [Serializable]
 public abstract class ABCConsumable
 {
-    public ConsumableData data;
+    // public ConsumableData data;
+    public int count;
+    public Sprite sprite;
     public void Consume()
     {
-        if (data.count > 0)
+        if (count > 0)
         {
             ConsumeEffect();
-            data.count--;
+            count--;
         }
         else
         {
             Debug.Log("Empty");
         }
     }
+    public void LoadSprite(string resourcePath)
+    {
+        sprite = Resources.Load<Sprite>(resourcePath);
+
+        if (sprite == null)
+        {
+            Debug.LogError("Failed to load KitKat sprite!");
+        }
+    }
     public abstract void ConsumeEffect();
-}
-[Serializable]
-public struct ConsumableData
-{
-    public int count;
-    public Sprite sprite;
 }

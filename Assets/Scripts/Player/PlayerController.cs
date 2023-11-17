@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
 
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
-        GameManager.instance.interact.AddListener(TriggerInteract);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
         // GameManager.instance.TimerStop.AddListener(OnOvertime);
@@ -87,8 +86,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!interactLock)
         {
-            canMove = false;
-            rb.velocity = new Vector3();
+            GameManager.instance.interact.Invoke();
         }
 
 
@@ -114,6 +112,7 @@ public class PlayerController : MonoBehaviour
     }
     public void AcquireInteractLock()
     {
+        canMove = false;
         interactLock = true;
     }
     public void ReleaseInteractLock()

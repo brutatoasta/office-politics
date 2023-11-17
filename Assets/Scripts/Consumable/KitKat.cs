@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class KitKat : ABCConsumable
 {
-    public KitKat(ConsumableData initData)
+
+    public KitKat(int initCount)
     {
-        data = initData;
+        count = initCount;
+        LoadSprite("Paper-document-4 (2)"); // TODO: replace sprite
     }
     public override void ConsumeEffect()
     {

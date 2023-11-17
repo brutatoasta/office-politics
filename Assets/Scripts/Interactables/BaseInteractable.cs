@@ -3,19 +3,23 @@ using UnityEngine;
 
 
 // Takes and handles input and movement for a player character
-public class BaseInteractable : MonoBehaviour
+public abstract class BaseInteractable : MonoBehaviour
 {
     public InteractableType iType; // my own type 
-    public Type type;
-    protected Animator animator;
-    protected bool isTouching = false;
 
+    protected Animator animator;
+    public SpriteRenderer playerHand;
+
+    protected void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.layer == 7) //player
         {
-            isTouching = true;
-
+            playerHand = col.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            Debug.LogError("in Hand");
             // if player can interact, light up
             if (CanInteract())
             {
@@ -23,8 +27,9 @@ public class BaseInteractable : MonoBehaviour
                 // add
                 // turn on shader
                 // subscribe to gamemanager's interact event
-                
+
                 GameManager.instance.interact.AddListener(OnInteract);
+                Debug.LogError("addedlistener");
             }
         }
     }
@@ -33,35 +38,18 @@ public class BaseInteractable : MonoBehaviour
     {
         if (col.gameObject.layer == 7)
         {
-            isTouching = false;
             // turn off shader  // unsubscribe to gamemanager's interact event
+            Debug.LogError("remove listener");
             GameManager.instance.interact.RemoveListener(OnInteract);
         }
     }
-
-    protected virtual bool CanInteract()
-    {
-        // checks if player is allowed to interact with this object.
-        // TODO: check player's hand
-        // if held item can interact with self, return true
-        // if empty item and can interact with self, return true
-        // else return false
-        // uses the subclass 
-
-        return true;
-    }
-
-    protected void Awake()
-    {
-        animator = GetComponent<Animator>();
-        type = GetType();
-
-    }
-    protected virtual void OnInteract()
-    {
-        // called when player presses interact key
-        Debug.Log("Interacted with me!");
-        animator.SetTrigger("doWiggle");
-    }
+    // checks if player is allowed to interact with this object.
+    // TODO: check player's hand
+    // if held item can interact with self, return true
+    // if empty item and can interact with self, return true
+    // else return false
+    // uses the subclass 
+    protected abstract bool CanInteract();
+    protected abstract void OnInteract();
 
 }
