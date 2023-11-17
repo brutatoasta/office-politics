@@ -3083,9 +3083,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  iType: 0
   inventory: {fileID: 0}
-  validInput: 03000000
+  validInputs: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   taskConstants: {fileID: 11400000, guid: fefb62a1a34a584479740ff168f86a0f, type: 2}
 --- !u!95 &270021894
@@ -25262,7 +25262,8 @@ PrefabInstance:
       propertyPath: m_UpdateRectTransformForStandalone
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1526242262548653623, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -28880,51 +28881,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1337201412
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1337201414}
-  - component: {fileID: 1337201413}
-  m_Layer: 0
-  m_Name: TaskManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1337201413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337201412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e299126693a7c1e4c973dc8af39c68de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  taskConstants: {fileID: 11400000, guid: fefb62a1a34a584479740ff168f86a0f, type: 2}
---- !u!4 &1337201414
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1337201412}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.15180267, y: 20.93676, z: 0.74538463}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1342591090
 GameObject:
   m_ObjectHideFlags: 0
@@ -29595,9 +29551,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  iType: 0
   inventory: {fileID: 0}
-  validInput: 
+  validInputs: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   taskConstants: {fileID: 11400000, guid: fefb62a1a34a584479740ff168f86a0f, type: 2}
 --- !u!61 &1405894337
@@ -59128,6 +59084,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
+      propertyPath: runVariables
+      value: 
+      objectReference: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
+    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
+      propertyPath: levelVariables
+      value: 
+      objectReference: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
+    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
+      propertyPath: playerConstants
+      value: 
+      objectReference: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
+    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
       propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -59408,7 +59376,6 @@ SceneRoots:
   - {fileID: 5703592345734390654}
   - {fileID: 1325797013}
   - {fileID: 1438927148}
-  - {fileID: 1337201414}
   - {fileID: 1082889248}
   - {fileID: 1462272304}
   - {fileID: 1941129048}

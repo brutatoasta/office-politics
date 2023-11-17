@@ -14,4 +14,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HandRoom.unity
     guid: ab076da437ebd1447be46345d3587253
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: c07ef09d4da512a4aa95196899d5b6b6, type: 2}

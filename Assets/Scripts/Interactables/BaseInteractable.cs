@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Tilemaps;
+
 
 // Takes and handles input and movement for a player character
 public class BaseInteractable : MonoBehaviour
@@ -22,8 +19,11 @@ public class BaseInteractable : MonoBehaviour
             // if player can interact, light up
             if (CanInteract())
             {
+                // if GameManager.instance.interacting == null
+                // add
                 // turn on shader
                 // subscribe to gamemanager's interact event
+                
                 GameManager.instance.interact.AddListener(OnInteract);
             }
         }

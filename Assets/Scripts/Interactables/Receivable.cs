@@ -7,7 +7,7 @@ using UnityEngine;
 // Shredder and Laminator
 public class Receivable : BaseInteractable
 {
-    public InventoryVariable inventory;
+    public RunVariables inventory;
     public InteractableType[] validInputs; // can change when tasks get added
     private HashSet<InteractableType> _validInputs; // hashset for faster checks
     public PlayerConstants playerConstants;
@@ -18,7 +18,7 @@ public class Receivable : BaseInteractable
         base.Awake();
         _validInputs = new HashSet<InteractableType>(validInputs); // TODO: no need multiple inputs
     }
-    bool CanInteract()
+    public bool CanInteract()
     {
         GameObject held = GameManager.instance.held;
 
@@ -68,7 +68,7 @@ public class Receivable : BaseInteractable
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
                 // decrease task count
-                taskConstants.succeed((TaskName)heldType);
+                GameManager.instance.levelVariables.Succeed((TaskName)heldType);
                 Debug.Log("increase score");
 
                 // TODO: if machine and not a person
@@ -82,7 +82,7 @@ public class Receivable : BaseInteractable
             else
             {
                 // decrease score
-                taskConstants.fail((TaskName)heldType);
+                GameManager.instance.levelVariables.Fail((TaskName)heldType);
                 Debug.Log("decrease score");
                 animator.SetTrigger("doFlinch");
             }

@@ -1,17 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[Serializable]
 public abstract class ABCConsumable
 {
-    public int count;
-    public Sprite sprite;
-
-    public void Consume() {
-        if (count > 0)
+    public ConsumableData data;
+    public void Consume()
+    {
+        if (data.count > 0)
         {
             ConsumeEffect();
-            count--;
+            data.count--;
         }
         else
         {
@@ -19,4 +19,10 @@ public abstract class ABCConsumable
         }
     }
     public abstract void ConsumeEffect();
+}
+[Serializable]
+public struct ConsumableData
+{
+    public int count;
+    public Sprite sprite;
 }

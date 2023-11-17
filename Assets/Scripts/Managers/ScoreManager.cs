@@ -10,17 +10,17 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance.increasePerformancePoint.AddListener(IncreasePP);
+        // GameManager.instance.increasePerformancePoint.AddListener(IncreasePP);
         playerConstants = GameManager.instance.playerConstants;
     }
 
-    void IncreasePP(int amount, Transform tf)
-    {
-        playerConstants.performancePoint += amount;
+    // void IncreasePP(int amount, Transform tf)
+    // {
+    //     playerConstants.performancePoints += amount;
 
-        // TODO: trigger of animation
-        // tmp.text = playerConstants.performancePoint // set current performance points
-        // tmp.transform = tf
-        // animator.SetTrigger("Increased"); // move up, fade away
-    }
+    //     // TODO: trigger of animation
+    //     // tmp.text = playerConstants.performancePoints // set current performance points
+    //     // tmp.transform = tf
+    //     // animator.SetTrigger("Increased"); // move up, fade away
+    // }
 }

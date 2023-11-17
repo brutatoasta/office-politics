@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
-    public InventoryVariable inventory;
+
+
     public Image current;
-    public CanvasGroup currentGroup;
-    private int currSlot;
     public Image next;
+    public CanvasGroup currentGroup;
     public CanvasGroup nextGroup;
+
+    private int currSlot;
     private int nextSlot;
     public CanvasGroup fade;
     public GameObject countText;
@@ -24,32 +26,32 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.cycleInventory.AddListener(CycleInventory);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
-        GameManager.instance.increasePerformancePoint.AddListener(PerformancePoint);
+        // GameManager.instance.increasePerformancePoint.AddListener(PerformancePoint);
 
 
-        current.sprite = inventory.consumableObjects[0].sprite;
-        next.sprite = inventory.consumableObjects[1].sprite;
+        current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
+        next.sprite = GameManager.instance.runVariables.consumableObjects[1].sprite;
 
         currSlot = 0;
         nextSlot = 1;
 
-        countText.GetComponent<TextMeshProUGUI>().text = "" + inventory.consumableObjects[0].count;
+        countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[0].count;
     }
 
     public void CycleInventory(int currentInventorySlot)
     {
-        current.sprite = (inventory.consumableObjects[currentInventorySlot].count > 0) ?
-                            inventory.consumableObjects[currentInventorySlot].sprite :
+        current.sprite = (GameManager.instance.runVariables.consumableObjects[currentInventorySlot].count > 0) ?
+                            GameManager.instance.runVariables.consumableObjects[currentInventorySlot].sprite :
                             null;
 
-        int nextInventorySlot = (currentInventorySlot + 1) % inventory.consumableObjects.Length;
-        for (int i = 0; i < inventory.consumableObjects.Length; i++)
+        int nextInventorySlot = (currentInventorySlot + 1) % GameManager.instance.runVariables.consumableObjects.Length;
+        for (int i = 0; i < GameManager.instance.runVariables.consumableObjects.Length; i++)
         {
-            if (inventory.consumableObjects[nextInventorySlot].count != 0) break;
-            nextInventorySlot = (nextInventorySlot + 1) % inventory.consumableObjects.Length;
+            if (GameManager.instance.runVariables.consumableObjects[nextInventorySlot].count != 0) break;
+            nextInventorySlot = (nextInventorySlot + 1) % GameManager.instance.runVariables.consumableObjects.Length;
         }
-        next.sprite = (inventory.consumableObjects[nextInventorySlot].count > 0 && nextInventorySlot != currentInventorySlot) ?
-                            inventory.consumableObjects[nextInventorySlot].sprite :
+        next.sprite = (GameManager.instance.runVariables.consumableObjects[nextInventorySlot].count > 0 && nextInventorySlot != currentInventorySlot) ?
+                            GameManager.instance.runVariables.consumableObjects[nextInventorySlot].sprite :
                             null;
 
         currSlot = currentInventorySlot;
@@ -58,23 +60,23 @@ public class HUDManager : MonoBehaviour
         currentGroup.alpha = (current.sprite == null) ? 0 : 1;
         nextGroup.alpha = (next.sprite == null) ? 0 : 1;
 
-        countText.GetComponent<TextMeshProUGUI>().text = "" + inventory.consumableObjects[currentInventorySlot].count;
+        countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[currentInventorySlot].count;
     }
 
     public void UseConsumable()
     {
-        current.sprite = (inventory.consumableObjects[currSlot].count > 0) ?
-                            inventory.consumableObjects[currSlot].sprite :
+        current.sprite = (GameManager.instance.runVariables.consumableObjects[currSlot].count > 0) ?
+                            GameManager.instance.runVariables.consumableObjects[currSlot].sprite :
                             null;
-        next.sprite = (inventory.consumableObjects[nextSlot].count > 0 && nextSlot != currSlot) ?
-                            inventory.consumableObjects[nextSlot].sprite :
+        next.sprite = (GameManager.instance.runVariables.consumableObjects[nextSlot].count > 0 && nextSlot != currSlot) ?
+                            GameManager.instance.runVariables.consumableObjects[nextSlot].sprite :
                             null;
 
         currentGroup.alpha = (current.sprite == null) ? 0 : 1;
         nextGroup.alpha = (next.sprite == null) ? 0 : 1;
         StartCoroutine(Fade());
 
-        countText.GetComponent<TextMeshProUGUI>().text = "" + inventory.consumableObjects[currSlot].count;
+        countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[currSlot].count;
     }
 
     IEnumerator Fade()
@@ -87,11 +89,11 @@ public class HUDManager : MonoBehaviour
     }
     public void StressBarSlider()
     {
-        slider.value = inventory.stressPoint;
+        slider.value = GameManager.instance.levelVariables.stressPoints;
     }
     public void PerformancePoint()
     {
-        performancePointText.GetComponent<TextMeshProUGUI>().text = "Performance Point: " + playerConstants.performancePoint;
+        performancePointText.GetComponent<TextMeshProUGUI>().text = "Performance Point: " + GameManager.instance.levelVariables.levelPP;
     }
 
 }

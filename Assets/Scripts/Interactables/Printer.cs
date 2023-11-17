@@ -26,13 +26,13 @@ public class Printer : Receivable
     //         if (validInput != held.GetComponent<Holdable>().holdableType)
     //         {
     //             // decrease score
-    //             playerConstants.performancePoint -= 5;
+    //             playerConstants.performancePoints -= 5;
     //             Debug.Log("decrease score");
     //             animator.SetTrigger("doFlinch");
     //         }
     //         else
     //         {
-    //             playerConstants.performancePoint += 5;
+    //             playerConstants.performancePoints += 5;
     //             Debug.Log("increase score");
     //             // animate for some time
     //             animator.SetBool("isWiggling", true);

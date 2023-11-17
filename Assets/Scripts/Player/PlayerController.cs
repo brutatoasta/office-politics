@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     // Player Constants
     public PlayerConstants playerConstants;
     public WeaponGameConstants arrowConstants;
-    public InventoryVariable inventory;
     public AudioElements audioElements;
 
     Vector2 movementInput;
@@ -38,11 +37,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        // audioSource = GetComponent<AudioSource>();
-        playerConstants.stressPoint = 0;
-        playerConstants.performancePoint = 0;
+
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
-        // audioSource = GetComponent<AudioSource>();
+
         GameManager.instance.interact.AddListener(TriggerInteract);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
@@ -127,7 +124,7 @@ public class PlayerController : MonoBehaviour
 
     public void Evade()
     {
-        if (inventory.evadeType == EvadeType.Dash)
+        if (GameManager.instance.levelVariables.evadeType == EvadeType.Dash)
         {
             if (canDash && canMove)
             {
@@ -213,7 +210,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Arrow"))
         {
-            inventory.stressPoint += arrowConstants.stressArrowDamage;
+            GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
             GameManager.instance.IncreaseStress();
         }
     }
@@ -225,7 +222,7 @@ public class PlayerController : MonoBehaviour
 
     // public void TickOvertime()
     // {
-    //     // inventory.stressPoint += playerConstants.overtimeTick;
+    //     // GameManager.instance.runVariables.stressPoint += playerConstants.overtimeTick;
     //     GameManager.instance.IncreaseStress();
     // }
 

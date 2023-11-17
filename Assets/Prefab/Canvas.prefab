@@ -597,8 +597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba064bb7acf645c4e8d45aa489d7cad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskDescription: {fileID: 5522730913691723285}
-  taskConstants: {fileID: 11400000, guid: fefb62a1a34a584479740ff168f86a0f, type: 2}
 --- !u!1 &5522730913691723285
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +608,7 @@ GameObject:
   - component: {fileID: 5832545426529781450}
   - component: {fileID: 2673565300272704129}
   - component: {fileID: 7805496197574262649}
+  - component: {fileID: 4891936360755643986}
   m_Layer: 5
   m_Name: TaskDescription
   m_TagString: Untagged
@@ -733,6 +732,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4891936360755643986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522730913691723285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba064bb7acf645c4e8d45aa489d7cad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6291794481293788550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b4149f0c79f874d8d18b6a4064451c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   current: {fileID: 8506034940791849336}
   currentGroup: {fileID: 2916235677481861178}
   next: {fileID: 2551586990775343021}

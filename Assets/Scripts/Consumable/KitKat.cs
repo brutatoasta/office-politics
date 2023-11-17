@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class KitKat : ABCConsumable
 {
-    public KitKat(int initCount, Sprite initSprite)
+    public KitKat(ConsumableData initData)
     {
-        count = initCount;
-        sprite = initSprite;
+        data = initData;
     }
     public override void ConsumeEffect()
     {
         Debug.Log("Ate KitKat");
     }
+
 }

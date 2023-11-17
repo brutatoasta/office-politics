@@ -19,12 +19,14 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent gamePause; // 
     public UnityEvent gamePlay; // 
 
+    public UnityEvent levelStart;
+
     public UnityEvent interact;
 
     public UnityEvent gameOver;
     public UnityEvent doorOpen;
 
-    // Inventory
+    // runVariables
     public UnityEvent<int> cycleInventory;
     public UnityEvent useConsumable;
 
@@ -36,13 +38,14 @@ public class GameManager : Singleton<GameManager>
 
     // scoring and tasks system
     public UnityEvent increaseStress;
-    public UnityEvent<int, Transform> increasePerformancePoint;
-    public UnityEvent<TaskName> switchTasks;
+    // public UnityEvent<int, Transform> increasePerformancePoint;
+    public UnityEvent onTaskSuccess;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
     public PlayerConstants playerConstants;
-    public InventoryVariable inventory;
+    public RunVariables runVariables;
+    public LevelVariables levelVariables;
     public bool isPaused = false;
     public bool overtime = false;
     private int currentInventorySlot = 0;
@@ -54,19 +57,24 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        // start of whole game, not level
-        inventory.consumableObjects = new ABCConsumable[] { new KitKat(2, kitKatSprite), new Coffee(1, coffeeSprite), new KitKat(3, kitKatSprite) };
-        inventory.stressPoint = 0;
+        levelVariables.Init(0);
+        runVariables.Init();
     }
 
-    // Raise event to cycle inventory slot
+    public void GameStart()
+    {
+        runVariables.Init();
+        gameStart.Invoke();
+    }
+
+    // Raise event to cycle runVariables slot
     public void CycleInventory()
     {
         // find next slot that contains an item
-        for (int i = 0; i < inventory.consumableObjects.Length; i++)
+        for (int i = 0; i < runVariables.consumableObjects.Length; i++)
         {
-            currentInventorySlot = (currentInventorySlot + 1) % inventory.consumableObjects.Length;
-            if (inventory.consumableObjects[currentInventorySlot].count != 0) break;
+            currentInventorySlot = (currentInventorySlot + 1) % runVariables.consumableObjects.Length;
+            if (runVariables.consumableObjects[currentInventorySlot].count != 0) break;
         }
 
         cycleInventory.Invoke(currentInventorySlot);
@@ -74,14 +82,14 @@ public class GameManager : Singleton<GameManager>
 
     public void UseCurrentConsumable()
     {
-        inventory.consumableObjects[currentInventorySlot].Consume();
+        runVariables.consumableObjects[currentInventorySlot].Consume();
         useConsumable.Invoke();
     }
 
 
     public void IncreaseStress()
     {
-        if (inventory.stressPoint > 50) GameOver();
+        if (levelVariables.stressPoints > levelVariables.maxStressPoints) GameOver();
         increaseStress.Invoke();
     }
 
@@ -112,12 +120,11 @@ public class GameManager : Singleton<GameManager>
 
     public void GameRestart()
     {
-        // reset score
-
         gameRestart.Invoke();
         Time.timeScale = 1;
 
         isPaused = false;
+        SceneManager.LoadSceneAsync("MainMenu");
     }
     public void GameOver()
     {
@@ -133,16 +140,8 @@ public class GameManager : Singleton<GameManager>
         overtime = true;
         TimerStop?.Invoke();
 
-        bool quotaComplete = true;
-        foreach (TaskItem taskItem in inventory.taskQuotas)
-        {
-            if (taskItem.quota > 0)
-            {
-                quotaComplete = false;
-                break;
-            }
-        }
-        if (quotaComplete) doorOpen.Invoke();
+
+        if (levelVariables.isQuotaComplete()) doorOpen.Invoke();
     }
     public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);
 
@@ -152,14 +151,7 @@ public class GameManager : Singleton<GameManager>
         if (overtime)
         {
             bool quotaComplete = true;
-            foreach (TaskItem taskItem in inventory.taskQuotas)
-            {
-                if (taskItem.quota > 0)
-                {
-                    quotaComplete = false;
-                    break;
-                }
-            }
+
             Debug.LogError(quotaComplete);
             if (quotaComplete) doorOpen.Invoke();
         }
