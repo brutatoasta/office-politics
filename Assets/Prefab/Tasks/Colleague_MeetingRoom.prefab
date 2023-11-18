@@ -356,7 +356,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -512,10 +512,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
-  validInput: 11
-  playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
-  taskConstants: {fileID: 11400000, guid: fefb62a1a34a584479740ff168f86a0f, type: 2}
+  playerHand: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  shaderMaterial: {fileID: 0}
+  spriteMaterial: {fileID: 0}
+  invalidInputs: 
+  validInputs: 
 --- !u!114 &2323745352086137420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6337c4a06a34249b2cb3d44e254d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  documentSprite: {fileID: 5123050523695463047}
 --- !u!1 &5123050523695463047
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,7 +582,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

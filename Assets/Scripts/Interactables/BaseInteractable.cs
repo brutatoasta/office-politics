@@ -9,11 +9,15 @@ public abstract class BaseInteractable : MonoBehaviour
     // public TaskName iType = TaskName.Default; // my own type 
 
     protected Animator animator;
-    public SpriteRenderer playerHand;
+    [System.NonSerialized] public SpriteRenderer playerHand;
+    [System.NonSerialized] public SpriteRenderer spriteRenderer;
+    public Material shaderMaterial;
+    public Material spriteMaterial;
 
     protected void Awake()
     {
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -24,6 +28,8 @@ public abstract class BaseInteractable : MonoBehaviour
             if (CanInteract())
             {
                 // TODO: turn on shader
+                spriteRenderer.material = shaderMaterial;
+                
 
                 // subscribe to gamemanager's interact event
                 GameManager.instance.interact.AddListener(OnInteract);
@@ -37,6 +43,7 @@ public abstract class BaseInteractable : MonoBehaviour
         if (col.gameObject.layer == 7)
         {
             // TODO: turn off shader
+            spriteRenderer.material = spriteMaterial;
 
             // unsubscribe to gamemanager's interact event
             GameManager.instance.interact.RemoveListener(OnInteract);
