@@ -5,6 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneExit : MonoBehaviour
 {
+    public void PlayGame()
+    {
+        SceneManager.LoadSceneAsync(1);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
     private string nextScene;
     void OnTriggerEnter2D(Collider2D collision)
     {
