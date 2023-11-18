@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6288d719c00be6f42ac55cd62f914049, type: 3}
-  m_Name: InventoryVariable
+  m_Script: {fileID: 11500000, guid: 5d0be639ebd39714ab402fbbe7dfcaf6, type: 3}
+  m_Name: LevelVariables
   m_EditorClassIdentifier: 
   evadeType: 0
-  taskQuotas:
-  - quota: 1
-    taskName: 0
-  - quota: 1
-    taskName: 1
-  stressPoint: 1
-  maxStressPoint: 50
-  sanityPoint: 0
-  performancePoint: 3
+  levelPP: 0
+  stressPoints: 0
+  maxStressPoints: 0

@@ -16,13 +16,22 @@ public class Timer : MonoBehaviour
 
     #endregion
 
-    private void Awake() => _timerText = GetComponent<TextMeshProUGUI>();
+    private void Awake()
+    {
+        _timerText = GetComponent<TextMeshProUGUI>();
+    }
 
     void Start()
     {
         GameManager.instance.TimerStart.AddListener(OnTimerStart);
         GameManager.instance.TimerStop.AddListener(OnTimerStop);
         GameManager.instance.TimerUpdate.AddListener(OnTimerUpdate);
+        // OnTimerStart(); // force timer to start
+
+        // wait 3 seconds and invoke timerstart gameplay event()
+        GameManager.instance.TimerStart.Invoke();
+        
+        // if there is a countdown for the player to start, call on timer stop here then start timer via gameplay event
     }
 
     private void OnTimerStart() => _isRunning = true;
@@ -30,7 +39,7 @@ public class Timer : MonoBehaviour
     private void OnTimerUpdate(float value) => timeToDisplay = value;
 
     private void Update()
-    {   
+    {
         if (!_isRunning) return;
 
         // Overtime
@@ -38,7 +47,6 @@ public class Timer : MonoBehaviour
         {
             GameManager.instance.OnStopTimer();
         }
-
         timeToDisplay += timerType == TimerType.Countdown ? -Time.deltaTime : Time.deltaTime;
 
         TimeSpan timeSpan = TimeSpan.FromSeconds(timeToDisplay);

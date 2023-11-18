@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AudioElements", menuName = "ScriptableObjects/AudioElements", order = 6)]
+[CreateAssetMenu(fileName = "AudioElements", menuName = "ScriptableObjects/AudioElements")]
 public class AudioElements : ScriptableObject
 {
     /* Description:
@@ -12,6 +12,8 @@ public class AudioElements : ScriptableObject
     Any script that needs an AudioClip to be played would reference the respective AudioElement from "AudioElements"
     when raising the "onPlayAudioElement" AudioElementGameEvent through the GameManager's
     "PlayAudioElement(AudioElement audioElement)" function.
+
+    Static.
     */
 
     /* Note:

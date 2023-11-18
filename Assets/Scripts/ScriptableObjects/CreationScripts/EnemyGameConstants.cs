@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyGameConstants", menuName = "ScriptableObjects/EnemyGameConstants", order = 2)]
+[CreateAssetMenu(fileName = "EnemyGameConstants", menuName = "ScriptableObjects/EnemyGameConstants")]
 public class EnemyGameConstants : ScriptableObject
 {
     // Boss's movement

@@ -1,50 +1,111 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-// Takes and handles input and movement for a player character
+// Represents an interactable object that can receive items from players.
+// Shredder and Laminator
 public class Receivable : BaseInteractable
 {
-    public InventoryVariable inventory;
-    public InteractableType validInput;
-    public PlayerConstants playerConstants;
-    public TaskConstants taskConstants;
+    // shredder can accept both valid and invalid inputs
+    public TaskName[] invalidInputs;
+    public TaskName[] validInputs;
+    private HashSet<TaskName> _invalidInputs;
+    private HashSet<TaskName> _validInputs; // hashset for faster checks
+    TaskName heldType;
+    GameObject held;
 
+    new void Awake()
+    {
+        base.Awake();
+    
+        _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
+        _invalidInputs = new HashSet<TaskName>(invalidInputs);
+    }
+    protected override bool CanInteract()
+    {
+        held = GameManager.instance.held;
 
+        if (held == null) // nothing in hand
+        {
+            return false;
+        }
+        else
+        {
+            heldType = held.GetComponent<Holdable>().taskName;
+            return _validInputs.Contains(heldType) || _invalidInputs.Contains(heldType);
+        }
 
-    public new void OnInteract(SpriteRenderer heldSprite)
+    }
+
+    protected override void OnInteract()
     {
         // called when player presses interact key
-        taskConstants.currentInput = validInput;
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>(); // TODO: what for?
+
+
         if (GameManager.instance.held != null)
         {
             // maybe check other conditions
             // drop the item in!
-            Debug.Log("Dropped something into me!");
-            GameObject held = GameManager.instance.held;
             GameManager.instance.held = null;
-            heldSprite.sprite = null;
-            // calculate score
-            if (validInput != held.GetComponent<Holdable>().holdableType)
+            playerHand.sprite = null;
+
+            Debug.Log($"Dropped {held.name} into me!");
+
+            // calculate score and tasks
+            if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
-                //decrease score
-                playerConstants.performancePoint -= 5;
-                Debug.Log("decrease score");
-            }
-            else
-            {
-                playerConstants.performancePoint += 5;
+                // decrease task count
+                GameManager.instance.levelVariables.Succeed(heldType);
                 Debug.Log("increase score");
-                if (validInput == InteractableType.ToPrepMeeting || validInput == InteractableType.ToPrepRefreshment)
+
+                // TODO: if machine and not a person
+                animator.SetTrigger("doWiggle");
+                // putting papers/refreshment has no fail condition, but maybe put this in another method/switch statement based on validInputs
+                if (anyAreValidInput(new[] { TaskName.PrepMeeting, TaskName.PrepRefreshment }))
                 {
                     sprite.enabled = true;
                 }
-                GameManager.instance.switchTasks.Invoke();
+            }
+            else
+            {
+                // decrease score
+                GameManager.instance.levelVariables.Fail(heldType);
+                Debug.Log("decrease score");
+                animator.SetTrigger("doFlinch");
             }
 
         }
+    }
 
+    bool isValidInput(TaskName input)
+    {
+        return _validInputs.Contains(input);
+    }
+
+    bool allAreValidInput(TaskName[] inputs)
+    {
+        foreach (TaskName value in inputs)
+        {
+            if (!_validInputs.Contains(value))
+            {
+                return false;
+            }
+
+        }
+        return true;
+    }
+    bool anyAreValidInput(TaskName[] inputs)
+    {
+        foreach (TaskName value in inputs)
+        {
+            if (_validInputs.Contains(value))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
+

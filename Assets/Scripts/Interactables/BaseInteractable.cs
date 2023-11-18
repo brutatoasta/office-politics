@@ -1,33 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Tilemaps;
+
 
 // Takes and handles input and movement for a player character
-public class BaseInteractable : InteractableHighlight, IInteractables
+public abstract class BaseInteractable : MonoBehaviour
 {
-    public InteractableType type; // type is for different logic
+    // public TaskName iType = TaskName.Default; // my own type 
 
-    public void OnInteract(SpriteRenderer heldSprite)
+    protected Animator animator;
+    public SpriteRenderer playerHand;
+
+    protected void Awake()
     {
-        // called when player presses interact key
-        Debug.Log("Interacted with me!");
+        animator = GetComponent<Animator>();
     }
-    public bool CastAndInteract(SpriteRenderer heldSprite)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        switch (type)
+        if (col.gameObject.layer == 7) //player
         {
-            case InteractableType.Receivable:
-                ((Receivable)this).OnInteract(heldSprite);
-                // TODO check if player is holding object and allowed to deposit
-                return true;
-            case InteractableType.Holdable:
-                ((Holdable)this).OnInteract(heldSprite);
-                // TODO check if player is holding object and allowed to pickup another
-                return true;
-            default:
-                OnInteract(heldSprite);
-                return true;
+            playerHand = col.transform.GetChild(0).GetComponent<SpriteRenderer>();
+            // if player can interact, light up
+            if (CanInteract())
+            {
+                // TODO: turn on shader
+
+                // subscribe to gamemanager's interact event
+                GameManager.instance.interact.AddListener(OnInteract);
+
+            }
         }
     }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.layer == 7)
+        {
+            // TODO: turn off shader
+
+            // unsubscribe to gamemanager's interact event
+            GameManager.instance.interact.RemoveListener(OnInteract);
+        }
+    }
+    // checks if player is allowed to interact with this object.
+    // check player's hand
+    // if held item can interact with self, return true
+    // if empty item and can interact with self, return true
+    // else return false
+    // uses the subclass 
+    protected abstract bool CanInteract();
+    protected abstract void OnInteract();
+
 }

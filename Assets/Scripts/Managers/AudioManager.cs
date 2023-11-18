@@ -50,13 +50,7 @@ public class AudioManager : MonoBehaviour
         gameplayBgmIntensity1AudioSource.Play();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void PlayAudioElement(AudioElement audioElement)
+     public void PlayAudioElement(AudioElement audioElement)
     {
         switch (audioElement.audioType)
         {
