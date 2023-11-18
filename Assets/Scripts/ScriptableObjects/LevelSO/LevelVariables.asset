@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: LevelVariables
   m_EditorClassIdentifier: 
   evadeType: 0
+  todo:
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 0
+    taskString: Shred documents
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 1
+    taskString: Laminate documents
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 2
+    taskString: Laminate documents
   levelPP: 0
-  stressPoints: 0
-  maxStressPoints: 0
+  stressPoints: 70
+  maxStressPoints: 199

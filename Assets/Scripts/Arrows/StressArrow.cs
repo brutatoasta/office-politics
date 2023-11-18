@@ -11,6 +11,8 @@ public class StressArrow : BaseArrow
     public UnityEvent<Transform> StopLineRenderer;
     private float speed;
 
+    public override void OnParry() {}
+
     private void Awake()
     {
         speed = weaponGameConstants.stressArrowSpeed;

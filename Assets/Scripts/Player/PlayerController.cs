@@ -180,6 +180,8 @@ public class PlayerController : MonoBehaviour
                 {
                     arrow.attachedRigidbody.velocity = arrowRb.velocity - 2 * Vector2.Dot(arrowRb.velocity, reflectionNormal) * reflectionNormal;
                 }
+
+                arrow.gameObject.GetComponent<BaseArrow>().OnParry();
             }
 
             else if (arrow.gameObject.CompareTag("Enemy"))

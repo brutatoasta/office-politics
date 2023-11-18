@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WeaponGameConstants
   m_EditorClassIdentifier: 
   stressArrowSpeed: 3
-  jobArrowSpeed: 1
+  jobArrowSpeed: 10
+  jobArrowMaxForce: 0.2
   stressArrowDamage: 5
   jobArrowDamage: 5
