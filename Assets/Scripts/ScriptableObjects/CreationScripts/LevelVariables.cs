@@ -8,7 +8,7 @@ public class LevelVariables : ScriptableObject
 {
     // Tracks dynamic values for each Level
     public EvadeType evadeType;
-
+    [SerializeField]
     public TaskItem[] todo;
 
     public int levelPP;
@@ -29,6 +29,7 @@ public class LevelVariables : ScriptableObject
     public void Succeed(TaskName name)
     {
         // reduce quota
+        Debug.Log(name);
         if (todo[(int)name].quota > 0)
         {
             todo[(int)name].quota--;
@@ -59,6 +60,7 @@ public class LevelVariables : ScriptableObject
         maxStressPoints = 199;
         levelPP = 0;
         todo = TaskConstants.todos[level];
+        Debug.Log(todo);
     }
 
     public void ExitLevel()

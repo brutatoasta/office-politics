@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 // Takes and handles input and movement for a player character
 public class Holdable : BaseInteractable
 {
-    public InteractableType holdableType;
+    public TaskName taskName;
     protected override void OnInteract()
     {
         // called when player presses interact key

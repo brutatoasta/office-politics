@@ -7,17 +7,24 @@ using UnityEngine;
 // Shredder and Laminator
 public class Receivable : BaseInteractable
 {
-    public InteractableType[] validInputs; // can change when tasks get added
-    private HashSet<InteractableType> _validInputs; // hashset for faster checks
+    // shredder can accept both valid and invalid inputs
+    public TaskName[] invalidInputs;
+    public TaskName[] validInputs;
+    private HashSet<TaskName> _invalidInputs;
+    private HashSet<TaskName> _validInputs; // hashset for faster checks
+    TaskName heldType;
+    GameObject held;
 
     new void Awake()
     {
         base.Awake();
-        _validInputs = new HashSet<InteractableType>(validInputs); // TODO: no need multiple inputs
+    
+        _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
+        _invalidInputs = new HashSet<TaskName>(invalidInputs);
     }
     protected override bool CanInteract()
     {
-        GameObject held = GameManager.instance.held;
+        held = GameManager.instance.held;
 
         if (held == null) // nothing in hand
         {
@@ -25,15 +32,12 @@ public class Receivable : BaseInteractable
         }
         else
         {
-            //something in hand
-            // check what it is
-            // if its holdable of appropriate type, return true
-            // no other scripts or interactables can be held anyway?
-            // TODO
-            return isValidInput(held.GetComponent<Holdable>().holdableType);
+            heldType = held.GetComponent<Holdable>().taskName;
+            return _validInputs.Contains(heldType) || _invalidInputs.Contains(heldType);
         }
 
     }
+
     protected override void OnInteract()
     {
         // called when player presses interact key
@@ -44,24 +48,22 @@ public class Receivable : BaseInteractable
         {
             // maybe check other conditions
             // drop the item in!
-            GameObject held = GameManager.instance.held;
             GameManager.instance.held = null;
             playerHand.sprite = null;
 
             Debug.Log($"Dropped {held.name} into me!");
 
             // calculate score and tasks
-            InteractableType heldType = held.GetComponent<Holdable>().holdableType;
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
                 // decrease task count
-                GameManager.instance.levelVariables.Succeed((TaskName)heldType);
+                GameManager.instance.levelVariables.Succeed(heldType);
                 Debug.Log("increase score");
 
                 // TODO: if machine and not a person
                 animator.SetTrigger("doWiggle");
                 // putting papers/refreshment has no fail condition, but maybe put this in another method/switch statement based on validInputs
-                if (anyAreValidInput(new[] { InteractableType.ToPrepMeeting, InteractableType.ToPrepRefreshment }))
+                if (anyAreValidInput(new[] { TaskName.PrepMeeting, TaskName.PrepRefreshment }))
                 {
                     sprite.enabled = true;
                 }
@@ -69,7 +71,7 @@ public class Receivable : BaseInteractable
             else
             {
                 // decrease score
-                GameManager.instance.levelVariables.Fail((TaskName)heldType);
+                GameManager.instance.levelVariables.Fail(heldType);
                 Debug.Log("decrease score");
                 animator.SetTrigger("doFlinch");
             }
@@ -77,14 +79,14 @@ public class Receivable : BaseInteractable
         }
     }
 
-    bool isValidInput(InteractableType input)
+    bool isValidInput(TaskName input)
     {
         return _validInputs.Contains(input);
     }
 
-    bool allAreValidInput(InteractableType[] inputs)
+    bool allAreValidInput(TaskName[] inputs)
     {
-        foreach (InteractableType value in inputs)
+        foreach (TaskName value in inputs)
         {
             if (!_validInputs.Contains(value))
             {
@@ -94,9 +96,9 @@ public class Receivable : BaseInteractable
         }
         return true;
     }
-    bool anyAreValidInput(InteractableType[] inputs)
+    bool anyAreValidInput(TaskName[] inputs)
     {
-        foreach (InteractableType value in inputs)
+        foreach (TaskName value in inputs)
         {
             if (_validInputs.Contains(value))
             {

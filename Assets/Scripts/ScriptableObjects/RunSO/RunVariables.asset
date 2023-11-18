@@ -12,13 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6288d719c00be6f42ac55cd62f914049, type: 3}
   m_Name: RunVariables
   m_EditorClassIdentifier: 
-  evadeType: 0
-  taskQuotas:
-  - quota: 1
-    taskName: 0
-  - quota: 1
-    taskName: 1
-  stressPoint: 1
-  maxStressPoint: 50
-  sanityPoint: 0
-  performancePoint: 3
+  performancePoints: 20

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
-using System.Text;
 
 public class TaskGenerator : MonoBehaviour
 {
@@ -19,7 +17,7 @@ public class TaskGenerator : MonoBehaviour
         string description = "";
         foreach (TaskItem taskItem in GameManager.instance.levelVariables.todo)
         {
-            description += taskItem.taskString;
+            description += taskItem.taskString + "\n";
         }
         taskList.text = description;
     }

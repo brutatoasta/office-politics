@@ -23,7 +23,7 @@ public class Printer : Receivable
     //         Debug.Log($"Dropped {held.name} into me!");
 
     //         // calculate score
-    //         if (validInput != held.GetComponent<Holdable>().holdableType)
+    //         if (validInput != held.GetComponent<Holdable>().taskName)
     //         {
     //             // decrease score
     //             playerConstants.performancePoints -= 5;

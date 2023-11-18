@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -6,30 +7,42 @@ using UnityEngine;
 public class TaskConstants : ScriptableObject
 {
     // this is the readonly stuff
-    public static readonly TaskItem[][] todos = new TaskItem[][]
-   {
-        // level 1
-        new TaskItem[]
-        {
-            new TaskItem(1, 1, 5, TaskName.Shred, "Shred documents"),
-            new TaskItem(1, 1, 5, TaskName.Laminate, "Laminate documents"),
-        },
-        // level 2
-        new TaskItem[]
-        {
-            new TaskItem(1, 1, 5, TaskName.Shred, "Shred documents"),
-            new TaskItem(1, 1, 5, TaskName.Laminate, "Laminate documents"),
+    // TODO: read from CSV
+    [SerializeField]
+    public static TaskItem[][] todos = new TaskItem[][]
+       {
+            // level 1
+            
+            new TaskItem[]
+            {
+                new(1, 1, 5, TaskName.Shred, "Shred documents"),
+                new(1, 1, 5, TaskName.Laminate, "Laminate documents"),
+                new(1, 1, 5, TaskName.PrepMeeting, "Laminate documents"),
+            },
+            // level 2
+            new TaskItem[]
+            {
+                new(1, 1, 5, TaskName.Shred, "Shred documents"),
+                new(1, 1, 5, TaskName.Laminate, "Laminate documents"),
 
-        }
-   };
+            }
+       };
+    //     public static Dictionary<TaskName, TaskItem>[] todos = new[]{
+    //         // level 1
+    // new Dictionary<TaskName, TaskItem>(){
+    //     {TaskName.Shred, new(1, 1, 5, TaskName.Shred, "Shred documents")},
+
+    // },
+    //    };
 
 }
+[Serializable]
 public struct TaskItem
 {
     public int quota;
-    public readonly int performancePoints;
+    public int performancePoints;
 
-    public readonly int stressDamage;
+    public int stressDamage;
     public TaskName taskName;
     public string taskString;
     public TaskItem(int quota, int performancePoints, int stressDamage, TaskName taskName, string taskString)
@@ -39,7 +52,7 @@ public struct TaskItem
         this.stressDamage = stressDamage;
         this.taskName = taskName;
         this.taskString = taskString;
-        this = new(); // mystery
+        // this = new(); // mystery
     }
     public void StrikeOut()
     {
@@ -56,4 +69,8 @@ public enum TaskName
 {
     Shred,
     Laminate,
+    PrepMeeting,
+    PrepRefreshment,
+    FetchDoc,
+    Default,
 }

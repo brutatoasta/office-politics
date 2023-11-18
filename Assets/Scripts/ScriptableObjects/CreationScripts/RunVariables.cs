@@ -7,9 +7,8 @@ using UnityEngine.TextCore.Text;
 public class RunVariables : ScriptableObject
 {
     // Tracks dynamic values for each Run
+    [SerializeField]
     public ABCConsumable[] consumableObjects;
-
-
     public int performancePoints;
 
     public void Init()
