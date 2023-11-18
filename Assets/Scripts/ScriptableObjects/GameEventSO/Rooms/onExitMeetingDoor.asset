@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a5d85e4965878439f9b4268707f638, type: 3}
-  m_Name: onEnterMeeting
+  m_Script: {fileID: 11500000, guid: 388888b21a996754988f3b24cf8da50a, type: 3}
+  m_Name: onExitMeetingDoor
   m_EditorClassIdentifier: 
