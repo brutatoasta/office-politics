@@ -1,14 +1,13 @@
 using System;
-using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TaskConstants", menuName = "ScriptableObjects/TaskConstants")]
 public class TaskConstants : ScriptableObject
 {
     // this is the readonly stuff
+    // each TaskItem array must have TaskItems in order and at the index of enum as they are accessed via enum, and 
     // TODO: read from CSV
-    [SerializeField]
+    // unity does not serialize multidimensional arrays/matrices
     public static TaskItem[][] todos = new TaskItem[][]
        {
             // level 1
@@ -27,13 +26,6 @@ public class TaskConstants : ScriptableObject
 
             }
        };
-    //     public static Dictionary<TaskName, TaskItem>[] todos = new[]{
-    //         // level 1
-    // new Dictionary<TaskName, TaskItem>(){
-    //     {TaskName.Shred, new(1, 1, 5, TaskName.Shred, "Shred documents")},
-
-    // },
-    //    };
 
 }
 [Serializable]
@@ -69,8 +61,16 @@ public enum TaskName
 {
     Shred,
     Laminate,
+    FetchCoffee,
+    RefillCoffee,
+    FetchTea,
+    RefillTea,
+    FetchDoc,
+    DeliverDoc,
+    ChargeMic,
+
     PrepMeeting,
     PrepRefreshment,
-    FetchDoc,
+
     Default,
 }
