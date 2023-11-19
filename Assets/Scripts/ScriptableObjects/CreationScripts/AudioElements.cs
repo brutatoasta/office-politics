@@ -47,4 +47,6 @@ public class AudioElements : ScriptableObject
     public AudioElement pourCoffee;
     public AudioElement placeCoffeeCup;
     public AudioElement pickUpDocument;
+    public AudioElement shredDocument;
+    public AudioElement laminateDocument;
 }
