@@ -59,4 +59,4 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 559b79eddc651ad4e93afcabf3d12363, type: 3}
   laminateDocument:
     audioType: 8
-    audioClip: {fileID: 8300000, guid: cd4bf065bd3441044af0d10a24fb0a6b, type: 3}
+    audioClip: {fileID: 8300000, guid: f926ea8a2751e004cbefc9612e13fa3d, type: 3}
