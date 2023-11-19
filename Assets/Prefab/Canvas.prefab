@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerType: 0
-  timeToDisplay: 40
+  timeToDisplay: 120
 --- !u!1 &659845981579297320
 GameObject:
   m_ObjectHideFlags: 0

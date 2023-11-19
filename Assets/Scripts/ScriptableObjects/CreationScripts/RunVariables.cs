@@ -15,7 +15,7 @@ public class RunVariables : ScriptableObject
     {
         // start of whole game, not level
         consumableObjects = new ABCConsumable[]
-        { new KitKat(2), new Coffee(4), new Adderall(3) };
+        { new KitKat(20), new Coffee(4), new Adderall(3) };
     }
 }
 
