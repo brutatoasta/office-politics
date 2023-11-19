@@ -29,7 +29,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
   cycleConsumable:
     audioType: 4
-    audioClip: {fileID: 8300000, guid: 8b739406e2ec3354b807432cc076afe4, type: 3}
+    audioClip: {fileID: 8300000, guid: 57959bde99a17a44cb636e0a7d6983c4, type: 3}
   playerDash:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}
