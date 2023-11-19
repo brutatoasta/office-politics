@@ -14,7 +14,7 @@ public class TaskGenerator : MonoBehaviour
     }
     void generateDescription()
     {
-        string description = "";
+        string description = "To Do: \n";
         foreach (TaskItem taskItem in GameManager.instance.levelVariables.todo)
         {
             description += taskItem.taskString + "\n";

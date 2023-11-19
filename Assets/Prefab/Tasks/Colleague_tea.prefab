@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 449071865038590384}
   - component: {fileID: 6346254474792105659}
-  - component: {fileID: 8662232930016552941}
+  - component: {fileID: 7785950939722036326}
   m_Layer: 8
   m_Name: TaskIcon
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 9899bed34b7877b44b25d89920d30519, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ec045dc2a2872704eb0e8549088db1db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8662232930016552941
+--- !u!95 &7785950939722036326
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 2838321661930908863}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82fd26732de8fb446ad6c18665c2ecf2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3fa9430651aecf248b345752d315737a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -340,7 +340,7 @@ Transform:
   m_GameObject: {fileID: 6762628470668186360}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.102854, y: 18.548033, z: -2.0667977}
+  m_LocalPosition: {x: 4.102854, y: 18.72, z: -2.0667977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -378,14 +378,14 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: f924ad7e4eeb9854ba58622cfac54eec, type: 2}
+    m_Data: {fileID: 11400000, guid: f7811e17225da5c4cbcfd15feff5a6ea, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 059cbaa2b50a0b8479b14ac895fbcdce, type: 2}
+    m_Data: {fileID: 11400000, guid: 2d23b845680e08f4a8d4aa9b0003c419, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
-    m_Data: {fileID: -1402885158, guid: 68b3d06ca6265344c9a35fd081799c67, type: 3}
+    m_Data: {fileID: -1104388131, guid: 68b3d06ca6265344c9a35fd081799c67, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 1641881573, guid: 68b3d06ca6265344c9a35fd081799c67, type: 3}
+    m_Data: {fileID: 526615806, guid: 68b3d06ca6265344c9a35fd081799c67, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 2
     m_Data:
@@ -472,7 +472,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -529,8 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invalidInputs: 0400000000000000010000000600000007000000
-  validInputs: 02000000
+  invalidInputs: 0200000000000000010000000600000007000000
+  validInputs: 04000000
 --- !u!1 &8156460548488091828
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6855691210256059400}
   m_Layer: 8
-  m_Name: Colleague_coffee
+  m_Name: Colleague_tea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

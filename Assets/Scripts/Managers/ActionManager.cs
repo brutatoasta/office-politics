@@ -8,6 +8,7 @@ public class ActionManager : MonoBehaviour
     public UnityEvent interact;
     public UnityEvent evade;
     public UnityEvent playPause;
+    public UnityEvent showTaskList;
 
     public void OnInteractAction(InputAction.CallbackContext context)
     {
@@ -44,6 +45,10 @@ public class ActionManager : MonoBehaviour
     public void OnPlayPauseAction(InputAction.CallbackContext context)
     {
         if (context.performed) playPause.Invoke();
+    }
+    public void OnPullupTaskAction(InputAction.CallbackContext context)
+    {
+        if (context.performed) showTaskList.Invoke();
     }
     // Started - The button press has been initiated.
     // Performed - The button press has been successfully performed. Runs immediately after the started phase.

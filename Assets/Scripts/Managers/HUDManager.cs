@@ -20,13 +20,15 @@ public class HUDManager : MonoBehaviour
     public Slider slider;
     public PlayerConstants playerConstants;
     public GameObject performancePointText;
+    public GameObject taskList;
+    public bool isShown = false;
 
     void Start()
     {
         GameManager.instance.cycleInventory.AddListener(CycleInventory);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
-        // GameManager.instance.increasePerformancePoint.AddListener(PerformancePoint);
+        GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
 
 
         current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
@@ -96,4 +98,20 @@ public class HUDManager : MonoBehaviour
         performancePointText.GetComponent<TextMeshProUGUI>().text = "Performance Point: " + GameManager.instance.levelVariables.levelPP;
     }
 
+    public void TaskList()
+    {
+        taskList.SetActive(true);
+        if (isShown)
+        {
+            isShown = false;
+            taskList.SetActive(false);
+        }
+        else
+        {
+            isShown = true;
+            taskList.SetActive(true);
+
+        }
+
+    }
 }

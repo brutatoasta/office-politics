@@ -18,7 +18,7 @@ public class Receivable : BaseInteractable
     new void Awake()
     {
         base.Awake();
-    
+
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
     }
@@ -58,10 +58,14 @@ public class Receivable : BaseInteractable
             {
                 // decrease task count
                 GameManager.instance.levelVariables.Succeed(heldType);
+                GameManager.instance.showPerformancePoint.Invoke();
                 Debug.Log("increase score");
 
                 // TODO: if machine and not a person
-                animator.SetTrigger("doWiggle");
+                if (animator != null)
+                {
+                    animator.SetTrigger("doWiggle");
+                }
                 // putting papers/refreshment has no fail condition, but maybe put this in another method/switch statement based on validInputs
                 if (anyAreValidInput(new[] { TaskName.PrepMeeting, TaskName.PrepRefreshment }))
                 {
@@ -72,8 +76,13 @@ public class Receivable : BaseInteractable
             {
                 // decrease score
                 GameManager.instance.levelVariables.Fail(heldType);
+                GameManager.instance.showPerformancePoint.Invoke();
                 Debug.Log("decrease score");
-                animator.SetTrigger("doFlinch");
+                if (animator != null)
+                {
+                    animator.SetTrigger("doFlinch");
+                }
+
             }
 
         }

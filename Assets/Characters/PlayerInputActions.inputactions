@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "pullupTask",
+                    "type": "Button",
+                    "id": "ed7d17a3-3974-4e0a-895b-01155bdde3fd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -223,6 +232,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse;OfficePolitics",
                     "action": "PlayPause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "adbbe8d0-123e-4f9e-a590-624d6e01ee34",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;OfficePolitics;Gamepad;Touch;Joystick;XR",
+                    "action": "pullupTask",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

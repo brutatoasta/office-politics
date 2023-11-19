@@ -19,6 +19,8 @@ public class Printer : BaseInteractable
     private GameObject fetchDoc; // placed outside map
     private Sprite fetchDocSprite;
     private float cookTime;
+    public GameObject progressBar;
+    //public Animator progressBarAnimator;
     new void Awake()
     {
         base.Awake();
@@ -26,6 +28,7 @@ public class Printer : BaseInteractable
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
         fetchDocSprite = fetchDoc.GetComponent<SpriteRenderer>().sprite;
+        progressBar.SetActive(false);
     }
     protected override bool CanInteract()
     {
@@ -62,14 +65,20 @@ public class Printer : BaseInteractable
             playerHand.sprite = null;
 
             Debug.Log($"Dropped {held.name} into printer!");
-            animator.SetTrigger("doWiggle");
+            progressBar.SetActive(true);
+            animator.SetTrigger("photocopyProgress");
 
             // cook the doc
-            Cook();
+            StartCoroutine(Cook());
         }
     }
-    private void Cook()
+    private IEnumerator Cook()
     {
         // coroutine changes isDocumentReady from false to true after x seconds
+        Debug.Log($"Waiting for {held.name} to finish processing");
+        yield return new WaitForSeconds(2.0f);
+        isDocumentReady = true;
+        Debug.Log("document ready");
+
     }
 }

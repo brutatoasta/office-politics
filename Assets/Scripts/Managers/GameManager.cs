@@ -40,6 +40,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent increaseStress;
     // public UnityEvent<int, Transform> increasePerformancePoint;
     public UnityEvent onTaskSuccess;
+    public UnityEvent showPerformancePoint;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;

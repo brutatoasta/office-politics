@@ -80,6 +80,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""pullupTask"",
+                    ""type"": ""Button"",
+                    ""id"": ""ed7d17a3-3974-4e0a-895b-01155bdde3fd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -247,6 +256,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""PlayPause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""adbbe8d0-123e-4f9e-a590-624d6e01ee34"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;OfficePolitics;Gamepad;Touch;Joystick;XR"",
+                    ""action"": ""pullupTask"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -338,6 +358,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerMap_cycleConsumable = m_PlayerMap.FindAction("cycleConsumable", throwIfNotFound: true);
         m_PlayerMap_useConsumable = m_PlayerMap.FindAction("useConsumable", throwIfNotFound: true);
         m_PlayerMap_evade = m_PlayerMap.FindAction("evade", throwIfNotFound: true);
+        m_PlayerMap_pullupTask = m_PlayerMap.FindAction("pullupTask", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -405,6 +426,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_cycleConsumable;
     private readonly InputAction m_PlayerMap_useConsumable;
     private readonly InputAction m_PlayerMap_evade;
+    private readonly InputAction m_PlayerMap_pullupTask;
     public struct PlayerMapActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -415,6 +437,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @cycleConsumable => m_Wrapper.m_PlayerMap_cycleConsumable;
         public InputAction @useConsumable => m_Wrapper.m_PlayerMap_useConsumable;
         public InputAction @evade => m_Wrapper.m_PlayerMap_evade;
+        public InputAction @pullupTask => m_Wrapper.m_PlayerMap_pullupTask;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -442,6 +465,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @evade.started += instance.OnEvade;
             @evade.performed += instance.OnEvade;
             @evade.canceled += instance.OnEvade;
+            @pullupTask.started += instance.OnPullupTask;
+            @pullupTask.performed += instance.OnPullupTask;
+            @pullupTask.canceled += instance.OnPullupTask;
         }
 
         private void UnregisterCallbacks(IPlayerMapActions instance)
@@ -464,6 +490,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @evade.started -= instance.OnEvade;
             @evade.performed -= instance.OnEvade;
             @evade.canceled -= instance.OnEvade;
+            @pullupTask.started -= instance.OnPullupTask;
+            @pullupTask.performed -= instance.OnPullupTask;
+            @pullupTask.canceled -= instance.OnPullupTask;
         }
 
         public void RemoveCallbacks(IPlayerMapActions instance)
@@ -543,5 +572,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnCycleConsumable(InputAction.CallbackContext context);
         void OnUseConsumable(InputAction.CallbackContext context);
         void OnEvade(InputAction.CallbackContext context);
+        void OnPullupTask(InputAction.CallbackContext context);
     }
 }
