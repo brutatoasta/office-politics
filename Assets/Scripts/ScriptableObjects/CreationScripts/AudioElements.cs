@@ -45,7 +45,8 @@ public class AudioElements : ScriptableObject
 
     // Interaction SFX
     public AudioElement pourCoffee;
-    public AudioElement placeCoffeeCup;
+    public AudioElement serveCoffee;
+    public AudioElement spillCoffee;
     public AudioElement pickUpDocument;
     public AudioElement shredDocument;
     public AudioElement laminateDocument;
