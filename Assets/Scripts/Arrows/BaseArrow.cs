@@ -18,7 +18,6 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     }
     public void Shoot(Transform bossCoords, float speed)
     {
-        Debug.Log("shoot!");
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - bossCoords.position;

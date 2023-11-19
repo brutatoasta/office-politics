@@ -157,6 +157,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Parry()
     {
+        transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
         GameManager.instance.PlayAudioElement(audioElements.playerParry);
 
@@ -191,6 +192,11 @@ public class PlayerController : MonoBehaviour
             }
         }
         yield return null;
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
     }
 
 

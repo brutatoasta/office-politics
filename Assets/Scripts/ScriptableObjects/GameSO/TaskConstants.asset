@@ -12,16 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dfcf1862d3b8f46a19191b9d9100a3, type: 3}
   m_Name: TaskConstants
   m_EditorClassIdentifier: 
-  fetchCoffeeTask: 1
-  refillCoffeeTask: 1
-  fetchTeaTask: 1
-  fetchDocumentTask: 1
-  deliverDocumentTask: 1
-  chargeMicrophoneTask: 1
-  prepMeetingMaterialsTask: 1
-  refereshmentsTask: 1
-  collectDocumentsTask: 1
-  shredDocumentsTask: 1
-  laminateDocumentTask: 1
-  returnDocumentTask: 1
-  currentInput: 8
+  highlightMaterial: {fileID: 2100000, guid: c74e9446e4577cd4a871ca1bc6aa9417, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}

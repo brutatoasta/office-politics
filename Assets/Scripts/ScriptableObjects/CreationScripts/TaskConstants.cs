@@ -27,6 +27,9 @@ public class TaskConstants : ScriptableObject
             }
        };
 
+    public Material highlightMaterial;
+    public Material defaultMaterial;
+
 }
 [Serializable]
 public struct TaskItem
