@@ -3083,8 +3083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderMaterial: {fileID: 2100000, guid: c74e9446e4577cd4a871ca1bc6aa9417, type: 2}
-  spriteMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   invalidInputs: 02000000
   validInputs: 01000000
 --- !u!95 &270021894
@@ -29451,8 +29449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shaderMaterial: {fileID: 2100000, guid: c74e9446e4577cd4a871ca1bc6aa9417, type: 2}
-  spriteMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   invalidInputs: 01000000
   validInputs: 02000000
 --- !u!61 &1405894337
@@ -59124,74 +59120,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: runVariables
-      value: 
-      objectReference: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: levelVariables
-      value: 
-      objectReference: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: playerConstants
-      value: 
-      objectReference: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778183383}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 778183383}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnStopTimer
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartTimer
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStop.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-      propertyPath: TimerStart.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2433276769315285771, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
       propertyPath: m_Name
       value: GameManager

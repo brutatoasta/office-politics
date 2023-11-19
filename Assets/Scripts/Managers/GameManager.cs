@@ -44,6 +44,7 @@ public class GameManager : Singleton<GameManager>
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
     public PlayerConstants playerConstants;
+    public TaskConstants taskConstants;
     public RunVariables runVariables;
     public LevelVariables levelVariables;
     public bool isPaused = false;
