@@ -60,3 +60,6 @@ MonoBehaviour:
   laminateDocument:
     audioType: 8
     audioClip: {fileID: 8300000, guid: f926ea8a2751e004cbefc9612e13fa3d, type: 3}
+  jamMachine:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: cf245e50a5dd74a4a958a95009bb07b9, type: 3}

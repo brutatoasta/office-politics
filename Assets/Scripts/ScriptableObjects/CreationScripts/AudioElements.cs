@@ -49,4 +49,5 @@ public class AudioElements : ScriptableObject
     public AudioElement pickUpDocument;
     public AudioElement shredDocument;
     public AudioElement laminateDocument;
+    public AudioElement jamMachine;
 }
