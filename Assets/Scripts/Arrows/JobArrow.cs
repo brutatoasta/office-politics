@@ -1,5 +1,7 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class JobArrow : BaseArrow
 {
@@ -66,7 +68,7 @@ public class JobArrow : BaseArrow
 
     }
 
-
+    private bool arrowHasLeftBoss = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != "Enemy")
@@ -74,6 +76,19 @@ public class JobArrow : BaseArrow
             Debug.Log("Job Arrow has hit " + collision.gameObject.name);
             Destroy(gameObject);
 
+        } else
+        {
+            if (arrowHasLeftBoss)
+            {
+                Enemy EnemyComponent = collision.GetComponent<Enemy>();
+                EnemyComponent.stunByArrow();
+                Destroy(gameObject);
+            }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        arrowHasLeftBoss = true;
     }
 }

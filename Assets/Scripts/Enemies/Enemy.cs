@@ -101,6 +101,23 @@ public class Enemy : MonoBehaviour
         UpdatePosition();
     }
 
+    public UnityEvent pauseEnemyWeapon;
+    IEnumerator Stun()
+    {
+        float existingSpeed = gameObject.GetComponent<AIPath>().maxSpeed;
+        gameObject.GetComponent<AIPath>().maxSpeed = 0;
+        pauseEnemyWeapon.Invoke();
+        yield return new WaitForSeconds(2f);
+        gameObject.GetComponent<AIPath>().maxSpeed = existingSpeed;
+        yield return new WaitForSeconds(2.1f); // because one enemy weapon cycle is 4.1s
+        pauseEnemyWeapon.Invoke();
+    }
+
+    public void stunByArrow()
+    {
+        StartCoroutine(Stun());
+    }
+
     void Update()
     {
         //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);

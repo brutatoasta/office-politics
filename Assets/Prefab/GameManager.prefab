@@ -56,11 +56,22 @@ MonoBehaviour:
   gamePlay:
     m_PersistentCalls:
       m_Calls: []
-  audioElementGameEvent: {fileID: 11400000, guid: a43a27aea5b64f44c9b3e9358d4ba3db, type: 2}
+  levelStart:
+    m_PersistentCalls:
+      m_Calls: []
+  interact:
+    m_PersistentCalls:
+      m_Calls: []
   gameOver:
     m_PersistentCalls:
       m_Calls: []
   doorOpen:
+    m_PersistentCalls:
+      m_Calls: []
+  cycleInventory:
+    m_PersistentCalls:
+      m_Calls: []
+  useConsumable:
     m_PersistentCalls:
       m_Calls: []
   TimerStart:
@@ -69,27 +80,21 @@ MonoBehaviour:
   TimerStop:
     m_PersistentCalls:
       m_Calls: []
-  overtime: 0
   TimerUpdate:
     m_PersistentCalls:
       m_Calls: []
-  isPaused: 0
-  inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
-  kitKatSprite: {fileID: 693650443, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
-  coffeeSprite: {fileID: 971501781, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
-  cycleInventory:
-    m_PersistentCalls:
-      m_Calls: []
-  useConsumable:
-    m_PersistentCalls:
-      m_Calls: []
-  held: {fileID: 0}
   increaseStress:
     m_PersistentCalls:
       m_Calls: []
-  increasePerformancePoint:
+  onTaskSuccess:
     m_PersistentCalls:
       m_Calls: []
-  switchTasks:
-    m_PersistentCalls:
-      m_Calls: []
+  audioElementGameEvent: {fileID: 11400000, guid: a43a27aea5b64f44c9b3e9358d4ba3db, type: 2}
+  playerConstants: {fileID: 0}
+  runVariables: {fileID: 0}
+  levelVariables: {fileID: 0}
+  isPaused: 0
+  overtime: 0
+  kitKatSprite: {fileID: 693650443, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  coffeeSprite: {fileID: 971501781, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  held: {fileID: 0}

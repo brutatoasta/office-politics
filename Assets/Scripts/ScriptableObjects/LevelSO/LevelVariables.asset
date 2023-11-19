@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0be639ebd39714ab402fbbe7dfcaf6, type: 3}
   m_Name: LevelVariables
   m_EditorClassIdentifier: 
-  evadeType: 0
+  evadeType: 1
   todo:
   - quota: 1
     performancePoints: 1
@@ -27,8 +27,8 @@ MonoBehaviour:
   - quota: 1
     performancePoints: 1
     stressDamage: 5
-    taskName: 2
+    taskName: 9
     taskString: Laminate documents
   levelPP: 0
-  stressPoints: 70
+  stressPoints: 20
   maxStressPoints: 199

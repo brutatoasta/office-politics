@@ -1423,8 +1423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: {fileID: 8506034940791849336}
-  currentGroup: {fileID: 2916235677481861178}
   next: {fileID: 2551586990775343021}
+  currentGroup: {fileID: 2916235677481861178}
   nextGroup: {fileID: 5770405573126536997}
   fade: {fileID: 8281516524247524587}
   countText: {fileID: 9154882400586178001}

@@ -515,7 +515,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   arrowConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
-  inventory: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   audioElements: {fileID: 11400000, guid: 1494f76509bb89143befbd26d67ba5f4, type: 2}
   trail: {fileID: 601554962093554315}
   touching: 0

@@ -28,6 +28,10 @@ public class EnemyWeapon : MonoBehaviour
             Spawn.Invoke(transform);
         }
     }
+    public void PauseArrowShooting()
+    {
+        gameObject.GetComponent<EnemyWeapon>().enabled = !gameObject.GetComponent<EnemyWeapon>().enabled;
+    }
     public void Shoot()
     {
         Instantiate(arrow, arrowOrigin.position, Quaternion.identity);

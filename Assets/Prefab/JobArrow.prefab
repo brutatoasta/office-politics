@@ -108,6 +108,21 @@ MonoBehaviour:
     audioType: 0
     audioClip: {fileID: 0}
   rb: {fileID: 7616305652816618990}
+  stunBoss:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8471452804857979317, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: stunByArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &7616305652816618990
 Rigidbody2D:
   serializedVersion: 4
