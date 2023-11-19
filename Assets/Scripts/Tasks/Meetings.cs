@@ -6,15 +6,15 @@ public class Meetings : BaseInteractable
 {
     // Start is called before the first frame update
     public Sprite[] sprites;  // Array of sprites to switch between
-    private SpriteRenderer spriteRenderer;
+    // private SpriteRenderer spriteRenderer;
     TaskName heldType;
     GameObject held;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    // void Start()
+    // {
+    //     spriteRenderer = GetComponent<SpriteRenderer>();
+    // }
     protected override bool CanInteract()
     {
         held = GameManager.instance.held;

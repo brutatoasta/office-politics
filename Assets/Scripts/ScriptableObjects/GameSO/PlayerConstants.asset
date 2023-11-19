@@ -17,7 +17,10 @@ MonoBehaviour:
   dashPower: 30
   dashTime: 0.2
   dashCooldown: 0.5
-  parryRange: 4
+  parryRange: 2.5
   parryStartupTime: 0
-  parryCooldown: 0.2
-  overtimeTick: 1
+  parryCooldown: 0.5
+  stressPoint: 0
+  maxStressPoint: 0
+  sanityPoint: 0
+  performancePoints: 0

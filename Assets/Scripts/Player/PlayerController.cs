@@ -157,6 +157,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Parry()
     {
+        canParry = false;
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
         GameManager.instance.PlayAudioElement(audioElements.playerParry);
@@ -191,7 +192,8 @@ public class PlayerController : MonoBehaviour
                 arrow.attachedRigidbody.AddForce(reflectionNormal * 10, ForceMode2D.Impulse);
             }
         }
-        yield return null;
+        yield return new WaitForSecondsRealtime(playerConstants.parryCooldown);
+        canParry = true;
     }
 
     void OnDrawGizmosSelected()

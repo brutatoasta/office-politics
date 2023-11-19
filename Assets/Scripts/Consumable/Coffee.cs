@@ -12,6 +12,14 @@ public class Coffee : ABCConsumable
     }
     public override void ConsumeEffect()
     {
-        Debug.Log("Drank Coffee");
+        GameManager.instance.StartCoroutine(TempIncreaseMovementSpeed());
+    }
+    IEnumerator TempIncreaseMovementSpeed()
+    {
+        GameManager.instance.playerConstants.moveSpeed += 10;
+        GameManager.instance.playerConstants.maxMoveSpeed += 10;
+        yield return new WaitForSecondsRealtime(20);
+        GameManager.instance.playerConstants.moveSpeed -= 10;
+        GameManager.instance.playerConstants.maxMoveSpeed -= 10;
     }
 }

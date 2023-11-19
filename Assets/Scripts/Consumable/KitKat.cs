@@ -9,11 +9,14 @@ public class KitKat : ABCConsumable
     public KitKat(int initCount)
     {
         count = initCount;
-        LoadSprite("Paper-document-4 (2)"); // TODO: replace sprite
+        LoadSprite("Shredder_only"); // TODO: replace sprite
     }
     public override void ConsumeEffect()
     {
-        Debug.Log("Ate KitKat");
+        GameManager.instance.levelVariables.stressPoints = (GameManager.instance.levelVariables.stressPoints > 10)?
+                                                                GameManager.instance.levelVariables.stressPoints - 10:
+                                                                0;
+        GameManager.instance.IncreaseStress();
     }
 
 }
