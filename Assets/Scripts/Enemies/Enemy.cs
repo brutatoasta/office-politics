@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,10 +44,14 @@ public class Enemy : MonoBehaviour
 
     public float health = 1;
 
+    private float positionX;
+    private float positionY;
     private float speed;
     private void Start() {
         animator = GetComponent<Animator>();
         speed = constants.speed;
+        positionX = transform.position.x;
+        positionY = transform.position.y;
     }
 
     public void Defeated(){
@@ -81,6 +86,20 @@ public class Enemy : MonoBehaviour
     {
         enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
     }
+    private void UpdatePosition()
+    {
+        float velocityX = (transform.position.x - positionX) / 0.02f;
+        float velocityY = (transform.position.y - positionY) / 0.02f;
+        animator.SetFloat("bossVelocityX", velocityX);
+        animator.SetFloat("bossVelocityY", velocityY);
+        animator.SetBool("bossVelXGreater", Math.Abs(velocityX) - Math.Abs(velocityY) > 0.3);
+        positionY = transform.position.y;
+        positionX = transform.position.x;
+    }
+    private void FixedUpdate()
+    {
+        UpdatePosition();
+    }
 
     void Update()
     {
@@ -99,6 +118,7 @@ public class Enemy : MonoBehaviour
                     moveRight *= -1;
                     ComputeVelocity();
                     MoveBoss();
+                    UpdatePosition();
                 }
             }
             else //returning to original spot before patrolling again
