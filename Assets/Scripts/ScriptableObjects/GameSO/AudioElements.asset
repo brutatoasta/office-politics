@@ -47,7 +47,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
   pourCoffee:
     audioType: 8
-    audioClip: {fileID: 8300000, guid: fd26e8620e8ad41409c3972fcc63f00e, type: 3}
+    audioClip: {fileID: 8300000, guid: ed4ee1c75ef5e404ea86b8d2961f4bd7, type: 3}
   placeCoffeeCup:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 60259c401c4cf414db656bd9253f9e88, type: 3}
