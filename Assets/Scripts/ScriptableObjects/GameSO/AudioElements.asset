@@ -54,3 +54,9 @@ MonoBehaviour:
   pickUpDocument:
     audioType: 8
     audioClip: {fileID: 8300000, guid: cb09fd84c8a675341ae715e1d9bf1eb0, type: 3}
+  shredDocument:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 559b79eddc651ad4e93afcabf3d12363, type: 3}
+  laminateDocument:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: cd4bf065bd3441044af0d10a24fb0a6b, type: 3}
