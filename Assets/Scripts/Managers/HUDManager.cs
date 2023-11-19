@@ -21,6 +21,7 @@ public class HUDManager : MonoBehaviour
     public PlayerConstants playerConstants;
     public GameObject performancePointText;
     public GameObject taskList;
+    public GameObject gameOverScreen;
     public bool isShown = false;
 
     void Start()
@@ -29,6 +30,7 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
+        GameManager.instance.gameOver.AddListener(OnGameOver);
 
 
         current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
@@ -114,4 +116,10 @@ public class HUDManager : MonoBehaviour
         }
 
     }
+
+    public void OnGameOver()
+    {
+        gameOverScreen.SetActive(true);
+    }
+
 }

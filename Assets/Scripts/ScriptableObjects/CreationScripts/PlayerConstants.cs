@@ -17,6 +17,7 @@ public class PlayerConstants : ScriptableObject
     public int maxStressPoint;
     public int sanityPoint;
     public int performancePoints;
+    public int overtimeTick = 1;
 
 
 

@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
 
     [SerializeField] private float timeToDisplay = 60.0f;
 
-    private bool _isRunning;
+    private bool _isRunning = false;
 
     #endregion
 
@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
         // OnTimerStart(); // force timer to start
 
         // wait 3 seconds and invoke timerstart gameplay event()
-        GameManager.instance.TimerStart.Invoke();
+        // GameManager.instance.TimerStart.Invoke();
         
         // if there is a countdown for the player to start, call on timer stop here then start timer via gameplay event
     }

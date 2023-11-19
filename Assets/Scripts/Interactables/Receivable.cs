@@ -59,6 +59,7 @@ public class Receivable : BaseInteractable
                 // decrease task count
                 GameManager.instance.levelVariables.Succeed(heldType);
                 GameManager.instance.showPerformancePoint.Invoke();
+                GameManager.instance.DecreaseQuota();
                 Debug.Log("increase score");
 
                 // TODO: if machine and not a person

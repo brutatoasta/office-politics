@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     // events
-    public UnityEvent gameStart; // start the level (not pantry or hostel)
+    public UnityEvent runStart; // start the level (not pantry or hostel)
     public UnityEvent gameRestart; // go back to main menu
     public UnityEvent gamePause; // 
     public UnityEvent gamePlay; // 
@@ -63,10 +63,18 @@ public class GameManager : Singleton<GameManager>
         runVariables.Init();
     }
 
-    public void GameStart()
+    public void RunStart()
     {
         runVariables.Init();
-        gameStart.Invoke();
+        runStart.Invoke();
+    }
+
+    public void LevelStart()
+    {
+        Debug.Log("InitCalled");
+        levelStart.Invoke();
+        UpdateTimer(120);
+        levelVariables.Init(0);
     }
 
     // Raise event to cycle runVariables slot
@@ -91,7 +99,7 @@ public class GameManager : Singleton<GameManager>
 
     public void IncreaseStress()
     {
-        if (levelVariables.stressPoints > levelVariables.maxStressPoints) GameOver();
+        if (levelVariables.stressPoints >= levelVariables.maxStressPoints) GameOver();
         increaseStress.Invoke();
     }
 
@@ -150,14 +158,19 @@ public class GameManager : Singleton<GameManager>
 
     public void DecreaseQuota()
     {
-        if (overtime)
-        {
-            bool quotaComplete = true;
-
-            Debug.LogError(quotaComplete);
-            if (quotaComplete) doorOpen.Invoke();
-        }
+        if (overtime && levelVariables.isQuotaComplete()) DoorOpen();
     }
+    
+    public void DoorOpen()
+    {
+        doorOpen.Invoke();
+    }
+
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
+    }
+
     void OnSceneLoaded()
     {
         // check which scene

@@ -7,7 +7,8 @@ public class SceneExit : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        GameManager.instance.LevelStart();
+        SceneManager.LoadSceneAsync("PowerUpScene");
     }
     public void QuitGame()
     {
@@ -30,6 +31,7 @@ public class SceneExit : MonoBehaviour
                 case "Map":
                     // might need a transition scene for night to day 
                     nextScene = "PowerUpScene";
+                    GameManager.instance.LevelStart();
                     // change some scriptable object values
                     break;
                 default:

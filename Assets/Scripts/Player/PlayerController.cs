@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.cycleInventory.AddListener(CycleConsumable);
-        // GameManager.instance.TimerStop.AddListener(OnOvertime);
+        GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
     private void FixedUpdate()
@@ -224,16 +224,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // public void OnOvertime()
-    // {
-    //     InvokeRepeating("TickOvertime", 0, 1.0f);
-    // }
+    public void OnOvertime()
+    {
+        InvokeRepeating("TickOvertime", 0, 1.0f);
+    }
 
-    // public void TickOvertime()
-    // {
-    //     // GameManager.instance.runVariables.stressPoint += playerConstants.overtimeTick;
-    //     GameManager.instance.IncreaseStress();
-    // }
+    public void TickOvertime()
+    {
+        GameManager.instance.levelVariables.stressPoints += playerConstants.overtimeTick;
+        GameManager.instance.IncreaseStress();
+    }
 
 
     // Interact with objects

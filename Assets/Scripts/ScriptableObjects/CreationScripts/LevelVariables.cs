@@ -51,13 +51,14 @@ public class LevelVariables : ScriptableObject
         // levelPP -= todo[(int)name].performancePoints;
         // increase stress
         stressPoints += todo[(int)name].stressDamage;
+        GameManager.instance.IncreaseStress();
     }
 
     public void Init(int level)
     {
         // let evadeType be determined by player
         stressPoints = 0;
-        maxStressPoints = 199;
+        maxStressPoints = 50;
         levelPP = 0;
         todo = TaskConstants.todos[level];
         Debug.Log(todo);

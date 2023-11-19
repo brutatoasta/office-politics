@@ -10,7 +10,7 @@ public class Adderall : ABCConsumable
     public Adderall(int initCount)
     {
         count = initCount;
-        LoadSprite("Paper-document-4 (2)"); // TODO: replace sprite
+        LoadSprite("Inventory"); // TODO: replace sprite
         oldCooldownParry = GameManager.instance.playerConstants.parryCooldown;
         oldCooldownDash = GameManager.instance.playerConstants.dashCooldown;
     }
