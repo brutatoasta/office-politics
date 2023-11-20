@@ -221,6 +221,7 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
             GameManager.instance.IncreaseStress();
+            GameManager.instance.PlayAudioElement(audioElements.playerGetHitIntensity1);
         }
     }
 

@@ -48,6 +48,7 @@ public class GameManager : Singleton<GameManager>
     public TaskConstants taskConstants;
     public RunVariables runVariables;
     public LevelVariables levelVariables;
+    public AudioElements audioElements;
     public bool isPaused = false;
     public bool overtime = false;
     private int currentInventorySlot = 0;

@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0dcc81b80676341a3901f19da97fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStart:
+  runStart:
     m_PersistentCalls:
       m_Calls: []
   gameRestart:
@@ -89,11 +89,15 @@ MonoBehaviour:
   onTaskSuccess:
     m_PersistentCalls:
       m_Calls: []
+  showPerformancePoint:
+    m_PersistentCalls:
+      m_Calls: []
   audioElementGameEvent: {fileID: 11400000, guid: a43a27aea5b64f44c9b3e9358d4ba3db, type: 2}
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   taskConstants: {fileID: 11400000, guid: fefb62a1a34a584479740ff168f86a0f, type: 2}
   runVariables: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
+  audioElements: {fileID: 11400000, guid: 1494f76509bb89143befbd26d67ba5f4, type: 2}
   isPaused: 0
   overtime: 0
   kitKatSprite: {fileID: 693650443, guid: e55630479cfbb1945b8990dfb786d507, type: 3}

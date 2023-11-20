@@ -12,13 +12,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0be639ebd39714ab402fbbe7dfcaf6, type: 3}
   m_Name: LevelVariables
   m_EditorClassIdentifier: 
-  evadeType: 0
+  evadeType: 1
   todo:
   - quota: 1
     performancePoints: 1
     stressDamage: 5
     taskName: 0
     taskString: Shred documents
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 1
+    taskString: Laminate documents
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 2
+    taskString: Fetch coffee for Mary
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 3
+    taskString: Refill the empty coffee pot
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 4
+    taskString: Fetch tea for Ann
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 5
+    taskString: Refill the empty tea pot
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 6
+    taskString: Fetch documents from Jack for photocopy
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 7
+    taskString: Deliver photocopied documents to Tom
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 8
+    taskString: Charge mic in the meeting room
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 10
+    taskString: Prepare refreshment in the meeting room
+  - quota: 1
+    performancePoints: 1
+    stressDamage: 5
+    taskName: 9
+    taskString: Prepare Meeting Materials in the meeting room
   levelPP: 0
-  stressPoints: 55
+  stressPoints: 0
   maxStressPoints: 50

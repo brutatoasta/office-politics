@@ -25584,11 +25584,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3331187446551087720, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3331187446551087720, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 4257275603884606435, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7837635378903992681, guid: 286588aa772d17d448dd230311e31c1d, type: 3}

@@ -32,6 +32,7 @@ public class SceneExit : MonoBehaviour
                     // might need a transition scene for night to day 
                     nextScene = "Cutscene";
                     GameManager.instance.LevelStart();
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.levelComplete);
                     // change some scriptable object values
                     break;
                 case "Cutscene":
