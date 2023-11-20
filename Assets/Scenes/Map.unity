@@ -25603,6 +25603,30 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: db3dc2d3e25119348bae272f596d3c31, type: 3}
+    - target: {fileID: 5199828000067076415, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 611662fd387b218479767fe2899190be, type: 2}
+    - target: {fileID: 5199828000067076415, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6925623329895032942, guid: 611662fd387b218479767fe2899190be, type: 2}
+    - target: {fileID: 5199828000067076415, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689580402929312932, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 611662fd387b218479767fe2899190be, type: 2}
+    - target: {fileID: 5689580402929312932, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6925623329895032942, guid: 611662fd387b218479767fe2899190be, type: 2}
+    - target: {fileID: 5689580402929312932, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7837635378903992681, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -25611,6 +25635,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 494830508}
+    - target: {fileID: 8801134739181270541, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8879660619112833801, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_fontAsset
       value: 
