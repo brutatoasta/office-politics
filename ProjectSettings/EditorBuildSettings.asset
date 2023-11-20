@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PowerUpScene.unity
     guid: 8a1fbf262582b424796f5954819a2802
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GitHubScenes/PrintingRoom.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GitHubScenes/HandRoom.unity
     guid: ab076da437ebd1447be46345d3587253
   m_configObjects:
