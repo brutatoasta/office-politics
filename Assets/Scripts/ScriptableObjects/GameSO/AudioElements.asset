@@ -42,9 +42,15 @@ MonoBehaviour:
   useConsumable:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 78dbaa4c5cae3ac46b81e33b949d0488, type: 3}
-  playerGetHit:
+  playerGetHitIntensity1:
     audioType: 5
-    audioClip: {fileID: 8300000, guid: b1aa01f115c9545408a994918fee2b11, type: 3}
+    audioClip: {fileID: 8300000, guid: ec9ece6ed6fa44543bbf9bde85a5e665, type: 3}
+  playerGetHitIntensity2:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: 7c47e59e6dcadeb4d8101d4149bc98c3, type: 3}
+  playerGetHitIntensity3:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: 3ca2b71b3153bc84cb38779882e867a8, type: 3}
   throwStressArrow:
     audioType: 6
     audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
