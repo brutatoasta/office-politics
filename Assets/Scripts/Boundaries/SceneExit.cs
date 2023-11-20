@@ -30,6 +30,12 @@ public class SceneExit : MonoBehaviour
                     break;
                 case "Map":
                     // might need a transition scene for night to day 
+                    nextScene = "Cutscene";
+                    GameManager.instance.LevelStart();
+                    // change some scriptable object values
+                    break;
+                case "Cutscene":
+                    // might need a transition scene for night to day 
                     nextScene = "PowerUpScene";
                     GameManager.instance.LevelStart();
                     // change some scriptable object values
