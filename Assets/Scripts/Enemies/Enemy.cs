@@ -27,6 +27,9 @@ public class Enemy : MonoBehaviour
         enemyBody = gameObject.GetComponent<Rigidbody2D>();
         originalX = transform.position.x;
         ComputeVelocity();
+
+        gameObject.GetComponent<AIPath>().slowdownDistance = 2;
+        gameObject.GetComponent<AIPath>().endReachedDistance = 3;
     }
 
     public float Health {
