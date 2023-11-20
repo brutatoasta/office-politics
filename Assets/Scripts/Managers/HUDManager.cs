@@ -23,6 +23,8 @@ public class HUDManager : MonoBehaviour
     public GameObject taskList;
     public GameObject gameOverScreen;
     public bool isShown = false;
+    // public bool ExitState = false;
+    // public Animator taskAnimator;
 
     void Start()
     {
@@ -112,9 +114,7 @@ public class HUDManager : MonoBehaviour
         {
             isShown = true;
             taskList.SetActive(true);
-
         }
-
     }
 
     public void OnGameOver()
