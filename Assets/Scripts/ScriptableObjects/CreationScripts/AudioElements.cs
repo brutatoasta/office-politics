@@ -28,6 +28,7 @@ public class AudioElements : ScriptableObject
     public AudioElement gameplayBgmIntensity1;
     public AudioElement gameplayBgmIntensity2;
     public AudioElement gameplayBgmIntensity3;
+    public AudioElement levelComplete;
 
     // UI SFX
     public AudioElement cycleConsumable;

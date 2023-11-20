@@ -27,6 +27,9 @@ MonoBehaviour:
   gameplayBgmIntensity3:
     audioType: 0
     audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
+  levelComplete:
+    audioType: 0
+    audioClip: {fileID: 8300000, guid: 10f9b47c67e9c944687da362e560f8c4, type: 3}
   cycleConsumable:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 67e549677c7e09c479f12a90d1f19191, type: 3}
