@@ -10,6 +10,7 @@ public class Receivable : BaseInteractable
     // shredder can accept both valid and invalid inputs
     public TaskName[] invalidInputs;
     public TaskName[] validInputs;
+    public GameObject taskIcon;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
     TaskName heldType;
@@ -21,6 +22,11 @@ public class Receivable : BaseInteractable
 
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
+        if (taskIcon != null)
+        {
+            taskIcon.SetActive(true);
+        }
+
     }
     protected override bool CanInteract()
     {
@@ -61,6 +67,10 @@ public class Receivable : BaseInteractable
                 GameManager.instance.showPerformancePoint.Invoke();
                 GameManager.instance.DecreaseQuota();
                 Debug.Log("increase score");
+                if (taskIcon != null)
+                {
+                    taskIcon.SetActive(false);
+                }
 
                 // TODO: if machine and not a person
                 if (animator != null)
