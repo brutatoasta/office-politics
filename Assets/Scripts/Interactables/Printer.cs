@@ -11,15 +11,15 @@ public class Printer : BaseInteractable
     public TaskName[] validInputs;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
-    TaskName heldType;
-    GameObject held;
+    private TaskName heldType;
+    private GameObject held;
 
-    // FetchDoc
+    // DeliverDoc
     private bool isDocumentReady = false;
     [SerializeField]
-    private GameObject fetchDoc; // placed outside map
-    private Sprite fetchDocSprite;
-    private float cookTime =2;
+    private GameObject deliverDoc; // placed outside map
+    private Sprite deliverDocSprite;
+    private float cookTime = 2;
     public GameObject progressBar;
     //public Animator progressBarAnimator;
     new void Awake()
@@ -28,7 +28,7 @@ public class Printer : BaseInteractable
 
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
-        fetchDocSprite = fetchDoc.GetComponent<SpriteRenderer>().sprite;
+        deliverDocSprite = deliverDoc.GetComponent<SpriteRenderer>().sprite;
         progressBar.SetActive(false);
     }
     protected override bool CanInteract()
@@ -54,8 +54,8 @@ public class Printer : BaseInteractable
         if (GameManager.instance.held == null)
         {
 
-            GameManager.instance.held = fetchDoc;
-            playerHand.sprite = fetchDocSprite;
+            GameManager.instance.held = deliverDoc;
+            playerHand.sprite = deliverDocSprite;
             Debug.Log($"Fetched {held.name} from printer!");
             isDocumentReady = false;
         }
