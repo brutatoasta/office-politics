@@ -1734,6 +1734,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6725211463262450640}
     - target: {fileID: 25880134405400249, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
+      propertyPath: deliverDoc
+      value: 
+      objectReference: {fileID: 4337958337037165083}
+    - target: {fileID: 25880134405400249, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
       propertyPath: progressBarAnimator
       value: 
       objectReference: {fileID: 754171222}
@@ -1962,6 +1966,10 @@ PrefabInstance:
       propertyPath: fetchDoc
       value: 
       objectReference: {fileID: 6725211463262450640}
+    - target: {fileID: 25880134405400249, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
+      propertyPath: deliverDoc
+      value: 
+      objectReference: {fileID: 4337958337037165083}
     - target: {fileID: 3779702946427972447, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.48
@@ -2167,7 +2175,7 @@ Transform:
   m_GameObject: {fileID: 119828339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.06, y: -18.38, z: -10}
+  m_LocalPosition: {x: -19.2, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4680,7 +4688,7 @@ Transform:
   m_GameObject: {fileID: 494830505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.06, y: -18.38, z: -10}
+  m_LocalPosition: {x: -19.2, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33538,6 +33546,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8545067100377018165, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: fetchDoc
+      value: 
+      objectReference: {fileID: 6725211463262450640}
     - target: {fileID: 8867571953013041711, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.05
@@ -51038,6 +51050,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colleague_DeliverDoc (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8545067100377018165, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: fetchDoc
+      value: 
+      objectReference: {fileID: 6725211463262450640}
     - target: {fileID: 8867571953013041711, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07
@@ -56432,11 +56448,11 @@ PrefabInstance:
       objectReference: {fileID: 750319938}
     - target: {fileID: 8975767868933776503, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.06
+      value: -19.2
       objectReference: {fileID: 0}
     - target: {fileID: 8975767868933776503, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.38
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8975767868933776503, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_LocalPosition.z
