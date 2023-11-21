@@ -16,9 +16,10 @@ public class Printer : BaseInteractable
 
     // FetchDoc
     private bool isDocumentReady = false;
+    [SerializeField]
     private GameObject fetchDoc; // placed outside map
     private Sprite fetchDocSprite;
-    private float cookTime;
+    private float cookTime =2;
     public GameObject progressBar;
     //public Animator progressBarAnimator;
     new void Awake()
@@ -76,7 +77,7 @@ public class Printer : BaseInteractable
     {
         // coroutine changes isDocumentReady from false to true after x seconds
         Debug.Log($"Waiting for {held.name} to finish processing");
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(cookTime);
         isDocumentReady = true;
         Debug.Log("document ready");
 

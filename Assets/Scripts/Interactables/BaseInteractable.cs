@@ -1,16 +1,13 @@
 using System;
-using System.Threading.Tasks;
 using UnityEngine;
 
 
 // Takes and handles input and movement for a player character
 public abstract class BaseInteractable : MonoBehaviour
 {
-    // public TaskName iType = TaskName.Default; // my own type 
-
     protected Animator animator;
-    [System.NonSerialized] public SpriteRenderer playerHand;
-    [System.NonSerialized] public Renderer spriteRenderer;
+    [NonSerialized] public SpriteRenderer playerHand;
+    [NonSerialized] public Renderer spriteRenderer;
 
     protected void Awake()
     {
@@ -25,13 +22,10 @@ public abstract class BaseInteractable : MonoBehaviour
             // if player can interact, light up
             if (CanInteract())
             {
-                // TODO: turn on shader
+                // turn on shader
                 spriteRenderer.material = GameManager.instance.taskConstants.highlightMaterial;
-                
-
                 // subscribe to gamemanager's interact event
                 GameManager.instance.interact.AddListener(OnInteract);
-
             }
         }
     }
@@ -40,7 +34,7 @@ public abstract class BaseInteractable : MonoBehaviour
     {
         if (col.gameObject.layer == 7)
         {
-            // TODO: turn off shader
+            // turn off shader
             spriteRenderer.material = GameManager.instance.taskConstants.defaultMaterial;
 
             // unsubscribe to gamemanager's interact event
