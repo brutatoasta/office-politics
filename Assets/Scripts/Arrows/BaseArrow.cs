@@ -14,10 +14,10 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        rb = GetComponent<Rigidbody2D>();
     }
     public void Shoot(Transform bossCoords, float speed)
     {
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - bossCoords.position;

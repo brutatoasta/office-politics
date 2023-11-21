@@ -27,7 +27,7 @@ public class StressArrow : BaseArrow
         yield return new WaitForSeconds(0.1f);
         Rigidbody2D arrowRigidBody = gameObject.AddComponent<Rigidbody2D>();
         arrowRigidBody.gravityScale = 0;
-        base.Shoot(bossCoords, speed);
+        Shoot(bossCoords, speed);
     }
 
     public void SpawnArrow(Transform bossCoords)
