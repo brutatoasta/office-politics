@@ -21,15 +21,12 @@ public class Enemy : MonoBehaviour
     private int moveRight = -1;
     public Transform originalTransform;
     private void Awake()
-    {
-        gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
-        gameObject.GetComponent<AIPath>().enabled = isChasing;
+    {        
+        gameObject.GetComponent<AIPath>().slowdownDistance = 2;
+        gameObject.GetComponent<AIPath>().endReachedDistance = 3;
         enemyBody = gameObject.GetComponent<Rigidbody2D>();
         originalX = transform.position.x;
         ComputeVelocity();
-
-        gameObject.GetComponent<AIPath>().slowdownDistance = 2;
-        gameObject.GetComponent<AIPath>().endReachedDistance = 3;
     }
 
     public float Health {
@@ -55,6 +52,9 @@ public class Enemy : MonoBehaviour
         speed = constants.speed;
         positionX = transform.position.x;
         positionY = transform.position.y;
+
+        gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
+        gameObject.GetComponent<AIPath>().enabled = isChasing;
     }
 
     public void Defeated(){

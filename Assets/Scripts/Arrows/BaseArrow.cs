@@ -21,7 +21,8 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - bossCoords.position;
-        rb.velocity = new Vector2(direction.x * speed, direction.y * speed);
+        Vector2 direction_norm = (Vector2) direction.normalized;
+        rb.velocity = direction_norm * speed;
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 45);
@@ -30,4 +31,29 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     }
 
     public abstract void OnParry();
+
+    private bool arrowHasLeftBoss = false;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag != "Enemy")
+        {
+            Debug.Log(gameObject.name + " has hit " + collision.gameObject.name);
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            if (arrowHasLeftBoss)
+            {
+                Enemy EnemyComponent = collision.GetComponent<Enemy>();
+                EnemyComponent.stunByArrow(); //should probably be a Unity Event since referencing another script hmmm TODO tmr i need to sleep now!!
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        arrowHasLeftBoss = true;
+    }
 }

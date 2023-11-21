@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,11 +13,13 @@ public class StressArrow : BaseArrow
     private float speed;
 
     public override void OnParry() {}
-
+    private TrailRenderer trailRenderer;
     private void Awake()
     {
         speed = weaponGameConstants.stressArrowSpeed;
         throwArrowAudioElement = audioElements.throwStressArrow;
+        trailRenderer = gameObject.GetComponent<TrailRenderer>();
+        trailRenderer.enabled = false;
     }
     IEnumerator SpawnArrowRoutine(Transform bossCoords)
     {
@@ -25,6 +28,7 @@ public class StressArrow : BaseArrow
         yield return new WaitForSeconds(2f);
         StopLineRenderer.Invoke(bossCoords);
         yield return new WaitForSeconds(0.1f);
+        trailRenderer.enabled = true;
         Rigidbody2D arrowRigidBody = gameObject.AddComponent<Rigidbody2D>();
         arrowRigidBody.gravityScale = 0;
         Shoot(bossCoords, speed);
@@ -33,15 +37,5 @@ public class StressArrow : BaseArrow
     public void SpawnArrow(Transform bossCoords)
     {
         StartCoroutine(SpawnArrowRoutine(bossCoords));
-    }
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag != "Enemy")
-        {
-            Debug.Log("Stress Arrow has hit " + collision.gameObject.name);
-            Destroy(gameObject);
-        }
     }
 }
