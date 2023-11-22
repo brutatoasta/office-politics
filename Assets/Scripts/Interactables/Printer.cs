@@ -21,7 +21,7 @@ public class Printer : BaseInteractable
     private Sprite deliverDocSprite;
     private float cookTime = 2;
     public GameObject progressBar;
-    //public Animator progressBarAnimator;
+    public Animator progressBarAnimator;
     new void Awake()
     {
         base.Awake();
@@ -56,8 +56,9 @@ public class Printer : BaseInteractable
 
             GameManager.instance.held = deliverDoc;
             playerHand.sprite = deliverDocSprite;
-            Debug.Log($"Fetched {held.name} from printer!");
+            Debug.Log($"Fetched {GameManager.instance.held.name} from printer!");
             isDocumentReady = false;
+            progressBar.SetActive(false);
         }
         else
         {
@@ -67,7 +68,7 @@ public class Printer : BaseInteractable
 
             Debug.Log($"Dropped {held.name} into printer!");
             progressBar.SetActive(true);
-            animator.SetTrigger("photocopyProgress");
+            progressBarAnimator.SetTrigger("photocopyProgress");
 
             // cook the doc
             StartCoroutine(Cook());

@@ -180,8 +180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invalidInputs: 000000000100000002000000
   validInputs: 07000000
-  fetchDoc: {fileID: 0}
+  deliverDoc: {fileID: 0}
   progressBar: {fileID: 4103052469029907690}
+  progressBarAnimator: {fileID: 0}
 --- !u!212 &5840814912862384870
 SpriteRenderer:
   m_ObjectHideFlags: 0
