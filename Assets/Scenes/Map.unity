@@ -33546,6 +33546,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7065241229230911048, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d5fe1b304aa34846ad10a3bc43bba8d, type: 3}
     - target: {fileID: 8545067100377018165, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: fetchDoc
       value: 
@@ -51042,14 +51046,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1990699342}
     m_Modifications:
-    - target: {fileID: 8585852953148958842, guid: 4a1ac5538d1122f41bf37125f8da3045, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3527473268749744585, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_Name
       value: Colleague_DeliverDoc (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7065241229230911048, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d5fe1b304aa34846ad10a3bc43bba8d, type: 3}
     - target: {fileID: 8545067100377018165, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: fetchDoc
       value: 
@@ -51092,6 +51096,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8867571953013041711, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8585852953148958842, guid: 4a1ac5538d1122f41bf37125f8da3045, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -62287,6 +62295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colleague_DeliverDoc
       objectReference: {fileID: 0}
+    - target: {fileID: 7065241229230911048, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9d5fe1b304aa34846ad10a3bc43bba8d, type: 3}
     - target: {fileID: 8545067100377018165, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: fetchDoc
       value: 
