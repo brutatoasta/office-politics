@@ -11,6 +11,8 @@ public class PlayerConstants : ScriptableObject
     public float parryRange;
     public float parryStartupTime;
     public float parryCooldown;
+    public Material hurtMaterial;
+    public Material defaultMaterial;
 
     // starting values
     public int stressPoint;

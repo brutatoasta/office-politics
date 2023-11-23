@@ -20,7 +20,10 @@ MonoBehaviour:
   parryRange: 2.5
   parryStartupTime: 0
   parryCooldown: 0.5
+  hurtMaterial: {fileID: 2100000, guid: 8d2a0ed3539807c48a823177190cb114, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   stressPoint: 0
   maxStressPoint: 0
   sanityPoint: 0
   performancePoints: 0
+  overtimeTick: 1

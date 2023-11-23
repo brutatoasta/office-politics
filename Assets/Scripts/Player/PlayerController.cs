@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public AudioElements audioElements;
 
     Vector2 movementInput;
-
+    SpriteRenderer playerSprite;
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool canDash = true;
     bool canParry = true;
+    bool invincible = false;
 
     public bool touching = false;
     new Collider2D collider;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        playerSprite = GetComponent<SpriteRenderer>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
@@ -217,12 +219,26 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Arrow"))
+        if (col.gameObject.CompareTag("Arrow") && !invincible)
         {
             GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
             GameManager.instance.IncreaseStress();
             GameManager.instance.PlayAudioElement(audioElements.playerGetHitIntensity1);
+            StartCoroutine(HurtPlayerShader());
         }
+    }
+
+    IEnumerator HurtPlayerShader()
+    {
+        invincible = true;
+        playerConstants.moveSpeed -= 10;
+        for (int i = 0; i<6; i++)
+        {
+            playerSprite.material = (i%2==0) ? playerConstants.hurtMaterial: playerConstants.defaultMaterial;
+            yield return new WaitForSecondsRealtime(0.1f);
+        }
+        playerConstants.moveSpeed += 10;
+        invincible = false;
     }
 
     public void OnOvertime()
