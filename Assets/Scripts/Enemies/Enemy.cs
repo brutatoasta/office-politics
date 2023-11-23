@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     private int moveRight = -1;
     public Transform originalTransform;
     private void Awake()
-    {        
+    {
         gameObject.GetComponent<AIPath>().slowdownDistance = 2;
         gameObject.GetComponent<AIPath>().endReachedDistance = 3;
         enemyBody = gameObject.GetComponent<Rigidbody2D>();
@@ -80,15 +80,6 @@ public class Enemy : MonoBehaviour
         }
         gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
     }
-    void ComputeVelocity()
-    {
-        velocity = new Vector2((moveRight) * maxOffset / enemyPatroltime, 0);
-    }
-
-    void MoveBoss()
-    {
-        enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
-    }
     private void UpdatePosition()
     {
         float velocityX = (transform.position.x - positionX) / 0.02f;
@@ -111,6 +102,7 @@ public class Enemy : MonoBehaviour
         // stop the enemy first
         float existingSpeed = gameObject.GetComponent<AIPath>().maxSpeed;
         gameObject.GetComponent<AIPath>().maxSpeed = 0;
+        animator.SetBool("isStun", true);
 
         // pause enemy weapon
         pauseEnemyWeapon.Invoke();
@@ -118,6 +110,7 @@ public class Enemy : MonoBehaviour
         
         //resume walking
         gameObject.GetComponent<AIPath>().maxSpeed = existingSpeed;
+        animator.SetBool("isStun", false);
 
         // resume enemy weapon
         yield return new WaitForSeconds(2.1f); // because one enemy weapon cycle is 4.1s
@@ -128,7 +121,17 @@ public class Enemy : MonoBehaviour
     {
         StartCoroutine(Stun());
     }
+    void ComputeVelocity()
+    {
+        velocity = new Vector2((moveRight) * maxOffset / enemyPatroltime, 0);
+    }
 
+    void MoveBoss()
+    {
+        enemyBody.MovePosition(enemyBody.position + velocity * Time.fixedDeltaTime);
+    }
+
+    private bool eligibleToChangeDirection;
     void Update()
     {
         //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
@@ -139,22 +142,32 @@ public class Enemy : MonoBehaviour
                 if (Mathf.Abs(enemyBody.position.x - originalX) < maxOffset)
                 {// move Boss
                     MoveBoss();
+                    eligibleToChangeDirection = true;
                 }
                 else
                 {
-                    // change direction
-                    moveRight *= -1;
-                    ComputeVelocity();
-                    MoveBoss();
-                    UpdatePosition();
+                    //Sometimes, update is function called before difference is below max offset, causing jittery boss
+                    if (eligibleToChangeDirection) 
+                    {
+                        // change direction
+                        moveRight *= -1;
+                        ComputeVelocity();
+                        MoveBoss();
+                        UpdatePosition();
+                        eligibleToChangeDirection = false;
+                    }
                 }
-            }
+    }
             else //returning to original spot before patrolling again
             {
+                gameObject.GetComponent<AIPath>().slowdownDistance = 0.6f;
+                gameObject.GetComponent<AIPath>().endReachedDistance = 0.2f;
                 // margin of error because the object will not return to exactly the original transform
                 if (Mathf.Abs(gameObject.transform.position.x - originalTransform.position.x) < 0.2 && 
                     Mathf.Abs(gameObject.transform.position.y - originalTransform.position.y) < 0.2)
                 {
+                    gameObject.GetComponent<AIPath>().slowdownDistance = 2;
+                    gameObject.GetComponent<AIPath>().endReachedDistance = 3;
                     gameObject.GetComponent<AIPath>().enabled = false;
                     isReturning = false;
                 } 

@@ -218,7 +218,7 @@ MonoBehaviour:
   radius: 1.09
   height: 2
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 2.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1c8784ff694ed47bbae6b7808179f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: d67031f722091a641865367ba957fdbd, type: 2}
+  Event: {fileID: 0}
   Response:
     m_PersistentCalls:
       m_Calls:
