@@ -10,7 +10,7 @@ public class EnemyWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("StartArrowSequence",0f,4.1f);
+        InvokeRepeating("StartArrowSequenceWithPause", 0f,4f);
     }
 
     // Update is called once per frame
@@ -18,7 +18,6 @@ public class EnemyWeapon : MonoBehaviour
     {
 
     }
-
     public UnityEvent<Transform> Spawn;
     private void StartArrowSequence()
     {
@@ -27,6 +26,15 @@ public class EnemyWeapon : MonoBehaviour
             Instantiate(arrow, this.transform);
             Spawn.Invoke(transform);
         }
+    }
+    IEnumerator StartArrowSequenceWithPauseCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        StartArrowSequence();
+    }
+    private void StartArrowSequenceWithPause()
+    {
+        StartCoroutine(StartArrowSequenceWithPauseCoroutine());
     }
     public void PauseArrowShooting()
     {

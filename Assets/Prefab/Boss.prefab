@@ -130,6 +130,21 @@ MonoBehaviour:
   constants: {fileID: 11400000, guid: e5b693a5c08a31445894c75e0f6a596d, type: 2}
   originalTransform: {fileID: 0}
   health: 1
+  pauseEnemyWeapon:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4200504481560553773}
+        m_TargetAssemblyTypeName: EnemyWeapon, Assembly-CSharp
+        m_MethodName: PauseArrowShooting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4200504481560553773
 MonoBehaviour:
   m_ObjectHideFlags: 0

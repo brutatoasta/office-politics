@@ -107,11 +107,19 @@ public class Enemy : MonoBehaviour
     public UnityEvent pauseEnemyWeapon;
     IEnumerator Stun()
     {
+        
+        // stop the enemy first
         float existingSpeed = gameObject.GetComponent<AIPath>().maxSpeed;
         gameObject.GetComponent<AIPath>().maxSpeed = 0;
+
+        // pause enemy weapon
         pauseEnemyWeapon.Invoke();
         yield return new WaitForSeconds(2f);
+        
+        //resume walking
         gameObject.GetComponent<AIPath>().maxSpeed = existingSpeed;
+
+        // resume enemy weapon
         yield return new WaitForSeconds(2.1f); // because one enemy weapon cycle is 4.1s
         pauseEnemyWeapon.Invoke();
     }
