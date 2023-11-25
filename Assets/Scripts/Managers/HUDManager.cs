@@ -112,6 +112,7 @@ public class HUDManager : MonoBehaviour
         }
         else
         {
+            GameManager.instance.onTaskSuccess.Invoke();
             isShown = true;
             taskList.SetActive(true);
         }
