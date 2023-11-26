@@ -22,8 +22,6 @@ public class Enemy : MonoBehaviour
     public Transform originalTransform;
     private void Awake()
     {
-        gameObject.GetComponent<AIPath>().slowdownDistance = 2;
-        gameObject.GetComponent<AIPath>().endReachedDistance = 3;
         enemyBody = gameObject.GetComponent<Rigidbody2D>();
         originalX = transform.position.x;
         ComputeVelocity();
@@ -160,18 +158,27 @@ public class Enemy : MonoBehaviour
     }
             else //returning to original spot before patrolling again
             {
-                gameObject.GetComponent<AIPath>().slowdownDistance = 0.6f;
-                gameObject.GetComponent<AIPath>().endReachedDistance = 0.2f;
                 // margin of error because the object will not return to exactly the original transform
                 if (Mathf.Abs(gameObject.transform.position.x - originalTransform.position.x) < 0.2 && 
                     Mathf.Abs(gameObject.transform.position.y - originalTransform.position.y) < 0.2)
                 {
-                    gameObject.GetComponent<AIPath>().slowdownDistance = 2;
-                    gameObject.GetComponent<AIPath>().endReachedDistance = 3;
                     gameObject.GetComponent<AIPath>().enabled = false;
                     isReturning = false;
                 } 
             }
+        }
+    }
+
+    public void ToggleAIPathParameter()
+    {
+        if (isChasing)
+        {
+            gameObject.GetComponent<AIPath>().slowdownDistance = 2;
+            gameObject.GetComponent<AIPath>().endReachedDistance = 3;
+        } else
+        {
+            gameObject.GetComponent<AIPath>().slowdownDistance = 0.6f;
+            gameObject.GetComponent<AIPath>().endReachedDistance = 0.2f;
         }
     }
 }
