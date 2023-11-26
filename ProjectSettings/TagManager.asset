@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Obstacles
   - ShredAndLaminate
+  - OfficeDoor
+  - BossDoor
   layers:
   - Default
   - TransparentFX

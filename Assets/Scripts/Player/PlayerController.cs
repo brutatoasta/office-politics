@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     Animator handAnimator;
     // AudioSource audioSource;
 
+    Vector3 teleportToOffice = new Vector3(-17, -3, 0);
+
+    Vector3 teleportToBossRoom = new Vector3(-43, -3, 0);
 
     public TrailRenderer trail;
 
@@ -39,7 +42,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
         heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
@@ -233,15 +235,24 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.PlayAudioElement(audioElements.playerGetHitIntensity1);
             StartCoroutine(HurtPlayerShader());
         }
+        //teleport from 
+        if (col.CompareTag("OfficeDoor"))
+        {
+            transform.position = teleportToBossRoom;
+        }
+        if (col.CompareTag("BossDoor"))
+        {
+            transform.position = teleportToOffice;
+        }
     }
 
     IEnumerator HurtPlayerShader()
     {
         invincible = true;
         playerConstants.moveSpeed -= 10;
-        for (int i = 0; i<6; i++)
+        for (int i = 0; i < 6; i++)
         {
-            playerSprite.material = (i%2==0) ? playerConstants.hurtMaterial: playerConstants.defaultMaterial;
+            playerSprite.material = (i % 2 == 0) ? playerConstants.hurtMaterial : playerConstants.defaultMaterial;
             yield return new WaitForSecondsRealtime(0.1f);
         }
         playerConstants.moveSpeed += 10;

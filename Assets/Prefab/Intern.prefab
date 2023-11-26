@@ -519,6 +519,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dec4df0d-9978-4843-8716-7d51cf85bdbd
     m_ActionName: PlayerMap/PlayPause[/Keyboard/escape,/Keyboard/c]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: HUDManager, Assembly-CSharp
+        m_MethodName: TaskList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ed7d17a3-3974-4e0a-895b-01155bdde3fd
+    m_ActionName: PlayerMap/pullupTask[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: OfficePolitics
   m_DefaultActionMap: PlayerMap
@@ -608,6 +624,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  showTaskList:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7185380654519326318
 MonoBehaviour:
   m_ObjectHideFlags: 0
