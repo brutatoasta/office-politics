@@ -60953,6 +60953,7 @@ GameObject:
   - component: {fileID: 2130466810}
   - component: {fileID: 2130466809}
   - component: {fileID: 2130466808}
+  - component: {fileID: 2130466811}
   m_Layer: 9
   m_Name: Trashbin
   m_TagString: Untagged
@@ -61770,6 +61771,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2130466811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130466805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0efcce672338be45852b574f5c2804b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invalidInputs: 
+  validInputs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  taskIcon: {fileID: 0}
 --- !u!1 &2131559234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5254153518291866764, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
