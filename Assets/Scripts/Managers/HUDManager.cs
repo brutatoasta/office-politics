@@ -23,6 +23,7 @@ public class HUDManager : MonoBehaviour
     public GameObject taskList;
     public GameObject gameOverScreen;
     public bool isShown = false;
+    public Animator taskAnimator;
     // public bool ExitState = false;
     // public Animator taskAnimator;
 
@@ -104,19 +105,38 @@ public class HUDManager : MonoBehaviour
 
     public void TaskList()
     {
-        taskList.SetActive(true);
+        // taskList.SetActive(true);
         if (isShown)
         {
+            Time.timeScale = 1;
             isShown = false;
-            taskList.SetActive(false);
+            taskAnimator.Play("TaskExit");
+
+
         }
         else
         {
             GameManager.instance.onTaskSuccess.Invoke();
             isShown = true;
-            taskList.SetActive(true);
+            taskAnimator.Play("TasksPage");
+
         }
     }
+    public void FreezeTime()
+    {
+        Time.timeScale = 0;
+    }
+    public void DisableTask()
+    {
+        taskList.SetActive(false);
+
+    }
+    public void EnableTask()
+    {
+        taskList.SetActive(true);
+
+    }
+
 
     public void OnGameOver()
     {
