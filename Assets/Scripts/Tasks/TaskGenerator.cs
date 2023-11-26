@@ -12,12 +12,26 @@ public class TaskGenerator : MonoBehaviour
         generateDescription();
         GameManager.instance.onTaskSuccess.AddListener(generateDescription);
     }
+    private string StrikeOut(string text)
+    {
+        const string STRIKE_START = "<s>";
+        const string STRIKE_END = "</s>";
+        return STRIKE_START + text + STRIKE_END;
+    }
     void generateDescription()
     {
         string description = "To Do: \n";
         foreach (TaskItem taskItem in GameManager.instance.levelVariables.todo)
         {
-            description += taskItem.taskString + "\n";
+            if (taskItem.current == 0)
+            {
+                description += StrikeOut(taskItem.taskString);
+            }
+            else
+            {
+                description += taskItem.taskString;
+            }
+            description += "\n";
         }
         taskList.text = description;
     }

@@ -30,19 +30,19 @@ public class LevelVariables : ScriptableObject
     {
         // reduce quota
         Debug.Log(name);
-        if (todo[(int)name].quota > 0)
+        if (todo[(int)name].current > 0)
         {
-            todo[(int)name].quota--;
+            todo[(int)name].current--;
 
             // add performance points for that task
             levelPP += todo[(int)name].performancePoints;
 
             // no change to stress
 
-            if (todo[(int)name].quota == 0)
-            {
-                todo[(int)name].StrikeOut();
-            }
+            //if (todo[(int)name].quota == 0)
+            //{
+            //    todo[(int)name].StrikeOut();
+            //}
         }
     }
     public void Fail(TaskName name)
@@ -61,6 +61,10 @@ public class LevelVariables : ScriptableObject
         maxStressPoints = 50;
         levelPP = 0;
         todo = TaskConstants.todos[level];
+        for (int i = 0; i < todo.Length; i++) 
+        {
+            todo[i].current = todo[i].quota;
+        }
         Debug.Log(todo);
     }
 
