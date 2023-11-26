@@ -68,6 +68,15 @@ public class LevelVariables : ScriptableObject
         Debug.Log(todo);
     }
 
+    public void addRandomJob(int level)
+    {
+        todo = TaskConstants.todos[level];
+
+        // randomly select an index
+        int i = UnityEngine.Random.Range(0, todo.Length);
+        todo[i].current++; 
+    }
+
     public void ExitLevel()
     {
         // transfer to RunVariables

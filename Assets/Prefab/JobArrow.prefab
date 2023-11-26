@@ -108,16 +108,16 @@ MonoBehaviour:
     audioType: 0
     audioClip: {fileID: 0}
   rb: {fileID: 7616305652816618990}
-  stunBoss:
+  addRandomJob:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8471452804857979317, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: stunByArrow
-        m_Mode: 1
+      - m_Target: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

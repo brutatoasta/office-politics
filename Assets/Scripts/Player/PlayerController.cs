@@ -222,7 +222,14 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.CompareTag("Arrow") && !invincible)
         {
             GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
-            GameManager.instance.IncreaseStress();
+            if (col.gameObject.name.Contains("JobArrow"))
+            {
+                GameManager.instance.IncreaseJob();
+            }
+            if (col.gameObject.name.Contains("StressArrow"))
+            {
+                GameManager.instance.IncreaseStress();
+            }
             GameManager.instance.PlayAudioElement(audioElements.playerGetHitIntensity1);
             StartCoroutine(HurtPlayerShader());
         }

@@ -58,9 +58,10 @@ public class GameManager : Singleton<GameManager>
 
     public GameObject held;
 
+    private int currentLevel = 0;
     void Start()
     {
-        levelVariables.Init(0);
+        levelVariables.Init(currentLevel);
         runVariables.Init();
     }
 
@@ -97,7 +98,10 @@ public class GameManager : Singleton<GameManager>
         useConsumable.Invoke();
     }
 
-
+    public void IncreaseJob()
+    {
+        levelVariables.addRandomJob(currentLevel);
+    }
     public void IncreaseStress()
     {
         if (levelVariables.stressPoints >= levelVariables.maxStressPoints) GameOver();

@@ -27,9 +27,13 @@ public class TaskGenerator : MonoBehaviour
             {
                 description += StrikeOut(taskItem.taskString);
             }
-            else
+            else if (taskItem.current == 1) 
             {
                 description += taskItem.taskString;
+            }
+            else
+            {
+                description += taskItem.taskString + $" x{taskItem.current}";
             }
             description += "\n";
         }
