@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class SceneExit : MonoBehaviour
 {
     public void PlayGame()
@@ -13,6 +14,15 @@ public class SceneExit : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public GameObject controlsPanel;
+    public void Controls()
+    {
+        controlsPanel.SetActive(true);
+    }
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
     }
     private string nextScene;
     void OnTriggerEnter2D(Collider2D collision)
@@ -47,7 +57,7 @@ public class SceneExit : MonoBehaviour
                     break;
             }
             // fade to black
-            
+
             SceneManager.LoadSceneAsync(nextScene);
         }
     }
