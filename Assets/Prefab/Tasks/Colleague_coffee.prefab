@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &449071865038590384
 Transform:
   m_ObjectHideFlags: 0
@@ -529,8 +529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 2838321661930908863}
   invalidInputs: 0400000000000000010000000600000007000000
   validInputs: 02000000
+  taskIcon: {fileID: 0}
 --- !u!1 &8156460548488091828
 GameObject:
   m_ObjectHideFlags: 0

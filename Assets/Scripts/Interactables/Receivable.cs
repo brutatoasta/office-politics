@@ -54,7 +54,7 @@ public class Receivable : BaseInteractable
         {
             // maybe check other conditions
             // drop the item in!
-            GameManager.instance.held = null;
+            GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
 
             Debug.Log($"Dropped {held.name} into me!");

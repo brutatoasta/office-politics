@@ -295,8 +295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 8585852953148958842}
   invalidInputs: 0000000001000000020000000400000007000000
   validInputs: 06000000
+  taskIcon: {fileID: 0}
 --- !u!1 &8156460548488091828
 GameObject:
   m_ObjectHideFlags: 0

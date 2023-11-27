@@ -54,7 +54,7 @@ public class Printer : BaseInteractable
         if (GameManager.instance.held == null)
         {
 
-            GameManager.instance.held = deliverDoc;
+            GameManager.instance.SetHeld(deliverDoc);
             playerHand.sprite = deliverDocSprite;
             Debug.Log($"Fetched {GameManager.instance.held.name} from printer!");
             isDocumentReady = false;
@@ -63,7 +63,7 @@ public class Printer : BaseInteractable
         else
         {
             // depositing PrintDoc
-            GameManager.instance.held = null;
+            GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
 
             Debug.Log($"Dropped {held.name} into printer!");

@@ -9,7 +9,7 @@ public class KitKat : ABCConsumable
     public KitKat(int initCount)
     {
         count = initCount;
-        LoadSprite("Shredder_only"); // TODO: replace sprite
+        LoadSprite("Consumables/Choco"); // TODO: replace sprite
     }
     public override void ConsumeEffect()
     {

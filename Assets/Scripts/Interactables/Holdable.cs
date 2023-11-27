@@ -17,7 +17,7 @@ public class Holdable : BaseInteractable
         {
             Debug.Log("Held me!");
             // add self to GameManager
-            GameManager.instance.held = gameObject;
+            GameManager.instance.SetHeld(gameObject);
             playerHand.sprite = GetComponent<SpriteRenderer>().sprite;
             playerHand.color = GetComponent<SpriteRenderer>().color;
 

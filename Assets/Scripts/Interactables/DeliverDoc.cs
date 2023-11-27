@@ -26,14 +26,14 @@ public class DeliverDoc : BaseInteractable
         {
             Debug.Log($"Fetched {fetchDoc.name} from colleague!");
             // add self to GameManager
-            GameManager.instance.held = fetchDoc;
+            GameManager.instance.SetHeld(fetchDoc);
             playerHand.sprite = fetchDocSprite;
         }
         else
         {
             // empty player's hand of deliverDoc
             Debug.Log($"Dropped {held.name} into colleague!");
-            GameManager.instance.held = null;
+            GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
             GameManager.instance.levelVariables.Succeed(TaskName.DeliverDoc);
         }

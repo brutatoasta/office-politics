@@ -2738,6 +2738,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoffeeCup
       objectReference: {fileID: 0}
+    - target: {fileID: 8191497623588659280, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
+      propertyPath: bubbleObj
+      value: 
+      objectReference: {fileID: 1609886895}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3353,6 +3357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 0}
   invalidInputs: 020000000100000007000000
   validInputs: 00000000
   taskIcon: {fileID: 0}
@@ -4188,6 +4193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858f2f20b1787684195c9c9c809d65e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlsPanel: {fileID: 0}
 --- !u!68 &427273883
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -26723,10 +26729,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7538725407953334285, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
-      propertyPath: taskIcon
-      value: 
-      objectReference: {fileID: 1733637689}
     - target: {fileID: 8156460548488091828, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_Name
       value: Colleague_tea (1)
@@ -30769,6 +30771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 0}
   invalidInputs: 02000000000000000400000007000000
   validInputs: 01000000
   taskIcon: {fileID: 0}
@@ -33082,6 +33085,10 @@ PrefabInstance:
     - target: {fileID: 3527473268749744585, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_Name
       value: Colleague_DeliverDoc (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782408214476055300, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.3125
       objectReference: {fileID: 0}
     - target: {fileID: 6022794606263135452, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_IsActive
@@ -50574,11 +50581,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1733637689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2838321661930908863, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
-  m_PrefabInstance: {fileID: 768817138}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1759644547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50590,6 +50592,10 @@ PrefabInstance:
     - target: {fileID: 3527473268749744585, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_Name
       value: Colleague_DeliverDoc (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782408214476055300, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.3125
       objectReference: {fileID: 0}
     - target: {fileID: 7065241229230911048, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_Sprite
@@ -61549,6 +61555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0efcce672338be45852b574f5c2804b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 0}
   invalidInputs: 
   validInputs: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
   taskIcon: {fileID: 0}
@@ -61704,14 +61711,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colleague_DeliverDoc
       objectReference: {fileID: 0}
+    - target: {fileID: 5782408214476055300, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.3125
+      objectReference: {fileID: 0}
     - target: {fileID: 7065241229230911048, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9d5fe1b304aa34846ad10a3bc43bba8d, type: 3}
-    - target: {fileID: 7065241229230911048, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c74e9446e4577cd4a871ca1bc6aa9417, type: 2}
     - target: {fileID: 8545067100377018165, guid: df3cb6c7a6f2b1f4298e83a1351d1f1f, type: 3}
       propertyPath: fetchDoc
       value: 
@@ -61930,6 +61937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5285ad6ee78a149b0ef9a433a76d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 0}
   taskName: 7
 --- !u!1 &4337958337037165083
 GameObject:
@@ -62007,6 +62015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TeaCup
       objectReference: {fileID: 0}
+    - target: {fileID: 8191497623588659280, guid: e7c5bfda312452f4cb67665c10214b13, type: 3}
+      propertyPath: bubbleObj
+      value: 
+      objectReference: {fileID: 1240854299}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -62085,6 +62097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5285ad6ee78a149b0ef9a433a76d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 0}
   taskName: 6
 --- !u!1001 &6290294752409637512
 PrefabInstance:

@@ -8,12 +8,26 @@ public abstract class BaseInteractable : MonoBehaviour
     protected Animator animator;
     [NonSerialized] public SpriteRenderer playerHand;
     [NonSerialized] public Renderer spriteRenderer;
+    public GameObject bubbleObj = null;
 
     protected void Awake()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<Renderer>();
     }
+
+    public void Start()
+    {
+        SetBubble();
+        GameManager.instance.heldSet.AddListener(SetBubble);
+    }
+
+    public void SetBubble()
+    {
+    
+        if (bubbleObj != null) bubbleObj.SetActive(CanInteract());
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.layer == 7) //player

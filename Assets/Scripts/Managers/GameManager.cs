@@ -41,6 +41,7 @@ public class GameManager : Singleton<GameManager>
     // public UnityEvent<int, Transform> increasePerformancePoint;
     public UnityEvent onTaskSuccess;
     public UnityEvent showPerformancePoint;
+    public UnityEvent heldSet;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
@@ -174,6 +175,12 @@ public class GameManager : Singleton<GameManager>
     public void ReturnToMainMenu()
     {
         SceneManager.LoadSceneAsync("MainMenu");
+    }
+
+    public void SetHeld(GameObject newHeld)
+    {
+        held = newHeld;
+        heldSet.Invoke();
     }
 
     void OnSceneLoaded()

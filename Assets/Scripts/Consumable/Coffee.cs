@@ -8,7 +8,7 @@ public class Coffee : ABCConsumable
     public Coffee(int initCount)
     {
         count = initCount;
-        LoadSprite("Paper-document-4 (2)"); // TODO: replace sprite
+        LoadSprite("Consumables/Coffee"); // TODO: replace sprite
     }
     public override void ConsumeEffect()
     {

@@ -12,7 +12,7 @@ public class ActionManager : MonoBehaviour
 
     public void OnInteractAction(InputAction.CallbackContext context)
     {
-        if (context.performed) interact.Invoke();
+        if (context.started) interact.Invoke();
     }
 
     public void OnMoveAction(InputAction.CallbackContext context)

@@ -558,8 +558,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fc21bfebd59ea47a48bddbf05b1920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bubbleObj: {fileID: 5254153518291866764}
   invalidInputs: 060000000700000002000000
   validInputs: 09000000
+  taskIcon: {fileID: 0}
 --- !u!212 &5892629561154869264
 SpriteRenderer:
   m_ObjectHideFlags: 0
