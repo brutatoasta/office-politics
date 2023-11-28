@@ -66,6 +66,16 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = Vector2.zero;
             }
         }
+        if (DialogueManager.isActive == true)
+        {
+            canMove = false;
+            interactLock = true;
+        }
+        if (DialogueManager.isActive == false)
+        {
+            canMove = true;
+            interactLock = false;
+        }
     }
 
     void Update()
