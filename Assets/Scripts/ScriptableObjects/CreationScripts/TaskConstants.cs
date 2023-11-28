@@ -14,32 +14,45 @@ public class TaskConstants : ScriptableObject
             
             new TaskItem[]
             {
-                new(1, 1, 5, TaskName.Shred, "Shred documents"),
-                new(1, 1, 5, TaskName.Laminate, "Laminate documents"),
-
-                new(1, 1, 5, TaskName.FetchCoffee, "Fetch coffee for Mary"),
-                new(1, 1, 5, TaskName.RefillCoffee, "Refill the empty coffee pot"),
                 new(1, 1, 5, TaskName.FetchTea, "Fetch tea for Ann"),
-                new(1, 1, 5, TaskName.RefillTea, "Refill the empty tea pot"),
+                new(1, 1, 5, TaskName.FetchCoffee, "Fetch coffee for Mary"),
 
-                new(1, 1, 5, TaskName.FetchDoc, "Fetch documents from Jack for photocopy"),
-                new(1, 1, 5, TaskName.DeliverDoc, "Deliver photocopied documents to Tom"),
-
-                new(1, 1, 5, TaskName.ChargeMic, "Charge mic in the meeting room"),
                 new(1, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
                 new(1, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
+                new(1, 1, 5, TaskName.Shred, "Shred documents"),
+                new(1, 1,  5, TaskName.Laminate, "Laminate documents"),
+                new(1, 1,  5, TaskName.FetchDoc, "Fetch documents from Susan for photocopy"),
+                new(1, 1,5, TaskName.DeliverDoc, "Deliver photocopied documents to Jane"),
 
+                new(1, 1,5, TaskName.RefillCoffee, "Refill the empty coffee pot"),
 
             },
             // level 2
             new TaskItem[]
             {
+                new(1, 1, 5, TaskName.FetchTea, "Fetch tea for Ann"),
+                new(1, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
+                new(1, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
+
+            },
+            // level 3
+            new TaskItem[]
+            {
                 new(1, 1, 5, TaskName.Shred, "Shred documents"),
-                new(1, 1, 5, TaskName.Laminate, "Laminate documents"),
-                new(1, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials"),
-
-
+                new(1, 1,  5, TaskName.Laminate, "Laminate documents"),
+                new(1, 1,  5, TaskName.FetchDoc, "Fetch documents from Susan for photocopy"),
+                new(1, 1,5, TaskName.DeliverDoc, "Deliver photocopied documents to Jane"),
+            },
+            // level 4
+            new TaskItem[]
+            {
+                new(1, 1,5, TaskName.Shred, "Shred documents"),
+                new(1, 1,5, TaskName.Laminate, "Laminate documents"),
+                new(1, 1,5, TaskName.FetchDoc, "Fetch documents from Jack for photocopy"),
+                new(1, 1,5, TaskName.DeliverDoc, "Deliver photocopied documents to Tom"),
+                new(1, 1,5, TaskName.RefillCoffee, "Refill the empty coffee pot"),
             }
+
        };
 
     public Material highlightMaterial;
@@ -73,16 +86,11 @@ public enum TaskName
 {
     Shred,
     Laminate,
-
     FetchCoffee,
     RefillCoffee,
     FetchTea,
-    RefillTea,
-
     FetchDoc,
     DeliverDoc,
-
-    ChargeMic,
     PrepMeeting,
     PrepRefreshment,
 

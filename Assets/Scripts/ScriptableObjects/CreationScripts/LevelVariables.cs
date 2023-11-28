@@ -14,6 +14,7 @@ public class LevelVariables : ScriptableObject
     public int levelPP;
     public int stressPoints;
     public int maxStressPoints;
+    public int currentLevelIndex;
 
     public bool isQuotaComplete()
     {
@@ -29,7 +30,9 @@ public class LevelVariables : ScriptableObject
     public void Succeed(TaskName name)
     {
         // reduce quota
-        Debug.Log(name);
+        Debug.Log((int)name);
+        Debug.Log(todo);
+        Debug.Log(todo[0]);
         if (todo[(int)name].current > 0)
         {
             todo[(int)name].current--;
@@ -61,7 +64,7 @@ public class LevelVariables : ScriptableObject
         maxStressPoints = 50;
         levelPP = 0;
         todo = TaskConstants.todos[level];
-        for (int i = 0; i < todo.Length; i++) 
+        for (int i = 0; i < todo.Length; i++)
         {
             todo[i].current = todo[i].quota;
         }
@@ -74,7 +77,7 @@ public class LevelVariables : ScriptableObject
 
         // randomly select an index
         int i = UnityEngine.Random.Range(0, todo.Length);
-        todo[i].current++; 
+        todo[i].current++;
     }
 
     public void ExitLevel()

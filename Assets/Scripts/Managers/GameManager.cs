@@ -59,10 +59,10 @@ public class GameManager : Singleton<GameManager>
 
     public GameObject held;
 
-    private int currentLevel = 0;
+
     void Start()
     {
-        levelVariables.Init(currentLevel);
+        levelVariables.Init(levelVariables.currentLevelIndex);
         runVariables.Init();
     }
 
@@ -101,7 +101,7 @@ public class GameManager : Singleton<GameManager>
 
     public void IncreaseJob()
     {
-        levelVariables.addRandomJob(currentLevel);
+        levelVariables.addRandomJob(levelVariables.currentLevelIndex);
     }
     public void IncreaseStress()
     {
@@ -166,7 +166,7 @@ public class GameManager : Singleton<GameManager>
     {
         if (overtime && levelVariables.isQuotaComplete()) DoorOpen();
     }
-    
+
     public void DoorOpen()
     {
         doorOpen.Invoke();

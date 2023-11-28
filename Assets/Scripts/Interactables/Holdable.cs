@@ -27,5 +27,6 @@ public class Holdable : BaseInteractable
     protected override bool CanInteract()
     {
         return GameManager.instance.held == null;
+
     }
 }

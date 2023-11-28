@@ -23,7 +23,6 @@ public class CoffeePot : BaseInteractable
             sprite.enabled = true;
         }
 
-
     }
 
     protected override bool CanInteract()
