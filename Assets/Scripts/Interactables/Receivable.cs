@@ -65,7 +65,7 @@ public class Receivable : BaseInteractable
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
 
-            Debug.Log($"Dropped {held.name} into me!");
+            //Debug.Log($"Dropped {held.name} into me!");
 
             // calculate score and tasks
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
