@@ -11,6 +11,7 @@ public class Receivable : BaseInteractable
     public TaskName[] invalidInputs;
     public TaskName[] validInputs;
     public GameObject taskIcon;
+    public SpriteRenderer sprite;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
     TaskName heldType;
@@ -38,7 +39,14 @@ public class Receivable : BaseInteractable
         }
         else
         {
-            heldType = held.GetComponent<Holdable>().taskName;
+            if (held.GetComponent<Holdable>() == null)
+            {
+                heldType = held.GetComponent<CoffeePot>().taskName;
+            }
+            else
+            {
+                heldType = held.GetComponent<Holdable>().taskName;
+            }
             return _validInputs.Contains(heldType) || _invalidInputs.Contains(heldType);
         }
 
@@ -66,6 +74,10 @@ public class Receivable : BaseInteractable
                 GameManager.instance.levelVariables.Succeed(heldType);
                 GameManager.instance.showPerformancePoint.Invoke();
                 GameManager.instance.DecreaseQuota();
+                if (sprite != null)
+                {
+                    sprite.enabled = true;
+                }
                 Debug.Log("increase score");
                 if (taskIcon != null)
                 {

@@ -42,7 +42,14 @@ public class Printer : BaseInteractable
         }
         else
         {
-            heldType = held.GetComponent<Holdable>().taskName;
+            if (held.GetComponent<Holdable>() == null)
+            {
+                heldType = held.GetComponent<CoffeePot>().taskName;
+            }
+            else
+            {
+                heldType = held.GetComponent<Holdable>().taskName;
+            }
             return _validInputs.Contains(heldType);
         }
 
