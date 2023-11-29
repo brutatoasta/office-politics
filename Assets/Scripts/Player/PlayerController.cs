@@ -10,24 +10,23 @@ public class PlayerController : MonoBehaviour
     public WeaponGameConstants arrowConstants;
     public AudioElements audioElements;
 
-
     // movement
     public Vector2 movementInput;
     public ContactFilter2D movementFilter;
-    [SerializeField]
     public List<RaycastHit2D> castCollisions = new();
-    public float collisionOffset = 0;
+    public float collisionOffset;
     public float distanceCast;
     // components
     SpriteRenderer playerSprite;
-    SpriteRenderer heldSprite;
+
     Rigidbody2D rb;
+    public float currentSpeed;
     Animator animator;
     Animator handAnimator;
 
-    Vector3 teleportToOffice = new Vector3(-17, -3, 0);
+    Vector3 teleportToOffice = new(-17, -3, 0);
 
-    Vector3 teleportToBossRoom = new Vector3(-43, -3, 0);
+    Vector3 teleportToBossRoom = new(-43, -3, 0);
 
     public TrailRenderer trail;
 
@@ -48,7 +47,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
-        heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
@@ -58,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        currentSpeed = rb.velocity.magnitude; // debug: report current speed in unity inspector
         if (canMove)
         {
             // Debug.LogError("" +movementInput);
@@ -68,23 +67,8 @@ public class PlayerController : MonoBehaviour
                 // force is in the direction of movement input (normalized) multiplied by movespeed
                 if (rb.velocity.magnitude < playerConstants.maxMoveSpeed)
                 {
-                    // rb.AddForce(movementInput * playerConstants.moveSpeed);
-                    // bool success = TryMove(movementInput);
 
-                    // if (!success)
-                    // {
-                    //     Debug.LogError("try x");
-                    //     success = TryMove(new Vector2(movementInput.x, 0));
-                    // }
-
-                    // if (!success)
-                    // {
-                    //     Debug.LogError("try y");
-                    //     success = TryMove(new Vector2(0, movementInput.y));
-                    // }
-
-                    // if (!success) Debug.Log("really can't move");
-                    DoMove(movementInput);
+                    DoMove(TryMoves());
                 }
             }
             else
@@ -104,7 +88,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void DoMove(Vector2 direction) => rb.velocity = direction * playerConstants.moveSpeed;
+    private void DoMove(Vector2 direction) => rb.velocity = direction.normalized * playerConstants.moveSpeed;
+    private Vector2 TryMoves()
+    {
+        Vector2 x_only = new Vector2(movementInput.x, 0).normalized;
+        Vector2 y_only = new Vector2(0, movementInput.y).normalized;
+        Vector2[] vectors = new Vector2[] { movementInput, x_only, y_only };
+
+        foreach (Vector2 currentVector in vectors)
+        {
+            if (TryMove(currentVector))
+            {
+                return currentVector;
+
+            }
+        }
+        Debug.Log("really can't move");
+        return Vector2.zero;
+    }
     private bool TryMove(Vector2 direction)
     {
         if (direction != Vector2.zero) // still need to check here because sometimes may take zero component from movementInput with zero component from FixedUpdate
@@ -116,16 +117,7 @@ public class PlayerController : MonoBehaviour
                 castCollisions, // List of collisions to store the found collisions into after the Cast is finished
                 distanceCast + collisionOffset); // The distance to cast equal to the movement plus an offset
             Debug.LogError("count " + count);
-            if (count == 0)
-            {
-                // DoMove(direction);
-                return true;
-            }
-            else
-            {
-
-                return false;
-            }
+            return count == 0;
         }
         else
         {
@@ -147,24 +139,7 @@ public class PlayerController : MonoBehaviour
         handAnimator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
     }
 
-    public void MoveCheck(Vector2 movement)
-    {
-        Vector2 x_only = new Vector2(movement.x, 0);
-        Vector2 y_only = new Vector2(0, movement.y);
-        Vector2[] vectors = new Vector2[] { movement, };
-
-        foreach (Vector2 currentVector in vectors)
-        {
-            if (TryMove(currentVector))
-            {
-                movementInput = currentVector;
-                return;
-            }
-        }
-        Debug.Log("really can't move");
-        movementInput = movement; // original
-    }
-
+    public void MoveCheck(Vector2 movement) => movementInput = movement.normalized;
     public void TriggerInteract()
     {
         if (!interactLock)
@@ -252,7 +227,6 @@ public class PlayerController : MonoBehaviour
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
                 Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
 
-
                 if (Vector2.Dot(arrowRb.velocity, reflectionNormal) >= 0)
                 {
                     Vector2 velSurfaceReflect = arrowRb.velocity;
@@ -270,23 +244,10 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
-    }
+    void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
+    void UseConsumable() => GameManager.instance.PlayAudioElement(audioElements.useConsumable);
+    void CycleConsumable() => GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
 
-
-    void UseConsumable()
-    {
-        // audioSource.PlayOneShot(playerConstants.useConsumeableClip);
-        GameManager.instance.PlayAudioElement(audioElements.useConsumable);
-    }
-
-    void CycleConsumable()
-    {
-        // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
-        GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
-    }
 
 
     void OnTriggerEnter2D(Collider2D col)
@@ -333,10 +294,8 @@ public class PlayerController : MonoBehaviour
         invincible = false;
     }
 
-    public void OnOvertime()
-    {
-        InvokeRepeating("TickOvertime", 0, 1.0f);
-    }
+    public void OnOvertime() => InvokeRepeating(nameof(TickOvertime), 0, 1.0f);
+
 
     public void TickOvertime()
     {
