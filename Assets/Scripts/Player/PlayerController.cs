@@ -161,6 +161,7 @@ public class PlayerController : MonoBehaviour
         trail.emitting = true;
         // audioSource.PlayOneShot(playerConstants.dashAudio);
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerDash);
+        GameManager.instance.playerEvade.Invoke();
 
         yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
@@ -174,6 +175,8 @@ public class PlayerController : MonoBehaviour
         canParry = false;
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
+
+        GameManager.instance.playerEvade.Invoke();
 
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerParry);
 

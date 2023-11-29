@@ -45,6 +45,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent heldSet;
     // UI
     public UnityEvent<EvadeType> updateEvade;
+    public UnityEvent playerEvade;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
