@@ -6,9 +6,10 @@ using UnityEngine;
 public class KitKat : ABCConsumable
 {
 
-    public KitKat(int initCount)
+    public KitKat(int initCount, int initCost)
     {
         count = initCount;
+        cost = initCost;
         LoadSprite("Consumables/Choco"); // TODO: replace sprite
     }
     public override void ConsumeEffect()

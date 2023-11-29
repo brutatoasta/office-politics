@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ActionManager : MonoBehaviour
 {
@@ -30,7 +31,8 @@ public class ActionManager : MonoBehaviour
 
     public void OnUseConsumableAction(InputAction.CallbackContext context)
     {
-        if (context.started) GameManager.instance.UseCurrentConsumable();
+        Scene scene = SceneManager.GetActiveScene();
+        if (context.started && scene.name != "PowerUpScene") GameManager.instance.UseCurrentConsumable();
     }
 
     public void OnCycleConsumableAction(InputAction.CallbackContext context)

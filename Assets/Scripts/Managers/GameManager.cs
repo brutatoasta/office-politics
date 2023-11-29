@@ -28,7 +28,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent doorOpen;
 
     // runVariables
-    public UnityEvent cycleInventory;
+    public UnityEvent updateInventory;
     public UnityEvent useConsumable;
 
     // Timer
@@ -43,6 +43,8 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent onTaskSuccess;
     public UnityEvent showPerformancePoint;
     public UnityEvent heldSet;
+    // UI
+    public UnityEvent<EvadeType> updateEvade;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
@@ -118,7 +120,7 @@ public class GameManager : Singleton<GameManager>
         Debug.Log(string.Join(",", activeSlots));
 
 
-        cycleInventory.Invoke();
+        updateInventory.Invoke();
     }
 
     public void UseCurrentConsumable()
@@ -219,6 +221,12 @@ public class GameManager : Singleton<GameManager>
     {
         held = newHeld;
         heldSet.Invoke();
+    }
+
+    public void UpdateEvadeType(EvadeType evadeType)
+    {
+        levelVariables.evadeType = evadeType;
+        updateEvade.Invoke(evadeType);
     }
 
     void OnSceneLoaded()

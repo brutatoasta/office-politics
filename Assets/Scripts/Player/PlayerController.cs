@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
-        GameManager.instance.cycleInventory.AddListener(CycleConsumable);
+        GameManager.instance.updateInventory.AddListener(CycleConsumable);
         GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 

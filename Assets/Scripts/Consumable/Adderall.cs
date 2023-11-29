@@ -7,9 +7,10 @@ public class Adderall : ABCConsumable
 {
     private float oldCooldownParry;
     private float oldCooldownDash;
-    public Adderall(int initCount)
+    public Adderall(int initCount, int initCost)
     {
         count = initCount;
+        cost = initCost;
         LoadSprite("Consumables/Pills"); // TODO: replace sprite
         oldCooldownParry = GameManager.instance.playerConstants.parryCooldown;
         oldCooldownDash = GameManager.instance.playerConstants.dashCooldown;
@@ -20,7 +21,6 @@ public class Adderall : ABCConsumable
     }
     IEnumerator TempLowerCooldown()
     {
-        
         GameManager.instance.playerConstants.parryCooldown = 0.2f;
         GameManager.instance.playerConstants.dashCooldown = 0.2f;
         yield return new WaitForSecondsRealtime(10);

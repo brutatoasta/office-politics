@@ -7,6 +7,7 @@ public abstract class ABCConsumable
 {
     // public ConsumableData data;
     public int count;
+    public int cost;
     public Sprite sprite;
     public void Consume()
     {

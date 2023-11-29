@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Coffee : ABCConsumable
 {
-    public Coffee(int initCount)
+    public Coffee(int initCount, int initCost)
     {
         count = initCount;
+        cost = initCost;
         LoadSprite("Consumables/Coffee"); // TODO: replace sprite
     }
     public override void ConsumeEffect()
