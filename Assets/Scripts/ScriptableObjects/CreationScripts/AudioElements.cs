@@ -33,6 +33,8 @@ public class AudioElements : ScriptableObject
     // UI SFX
     public AudioElement menuClick;
     public AudioElement menuBack;
+    public AudioElement gamePause;
+    public AudioElement gameResume;
     public AudioElement cycleConsumable;
     public AudioElement showTaskDetails;
     public AudioElement hideTaskDetails;

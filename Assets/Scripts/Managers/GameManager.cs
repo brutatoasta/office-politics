@@ -157,6 +157,8 @@ public class GameManager : Singleton<GameManager>
             // check if in a level
             gamePlay.Invoke();
             // hide pause menu
+
+            PlayAudioElement(audioElements.gameResume);
         }
         else
         {
@@ -164,6 +166,8 @@ public class GameManager : Singleton<GameManager>
             isPaused = true;
             gamePause.Invoke();
             // show pause menu
+
+            PlayAudioElement(audioElements.gamePause);
         }
     }
 
