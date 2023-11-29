@@ -49,9 +49,9 @@ public class TaskConstants : ScriptableObject
             {
                 new(1, 1,5, TaskName.Shred, "Shred documents"),
                 new(1, 1,5, TaskName.Laminate, "Laminate documents"),
-                new(1, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
-                new(1, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
-                //new(1, 1,5, TaskName.FetchDoc, "Fetch documents from Jack for photocopy"),
+                new(3, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
+                new(2, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
+                new(1, 1,5, TaskName.FetchDoc, "Fetch documents from Jack for photocopy"),
                 new(1, 1,5, TaskName.DeliverDoc, "Deliver photocopied documents to Tom"),
                 new(1, 1,5, TaskName.RefillCoffee, "Refill the empty coffee pot"),
             }
