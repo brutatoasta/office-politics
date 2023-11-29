@@ -31,9 +31,11 @@ public class AudioElements : ScriptableObject
     public AudioElement levelComplete;
 
     // UI SFX
-    public AudioElement cycleConsumable;
     public AudioElement menuClick;
     public AudioElement menuBack;
+    public AudioElement cycleConsumable;
+    public AudioElement showTaskDetails;
+    public AudioElement hideTaskDetails;
 
     // Player SFX
     public AudioElement playerDash;

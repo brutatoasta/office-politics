@@ -113,7 +113,7 @@ public class HUDManager : MonoBehaviour
             isShown = false;
             taskAnimator.Play("TaskExit");
 
-
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
         }
         else
         {
@@ -121,6 +121,7 @@ public class HUDManager : MonoBehaviour
             isShown = true;
             taskAnimator.Play("TasksPage");
 
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
     }
     public void FreezeTime()
