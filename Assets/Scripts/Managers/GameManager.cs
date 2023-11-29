@@ -195,7 +195,7 @@ public class GameManager : Singleton<GameManager>
 
     public void DecreaseQuota()
     {
-        if (overtime && levelVariables.isQuotaComplete()) DoorOpen();
+        if (levelVariables.isQuotaComplete()) DoorOpen();
     }
 
     public void DoorOpen()

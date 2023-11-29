@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -174,12 +175,15 @@ public class PlayerController : MonoBehaviour
         canParry = false;
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
-        
+
         GameManager.instance.PlayAudioElement(audioElements.playerParry);
+
+        List<int> oldArrows = new List<int>();
+
         float timePassed = 0f;
         while (timePassed < 0.6f)
         {
-            ParryObj();
+            ParryObj(oldArrows);
             timePassed += Time.deltaTime;
             yield return null;
         }
@@ -188,14 +192,16 @@ public class PlayerController : MonoBehaviour
         canParry = true;
     }
 
-    void ParryObj()
+    void ParryObj(List<int> oldArrows)
     {
         Collider2D[] parriedArrows = Physics2D.OverlapCircleAll(transform.position, playerConstants.parryRange);
 
         foreach (Collider2D arrow in parriedArrows)
         {
-            if (arrow.gameObject.CompareTag("Arrow"))
+            if (arrow.gameObject.CompareTag("Arrow") && (!oldArrows.Contains(arrow.gameObject.GetInstanceID())))
             {
+                oldArrows.Add(arrow.gameObject.GetInstanceID());
+
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
                 Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
 
