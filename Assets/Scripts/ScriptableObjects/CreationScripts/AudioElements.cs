@@ -42,6 +42,7 @@ public class AudioElements : ScriptableObject
     // Player SFX
     public AudioElement playerDash;
     public AudioElement playerParry;
+    public AudioElement playerParrySuccess;
     public AudioElement useConsumable;
     public AudioElement playerGetHitIntensity1;
     public AudioElement playerGetHitIntensity2;

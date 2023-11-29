@@ -57,6 +57,9 @@ MonoBehaviour:
   playerParry:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 2c0a0781639ebeb479072ca17b7aa5e9, type: 3}
+  playerParrySuccess:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: bc3b906b9c1bfbb49baf25de03fce989, type: 3}
   useConsumable:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 78dbaa4c5cae3ac46b81e33b949d0488, type: 3}
@@ -72,6 +75,9 @@ MonoBehaviour:
   throwStressArrow:
     audioType: 6
     audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
+  enemyGetStunned:
+    audioType: 6
+    audioClip: {fileID: 8300000, guid: ab13116e66e77324782d1f776d80e4c2, type: 3}
   pourCoffee:
     audioType: 8
     audioClip: {fileID: 8300000, guid: ed4ee1c75ef5e404ea86b8d2961f4bd7, type: 3}

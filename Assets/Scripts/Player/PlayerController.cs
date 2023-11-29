@@ -199,6 +199,8 @@ public class PlayerController : MonoBehaviour
         {
             if (arrow.gameObject.CompareTag("Arrow") && (!oldArrows.Contains(arrow.gameObject.GetInstanceID())))
             {
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerParrySuccess);
+
                 oldArrows.Add(arrow.gameObject.GetInstanceID());
 
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
