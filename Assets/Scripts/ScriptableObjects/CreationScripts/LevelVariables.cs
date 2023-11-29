@@ -70,6 +70,7 @@ public class LevelVariables : ScriptableObject
         // let evadeType be determined by player
         stressPoints = 0;
         maxStressPoints = 50;
+        currentSceneIndex = 0;
         todo = TaskConstants.todos[currentLevelIndex];
         for (int i = 0; i < todo.Length; i++)
         {

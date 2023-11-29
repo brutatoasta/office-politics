@@ -21,6 +21,7 @@ public class PlayerConstants : ScriptableObject
     public int performancePoints;
     public int overtimeTick = 1;
 
-
+    public Sprite parryIcon;
+    public Sprite dashIcon;
 
 }

@@ -31,6 +31,9 @@ public class HUDManager : MonoBehaviour
     // public bool ExitState = false;
     // public Animator taskAnimator;
 
+    public Slider cooldownSlider;
+    public Image evadeIcon;
+
     void Start()
     {
         GameManager.instance.updateInventory.AddListener(UpdateInventory);
@@ -38,6 +41,8 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
         GameManager.instance.gameOver.AddListener(OnGameOver);
+        GameManager.instance.playerEvade.AddListener(OnPlayerEvade);
+        GameManager.instance.updateEvade.AddListener(UpdateCooldownSprite);
 
         UpdateShop();
 
@@ -181,5 +186,28 @@ public class HUDManager : MonoBehaviour
     }
 
     public void DisableShop() => shopUI.SetActive(false);
+
+    public void OnPlayerEvade(float cooldownTime)
+    {
+        StartCoroutine(CooldownAnimation(cooldownTime));
+    }
+
+    IEnumerator CooldownAnimation(float cooldownTime)
+    {
+        float timePassed = 0f;
+        while (timePassed < cooldownTime)
+        {
+            cooldownSlider.value = 1f - (timePassed / cooldownTime);
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+        yield return null;
+    }
+
+    public void UpdateCooldownSprite(EvadeType evadeType)
+    {
+        evadeIcon.sprite = (evadeType == EvadeType.Dash)? GameManager.instance.playerConstants.dashIcon: GameManager.instance.playerConstants.parryIcon;
+    }
+    
 
 }
