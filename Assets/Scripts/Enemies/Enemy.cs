@@ -120,7 +120,10 @@ public class Enemy : MonoBehaviour
 
         // resume enemy weapon
         yield return new WaitForSeconds(2.1f); // because one enemy weapon cycle is 4.1s
-        pauseEnemyWeapon.Invoke();
+        if (isChasing)
+        {
+            pauseEnemyWeapon.Invoke();
+        }
     }
 
     public void stunByArrow()
