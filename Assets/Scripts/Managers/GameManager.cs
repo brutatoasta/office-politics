@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -27,7 +28,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent doorOpen;
 
     // runVariables
-    public UnityEvent<int> cycleInventory;
+    public UnityEvent cycleInventory;
     public UnityEvent useConsumable;
 
     // Timer
@@ -53,6 +54,7 @@ public class GameManager : Singleton<GameManager>
     public bool isPaused = false;
     public bool overtime = false;
     private int currentInventorySlot = 0;
+    [NonSerialized] public List<int> activeSlots = new List<int> {0,1};
 
     public Sprite kitKatSprite;
     public Sprite coffeeSprite;
@@ -64,6 +66,7 @@ public class GameManager : Singleton<GameManager>
     {
         levelVariables.Init(levelVariables.currentLevelIndex);
         runVariables.Init();
+        Debug.Log(string.Join(",",activeSlots));
     }
 
     public void RunStart()
@@ -83,14 +86,33 @@ public class GameManager : Singleton<GameManager>
     // Raise event to cycle runVariables slot
     public void CycleInventory()
     {
-        // find next slot that contains an item
+        // find start slot
         for (int i = 0; i < runVariables.consumableObjects.Length; i++)
         {
             currentInventorySlot = (currentInventorySlot + 1) % runVariables.consumableObjects.Length;
             if (runVariables.consumableObjects[currentInventorySlot].count != 0) break;
         }
 
-        cycleInventory.Invoke(currentInventorySlot);
+        int currIdx = currentInventorySlot;
+        List<int> res = new List<int>();
+
+        while (res.Count <= activeSlots.Count )
+        {
+            if (runVariables.consumableObjects[currIdx].count > 0)
+            {
+                res.Add(currIdx);
+            }
+
+            currIdx = (currIdx+1) % runVariables.consumableObjects.Length;
+
+            if (currIdx == currentInventorySlot) break;
+        }
+
+        activeSlots = res;
+        Debug.Log(string.Join(",",activeSlots));
+
+
+        cycleInventory.Invoke();
     }
 
     public void UseCurrentConsumable()

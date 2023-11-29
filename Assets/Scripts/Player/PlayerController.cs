@@ -222,7 +222,7 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.PlayAudioElement(audioElements.useConsumable);
     }
 
-    void CycleConsumable(int _)
+    void CycleConsumable()
     {
         // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
         GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);

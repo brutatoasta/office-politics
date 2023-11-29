@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6288d719c00be6f42ac55cd62f914049, type: 3}
   m_Name: RunVariables
   m_EditorClassIdentifier: 
-  performancePoints: 20
+  consumableCosts: 050000000a0000000f000000
+  performancePoints: 100
