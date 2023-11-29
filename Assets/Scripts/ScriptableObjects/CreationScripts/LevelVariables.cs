@@ -43,7 +43,7 @@ public class LevelVariables : ScriptableObject
                     // add performance points for that task
                     levelPP += todo[i].performancePoints;
                 }
-                // break here
+                break;
             }
         }
     }
