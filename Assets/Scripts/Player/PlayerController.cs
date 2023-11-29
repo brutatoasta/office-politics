@@ -13,7 +13,15 @@ public class PlayerController : MonoBehaviour
     public WeaponGameConstants arrowConstants;
     public AudioElements audioElements;
 
+
+    // movement
+
     Vector2 movementInput;
+    public ContactFilter2D movementFilter;
+    List<RaycastHit2D> castCollisions = new();
+    public float collisionOffset = 0.05f;
+
+    // components
     SpriteRenderer playerSprite;
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
@@ -53,12 +61,27 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
+            Debug.Log(movementInput);
             // If movement input is not 0, move player
             if (movementInput != Vector2.zero)
             {
+                // if less than max, add a force to accelerate it in the next fixed update frame
+                // force is in the direction of movement input (normalized) multiplied by movespeed
                 if (rb.velocity.magnitude < playerConstants.maxMoveSpeed)
                 {
-                    rb.AddForce(movementInput * playerConstants.moveSpeed);
+                    bool success = TryMove(movementInput);
+
+                    if (!success)
+                    {
+                        success = TryMove(new Vector2(movementInput.x, 0));
+                    }
+
+                    if (!success)
+                    {
+                        success = TryMove(new Vector2(0, movementInput.y));
+                    }
+                    
+                    if( !success) Debug.Log("really can't move");
                 }
             }
             else
@@ -78,6 +101,37 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void DoMove(Rigidbody2D rb) => rb.AddForce(movementInput * playerConstants.moveSpeed);
+    private bool TryMove(Vector2 direction)
+    {
+        if (direction != Vector2.zero)
+        {
+            // Check for potential collisions
+            // we square time because movement updates are 
+            float distanceCast = playerConstants.moveSpeed * Time.fixedDeltaTime * Time.fixedDeltaTime;
+            int count = rb.Cast(
+                direction, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
+                movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
+                castCollisions, // List of collisions to store the found collisions into after the Cast is finished
+                distanceCast + collisionOffset); // The distance to cast equal to the movement plus an offset
+
+            if (count == 0)
+            {
+                DoMove(rb);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            // Can't move if there's no direction to move in
+            return false;
+        }
+
+    }
     void Update()
     {
         animator.SetFloat("playerVelocityX", rb.velocity.x);
