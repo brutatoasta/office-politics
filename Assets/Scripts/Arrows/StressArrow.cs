@@ -12,12 +12,12 @@ public class StressArrow : BaseArrow
     public UnityEvent<Transform> StopLineRenderer;
     private float speed;
 
-    public override void OnParry() {}
+    public override void OnParry() { }
     private TrailRenderer trailRenderer;
     private void Awake()
     {
         speed = weaponGameConstants.stressArrowSpeed;
-        throwArrowAudioElement = audioElements.throwStressArrow;
+        throwArrowAudioElement = GameManager.instance.audioElements.throwStressArrow;
         trailRenderer = gameObject.GetComponent<TrailRenderer>();
         trailRenderer.enabled = false;
     }
