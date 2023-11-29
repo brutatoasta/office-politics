@@ -16,7 +16,7 @@ public abstract class BaseInteractable : MonoBehaviour
         spriteRenderer = GetComponent<Renderer>();
     }
 
-    public void Start()
+    public virtual void Start()
     {
         SetBubble();
         GameManager.instance.heldSet.AddListener(SetBubble);

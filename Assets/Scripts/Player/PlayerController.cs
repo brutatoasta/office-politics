@@ -174,8 +174,22 @@ public class PlayerController : MonoBehaviour
         canParry = false;
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
+        
         GameManager.instance.PlayAudioElement(audioElements.playerParry);
+        float timePassed = 0f;
+        while (timePassed < 0.6f)
+        {
+            ParryObj();
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+        
+        yield return new WaitForSecondsRealtime(playerConstants.parryCooldown);
+        canParry = true;
+    }
 
+    void ParryObj()
+    {
         Collider2D[] parriedArrows = Physics2D.OverlapCircleAll(transform.position, playerConstants.parryRange);
 
         foreach (Collider2D arrow in parriedArrows)
@@ -199,16 +213,9 @@ public class PlayerController : MonoBehaviour
 
                 arrow.gameObject.GetComponent<BaseArrow>().OnParry();
             }
-
-            else if (arrow.gameObject.CompareTag("Enemy"))
-            {
-                Vector2 reflectionNormal = (arrow.attachedRigidbody.position - rb.position).normalized;
-                arrow.attachedRigidbody.AddForce(reflectionNormal * 10, ForceMode2D.Impulse);
-            }
         }
-        yield return new WaitForSecondsRealtime(playerConstants.parryCooldown);
-        canParry = true;
     }
+
 
     void OnDrawGizmosSelected()
     {
