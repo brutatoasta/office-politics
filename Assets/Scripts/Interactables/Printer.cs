@@ -63,28 +63,38 @@ public class Printer : BaseInteractable
 
             GameManager.instance.SetHeld(deliverDoc);
             playerHand.sprite = deliverDocSprite;
-            Debug.Log($"Fetched {GameManager.instance.held.name} from printer!");
+            Debug.Log($"Fetched {held.name} from printer!");
             isDocumentReady = false;
             progressBar.SetActive(false);
         }
         else
         {
-            // depositing PrintDoc
-            GameManager.instance.SetHeld(null);
-            playerHand.sprite = null;
+            if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
+            {
+                GameManager.instance.levelVariables.Succeed(heldType);
+                GameManager.instance.showPerformancePoint.Invoke();
+                GameManager.instance.DecreaseQuota();
+                // depositing PrintDoc
+                GameManager.instance.SetHeld(null);
+                playerHand.sprite = null;
 
-            Debug.Log($"Dropped {held.name} into printer!");
-            progressBar.SetActive(true);
-            progressBarAnimator.SetTrigger("photocopyProgress");
+                //Debug.Log($"Dropped {held.name} into printer!");
+                progressBar.SetActive(true);
+                progressBarAnimator.SetTrigger("photocopyProgress");
 
-            // cook the doc
-            StartCoroutine(Cook());
+                // cook the doc
+                StartCoroutine(Cook());
+            }
         }
+    }
+    bool isValidInput(TaskName input)
+    {
+        return _validInputs.Contains(input);
     }
     private IEnumerator Cook()
     {
         // coroutine changes isDocumentReady from false to true after x seconds
-        Debug.Log($"Waiting for {held.name} to finish processing");
+        //Debug.Log($"Waiting for {held.name} to finish processing");
         yield return new WaitForSeconds(cookTime);
         isDocumentReady = true;
         Debug.Log("document ready");

@@ -41,7 +41,7 @@ public class TaskConstants : ScriptableObject
             {
                 new(1, 1, 5, TaskName.Shred, "Shred documents"),
                 new(1, 1, 5, TaskName.Laminate, "Laminate documents"),
-                //new(1, 1, 5, TaskName.FetchDoc, "Fetch documents from Susan for photocopy"),
+                new(1, 1, 5, TaskName.FetchDoc, "Fetch documents from Susan for photocopy"),
                 new(1, 1, 5, TaskName.DeliverDoc, "Deliver photocopied documents to Jane"),
             },
             // level 4
@@ -92,7 +92,7 @@ public enum TaskName
     FetchCoffee,
     RefillCoffee,
     FetchTea,
-    // FetchDoc,
+    FetchDoc,
     DeliverDoc,
     PrepMeeting,
     PrepRefreshment,
