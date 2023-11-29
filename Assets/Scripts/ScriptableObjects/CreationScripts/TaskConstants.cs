@@ -32,8 +32,8 @@ public class TaskConstants : ScriptableObject
             {
                 new(1, 1, 5, TaskName.FetchTea, "Fetch tea for Ann"),
                 new(1, 1, 5, TaskName.FetchCoffee, "Fetch coffee for Mary"),
-                new(1, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
-                new(1, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
+                new(2, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
+                new(3, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
 
             },
             // level 3

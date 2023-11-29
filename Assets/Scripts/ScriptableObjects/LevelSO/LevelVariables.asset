@@ -26,8 +26,8 @@ MonoBehaviour:
     stressDamage: 5
     taskName: 2
     taskString: Fetch coffee for Mary
-  levelPP: 0
+  levelPP: 7
   stressPoints: 0
   maxStressPoints: 50
-  currentSceneIndex: 0
   currentLevelIndex: 0
+  currentSceneIndex: 1
