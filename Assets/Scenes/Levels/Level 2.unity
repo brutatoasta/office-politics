@@ -57718,22 +57718,38 @@ MonoBehaviour:
   - actorId: 0
     message: Hey! Welcome to Taichill Games. I believe I interviewed you and emailed
       you prior to today. :)
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 1
     message: Hi Lisa! I am Intern #24601. Nice to meet you!
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 0
     message: Since you dont meet our requirement of 20 year experience in C# and
       Unity, we will have to start you off at the basic level. For four days, you
       will be put under probation to see if you have what it takes to be an intern
       at our company.
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 0
     message: hello type here for lisa
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 1
     message: 1 is for intern
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   actors:
   - name: Lisa Tan (HR)
     sprite: {fileID: 21300000, guid: a44ec5bc3ec1304419bc75c77b2a3c12, type: 3}
   - name: Intern #24601
     sprite: {fileID: 21300000, guid: 5a805caebb5823c468b4cc2aa0302bfc, type: 3}
+  messagePauses: 
 --- !u!61 &1936507762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57879,7 +57895,7 @@ PrefabInstance:
     - target: {fileID: 4200504481560553773, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
       propertyPath: arrow
       value: 
-      objectReference: {fileID: 5917662536098192051, guid: 4e8a20f87375c8b4b9a51eed7c6a12f5, type: 3}
+      objectReference: {fileID: 5917662536098192051, guid: 493ae09969db39449b92fcb91efeaed1, type: 3}
     - target: {fileID: 7237201132361172765, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
       propertyPath: m_Name
       value: MainOfficeBoss
