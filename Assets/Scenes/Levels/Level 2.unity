@@ -3837,7 +3837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: taskName
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: bubbleObj
@@ -4094,7 +4094,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
+  transition: {fileID: 0}
   controlsPanel: {fileID: 0}
+  shade: {fileID: 0}
 --- !u!68 &427273883
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -29430,7 +29432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: taskName
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
@@ -34357,7 +34359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1100835573216779378, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -34972,7 +34974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1100835573216779378, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -62680,7 +62682,7 @@ PrefabInstance:
       objectReference: {fileID: 1269662892}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -62899,7 +62901,7 @@ PrefabInstance:
       objectReference: {fileID: 944279424}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -63999,7 +64001,7 @@ PrefabInstance:
       objectReference: {fileID: 611364050}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -64108,7 +64110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: taskName
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
@@ -64376,7 +64378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
-  taskName: 7
+  taskName: 6
 --- !u!1 &4337958337037165083
 GameObject:
   m_ObjectHideFlags: 0
@@ -64548,7 +64550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
-  taskName: 6
+  taskName: 5
 --- !u!1001 &6290294752409637512
 PrefabInstance:
   m_ObjectHideFlags: 0

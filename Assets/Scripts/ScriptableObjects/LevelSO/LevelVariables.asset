@@ -18,16 +18,28 @@ MonoBehaviour:
     performancePoints: 1
     current: 1
     stressDamage: 5
-    taskName: 4
-    taskString: Fetch tea for Ann
+    taskName: 0
+    taskString: Shred documents
   - quota: 1
     performancePoints: 1
     current: 1
     stressDamage: 5
-    taskName: 2
-    taskString: Fetch coffee for Mary
-  levelPP: 7
-  stressPoints: 0
+    taskName: 1
+    taskString: Laminate documents
+  - quota: 1
+    performancePoints: 1
+    current: 0
+    stressDamage: 5
+    taskName: 5
+    taskString: Fetch documents from Susan for photocopy
+  - quota: 1
+    performancePoints: 1
+    current: 0
+    stressDamage: 5
+    taskName: 6
+    taskString: Deliver photocopied documents to Jane
+  levelPP: 2
+  stressPoints: 10
   maxStressPoints: 50
   currentLevelIndex: 0
-  currentSceneIndex: 1
+  currentSceneIndex: 0
