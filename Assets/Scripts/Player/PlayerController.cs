@@ -222,14 +222,33 @@ public class PlayerController : MonoBehaviour
         canParry = false;
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
+
         GameManager.instance.PlayAudioElement(audioElements.playerParry);
 
+        List<int> oldArrows = new List<int>();
+
+        float timePassed = 0f;
+        while (timePassed < 0.6f)
+        {
+            ParryObj(oldArrows);
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+
+        yield return new WaitForSecondsRealtime(playerConstants.parryCooldown);
+        canParry = true;
+    }
+
+    void ParryObj(List<int> oldArrows)
+    {
         Collider2D[] parriedArrows = Physics2D.OverlapCircleAll(transform.position, playerConstants.parryRange);
 
         foreach (Collider2D arrow in parriedArrows)
         {
-            if (arrow.gameObject.CompareTag("Arrow"))
+            if (arrow.gameObject.CompareTag("Arrow") && (!oldArrows.Contains(arrow.gameObject.GetInstanceID())))
             {
+                oldArrows.Add(arrow.gameObject.GetInstanceID());
+
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
                 Vector2 reflectionNormal = (arrowRb.position - rb.position).normalized;
 
@@ -247,16 +266,9 @@ public class PlayerController : MonoBehaviour
 
                 arrow.gameObject.GetComponent<BaseArrow>().OnParry();
             }
-
-            else if (arrow.gameObject.CompareTag("Enemy"))
-            {
-                Vector2 reflectionNormal = (arrow.attachedRigidbody.position - rb.position).normalized;
-                arrow.attachedRigidbody.AddForce(reflectionNormal * 10, ForceMode2D.Impulse);
-            }
         }
-        yield return new WaitForSecondsRealtime(playerConstants.parryCooldown);
-        canParry = true;
     }
+
 
     void OnDrawGizmosSelected()
     {
@@ -270,7 +282,7 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.PlayAudioElement(audioElements.useConsumable);
     }
 
-    void CycleConsumable(int _)
+    void CycleConsumable()
     {
         // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
         GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
@@ -281,11 +293,15 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Arrow") && !invincible)
         {
-            if (col.gameObject.name.Contains("JobArrow"))
+            if (col.gameObject.name.Contains("JobArrowTutorial"))
+            {
+                GameManager.instance.IncreaseCoffeeJob();
+            }
+            else if (col.gameObject.name.Contains("JobArrow"))
             {
                 GameManager.instance.IncreaseJob();
             }
-            if (col.gameObject.name.Contains("StressArrow"))
+            else if (col.gameObject.name.Contains("StressArrow"))
             {
                 GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
                 GameManager.instance.IncreaseStress();

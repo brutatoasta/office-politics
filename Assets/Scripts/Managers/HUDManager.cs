@@ -45,8 +45,9 @@ public class HUDManager : MonoBehaviour
         countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[0].count;
     }
 
-    public void CycleInventory(int currentInventorySlot)
+    public void CycleInventory()
     {
+        int currentInventorySlot = 0;
         current.sprite = (GameManager.instance.runVariables.consumableObjects[currentInventorySlot].count > 0) ?
                             GameManager.instance.runVariables.consumableObjects[currentInventorySlot].sprite :
                             null;

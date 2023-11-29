@@ -8,7 +8,6 @@ public class SceneExit : MonoBehaviour
 {
     private string[] scenes = { "Level 1", "Cutscene", "PowerUpScene", "Level 2", "Cutscene", "PowerUpScene", "Level 3", "Cutscene", "PowerUpScene", "Level 4", "Cutscene" };
     public LevelVariables levelVariables;
-    private int currentSceneIndex = 0;
     public Animator transition;
     public void PlayGame()
     {
@@ -83,10 +82,11 @@ public class SceneExit : MonoBehaviour
             //         break;
             // }
             // fade to black
-            if (currentSceneIndex < scenes.Length)
+           
+            if (levelVariables.currentSceneIndex < scenes.Length)
             {
-                nextScene = scenes[currentSceneIndex];
-                currentSceneIndex++;
+                nextScene = scenes[levelVariables.currentSceneIndex];
+                levelVariables.currentSceneIndex++;
                 // fading in and out
                 transition.SetTrigger("Start");
                 // Start the coroutine to load the next scene after a delay
@@ -96,19 +96,23 @@ public class SceneExit : MonoBehaviour
             {
                 Debug.Log("All scenes loaded.");
             }
-            switch (scene.name)
+            switch (nextScene)
             {
                 case "Level 1":
                     levelVariables.currentLevelIndex = 0;
+                    GameManager.instance.LevelStart();
                     break;
                 case "Level 2":
                     levelVariables.currentLevelIndex = 1;
+                    GameManager.instance.LevelStart();
                     break;
                 case "Level 3":
                     levelVariables.currentLevelIndex = 2;
+                    GameManager.instance.LevelStart();
                     break;
                 case "Level 4":
                     levelVariables.currentLevelIndex = 3;
+                    GameManager.instance.LevelStart();
                     break;
                 default:
                     break;

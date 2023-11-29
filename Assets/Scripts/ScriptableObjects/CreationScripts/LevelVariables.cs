@@ -87,6 +87,18 @@ public class LevelVariables : ScriptableObject
         todo[i].current++;
     }
 
+    public void addCoffeeJob()
+    {
+        for (int i = 0; i < todo.Length; i++)
+        {
+            if (todo[i].taskName.Equals(TaskName.FetchCoffee))
+            {
+                todo[i].current++;
+                break;
+            }
+        }
+    }
+
     public void ExitLevel()
     {
         // transfer to RunVariables
