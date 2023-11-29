@@ -15,12 +15,12 @@ public class LevelVariables : ScriptableObject
     public int stressPoints;
     public int maxStressPoints;
     public int currentLevelIndex;
-
+    public int currentSceneIndex;
     public bool isQuotaComplete()
     {
         foreach (TaskItem taskItem in todo)
         {
-            if (taskItem.quota > 0)
+            if (taskItem.current > 0)
             {
                 return false;
             }
@@ -33,19 +33,18 @@ public class LevelVariables : ScriptableObject
         Debug.Log((int)name);
         Debug.Log(todo);
         Debug.Log(todo[0]);
-        if (todo[(int)name].current > 0)
+        for (int i = 0; i < todo.Length; i++)
         {
-            todo[(int)name].current--;
-
-            // add performance points for that task
-            levelPP += todo[(int)name].performancePoints;
-
-            // no change to stress
-
-            //if (todo[(int)name].quota == 0)
-            //{
-            //    todo[(int)name].StrikeOut();
-            //}
+            if (todo[i].taskName.Equals(name))
+            {
+                if (todo[i].current > 0)
+                {
+                    todo[i].current--;
+                    // add performance points for that task
+                    levelPP += todo[i].performancePoints;
+                }
+                break;
+            }
         }
     }
     public void Fail(TaskName name)
@@ -53,17 +52,25 @@ public class LevelVariables : ScriptableObject
         // perhaps subtract PP or reset streak
         // levelPP -= todo[(int)name].performancePoints;
         // increase stress
-        stressPoints += todo[(int)name].stressDamage;
-        GameManager.instance.IncreaseStress();
+        //stressPoints += todo[(int)name].stressDamage;
+        //GameManager.instance.IncreaseStress();
+        for (int i = 0; i < todo.Length; i++)
+        {
+            if (todo[i].taskName.Equals(name))
+            {
+                stressPoints += todo[i].stressDamage;
+                GameManager.instance.IncreaseStress();
+                break;
+            }
+        }
     }
 
-    public void Init(int level)
+    public void Init()
     {
         // let evadeType be determined by player
         stressPoints = 0;
         maxStressPoints = 50;
-        levelPP = 0;
-        todo = TaskConstants.todos[level];
+        todo = TaskConstants.todos[currentLevelIndex];
         for (int i = 0; i < todo.Length; i++)
         {
             todo[i].current = todo[i].quota;

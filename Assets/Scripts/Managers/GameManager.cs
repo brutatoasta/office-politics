@@ -64,7 +64,10 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        levelVariables.Init(levelVariables.currentLevelIndex);
+        levelVariables.Init();
+        levelVariables.currentSceneIndex = 0;
+        levelVariables.currentLevelIndex = 0;
+        levelVariables.levelPP = 0;
         runVariables.Init();
         Debug.Log(string.Join(",",activeSlots));
     }
@@ -80,7 +83,7 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("InitCalled");
         levelStart.Invoke();
         UpdateTimer(120);
-        levelVariables.Init(0);
+        levelVariables.Init();
     }
 
     // Raise event to cycle runVariables slot
