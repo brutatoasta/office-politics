@@ -54,7 +54,7 @@ public class GameManager : Singleton<GameManager>
     public bool isPaused = false;
     public bool overtime = false;
     private int currentInventorySlot = 0;
-    [NonSerialized] public List<int> activeSlots = new List<int> {0,1};
+    [NonSerialized] public List<int> activeSlots = new List<int> { 0, 1 };
 
     public Sprite kitKatSprite;
     public Sprite coffeeSprite;
@@ -69,7 +69,9 @@ public class GameManager : Singleton<GameManager>
         levelVariables.currentLevelIndex = 0;
         levelVariables.levelPP = 0;
         runVariables.Init();
-        Debug.Log(string.Join(",",activeSlots));
+        Debug.Log(string.Join(",", activeSlots));
+
+        PlayAudioElement(audioElements.startMenuBGM);
     }
 
     public void RunStart()
@@ -84,6 +86,7 @@ public class GameManager : Singleton<GameManager>
         levelStart.Invoke();
         UpdateTimer(120);
         levelVariables.Init();
+
     }
 
     // Raise event to cycle runVariables slot
@@ -99,20 +102,20 @@ public class GameManager : Singleton<GameManager>
         int currIdx = currentInventorySlot;
         List<int> res = new List<int>();
 
-        while (res.Count <= activeSlots.Count )
+        while (res.Count <= activeSlots.Count)
         {
             if (runVariables.consumableObjects[currIdx].count > 0)
             {
                 res.Add(currIdx);
             }
 
-            currIdx = (currIdx+1) % runVariables.consumableObjects.Length;
+            currIdx = (currIdx + 1) % runVariables.consumableObjects.Length;
 
             if (currIdx == currentInventorySlot) break;
         }
 
         activeSlots = res;
-        Debug.Log(string.Join(",",activeSlots));
+        Debug.Log(string.Join(",", activeSlots));
 
 
         cycleInventory.Invoke();
@@ -144,6 +147,7 @@ public class GameManager : Singleton<GameManager>
     {
         audioElementGameEvent.Raise(audioElement);
     }
+
     public void PlayPause()
     {
         if (isPaused)
@@ -162,7 +166,6 @@ public class GameManager : Singleton<GameManager>
             // show pause menu
         }
     }
-
 
 
     public void GameRestart()

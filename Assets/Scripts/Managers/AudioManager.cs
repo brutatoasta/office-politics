@@ -32,8 +32,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource nonPlayableCharacterSfxAudioSource;
     private AudioSource interactionSfxAudioSource;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         bgmAudioSource = transform.Find("BGM").GetComponent<AudioSource>();
         gameplayBgmIntensity1AudioSource = transform.Find("BGM").transform.Find("Gameplay BGM Intensity 1").GetComponent<AudioSource>();
@@ -44,13 +43,19 @@ public class AudioManager : MonoBehaviour
         enemySfxAudioSource = transform.Find("Enemy SFX").GetComponent<AudioSource>();
         nonPlayableCharacterSfxAudioSource = transform.Find("NPC SFX").GetComponent<AudioSource>();
         interactionSfxAudioSource = transform.Find("Interaction SFX").GetComponent<AudioSource>();
-
-        // temporary: for starting BGM in the main gameplay scene
-        gameplayBgmIntensity1AudioSource.clip = audioElements.gameplayBgmIntensity1.audioClip;
-        gameplayBgmIntensity1AudioSource.Play();
     }
 
-     public void PlayAudioElement(AudioElement audioElement)
+    // Start is called before the first frame update
+    void Start()
+    {
+
+
+        // // temporary: for starting BGM in the main gameplay scene
+        // gameplayBgmIntensity1AudioSource.clip = audioElements.gameplayBgmIntensity1.audioClip;
+        // gameplayBgmIntensity1AudioSource.Play();
+    }
+
+    public void PlayAudioElement(AudioElement audioElement)
     {
         switch (audioElement.audioType)
         {

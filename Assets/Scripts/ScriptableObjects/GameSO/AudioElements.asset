@@ -33,6 +33,12 @@ MonoBehaviour:
   cycleConsumable:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 67e549677c7e09c479f12a90d1f19191, type: 3}
+  menuClick:
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: e630f7cd1ddafed4dad4b1300f4ca6f5, type: 3}
+  menuBack:
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: 97689cdbe6a851248ae9a854fe706a1c, type: 3}
   playerDash:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}

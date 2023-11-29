@@ -32,6 +32,8 @@ public class AudioElements : ScriptableObject
 
     // UI SFX
     public AudioElement cycleConsumable;
+    public AudioElement menuClick;
+    public AudioElement menuBack;
 
     // Player SFX
     public AudioElement playerDash;

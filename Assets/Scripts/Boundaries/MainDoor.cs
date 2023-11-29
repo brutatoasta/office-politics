@@ -10,12 +10,14 @@ public class Entrance : MonoBehaviour
     void Start()
     {
         GameManager.instance.doorOpen.AddListener(OpenDoor);
-    }    
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
         sceneExit.SetActive(true);
         GameManager.instance.StartTimer();
+
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBgmIntensity1);
     }
 
     public void OpenDoor()
