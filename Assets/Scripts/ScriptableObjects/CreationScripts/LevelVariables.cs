@@ -15,12 +15,12 @@ public class LevelVariables : ScriptableObject
     public int stressPoints;
     public int maxStressPoints;
     public int currentLevelIndex;
-
+    public int currentSceneIndex;
     public bool isQuotaComplete()
     {
         foreach (TaskItem taskItem in todo)
         {
-            if (taskItem.quota > 0)
+            if (taskItem.current > 0)
             {
                 return false;
             }
@@ -56,13 +56,12 @@ public class LevelVariables : ScriptableObject
         GameManager.instance.IncreaseStress();
     }
 
-    public void Init(int level)
+    public void Init()
     {
         // let evadeType be determined by player
         stressPoints = 0;
         maxStressPoints = 50;
-        levelPP = 0;
-        todo = TaskConstants.todos[level];
+        todo = TaskConstants.todos[currentLevelIndex];
         for (int i = 0; i < todo.Length; i++)
         {
             todo[i].current = todo[i].quota;
