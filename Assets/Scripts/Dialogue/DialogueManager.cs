@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,13 +13,14 @@ public class DialogueManager : MonoBehaviour
     public RectTransform backgroundBox;
     Message[] currentMessages;
     Actor[] currentActors;
+    int[] currentMessagePauses;
     int activeMessage = 0;
     public static bool isActive = false;
-    public void OpenDialogue(Message[] messages, Actor[] actors)
+    public void OpenDialogue(Message[] messages, Actor[] actors, int[] messagePauses)
     {
         currentMessages = messages;
         currentActors = actors;
-        activeMessage = 0;
+        currentMessagePauses = messagePauses;
         isActive = true;
 
         Debug.Log("Started conversation! Loaded messages: " + messages.Length);
@@ -35,12 +37,14 @@ public class DialogueManager : MonoBehaviour
         actorName.text = actorToDisplay.name;
         actorImage.sprite = actorToDisplay.sprite;
 
+        currentMessages[activeMessage].triggerNextEvent.Invoke();
+
         AnimateTextColour();
     }
     public void NextMessage()
     {
         activeMessage++;
-        if (activeMessage < currentMessages.Length)
+        if (activeMessage < currentMessages.Length && !currentMessagePauses.Contains<int>(activeMessage))
         {
             DisplayMessage();
         }
@@ -50,6 +54,10 @@ public class DialogueManager : MonoBehaviour
             //animate closing backgroundbox
             backgroundBox.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo();
             isActive = false;
+            if (activeMessage == currentMessages.Length)
+            {
+                activeMessage = 0;
+            }
         }
     }
     void AnimateTextColour()

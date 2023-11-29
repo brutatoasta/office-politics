@@ -233,11 +233,15 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Arrow") && !invincible)
         {
-            if (col.gameObject.name.Contains("JobArrow"))
+            if (col.gameObject.name.Contains("JobArrowTutorial"))
+            {
+                GameManager.instance.IncreaseCoffeeJob();
+            }
+            else if (col.gameObject.name.Contains("JobArrow"))
             {
                 GameManager.instance.IncreaseJob();
             }
-            if (col.gameObject.name.Contains("StressArrow"))
+            else if (col.gameObject.name.Contains("StressArrow"))
             {
                 GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
                 GameManager.instance.IncreaseStress();

@@ -128,6 +128,12 @@ public class GameManager : Singleton<GameManager>
     {
         levelVariables.addRandomJob(levelVariables.currentLevelIndex);
     }
+
+    public void IncreaseCoffeeJob()
+    {
+        levelVariables.addCoffeeJob();
+    }
+
     public void IncreaseStress()
     {
         if (levelVariables.stressPoints >= levelVariables.maxStressPoints) GameOver();
