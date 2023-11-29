@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     // Player Constants
     public PlayerConstants playerConstants;
     public WeaponGameConstants arrowConstants;
-    public AudioElements audioElements;
 
     Vector2 movementInput;
     SpriteRenderer playerSprite;
@@ -161,7 +160,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
         // audioSource.PlayOneShot(playerConstants.dashAudio);
-        GameManager.instance.PlayAudioElement(audioElements.playerDash);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerDash);
 
         yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
@@ -176,7 +175,7 @@ public class PlayerController : MonoBehaviour
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
 
-        GameManager.instance.PlayAudioElement(audioElements.playerParry);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerParry);
 
         List<int> oldArrows = new List<int>();
 
@@ -187,7 +186,7 @@ public class PlayerController : MonoBehaviour
             timePassed += Time.deltaTime;
             yield return null;
         }
-        
+
         yield return new WaitForSecondsRealtime(playerConstants.parryCooldown);
         canParry = true;
     }
@@ -232,13 +231,13 @@ public class PlayerController : MonoBehaviour
     void UseConsumable()
     {
         // audioSource.PlayOneShot(playerConstants.useConsumeableClip);
-        GameManager.instance.PlayAudioElement(audioElements.useConsumable);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
     }
 
     void CycleConsumable()
     {
         // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
-        GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
     }
 
 
@@ -259,7 +258,7 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
                 GameManager.instance.IncreaseStress();
             }
-            GameManager.instance.PlayAudioElement(audioElements.playerGetHitIntensity1);
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerGetHitIntensity1);
             StartCoroutine(HurtPlayerShader());
         }
         //teleport from 
