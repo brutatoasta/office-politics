@@ -52,8 +52,17 @@ public class LevelVariables : ScriptableObject
         // perhaps subtract PP or reset streak
         // levelPP -= todo[(int)name].performancePoints;
         // increase stress
-        stressPoints += todo[(int)name].stressDamage;
-        GameManager.instance.IncreaseStress();
+        //stressPoints += todo[(int)name].stressDamage;
+        //GameManager.instance.IncreaseStress();
+        for (int i = 0; i < todo.Length; i++)
+        {
+            if (todo[i].taskName.Equals(name))
+            {
+                stressPoints += todo[i].stressDamage;
+                GameManager.instance.IncreaseStress();
+                break;
+            }
+        }
     }
 
     public void Init()
