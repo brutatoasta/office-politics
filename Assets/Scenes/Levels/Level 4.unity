@@ -3926,7 +3926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: taskName
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: bubbleObj
@@ -3938,7 +3938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26759,7 +26759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &747924645
 Transform:
   m_ObjectHideFlags: 0
@@ -27903,7 +27903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &789323626
 Transform:
   m_ObjectHideFlags: 0
@@ -29564,13 +29564,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: taskName
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34367,7 +34371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
-  invalidInputs: 00000000
+  invalidInputs: 0000000001000000080000000700000002000000
   validInputs: 03000000
   taskIcon: {fileID: 498885931}
   sprite: {fileID: 1551490555}
@@ -34519,7 +34523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1100835573216779378, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -34651,7 +34655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582496044235167530, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5123050523695463047, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Name
@@ -35142,7 +35146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1100835573216779378, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -35274,7 +35278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4582496044235167530, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4833295875916119786, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57889,22 +57893,38 @@ MonoBehaviour:
   - actorId: 0
     message: Hey! Welcome to Taichill Games. I believe I interviewed you and emailed
       you prior to today. :)
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 1
     message: Hi Lisa! I am Intern #24601. Nice to meet you!
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 0
     message: Since you dont meet our requirement of 20 year experience in C# and
       Unity, we will have to start you off at the basic level. For four days, you
       will be put under probation to see if you have what it takes to be an intern
       at our company.
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 0
     message: hello type here for lisa
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 1
     message: 1 is for intern
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   actors:
   - name: Lisa Tan (HR)
     sprite: {fileID: 21300000, guid: a44ec5bc3ec1304419bc75c77b2a3c12, type: 3}
   - name: Intern #24601
     sprite: {fileID: 21300000, guid: 5a805caebb5823c468b4cc2aa0302bfc, type: 3}
+  messagePauses: 
 --- !u!61 &1936507762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62369,13 +62389,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2033157245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a56866f735bc2b642bba8b7b3f325b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 157221668}
-  invalidInputs: 00000000
+  invalidInputs: 0000000001000000070000000800000006000000
   validInputs: 03000000
   deliverDoc: {fileID: 2065081226}
   progressBar: {fileID: 1551709082}
@@ -62853,7 +62873,11 @@ PrefabInstance:
       objectReference: {fileID: 1269662892}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: validInputs.Array.data[0]
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -62959,8 +62983,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colleague_MeetingRoom (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2790918318054030695, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
     m_AddedGameObjects:
@@ -63077,7 +63100,7 @@ PrefabInstance:
       objectReference: {fileID: 944279424}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: validInputs.Array.data[0]
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -64185,7 +64208,11 @@ PrefabInstance:
       objectReference: {fileID: 611364050}
     - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: validInputs.Array.data[0]
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
@@ -64243,8 +64270,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Colleague_MeetingRoom
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 485659831394163654, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -64297,13 +64323,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: taskName
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment
       objectReference: {fileID: 0}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
