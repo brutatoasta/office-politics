@@ -49,6 +49,7 @@ public class AudioElements : ScriptableObject
 
     // Enemy SFX
     public AudioElement throwStressArrow;
+    public AudioElement enemyGetStunned;
 
     // NPC SFX
 
