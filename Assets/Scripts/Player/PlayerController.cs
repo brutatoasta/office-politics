@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,19 +12,18 @@ public class PlayerController : MonoBehaviour
 
 
     // movement
-
-    Vector2 movementInput;
+    public Vector2 movementInput;
     public ContactFilter2D movementFilter;
-    List<RaycastHit2D> castCollisions = new();
-    public float collisionOffset = 0.05f;
-
+    [SerializeField]
+    public List<RaycastHit2D> castCollisions = new();
+    public float collisionOffset = 0;
+    public float distanceCast;
     // components
     SpriteRenderer playerSprite;
     SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
     Animator handAnimator;
-    // AudioSource audioSource;
 
     Vector3 teleportToOffice = new Vector3(-17, -3, 0);
 
@@ -35,17 +31,20 @@ public class PlayerController : MonoBehaviour
 
     public TrailRenderer trail;
 
+    [SerializeField]
     bool canMove = true;
     bool canDash = true;
     bool canParry = true;
     bool invincible = false;
 
     public bool touching = false;
-    new Collider2D collider;
+
+    [SerializeField]
     bool interactLock = false;
     // Start is called before the first frame update
     void Start()
     {
+        distanceCast = playerConstants.moveSpeed * Time.fixedDeltaTime;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
@@ -61,7 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
         {
-            Debug.Log(movementInput);
+            // Debug.LogError("" +movementInput);
             // If movement input is not 0, move player
             if (movementInput != Vector2.zero)
             {
@@ -69,19 +68,23 @@ public class PlayerController : MonoBehaviour
                 // force is in the direction of movement input (normalized) multiplied by movespeed
                 if (rb.velocity.magnitude < playerConstants.maxMoveSpeed)
                 {
-                    bool success = TryMove(movementInput);
+                    // rb.AddForce(movementInput * playerConstants.moveSpeed);
+                    // bool success = TryMove(movementInput);
 
-                    if (!success)
-                    {
-                        success = TryMove(new Vector2(movementInput.x, 0));
-                    }
+                    // if (!success)
+                    // {
+                    //     Debug.LogError("try x");
+                    //     success = TryMove(new Vector2(movementInput.x, 0));
+                    // }
 
-                    if (!success)
-                    {
-                        success = TryMove(new Vector2(0, movementInput.y));
-                    }
-                    
-                    if( !success) Debug.Log("really can't move");
+                    // if (!success)
+                    // {
+                    //     Debug.LogError("try y");
+                    //     success = TryMove(new Vector2(0, movementInput.y));
+                    // }
+
+                    // if (!success) Debug.Log("really can't move");
+                    DoMove(movementInput);
                 }
             }
             else
@@ -101,27 +104,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void DoMove(Rigidbody2D rb) => rb.AddForce(movementInput * playerConstants.moveSpeed);
+    private void DoMove(Vector2 direction) => rb.velocity = direction * playerConstants.moveSpeed;
     private bool TryMove(Vector2 direction)
     {
-        if (direction != Vector2.zero)
+        if (direction != Vector2.zero) // still need to check here because sometimes may take zero component from movementInput with zero component from FixedUpdate
         {
             // Check for potential collisions
-            // we square time because movement updates are 
-            float distanceCast = playerConstants.moveSpeed * Time.fixedDeltaTime * Time.fixedDeltaTime;
             int count = rb.Cast(
                 direction, // X and Y values between -1 and 1 that represent the direction from the body to look for collisions
                 movementFilter, // The settings that determine where a collision can occur on such as layers to collide with
                 castCollisions, // List of collisions to store the found collisions into after the Cast is finished
                 distanceCast + collisionOffset); // The distance to cast equal to the movement plus an offset
-
+            Debug.LogError("count " + count);
             if (count == 0)
             {
-                DoMove(rb);
+                // DoMove(direction);
                 return true;
             }
             else
             {
+
                 return false;
             }
         }
@@ -147,7 +149,20 @@ public class PlayerController : MonoBehaviour
 
     public void MoveCheck(Vector2 movement)
     {
-        movementInput = movement;
+        Vector2 x_only = new Vector2(movement.x, 0);
+        Vector2 y_only = new Vector2(0, movement.y);
+        Vector2[] vectors = new Vector2[] { movement, };
+
+        foreach (Vector2 currentVector in vectors)
+        {
+            if (TryMove(currentVector))
+            {
+                movementInput = currentVector;
+                return;
+            }
+        }
+        Debug.Log("really can't move");
+        movementInput = movement; // original
     }
 
     public void TriggerInteract()
@@ -156,27 +171,6 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.interact.Invoke();
         }
-
-
-        // // the object player is interacting with
-        // if (collider != null)
-        // {
-        //     BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
-        //     // check if player is touching object and not currently animating
-        //     if (touching && !interactLock)
-        //     {
-        //         if (collider.gameObject.layer == 8)
-        //         {
-        //             // get script component and cast according to type field
-        //             // check if held object is valid
-        //             if (inter.CastAndInteract(heldSprite))
-        //             {
-
-        //             }
-        //         }
-
-        //     }
-        // }
     }
     public void AcquireInteractLock()
     {
@@ -333,21 +327,4 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.levelVariables.stressPoints += playerConstants.overtimeTick;
         GameManager.instance.IncreaseStress();
     }
-
-
-    // Interact with objects
-    // nervous system, tells you if you're touching
-    void OnTriggerStay2D(Collider2D col)
-    {
-        touching = true;
-        collider = col;
-
-        // dont allow holding more stuff if already holding something
-    }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        touching = false;
-        collider = null;
-    }
-
 }

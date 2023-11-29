@@ -75,7 +75,7 @@ public class LevelVariables : ScriptableObject
         {
             todo[i].current = todo[i].quota;
         }
-        Debug.Log(todo);
+        // Debug.Log(todo);
     }
 
     public void addRandomJob(int level)

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cceca4b56082536459847895a83f5c6b, type: 3}
   m_Name: PlayerConstants
   m_EditorClassIdentifier: 
-  moveSpeed: 50
+  moveSpeed: 10
   maxMoveSpeed: 60
   dashPower: 30
   dashTime: 0.2
