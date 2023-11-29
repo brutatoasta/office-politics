@@ -33,19 +33,18 @@ public class LevelVariables : ScriptableObject
         Debug.Log((int)name);
         Debug.Log(todo);
         Debug.Log(todo[0]);
-        if (todo[(int)name].current > 0)
+        for (int i = 0; i < todo.Length; i++)
         {
-            todo[(int)name].current--;
-
-            // add performance points for that task
-            levelPP += todo[(int)name].performancePoints;
-
-            // no change to stress
-
-            //if (todo[(int)name].quota == 0)
-            //{
-            //    todo[(int)name].StrikeOut();
-            //}
+            if (todo[i].taskName.Equals(name))
+            {
+                if (todo[i].current > 0)
+                {
+                    todo[i].current--;
+                    // add performance points for that task
+                    levelPP += todo[i].performancePoints;
+                }
+                // break here
+            }
         }
     }
     public void Fail(TaskName name)
