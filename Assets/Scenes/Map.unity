@@ -4789,7 +4789,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18476188, y: 0.053889275}
+  m_Offset: {x: 0.028923988, y: -0.307271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4800,7 +4800,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3695238, y: 0.830637}
+  m_Size: {x: 1.514595, y: 1.1373501}
   m_EdgeRadius: 0
 --- !u!1 &604327257
 GameObject:
@@ -56936,6 +56936,18 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 337405591}
+    - target: {fileID: 2869334509754001544, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869334509754001544, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869334509754001544, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.59
+      objectReference: {fileID: 0}
     - target: {fileID: 3265215980486700150, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: playPause.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -61325,7 +61337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2064456496
 Transform:
   m_ObjectHideFlags: 0
@@ -61373,7 +61385,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18476188, y: 0.053889275}
+  m_Offset: {x: 0.035540104, y: -0.28746128}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -61384,7 +61396,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3695238, y: 0.830637}
+  m_Size: {x: 1.4919138, y: 1.149023}
   m_EdgeRadius: 0
 --- !u!1 &2065081226
 GameObject:
@@ -63712,7 +63724,6 @@ SceneRoots:
   - {fileID: 1490701729}
   - {fileID: 40004727}
   - {fileID: 6290294752409637512}
-  - {fileID: 1942054760}
   - {fileID: 1976138508}
   - {fileID: 1438927148}
   - {fileID: 1082889248}
@@ -63721,4 +63732,5 @@ SceneRoots:
   - {fileID: 1187154379}
   - {fileID: 1380412213}
   - {fileID: 1936507760}
+  - {fileID: 1942054760}
   - {fileID: 1768989110}
