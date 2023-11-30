@@ -30,6 +30,7 @@ public class GameManager : Singleton<GameManager>
     // runVariables
     public UnityEvent updateInventory;
     public UnityEvent<int> useConsumable;
+    public UnityEvent<ConsumableType> consumableEfffect;
 
     // Timer
     public UnityEvent TimerStart;
@@ -57,6 +58,7 @@ public class GameManager : Singleton<GameManager>
     public bool isPaused = false;
     public bool overtime = false;
     [NonSerialized] public bool invincible = false;
+    public float cooldownPercent = 1f;
     private int currentInventorySlot = 0;
     [NonSerialized] public List<int> activeSlots = new List<int> { 0, 1 };
 

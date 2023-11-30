@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.updateInventory.AddListener(CycleConsumable);
+        GameManager.instance.consumableEfffect.AddListener(ApplyConsumableEffect);
+
         GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
@@ -184,7 +186,7 @@ public class PlayerController : MonoBehaviour
         List<int> oldArrows = new List<int>();
 
         float timePassed = 0f;
-        while (timePassed < 0.6f)
+        while (timePassed < playerConstants.parryTime)
         {
             ParryObj(oldArrows);
             timePassed += Time.deltaTime;
@@ -244,6 +246,38 @@ public class PlayerController : MonoBehaviour
     {
         // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
+    }
+
+    void ApplyConsumableEffect(ConsumableType consumableType)
+    {
+        switch (consumableType)
+        {
+            case ConsumableType.KitKat:
+                //TODO: Visual Effects if any
+            break;
+
+            case ConsumableType.Coffee:
+                //TODO: Visual Effects if any
+            break;
+
+            case ConsumableType.Adderall:
+                //TODO: Visual Effects if any
+            break;
+
+            case ConsumableType.Starman:
+                StartCoroutine(InvincibilityVisuals());
+            break;
+
+        }
+    }
+
+    IEnumerator InvincibilityVisuals()
+    {        
+        for (int i = 0; i < 20; i++)
+        {
+            playerSprite.material = (i % 2 == 0) ? playerConstants.invincibleMaterial : playerConstants.defaultMaterial;
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
     }
 
 

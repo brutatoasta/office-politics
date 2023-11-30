@@ -8,10 +8,12 @@ public class PlayerConstants : ScriptableObject
     public float dashPower;
     public float dashTime;
     public float dashCooldown;
+    public float parryTime = 0.6f;
     public float parryRange;
     public float parryStartupTime;
     public float parryCooldown;
     public Material hurtMaterial;
+    public Material invincibleMaterial;
     public Material defaultMaterial;
 
     // starting values
