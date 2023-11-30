@@ -30,4 +30,3 @@ MonoBehaviour:
   stressPoints: 0
   maxStressPoints: 50
   currentLevelIndex: 0
-  currentSceneIndex: 0
