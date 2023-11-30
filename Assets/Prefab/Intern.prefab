@@ -613,7 +613,6 @@ MonoBehaviour:
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   arrowConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
   trail: {fileID: 601554962093554315}
-  touching: 0
 --- !u!70 &2869334509754001544
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -646,8 +645,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.37909734}
-  m_Size: {x: 0.75, y: 0.75}
+  m_Offset: {x: 0, y: -0.59}
+  m_Size: {x: 0.4, y: 0.4}
   m_Direction: 0
 --- !u!96 &601554962093554315
 TrailRenderer:
