@@ -97,7 +97,7 @@ public class SceneExit : MonoBehaviour
                 // fading in and out
                 transition.SetTrigger("Start");
                 // Start the coroutine to load the next scene after a delay
-                StartCoroutine(LoadNextSceneAfterDelay(nextScene, 0.5f));
+                StartCoroutine(LoadNextSceneAfterDelay(nextScene, 1f));
             }
             else
             {
