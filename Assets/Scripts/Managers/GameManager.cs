@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     // events
-    public UnityEvent runStart; // start the level (not pantry or hostel)
+    // public UnityEvent runStart; // start the level (not pantry or hostel)
     public UnityEvent gameRestart; // go back to main menu
     public UnityEvent gamePause; // 
     public UnityEvent gamePlay; // 
@@ -78,11 +78,11 @@ public class GameManager : Singleton<GameManager>
         PlayAudioElement(audioElements.startMenuBGM);
     }
 
-    public void RunStart()
-    {
-        runVariables.Init();
-        runStart.Invoke();
-    }
+    // public void RunStart()
+    // {
+    //     runVariables.Init();
+    //     runStart.Invoke();
+    // }
 
     public void LevelStart()
     {
@@ -201,6 +201,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
 
         isPaused = false;
+        runVariables.Init();
         SceneManager.LoadSceneAsync("MainMenu");
     }
     public void GameOver()
