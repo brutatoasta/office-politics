@@ -65,4 +65,5 @@ public class AudioElements : ScriptableObject
     public AudioElement laminateDocument;
     public AudioElement jamMachine;
     public AudioElement throwTrash;
+    public AudioElement interactionInvalid;
 }

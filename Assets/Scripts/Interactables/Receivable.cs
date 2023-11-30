@@ -132,6 +132,8 @@ public class Receivable : BaseInteractable
                     animator.SetTrigger("doFlinch");
                 }
 
+                // Play "interactionInvalid" sound - Natthan
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.interactionInvalid);
             }
 
         }
