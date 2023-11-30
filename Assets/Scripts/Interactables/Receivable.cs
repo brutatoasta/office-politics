@@ -87,6 +87,14 @@ public class Receivable : BaseInteractable
                 {
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
                 }
+                else if (heldType == TaskName.Shred)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.shredDocument);
+                }
+                else if (heldType == TaskName.Laminate)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.laminateDocument);
+                }
 
                 // decrease task count
                 GameManager.instance.levelVariables.Succeed(heldType);
