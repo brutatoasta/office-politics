@@ -29272,6 +29272,143 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5254153518291866764, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
   m_PrefabInstance: {fileID: 2121195506}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &951263662
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1680465596546227193, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 4.8942
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680465596546227193, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -1.7943501
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680465596546227193, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 18.364
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680465596546227193, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 4.78515
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572050303138143888, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 4.8950496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572050303138143888, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -1.7854501
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572050303138143888, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 18.37205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2572050303138143888, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 4.77895
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135080933002551705, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 4.898
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135080933002551705, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -1.8001001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135080933002551705, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 18.3695
+      objectReference: {fileID: 0}
+    - target: {fileID: 4135080933002551705, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 4.7825003
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975431793336002974, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_Name
+      value: Lighting
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193710976218086878, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 4.893
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193710976218086878, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -1.7948
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193710976218086878, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 18.374
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193710976218086878, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 4.7855997
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638171456595949054, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: 1.1234503
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638171456595949054, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -1.7709503
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638171456595949054, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 31.21505
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638171456595949054, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 29.45785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.2763224
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1469226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.4631844
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8642806682919873958, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f2d357f31689f04c840beda3c47da18, type: 3}
 --- !u!4 &966285331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6855691210256059400, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
@@ -57889,22 +58026,38 @@ MonoBehaviour:
   - actorId: 0
     message: Hey! Welcome to Taichill Games. I believe I interviewed you and emailed
       you prior to today. :)
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 1
     message: Hi Lisa! I am Intern #24601. Nice to meet you!
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 0
     message: Since you dont meet our requirement of 20 year experience in C# and
       Unity, we will have to start you off at the basic level. For four days, you
       will be put under probation to see if you have what it takes to be an intern
       at our company.
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 0
     message: hello type here for lisa
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   - actorId: 1
     message: 1 is for intern
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
   actors:
   - name: Lisa Tan (HR)
     sprite: {fileID: 21300000, guid: a44ec5bc3ec1304419bc75c77b2a3c12, type: 3}
   - name: Intern #24601
     sprite: {fileID: 21300000, guid: 5a805caebb5823c468b4cc2aa0302bfc, type: 3}
+  messagePauses: 
 --- !u!61 &1936507762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64975,3 +65128,4 @@ SceneRoots:
   - {fileID: 1187154379}
   - {fileID: 1380412213}
   - {fileID: 1936507760}
+  - {fileID: 951263662}

@@ -27,15 +27,19 @@ public class Enemy : MonoBehaviour
         ComputeVelocity();
     }
 
-    public float Health {
-        set {
+    public float Health
+    {
+        set
+        {
             health = value;
 
-            if(health <= 0) {
+            if (health <= 0)
+            {
                 Defeated();
             }
         }
-        get {
+        get
+        {
             return health;
         }
     }
@@ -45,7 +49,8 @@ public class Enemy : MonoBehaviour
     private float positionX;
     private float positionY;
     private float speed;
-    private void Start() {
+    private void Start()
+    {
         animator = GetComponent<Animator>();
         speed = constants.speed;
         positionX = transform.position.x;
@@ -55,11 +60,13 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<AIPath>().enabled = isChasing;
     }
 
-    public void Defeated(){
+    public void Defeated()
+    {
         animator.SetTrigger("Defeated");
     }
 
-    public void RemoveEnemy() {
+    public void RemoveEnemy()
+    {
         Destroy(gameObject);
     }
 
@@ -96,7 +103,8 @@ public class Enemy : MonoBehaviour
     public UnityEvent pauseEnemyWeapon;
     IEnumerator Stun()
     {
-        
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.enemyGetStunned);
+
         // stop the enemy first
         float existingSpeed = gameObject.GetComponent<AIPath>().maxSpeed;
         gameObject.GetComponent<AIPath>().maxSpeed = 0;
@@ -105,14 +113,17 @@ public class Enemy : MonoBehaviour
         // pause enemy weapon
         pauseEnemyWeapon.Invoke();
         yield return new WaitForSeconds(2f);
-        
+
         //resume walking
         gameObject.GetComponent<AIPath>().maxSpeed = existingSpeed;
         animator.SetBool("isStun", false);
 
         // resume enemy weapon
-        yield return new WaitForSeconds(2.1f); // because one enemy weapon cycle is 4.1s
-        pauseEnemyWeapon.Invoke();
+        yield return new WaitForSeconds(6f); // because one enemy weapon cycle is 8s, cause enemy to miss next shooting chance
+        if (isChasing)
+        {
+            pauseEnemyWeapon.Invoke();
+        }
     }
 
     public void stunByArrow()
@@ -145,7 +156,7 @@ public class Enemy : MonoBehaviour
                 else
                 {
                     //Sometimes, update is function called before difference is below max offset, causing jittery boss
-                    if (eligibleToChangeDirection) 
+                    if (eligibleToChangeDirection)
                     {
                         // change direction
                         moveRight *= -1;
@@ -155,16 +166,16 @@ public class Enemy : MonoBehaviour
                         eligibleToChangeDirection = false;
                     }
                 }
-    }
+            }
             else //returning to original spot before patrolling again
             {
                 // margin of error because the object will not return to exactly the original transform
-                if (Mathf.Abs(gameObject.transform.position.x - originalTransform.position.x) < 0.2 && 
+                if (Mathf.Abs(gameObject.transform.position.x - originalTransform.position.x) < 0.2 &&
                     Mathf.Abs(gameObject.transform.position.y - originalTransform.position.y) < 0.2)
                 {
                     gameObject.GetComponent<AIPath>().enabled = false;
                     isReturning = false;
-                } 
+                }
             }
         }
     }
@@ -175,7 +186,8 @@ public class Enemy : MonoBehaviour
         {
             gameObject.GetComponent<AIPath>().slowdownDistance = 2;
             gameObject.GetComponent<AIPath>().endReachedDistance = 3;
-        } else
+        }
+        else
         {
             gameObject.GetComponent<AIPath>().slowdownDistance = 0.6f;
             gameObject.GetComponent<AIPath>().endReachedDistance = 0.2f;

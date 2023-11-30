@@ -8,14 +8,8 @@ public class HUDManager : MonoBehaviour
 {
 
 
-    public Image current;
-    public Image next;
-    public CanvasGroup currentGroup;
-    public CanvasGroup nextGroup;
 
-    private int currSlot;
-    private int nextSlot;
-    public CanvasGroup fade;
+    public CanvasGroup[] fades;
     public GameObject countText;
     public Slider slider;
     public PlayerConstants playerConstants;
@@ -24,74 +18,110 @@ public class HUDManager : MonoBehaviour
     public GameObject gameOverScreen;
     public bool isShown = false;
     public Animator taskAnimator;
+
+    public GameObject[] shopCounts;
+    public GameObject performancePointsShop;
+    public GameObject shopUI;
     // public bool ExitState = false;
     // public Animator taskAnimator;
 
+    public Slider cooldownSlider;
+    public Image evadeIcon;
+    public GameObject upgradeOutline;
+    public GameObject unUpgradedGroup;
+    public GameObject upgradedGroup;
+
     void Start()
     {
-        GameManager.instance.cycleInventory.AddListener(CycleInventory);
+        GameManager.instance.updateInventory.AddListener(UpdateInventory);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
         GameManager.instance.gameOver.AddListener(OnGameOver);
+        GameManager.instance.playerEvade.AddListener(OnPlayerEvade);
+        GameManager.instance.updateEvade.AddListener(UpdateCooldownSprite);
 
+        UpdateShop();
+        UpdateInventory();
 
-        current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
-        next.sprite = GameManager.instance.runVariables.consumableObjects[1].sprite;
+        // current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
+        // next.sprite = GameManager.instance.runVariables.consumableObjects[1].sprite;
 
-        currSlot = 0;
-        nextSlot = 1;
+        // currSlot = 0;
+        // nextSlot = 1;
 
-        countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[0].count;
+        // countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[0].count;
     }
 
-    public void CycleInventory()
+    public void UpdateInventory()
     {
-        int currentInventorySlot = 0;
-        current.sprite = (GameManager.instance.runVariables.consumableObjects[currentInventorySlot].count > 0) ?
-                            GameManager.instance.runVariables.consumableObjects[currentInventorySlot].sprite :
-                            null;
-
-        int nextInventorySlot = (currentInventorySlot + 1) % GameManager.instance.runVariables.consumableObjects.Length;
-        for (int i = 0; i < GameManager.instance.runVariables.consumableObjects.Length; i++)
+        if (GameManager.instance.runVariables.upgradeBought)
         {
-            if (GameManager.instance.runVariables.consumableObjects[nextInventorySlot].count != 0) break;
-            nextInventorySlot = (nextInventorySlot + 1) % GameManager.instance.runVariables.consumableObjects.Length;
+            for (int i = 0; i < 3; i++)
+            {
+                Image slotImg = upgradedGroup.transform.GetChild(i).GetChild(1).GetComponent<Image>();
+                CanvasGroup slotGroup = upgradedGroup.transform.GetChild(i).GetChild(1).GetComponent<CanvasGroup>();
+                if (GameManager.instance.activeSlots[i] != -1)
+                {
+                    slotImg.sprite = GameManager.instance.runVariables.consumableObjects[GameManager.instance.activeSlots[i]].sprite;
+                    slotGroup.alpha = 1;
+                }
+                else
+                {
+                    slotImg.sprite = null;
+                    slotGroup.alpha = 0;
+                }
+            }
+            for (int i = 0; i < 2; i++)
+            {
+                upgradedGroup.transform.GetChild(i).GetChild(2).GetComponent<TextMeshProUGUI>().text = "" + (
+                    GameManager.instance.activeSlots[i] == -1 ?
+                        0 :
+                        GameManager.instance.runVariables.consumableObjects[GameManager.instance.activeSlots[i]].count
+                );
+            }
+
         }
-        next.sprite = (GameManager.instance.runVariables.consumableObjects[nextInventorySlot].count > 0 && nextInventorySlot != currentInventorySlot) ?
-                            GameManager.instance.runVariables.consumableObjects[nextInventorySlot].sprite :
-                            null;
-
-        currSlot = currentInventorySlot;
-        nextSlot = nextInventorySlot;
-
-        currentGroup.alpha = (current.sprite == null) ? 0 : 1;
-        nextGroup.alpha = (next.sprite == null) ? 0 : 1;
-
-        countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[currentInventorySlot].count;
-    }
-
-    public void UseConsumable()
-    {
-        current.sprite = (GameManager.instance.runVariables.consumableObjects[currSlot].count > 0) ?
-                            GameManager.instance.runVariables.consumableObjects[currSlot].sprite :
-                            null;
-        next.sprite = (GameManager.instance.runVariables.consumableObjects[nextSlot].count > 0 && nextSlot != currSlot) ?
-                            GameManager.instance.runVariables.consumableObjects[nextSlot].sprite :
-                            null;
-
-        currentGroup.alpha = (current.sprite == null) ? 0 : 1;
-        nextGroup.alpha = (next.sprite == null) ? 0 : 1;
-        StartCoroutine(Fade());
-
-        countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[currSlot].count;
-    }
-
-    IEnumerator Fade()
-    {
-        for (float alpha = 0.5f; alpha >= 0f; alpha -= 0.05f)
+        else
         {
-            fade.alpha = alpha;
+            for (int i = 0; i < 2; i++)
+            {
+                Image slotImg = unUpgradedGroup.transform.GetChild(i).GetChild(1).GetComponent<Image>();
+                CanvasGroup slotGroup = unUpgradedGroup.transform.GetChild(i).GetChild(1).GetComponent<CanvasGroup>();
+                if (GameManager.instance.activeSlots[i] != -1)
+                {
+                    slotImg.sprite = GameManager.instance.runVariables.consumableObjects[GameManager.instance.activeSlots[i]].sprite;
+                    slotGroup.alpha = 1;
+                }
+                else
+                {
+                    slotImg.sprite = null;
+                    slotGroup.alpha = 0;
+                }
+            }
+            unUpgradedGroup.transform.GetChild(0).GetChild(2).GetComponent<TextMeshProUGUI>().text = "" + (
+                GameManager.instance.activeSlots[0] == -1 ?
+                    0 :
+                    GameManager.instance.runVariables.consumableObjects[GameManager.instance.activeSlots[0]].count
+            );
+        }
+    }
+
+    public void UseConsumable(int slot)
+    {
+        
+        StartCoroutine(Fade(GameManager.instance.runVariables.upgradeBought ? slot : 0));
+
+        
+        UpdateShop();
+        UpdateInventory();
+    }
+
+    IEnumerator Fade(int slot)
+    {
+        for (float alpha = 0.5f; alpha >= -0.05f; alpha -= 0.05f)
+        {
+            fades[slot].alpha = alpha;
             yield return new WaitForSecondsRealtime(0.05f);
         }
     }
@@ -113,7 +143,7 @@ public class HUDManager : MonoBehaviour
             isShown = false;
             taskAnimator.Play("TaskExit");
 
-
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
         }
         else
         {
@@ -121,6 +151,7 @@ public class HUDManager : MonoBehaviour
             isShown = true;
             taskAnimator.Play("TasksPage");
 
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
     }
     public void FreezeTime()
@@ -143,5 +174,80 @@ public class HUDManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
     }
+
+
+    public void UpdateEvade(bool isDash)
+    {
+        GameManager.instance.UpdateEvadeType(isDash ? EvadeType.Dash : EvadeType.Parry);
+    }
+
+    public void BuyUpgrade()
+    {
+        if (
+            !GameManager.instance.runVariables.upgradeBought &&
+            GameManager.instance.runVariables.performancePoints >= 50
+        )
+        {
+            GameManager.instance.runVariables.upgradeBought = true;
+            GameManager.instance.runVariables.performancePoints -= 50;
+            GameManager.instance.activeSlots.Add(0);
+            GameManager.instance.CycleInventory();
+        }
+        UpdateShop();
+    }
+
+    public void BuyConsumable(int consumableIndex)
+    {
+        if (GameManager.instance.runVariables.performancePoints >= GameManager.instance.runVariables.consumableObjects[consumableIndex].cost)
+        {
+            GameManager.instance.runVariables.consumableObjects[consumableIndex].count += 1;
+            GameManager.instance.runVariables.performancePoints -= GameManager.instance.runVariables.consumableObjects[consumableIndex].cost;
+        }
+
+        GameManager.instance.updateInventory.Invoke();
+        UpdateShop();
+
+    }
+
+    public void UpdateShop()
+    {
+        for (int i = 0; i < GameManager.instance.runVariables.consumableObjects.Length; i++)
+        {
+            shopCounts[i].GetComponent<TextMeshProUGUI>().text = "x" + GameManager.instance.runVariables.consumableObjects[i].count;
+        }
+
+        performancePointsShop.GetComponent<TextMeshProUGUI>().text = "Owned: " + GameManager.instance.runVariables.performancePoints + " PP";
+
+
+        upgradeOutline.SetActive(GameManager.instance.runVariables.upgradeBought);
+
+        unUpgradedGroup.SetActive(!GameManager.instance.runVariables.upgradeBought);
+        upgradedGroup.SetActive(GameManager.instance.runVariables.upgradeBought);
+    }
+
+    public void DisableShop() => shopUI.SetActive(false);
+
+    public void OnPlayerEvade(float cooldownTime)
+    {
+        StartCoroutine(CooldownAnimation(cooldownTime));
+    }
+
+    IEnumerator CooldownAnimation(float cooldownTime)
+    {
+        float timePassed = 0f;
+        while (timePassed < cooldownTime)
+        {
+            cooldownSlider.value = 1f - (timePassed / cooldownTime);
+            timePassed += Time.deltaTime;
+            yield return null;
+        }
+        yield return null;
+    }
+
+    public void UpdateCooldownSprite(EvadeType evadeType)
+    {
+        evadeIcon.sprite = (evadeType == EvadeType.Dash) ? GameManager.instance.playerConstants.dashIcon : GameManager.instance.playerConstants.parryIcon;
+    }
+
 
 }

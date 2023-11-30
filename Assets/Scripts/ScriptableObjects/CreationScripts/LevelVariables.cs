@@ -15,7 +15,6 @@ public class LevelVariables : ScriptableObject
     public int stressPoints;
     public int maxStressPoints;
     public int currentLevelIndex;
-    public int currentSceneIndex;
     public bool isQuotaComplete()
     {
         foreach (TaskItem taskItem in todo)

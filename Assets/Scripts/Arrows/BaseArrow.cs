@@ -4,7 +4,6 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
 {
     public ArrowTypes type;
     public WeaponGameConstants weaponGameConstants;
-    public AudioElements audioElements;
     public AudioElement throwArrowAudioElement;
 
     public Rigidbody2D rb;
@@ -21,7 +20,7 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - bossCoords.position;
-        Vector2 direction_norm = (Vector2) direction.normalized;
+        Vector2 direction_norm = (Vector2)direction.normalized;
         rb.velocity = direction_norm * speed;
 
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;

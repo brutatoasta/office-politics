@@ -31,11 +31,18 @@ public class AudioElements : ScriptableObject
     public AudioElement levelComplete;
 
     // UI SFX
+    public AudioElement menuClick;
+    public AudioElement menuBack;
+    public AudioElement gamePause;
+    public AudioElement gameResume;
     public AudioElement cycleConsumable;
+    public AudioElement showTaskDetails;
+    public AudioElement hideTaskDetails;
 
     // Player SFX
     public AudioElement playerDash;
     public AudioElement playerParry;
+    public AudioElement playerParrySuccess;
     public AudioElement useConsumable;
     public AudioElement playerGetHitIntensity1;
     public AudioElement playerGetHitIntensity2;
@@ -43,6 +50,7 @@ public class AudioElements : ScriptableObject
 
     // Enemy SFX
     public AudioElement throwStressArrow;
+    public AudioElement enemyGetStunned;
 
     // NPC SFX
 

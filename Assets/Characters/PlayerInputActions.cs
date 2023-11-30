@@ -64,9 +64,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""useConsumable"",
+                    ""name"": ""useConsumable1"",
                     ""type"": ""Button"",
                     ""id"": ""ec2172b2-ee34-47f6-a6cc-e141936c1efa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""useConsumable2"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef7be87c-bca3-4f4c-8fa9-9665d940c917"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -216,7 +225,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""70d251bf-7878-44f4-b96b-c1e5ea17b791"",
-                    ""path"": ""<Keyboard>/u"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -227,11 +236,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a9c5fbc8-2ab5-400a-a8c6-46ce858cb7a9"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/u"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""useConsumable"",
+                    ""action"": ""useConsumable1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -265,6 +274,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse;OfficePolitics;Gamepad;Touch;Joystick;XR"",
                     ""action"": ""pullupTask"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9c8e6f2-a622-4447-a675-46d99a9c7d73"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""useConsumable2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -343,7 +363,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""devicePath"": ""<Mouse>"",
-                    ""isOptional"": true,
+                    ""isOptional"": false,
                     ""isOR"": false
                 }
             ]
@@ -356,7 +376,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerMap_PlayPause = m_PlayerMap.FindAction("PlayPause", throwIfNotFound: true);
         m_PlayerMap_interact = m_PlayerMap.FindAction("interact", throwIfNotFound: true);
         m_PlayerMap_cycleConsumable = m_PlayerMap.FindAction("cycleConsumable", throwIfNotFound: true);
-        m_PlayerMap_useConsumable = m_PlayerMap.FindAction("useConsumable", throwIfNotFound: true);
+        m_PlayerMap_useConsumable1 = m_PlayerMap.FindAction("useConsumable1", throwIfNotFound: true);
+        m_PlayerMap_useConsumable2 = m_PlayerMap.FindAction("useConsumable2", throwIfNotFound: true);
         m_PlayerMap_evade = m_PlayerMap.FindAction("evade", throwIfNotFound: true);
         m_PlayerMap_pullupTask = m_PlayerMap.FindAction("pullupTask", throwIfNotFound: true);
     }
@@ -424,7 +445,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMap_PlayPause;
     private readonly InputAction m_PlayerMap_interact;
     private readonly InputAction m_PlayerMap_cycleConsumable;
-    private readonly InputAction m_PlayerMap_useConsumable;
+    private readonly InputAction m_PlayerMap_useConsumable1;
+    private readonly InputAction m_PlayerMap_useConsumable2;
     private readonly InputAction m_PlayerMap_evade;
     private readonly InputAction m_PlayerMap_pullupTask;
     public struct PlayerMapActions
@@ -435,7 +457,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @PlayPause => m_Wrapper.m_PlayerMap_PlayPause;
         public InputAction @interact => m_Wrapper.m_PlayerMap_interact;
         public InputAction @cycleConsumable => m_Wrapper.m_PlayerMap_cycleConsumable;
-        public InputAction @useConsumable => m_Wrapper.m_PlayerMap_useConsumable;
+        public InputAction @useConsumable1 => m_Wrapper.m_PlayerMap_useConsumable1;
+        public InputAction @useConsumable2 => m_Wrapper.m_PlayerMap_useConsumable2;
         public InputAction @evade => m_Wrapper.m_PlayerMap_evade;
         public InputAction @pullupTask => m_Wrapper.m_PlayerMap_pullupTask;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMap; }
@@ -459,9 +482,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @cycleConsumable.started += instance.OnCycleConsumable;
             @cycleConsumable.performed += instance.OnCycleConsumable;
             @cycleConsumable.canceled += instance.OnCycleConsumable;
-            @useConsumable.started += instance.OnUseConsumable;
-            @useConsumable.performed += instance.OnUseConsumable;
-            @useConsumable.canceled += instance.OnUseConsumable;
+            @useConsumable1.started += instance.OnUseConsumable1;
+            @useConsumable1.performed += instance.OnUseConsumable1;
+            @useConsumable1.canceled += instance.OnUseConsumable1;
+            @useConsumable2.started += instance.OnUseConsumable2;
+            @useConsumable2.performed += instance.OnUseConsumable2;
+            @useConsumable2.canceled += instance.OnUseConsumable2;
             @evade.started += instance.OnEvade;
             @evade.performed += instance.OnEvade;
             @evade.canceled += instance.OnEvade;
@@ -484,9 +510,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @cycleConsumable.started -= instance.OnCycleConsumable;
             @cycleConsumable.performed -= instance.OnCycleConsumable;
             @cycleConsumable.canceled -= instance.OnCycleConsumable;
-            @useConsumable.started -= instance.OnUseConsumable;
-            @useConsumable.performed -= instance.OnUseConsumable;
-            @useConsumable.canceled -= instance.OnUseConsumable;
+            @useConsumable1.started -= instance.OnUseConsumable1;
+            @useConsumable1.performed -= instance.OnUseConsumable1;
+            @useConsumable1.canceled -= instance.OnUseConsumable1;
+            @useConsumable2.started -= instance.OnUseConsumable2;
+            @useConsumable2.performed -= instance.OnUseConsumable2;
+            @useConsumable2.canceled -= instance.OnUseConsumable2;
             @evade.started -= instance.OnEvade;
             @evade.performed -= instance.OnEvade;
             @evade.canceled -= instance.OnEvade;
@@ -570,7 +599,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnPlayPause(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnCycleConsumable(InputAction.CallbackContext context);
-        void OnUseConsumable(InputAction.CallbackContext context);
+        void OnUseConsumable1(InputAction.CallbackContext context);
+        void OnUseConsumable2(InputAction.CallbackContext context);
         void OnEvade(InputAction.CallbackContext context);
         void OnPullupTask(InputAction.CallbackContext context);
     }

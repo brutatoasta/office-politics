@@ -15,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     }
 
     // events
-    public UnityEvent runStart; // start the level (not pantry or hostel)
+    // public UnityEvent runStart; // start the level (not pantry or hostel)
     public UnityEvent gameRestart; // go back to main menu
     public UnityEvent gamePause; // 
     public UnityEvent gamePlay; // 
@@ -28,8 +28,8 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent doorOpen;
 
     // runVariables
-    public UnityEvent cycleInventory;
-    public UnityEvent useConsumable;
+    public UnityEvent updateInventory;
+    public UnityEvent<int> useConsumable;
 
     // Timer
     public UnityEvent TimerStart;
@@ -43,6 +43,9 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent onTaskSuccess;
     public UnityEvent showPerformancePoint;
     public UnityEvent heldSet;
+    // UI
+    public UnityEvent<EvadeType> updateEvade;
+    public UnityEvent<float> playerEvade;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
@@ -53,8 +56,9 @@ public class GameManager : Singleton<GameManager>
     public AudioElements audioElements;
     public bool isPaused = false;
     public bool overtime = false;
+    [NonSerialized] public bool invincible = false;
     private int currentInventorySlot = 0;
-    [NonSerialized] public List<int> activeSlots = new List<int> {0,1};
+    [NonSerialized] public List<int> activeSlots = new List<int> { 0, 1 };
 
     public Sprite kitKatSprite;
     public Sprite coffeeSprite;
@@ -65,18 +69,20 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         levelVariables.Init();
-        levelVariables.currentSceneIndex = 0;
+        runVariables.currentSceneIndex = 0;
         levelVariables.currentLevelIndex = 0;
         levelVariables.levelPP = 0;
         runVariables.Init();
-        Debug.Log(string.Join(",",activeSlots));
+        Debug.Log(string.Join(",", activeSlots));
+
+        PlayAudioElement(audioElements.startMenuBGM);
     }
 
-    public void RunStart()
-    {
-        runVariables.Init();
-        runStart.Invoke();
-    }
+    // public void RunStart()
+    // {
+    //     runVariables.Init();
+    //     runStart.Invoke();
+    // }
 
     public void LevelStart()
     {
@@ -84,6 +90,7 @@ public class GameManager : Singleton<GameManager>
         levelStart.Invoke();
         UpdateTimer(120);
         levelVariables.Init();
+
     }
 
     // Raise event to cycle runVariables slot
@@ -99,29 +106,48 @@ public class GameManager : Singleton<GameManager>
         int currIdx = currentInventorySlot;
         List<int> res = new List<int>();
 
-        while (res.Count <= activeSlots.Count )
+        while (res.Count < activeSlots.Count)
         {
             if (runVariables.consumableObjects[currIdx].count > 0)
             {
                 res.Add(currIdx);
             }
 
-            currIdx = (currIdx+1) % runVariables.consumableObjects.Length;
+            currIdx = (currIdx + 1) % runVariables.consumableObjects.Length;
 
             if (currIdx == currentInventorySlot) break;
         }
+        while (res.Count < (runVariables.upgradeBought? 3: 2))
+        {
+            res.Add(-1);
+        }
 
         activeSlots = res;
-        Debug.Log(string.Join(",",activeSlots));
+        Debug.Log(string.Join(",", activeSlots));
 
 
-        cycleInventory.Invoke();
+        updateInventory.Invoke();
     }
 
-    public void UseCurrentConsumable()
+    public void UseCurrentConsumable(int slot)
     {
-        runVariables.consumableObjects[currentInventorySlot].Consume();
-        useConsumable.Invoke();
+        
+        if (runVariables.upgradeBought && activeSlots[slot] != -1)
+        {
+            runVariables.consumableObjects[activeSlots[slot]].Consume();
+        }
+        else if (!runVariables.upgradeBought && activeSlots[0] != -1)
+        {
+            runVariables.consumableObjects[activeSlots[0]].Consume();
+        }
+        
+        // Blank cleaned slots
+        if (activeSlots[runVariables.upgradeBought? slot: 0] != -1 &&
+         runVariables.consumableObjects[activeSlots[runVariables.upgradeBought? slot: 0]].count <= 0)
+        {
+            activeSlots[runVariables.upgradeBought? slot: 0] = -1;
+        }
+        useConsumable.Invoke(slot);
     }
 
     public void IncreaseJob()
@@ -144,6 +170,7 @@ public class GameManager : Singleton<GameManager>
     {
         audioElementGameEvent.Raise(audioElement);
     }
+
     public void PlayPause()
     {
         if (isPaused)
@@ -153,6 +180,8 @@ public class GameManager : Singleton<GameManager>
             // check if in a level
             gamePlay.Invoke();
             // hide pause menu
+
+            PlayAudioElement(audioElements.gameResume);
         }
         else
         {
@@ -160,9 +189,10 @@ public class GameManager : Singleton<GameManager>
             isPaused = true;
             gamePause.Invoke();
             // show pause menu
+
+            PlayAudioElement(audioElements.gamePause);
         }
     }
-
 
 
     public void GameRestart()
@@ -171,6 +201,7 @@ public class GameManager : Singleton<GameManager>
         Time.timeScale = 1;
 
         isPaused = false;
+        runVariables.Init();
         SceneManager.LoadSceneAsync("MainMenu");
     }
     public void GameOver()
@@ -212,6 +243,12 @@ public class GameManager : Singleton<GameManager>
     {
         held = newHeld;
         heldSet.Invoke();
+    }
+
+    public void UpdateEvadeType(EvadeType evadeType)
+    {
+        levelVariables.evadeType = evadeType;
+        updateEvade.Invoke(evadeType);
     }
 
     void OnSceneLoaded()

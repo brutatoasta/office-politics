@@ -10,7 +10,7 @@ public class EnemyWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("StartArrowSequenceWithPause", 0f,4f);
+        InvokeRepeating("StartArrowSequenceWithPause", 0f,8f);
     }
 
     // Update is called once per frame

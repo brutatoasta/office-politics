@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     // Player Constants
     public PlayerConstants playerConstants;
     public WeaponGameConstants arrowConstants;
-    public AudioElements audioElements;
 
     // movement
     public Vector2 movementInput;
@@ -34,7 +33,7 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool canDash = true;
     bool canParry = true;
-    bool invincible = false;
+    
 
     public bool touching = false;
 
@@ -50,7 +49,7 @@ public class PlayerController : MonoBehaviour
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
-        GameManager.instance.cycleInventory.AddListener(CycleConsumable);
+        GameManager.instance.updateInventory.AddListener(CycleConsumable);
         GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
@@ -183,7 +182,9 @@ public class PlayerController : MonoBehaviour
         rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
         // audioSource.PlayOneShot(playerConstants.dashAudio);
-        GameManager.instance.PlayAudioElement(audioElements.playerDash);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerDash);
+
+        GameManager.instance.playerEvade.Invoke(playerConstants.dashCooldown);
 
         yield return new WaitForSecondsRealtime(playerConstants.dashTime);
         trail.emitting = false;
@@ -198,7 +199,9 @@ public class PlayerController : MonoBehaviour
         transform.GetChild(1).GetComponent<Animator>().SetTrigger("parry");
         yield return new WaitForSecondsRealtime(playerConstants.parryStartupTime);
 
-        GameManager.instance.PlayAudioElement(audioElements.playerParry);
+        GameManager.instance.playerEvade.Invoke(playerConstants.parryCooldown);
+
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerParry);
 
         List<int> oldArrows = new List<int>();
 
@@ -222,6 +225,8 @@ public class PlayerController : MonoBehaviour
         {
             if (arrow.gameObject.CompareTag("Arrow") && (!oldArrows.Contains(arrow.gameObject.GetInstanceID())))
             {
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerParrySuccess);
+
                 oldArrows.Add(arrow.gameObject.GetInstanceID());
 
                 Rigidbody2D arrowRb = arrow.attachedRigidbody;
@@ -252,7 +257,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Arrow") && !invincible)
+        if (col.gameObject.CompareTag("Arrow") && !GameManager.instance.invincible)
         {
             if (col.gameObject.name.Contains("JobArrowTutorial"))
             {
@@ -267,7 +272,7 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
                 GameManager.instance.IncreaseStress();
             }
-            GameManager.instance.PlayAudioElement(audioElements.playerGetHitIntensity1);
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerGetHitIntensity1);
             StartCoroutine(HurtPlayerShader());
         }
         //teleport from 
@@ -283,7 +288,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator HurtPlayerShader()
     {
-        invincible = true;
+        GameManager.instance.invincible = true;
         playerConstants.moveSpeed -= 10;
         for (int i = 0; i < 6; i++)
         {
@@ -291,7 +296,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.1f);
         }
         playerConstants.moveSpeed += 10;
-        invincible = false;
+        GameManager.instance.invincible = false;
     }
 
     public void OnOvertime() => InvokeRepeating(nameof(TickOvertime), 0, 1.0f);

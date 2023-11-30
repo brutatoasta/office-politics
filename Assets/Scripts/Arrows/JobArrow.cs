@@ -15,7 +15,7 @@ public class JobArrow : BaseArrow
         speed = weaponGameConstants.jobArrowSpeed;
 
         // temporary
-        throwArrowAudioElement = audioElements.throwStressArrow;
+        throwArrowAudioElement = GameManager.instance.audioElements.throwStressArrow;
     }
     public void SpawnArrow(Transform bossCoords)
     {
@@ -53,7 +53,7 @@ public class JobArrow : BaseArrow
 
     public void Seek(Transform target)
     {
-        Vector2 desired = (Vector2) (target.position - transform.position);
+        Vector2 desired = (Vector2)(target.position - transform.position);
         desired = desired.normalized * weaponGameConstants.jobArrowSpeed;
 
         Vector3 steering = desired - rb.velocity;

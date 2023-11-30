@@ -15,9 +15,12 @@ public class SceneExit : MonoBehaviour
         // fading in and out
         transition.SetTrigger("Start");
         StartCoroutine(LoadNextSceneAfterDelay("PowerUpScene", 0.5f));
+
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
     public void QuitGame()
     {
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
         Application.Quit();
     }
     public GameObject controlsPanel;
@@ -33,6 +36,8 @@ public class SceneExit : MonoBehaviour
         // Start the opening animation
         controlsPanel.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
         shade.SetActive(true);
+
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
     public void CloseControls()
     {
@@ -41,6 +46,8 @@ public class SceneExit : MonoBehaviour
             controlsPanel.SetActive(false);
         });
         shade.SetActive(false);
+
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
     IEnumerator LoadNextSceneAfterDelay(string nextScene, float delay)
     {
@@ -82,11 +89,11 @@ public class SceneExit : MonoBehaviour
             //         break;
             // }
             // fade to black
-           
-            if (levelVariables.currentSceneIndex < scenes.Length)
+
+            if (GameManager.instance.runVariables.currentSceneIndex < scenes.Length)
             {
-                nextScene = scenes[levelVariables.currentSceneIndex];
-                levelVariables.currentSceneIndex++;
+                nextScene = scenes[GameManager.instance.runVariables.currentSceneIndex];
+                GameManager.instance.runVariables.currentSceneIndex++;
                 // fading in and out
                 transition.SetTrigger("Start");
                 // Start the coroutine to load the next scene after a delay
