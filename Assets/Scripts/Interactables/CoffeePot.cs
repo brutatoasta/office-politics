@@ -22,7 +22,7 @@ public class CoffeePot : BaseInteractable
             playerHand.color = GetComponent<SpriteRenderer>().color;
             sprite.enabled = true;
 
-            // temporary
+            // temporary - Natthan
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
         }
 

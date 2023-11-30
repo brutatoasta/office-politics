@@ -49,10 +49,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
 
-
-        // // temporary: for starting BGM in the main gameplay scene
-        // gameplayBgmIntensity1AudioSource.clip = audioElements.gameplayBgmIntensity1.audioClip;
-        // gameplayBgmIntensity1AudioSource.Play();
     }
 
     public void PlayAudioElement(AudioElement audioElement)

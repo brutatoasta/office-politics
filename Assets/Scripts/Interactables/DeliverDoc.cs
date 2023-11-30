@@ -28,6 +28,9 @@ public class DeliverDoc : BaseInteractable
             // add self to GameManager
             GameManager.instance.SetHeld(fetchDoc);
             playerHand.sprite = fetchDocSprite;
+
+            // Temporary - Natthan
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
         else
         {
@@ -36,6 +39,9 @@ public class DeliverDoc : BaseInteractable
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
             GameManager.instance.levelVariables.Succeed(TaskName.DeliverDoc);
+
+            // Temporary - Natthan
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
         }
     }
 
