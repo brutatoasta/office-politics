@@ -204,6 +204,7 @@ public class GameManager : Singleton<GameManager>
 
         isPaused = false;
         runVariables.Init();
+        levelVariables.Init();
         SceneManager.LoadSceneAsync("MainMenu");
     }
     public void GameOver()
