@@ -10,7 +10,9 @@ public class Timer : MonoBehaviour
     enum TimerType { Countdown, Stopwatch }
     [SerializeField] private TimerType timerType;
 
-    [SerializeField] private float timeToDisplay = 120.0f;
+
+    [SerializeField] private float initialTime;
+    [SerializeField] private float timeToDisplay;
 
     private bool _isRunning = false;
 
@@ -19,6 +21,7 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         _timerText = GetComponent<TextMeshProUGUI>();
+        timeToDisplay = initialTime;
     }
 
     void Start()
@@ -37,7 +40,16 @@ public class Timer : MonoBehaviour
     private void OnTimerStart() => _isRunning = true;
     private void OnTimerStop() => _isRunning = false;
     private void OnTimerUpdate(float value) => timeToDisplay = value;
-
+    private Color ChangeColor(float value)
+    {
+        return value switch
+        {
+            float val when val / initialTime >= 2 / 3 => Color.green,
+            float val when val / initialTime >= 1 / 3 => Color.yellow,
+            float val when val / initialTime < 1 / 3 => Color.red,
+            _ => Color.black,
+        };
+    }
     private void Update()
     {
         if (!_isRunning) return;
@@ -51,5 +63,6 @@ public class Timer : MonoBehaviour
 
         TimeSpan timeSpan = TimeSpan.FromSeconds(timeToDisplay);
         _timerText.text = timeSpan.ToString(@"mm\:ss");
+        _timerText.color = ChangeColor(timeToDisplay);
     }
 }
