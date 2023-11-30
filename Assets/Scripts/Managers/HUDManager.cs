@@ -26,6 +26,7 @@ public class HUDManager : MonoBehaviour
     // public Animator taskAnimator;
 
     public Slider cooldownSlider;
+    public Slider cooldownBlockSlider;
     public Image evadeIcon;
     public GameObject upgradeOutline;
     public GameObject unUpgradedGroup;
@@ -35,6 +36,8 @@ public class HUDManager : MonoBehaviour
     {
         GameManager.instance.updateInventory.AddListener(UpdateInventory);
         GameManager.instance.useConsumable.AddListener(UseConsumable);
+        GameManager.instance.consumableEfffect.AddListener(UpdateCooldownBlock);
+
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
         GameManager.instance.gameOver.AddListener(OnGameOver);
@@ -43,6 +46,7 @@ public class HUDManager : MonoBehaviour
 
         UpdateShop();
         UpdateInventory();
+        UpdateCooldownSprite(GameManager.instance.levelVariables.evadeType);
 
         // current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
         // next.sprite = GameManager.instance.runVariables.consumableObjects[1].sprite;
@@ -109,10 +113,10 @@ public class HUDManager : MonoBehaviour
 
     public void UseConsumable(int slot)
     {
-        
+
         StartCoroutine(Fade(GameManager.instance.runVariables.upgradeBought ? slot : 0));
 
-        
+
         UpdateShop();
         UpdateInventory();
     }
@@ -234,14 +238,31 @@ public class HUDManager : MonoBehaviour
 
     IEnumerator CooldownAnimation(float cooldownTime)
     {
+        
         float timePassed = 0f;
+        cooldownSlider.value = (1f - (timePassed / cooldownTime)) * GameManager.instance.cooldownPercent;
+
+        yield return new WaitForSecondsRealtime(
+            GameManager.instance.levelVariables.evadeType == EvadeType.Dash?
+                GameManager.instance.playerConstants.dashTime:
+                GameManager.instance.playerConstants.parryTime
+        );
+
         while (timePassed < cooldownTime)
         {
-            cooldownSlider.value = 1f - (timePassed / cooldownTime);
+            cooldownSlider.value = (1f - (timePassed / cooldownTime)) * GameManager.instance.cooldownPercent;
             timePassed += Time.deltaTime;
             yield return null;
         }
         yield return null;
+    }
+
+    public void UpdateCooldownBlock(ConsumableType consumableType)
+    {
+        if (consumableType == ConsumableType.Adderall)
+        {
+            cooldownBlockSlider.value = 1f - GameManager.instance.cooldownPercent;
+        }
     }
 
     public void UpdateCooldownSprite(EvadeType evadeType)

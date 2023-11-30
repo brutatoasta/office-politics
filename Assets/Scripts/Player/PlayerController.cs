@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.updateInventory.AddListener(CycleConsumable);
+        GameManager.instance.consumableEfffect.AddListener(ApplyConsumableEffect);
+
         GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
@@ -69,10 +71,24 @@ public class PlayerController : MonoBehaviour
 
                     DoMove(TryMoves());
                 }
+
+                // Natthan
+                if (rb.velocity != Vector2.zero)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerWalk);
+                }
+                // stop the walking sound if the player is blocked by an obstacle
+                else if (rb.velocity == Vector2.zero)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
+                }
             }
             else
             {
                 rb.velocity = Vector2.zero;
+
+                // Stop walking sound - Natthan
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
             }
         }
         if (DialogueManager.isActive == true)
@@ -87,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void DoMove(Vector2 direction) => rb.velocity = direction.normalized * playerConstants.moveSpeed;
+    private void DoMove(Vector2 direction) => rb.AddForce(direction.normalized * playerConstants.moveSpeed);
     private Vector2 TryMoves()
     {
         Vector2 x_only = new Vector2(movementInput.x, 0).normalized;
@@ -206,7 +222,7 @@ public class PlayerController : MonoBehaviour
         List<int> oldArrows = new List<int>();
 
         float timePassed = 0f;
-        while (timePassed < 0.6f)
+        while (timePassed < playerConstants.parryTime)
         {
             ParryObj(oldArrows);
             timePassed += Time.deltaTime;
@@ -253,6 +269,37 @@ public class PlayerController : MonoBehaviour
     void UseConsumable(int _) => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
     void CycleConsumable() => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
 
+    void ApplyConsumableEffect(ConsumableType consumableType)
+    {
+        switch (consumableType)
+        {
+            case ConsumableType.KitKat:
+                //TODO: Visual Effects if any
+                break;
+
+            case ConsumableType.Coffee:
+                //TODO: Visual Effects if any
+                break;
+
+            case ConsumableType.Adderall:
+                //TODO: Visual Effects if any
+                break;
+
+            case ConsumableType.Starman:
+                StartCoroutine(InvincibilityVisuals());
+                break;
+
+        }
+    }
+
+    IEnumerator InvincibilityVisuals()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            playerSprite.material = (i % 2 == 0) ? playerConstants.invincibleMaterial : playerConstants.defaultMaterial;
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
+    }
 
 
     void OnTriggerEnter2D(Collider2D col)

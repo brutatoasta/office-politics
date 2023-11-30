@@ -59,6 +59,8 @@ public class Trashbin : BaseInteractable
 
             Debug.Log($"Dropped {held.name} into me!");
 
+            // Natthan
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwTrash);
         }
     }
 

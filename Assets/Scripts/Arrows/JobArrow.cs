@@ -14,7 +14,7 @@ public class JobArrow : BaseArrow
     {
         speed = weaponGameConstants.jobArrowSpeed;
 
-        // temporary
+        // temporary - Natthan
         throwArrowAudioElement = GameManager.instance.audioElements.throwStressArrow;
     }
     public void SpawnArrow(Transform bossCoords)

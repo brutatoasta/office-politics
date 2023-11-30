@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -21,6 +22,23 @@ public class Holdable : BaseInteractable
             playerHand.sprite = GetComponent<SpriteRenderer>().sprite;
             playerHand.color = GetComponent<SpriteRenderer>().color;
 
+            // check which task and play the sfx accordingly - Natthan
+            if (taskName == TaskName.FetchCoffee)
+            {
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
+            }
+            else if (taskName == TaskName.RefillCoffee)
+            {
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+            }
+            else if (taskName == TaskName.FetchTea)
+            {
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
+            }
+            else if (taskName == TaskName.PrepRefreshment)
+            {
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+            }
         }
     }
 

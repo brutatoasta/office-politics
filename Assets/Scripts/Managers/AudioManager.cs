@@ -49,10 +49,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
 
-
-        // // temporary: for starting BGM in the main gameplay scene
-        // gameplayBgmIntensity1AudioSource.clip = audioElements.gameplayBgmIntensity1.audioClip;
-        // gameplayBgmIntensity1AudioSource.Play();
     }
 
     public void PlayAudioElement(AudioElement audioElement)
@@ -81,7 +77,22 @@ public class AudioManager : MonoBehaviour
                 userInterfaceSfxAudioSource.PlayOneShot(audioElement.audioClip);
                 break;
             case AudioType.playerSFX:
-                playerSfxAudioSource.PlayOneShot(audioElement.audioClip);
+                if (audioElement.Equals(audioElements.playerWalk))
+                {
+                    if (!playerSfxAudioSource.isPlaying)
+                    {
+                        playerSfxAudioSource.clip = audioElements.playerWalk.audioClip;
+                        playerSfxAudioSource.Play();
+                    }
+                }
+                else if (audioElement.Equals(audioElements.playerStop))
+                {
+                    playerSfxAudioSource.clip = audioElements.playerStop.audioClip;
+                }
+                else
+                {
+                    playerSfxAudioSource.PlayOneShot(audioElement.audioClip);
+                }
                 break;
             case AudioType.enemySFX:
                 enemySfxAudioSource.PlayOneShot(audioElement.audioClip);

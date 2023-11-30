@@ -51,6 +51,12 @@ MonoBehaviour:
   hideTaskDetails:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 80114cbd30f0f784ba9418f9bd4fafc8, type: 3}
+  playerWalk:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: 84876e3b88c77fa47b0b094e370875a3, type: 3}
+  playerStop:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: 97ecf302f496db74ab1d0612b23bfb7d, type: 3}
   playerDash:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}
@@ -80,7 +86,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ab13116e66e77324782d1f776d80e4c2, type: 3}
   pourCoffee:
     audioType: 8
-    audioClip: {fileID: 8300000, guid: ed4ee1c75ef5e404ea86b8d2961f4bd7, type: 3}
+    audioClip: {fileID: 8300000, guid: 50c05aa6974c3b045ac9e291c80c48ff, type: 3}
   serveCoffee:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 60259c401c4cf414db656bd9253f9e88, type: 3}
@@ -99,3 +105,9 @@ MonoBehaviour:
   jamMachine:
     audioType: 8
     audioClip: {fileID: 8300000, guid: cf245e50a5dd74a4a958a95009bb07b9, type: 3}
+  throwTrash:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 21c9b58bff55d6648856713c0e92ec72, type: 3}
+  interactionInvalid:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 2bf8080eaa0f20943b2410c39a13be47, type: 3}
