@@ -69,19 +69,23 @@ public class AudioManager : MonoBehaviour
                 gameplayBgmIntensity2AudioSource.clip = audioElement.audioClip;
                 gameplayBgmIntensity2AudioSource.Play();
                 break;
+
             case AudioType.gameplayBGMIntensity3:
                 gameplayBgmIntensity3AudioSource.clip = audioElement.audioClip;
                 gameplayBgmIntensity3AudioSource.Play();
                 break;
+
             case AudioType.userInterfaceSFX:
                 userInterfaceSfxAudioSource.PlayOneShot(audioElement.audioClip);
                 break;
+
             case AudioType.playerSFX:
                 if (audioElement.Equals(audioElements.playerWalk))
                 {
+                    playerSfxAudioSource.clip = audioElements.playerWalk.audioClip;
+
                     if (!playerSfxAudioSource.isPlaying)
                     {
-                        playerSfxAudioSource.clip = audioElements.playerWalk.audioClip;
                         playerSfxAudioSource.Play();
                     }
                 }
@@ -94,15 +98,19 @@ public class AudioManager : MonoBehaviour
                     playerSfxAudioSource.PlayOneShot(audioElement.audioClip);
                 }
                 break;
+
             case AudioType.enemySFX:
                 enemySfxAudioSource.PlayOneShot(audioElement.audioClip);
                 break;
+
             case AudioType.nonPlayableCharaterSFX:
                 nonPlayableCharacterSfxAudioSource.PlayOneShot(audioElement.audioClip);
                 break;
+
             case AudioType.interactionSFX:
                 interactionSfxAudioSource.PlayOneShot(audioElement.audioClip);
                 break;
+
             default:
                 // Debug.Log("Error in AudioManager");
                 break;
