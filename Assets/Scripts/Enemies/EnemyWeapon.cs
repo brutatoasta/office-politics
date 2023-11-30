@@ -36,9 +36,10 @@ public class EnemyWeapon : MonoBehaviour
     {
         StartCoroutine(StartArrowSequenceWithPauseCoroutine());
     }
-    public void PauseArrowShooting()
+    public void PauseArrowShooting(bool isChasing)
     {
-        gameObject.GetComponent<EnemyWeapon>().enabled = !gameObject.GetComponent<EnemyWeapon>().enabled;
+        //gameObject.GetComponent<EnemyWeapon>().enabled = !gameObject.GetComponent<EnemyWeapon>().enabled;
+        gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
     }
     public void Shoot()
     {

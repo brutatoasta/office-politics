@@ -27508,6 +27508,14 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7718155176503045928, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7718155176503045928, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7837635378903992681, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -35937,6 +35945,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e900c406701f004bbb75c1a86864e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1601986633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4200504481560553773, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
+  m_PrefabInstance: {fileID: 1941129048}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fde3cd98f1da74bb80ff42733f234c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1609886895
@@ -59471,6 +59490,14 @@ PrefabInstance:
       propertyPath: originalTransform
       value: 
       objectReference: {fileID: 2074525707}
+    - target: {fileID: 8471452804857979317, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
+      propertyPath: pauseEnemyWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471452804857979317, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
+      propertyPath: pauseEnemyWeapon.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1601986633}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

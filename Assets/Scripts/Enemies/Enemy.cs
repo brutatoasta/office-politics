@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
         UpdatePosition();
     }
 
-    public UnityEvent pauseEnemyWeapon;
+    //public UnityEvent<bool> pauseEnemyWeapon;
     IEnumerator Stun()
     {
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.enemyGetStunned);
@@ -111,7 +111,7 @@ public class Enemy : MonoBehaviour
         animator.SetBool("isStun", true);
 
         // pause enemy weapon
-        pauseEnemyWeapon.Invoke();
+        gameObject.GetComponent<EnemyWeapon>().enabled = false;
         yield return new WaitForSeconds(2f);
 
         //resume walking
@@ -120,10 +120,7 @@ public class Enemy : MonoBehaviour
 
         // resume enemy weapon
         yield return new WaitForSeconds(6f); // because one enemy weapon cycle is 8s, cause enemy to miss next shooting chance
-        if (isChasing)
-        {
-            pauseEnemyWeapon.Invoke();
-        }
+        gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
     }
 
     public void stunByArrow()
