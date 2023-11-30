@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
 
         // wait 3 seconds and invoke timerstart gameplay event()
         // GameManager.instance.TimerStart.Invoke();
-        
+
         // if there is a countdown for the player to start, call on timer stop here then start timer via gameplay event
     }
 
@@ -50,6 +50,6 @@ public class Timer : MonoBehaviour
         timeToDisplay += timerType == TimerType.Countdown ? -Time.deltaTime : Time.deltaTime;
 
         TimeSpan timeSpan = TimeSpan.FromSeconds(timeToDisplay);
-        _timerText.text = timeSpan.ToString(@"mm\:ss\:ff");
+        _timerText.text = timeSpan.ToString(@"mm\:ss");
     }
 }
