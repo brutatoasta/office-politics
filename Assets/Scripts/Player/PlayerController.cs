@@ -55,12 +55,12 @@ public class PlayerController : MonoBehaviour
                     rb.AddForce(movementInput * playerConstants.moveSpeed);
                 }
 
-                // Natthan
+                // play walking sound if player is moving - Natthan
                 if (rb.velocity != Vector2.zero)
                 {
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerWalk);
                 }
-                // stop the walking sound if the player is blocked by an obstacle
+                // stop the walking sound if the player is not moving (e.g. blocked by an obstacle) - Natthan
                 else if (rb.velocity == Vector2.zero)
                 {
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
