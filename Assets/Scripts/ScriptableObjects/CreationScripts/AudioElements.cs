@@ -40,6 +40,8 @@ public class AudioElements : ScriptableObject
     public AudioElement hideTaskDetails;
 
     // Player SFX
+    public AudioElement playerWalk;
+    public AudioElement playerStop;
     public AudioElement playerDash;
     public AudioElement playerParry;
     public AudioElement playerParrySuccess;

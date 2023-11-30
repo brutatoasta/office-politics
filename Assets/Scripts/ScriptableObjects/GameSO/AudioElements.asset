@@ -51,6 +51,12 @@ MonoBehaviour:
   hideTaskDetails:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 80114cbd30f0f784ba9418f9bd4fafc8, type: 3}
+  playerWalk:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: 84876e3b88c77fa47b0b094e370875a3, type: 3}
+  playerStop:
+    audioType: 5
+    audioClip: {fileID: 8300000, guid: 97ecf302f496db74ab1d0612b23bfb7d, type: 3}
   playerDash:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}

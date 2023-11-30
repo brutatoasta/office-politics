@@ -77,7 +77,22 @@ public class AudioManager : MonoBehaviour
                 userInterfaceSfxAudioSource.PlayOneShot(audioElement.audioClip);
                 break;
             case AudioType.playerSFX:
-                playerSfxAudioSource.PlayOneShot(audioElement.audioClip);
+                if (audioElement.Equals(audioElements.playerWalk))
+                {
+                    if (!playerSfxAudioSource.isPlaying)
+                    {
+                        playerSfxAudioSource.clip = audioElements.playerWalk.audioClip;
+                        playerSfxAudioSource.Play();
+                    }
+                }
+                else if (audioElement.Equals(audioElements.playerStop))
+                {
+                    playerSfxAudioSource.clip = audioElements.playerStop.audioClip;
+                }
+                else
+                {
+                    playerSfxAudioSource.PlayOneShot(audioElement.audioClip);
+                }
                 break;
             case AudioType.enemySFX:
                 enemySfxAudioSource.PlayOneShot(audioElement.audioClip);

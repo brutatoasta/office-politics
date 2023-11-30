@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool canDash = true;
     bool canParry = true;
-    
+
 
     public bool touching = false;
     new Collider2D collider;
@@ -62,10 +63,24 @@ public class PlayerController : MonoBehaviour
                 {
                     rb.AddForce(movementInput * playerConstants.moveSpeed);
                 }
+
+                // Natthan
+                if (rb.velocity != Vector2.zero)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerWalk);
+                }
+                // stop the walking sound if the player is blocked by an obstacle
+                else if (rb.velocity == Vector2.zero)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
+                }
             }
             else
             {
                 rb.velocity = Vector2.zero;
+
+                // Stop walking sound - Natthan
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
             }
         }
         if (DialogueManager.isActive == true)
