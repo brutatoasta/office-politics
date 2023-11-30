@@ -3747,10 +3747,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5707078471957721606, guid: 2b029adaa57e8e7448abce221a1a4865, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7808458188189179566, guid: 2b029adaa57e8e7448abce221a1a4865, type: 3}
       propertyPath: m_Name
       value: Crossfade
