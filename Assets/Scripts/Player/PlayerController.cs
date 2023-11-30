@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
-using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 
 public class PlayerController : MonoBehaviour
@@ -16,15 +13,13 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movementInput;
     SpriteRenderer playerSprite;
-    SpriteRenderer heldSprite;
     Rigidbody2D rb;
     Animator animator;
     Animator handAnimator;
-    // AudioSource audioSource;
 
-    Vector3 teleportToOffice = new Vector3(-17, -3, 0);
+    Vector3 teleportToOffice = new(-17, -3, 0);
 
-    Vector3 teleportToBossRoom = new Vector3(-43, -3, 0);
+    Vector3 teleportToBossRoom = new(-43, -3, 0);
 
     public TrailRenderer trail;
 
@@ -42,7 +37,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
-        heldSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
         GameManager.instance.useConsumable.AddListener(UseConsumable);
@@ -110,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     public void MoveCheck(Vector2 movement)
     {
-        movementInput = movement;
+        movementInput = movement.normalized;
     }
 
     public void TriggerInteract()
@@ -119,27 +113,6 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.interact.Invoke();
         }
-
-
-        // // the object player is interacting with
-        // if (collider != null)
-        // {
-        //     BaseInteractable inter = collider.gameObject.GetComponent<BaseInteractable>();
-        //     // check if player is touching object and not currently animating
-        //     if (touching && !interactLock)
-        //     {
-        //         if (collider.gameObject.layer == 8)
-        //         {
-        //             // get script component and cast according to type field
-        //             // check if held object is valid
-        //             if (inter.CastAndInteract(heldSprite))
-        //             {
-
-        //             }
-        //         }
-
-        //     }
-        // }
     }
     public void AcquireInteractLock()
     {
@@ -176,7 +149,6 @@ public class PlayerController : MonoBehaviour
         canDash = false;
         rb.velocity = movementInput.normalized * playerConstants.dashPower;
         trail.emitting = true;
-        // audioSource.PlayOneShot(playerConstants.dashAudio);
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerDash);
 
         GameManager.instance.playerEvade.Invoke(playerConstants.dashCooldown);
@@ -198,7 +170,7 @@ public class PlayerController : MonoBehaviour
 
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerParry);
 
-        List<int> oldArrows = new List<int>();
+        List<int> oldArrows = new();
 
         float timePassed = 0f;
         while (timePassed < playerConstants.parryTime)
@@ -245,23 +217,9 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
-    }
-
-
-    void UseConsumable(int _)
-    {
-        // audioSource.PlayOneShot(playerConstants.useConsumeableClip);
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
-    }
-
-    void CycleConsumable()
-    {
-        // audioSource.PlayOneShot(playerConstants.cycleConsumeableClip);
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
-    }
+    void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
+    void UseConsumable(int _) => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
+    void CycleConsumable() => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
 
     void ApplyConsumableEffect(ConsumableType consumableType)
     {
@@ -269,25 +227,25 @@ public class PlayerController : MonoBehaviour
         {
             case ConsumableType.KitKat:
                 //TODO: Visual Effects if any
-            break;
+                break;
 
             case ConsumableType.Coffee:
                 //TODO: Visual Effects if any
-            break;
+                break;
 
             case ConsumableType.Adderall:
                 //TODO: Visual Effects if any
-            break;
+                break;
 
             case ConsumableType.Starman:
                 StartCoroutine(InvincibilityVisuals());
-            break;
+                break;
 
         }
     }
 
     IEnumerator InvincibilityVisuals()
-    {        
+    {
         for (int i = 0; i < 20; i++)
         {
             playerSprite.material = (i % 2 == 0) ? playerConstants.invincibleMaterial : playerConstants.defaultMaterial;
@@ -339,32 +297,11 @@ public class PlayerController : MonoBehaviour
         playerConstants.moveSpeed += 10;
         GameManager.instance.invincible = false;
     }
-
-    public void OnOvertime()
-    {
-        InvokeRepeating("TickOvertime", 0, 1.0f);
-    }
-
+    public void OnOvertime() => InvokeRepeating(nameof(TickOvertime), 0, 1.0f);
     public void TickOvertime()
     {
         GameManager.instance.levelVariables.stressPoints += playerConstants.overtimeTick;
         GameManager.instance.IncreaseStress();
-    }
-
-
-    // Interact with objects
-    // nervous system, tells you if you're touching
-    void OnTriggerStay2D(Collider2D col)
-    {
-        touching = true;
-        collider = col;
-
-        // dont allow holding more stuff if already holding something
-    }
-    void OnTriggerExit2D(Collider2D col)
-    {
-        touching = false;
-        collider = null;
     }
 
 }
