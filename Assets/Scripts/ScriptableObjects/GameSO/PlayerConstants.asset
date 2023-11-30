@@ -27,3 +27,5 @@ MonoBehaviour:
   sanityPoint: 0
   performancePoints: 0
   overtimeTick: 1
+  parryIcon: {fileID: 7724252856404201693, guid: f5804991158c20349bc715ac20cc3cf8, type: 3}
+  dashIcon: {fileID: 3311861653480170298, guid: f5804991158c20349bc715ac20cc3cf8, type: 3}

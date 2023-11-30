@@ -10,12 +10,16 @@ public class RunVariables : ScriptableObject
     [SerializeField]
     public ABCConsumable[] consumableObjects;
     public int performancePoints;
+    public bool upgradeBought;
+    public int currentSceneIndex;
 
     public void Init()
     {
         // start of whole game, not level
         consumableObjects = new ABCConsumable[]
         { new KitKat(20, 5), new Coffee(4, 10), new Adderall(3, 15), new Adderall(1, 20) };
+        upgradeBought = false;
+        currentSceneIndex = 0;
     }
 }
 

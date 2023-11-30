@@ -475,7 +475,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3265215980486700150}
         m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
-        m_MethodName: OnUseConsumableAction
+        m_MethodName: OnUseConsumable1Action
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -535,6 +535,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ed7d17a3-3974-4e0a-895b-01155bdde3fd
     m_ActionName: PlayerMap/pullupTask[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3265215980486700150}
+        m_TargetAssemblyTypeName: ActionManager, Assembly-CSharp
+        m_MethodName: OnUseConsumable2Action
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ef7be87c-bca3-4f4c-8fa9-9665d940c917
+    m_ActionName: PlayerMap/useConsumable2[/Keyboard/i]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: OfficePolitics
   m_DefaultActionMap: PlayerMap
@@ -641,7 +657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerConstants: {fileID: 11400000, guid: dee66932ae8fbf74c9c9fd062af965c8, type: 2}
   arrowConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
-  audioElements: {fileID: 11400000, guid: 1494f76509bb89143befbd26d67ba5f4, type: 2}
   trail: {fileID: 601554962093554315}
   touching: 0
 --- !u!96 &601554962093554315

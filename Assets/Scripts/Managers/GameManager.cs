@@ -29,7 +29,7 @@ public class GameManager : Singleton<GameManager>
 
     // runVariables
     public UnityEvent updateInventory;
-    public UnityEvent useConsumable;
+    public UnityEvent<int> useConsumable;
 
     // Timer
     public UnityEvent TimerStart;
@@ -56,6 +56,7 @@ public class GameManager : Singleton<GameManager>
     public AudioElements audioElements;
     public bool isPaused = false;
     public bool overtime = false;
+    [NonSerialized] public bool invincible = false;
     private int currentInventorySlot = 0;
     [NonSerialized] public List<int> activeSlots = new List<int> { 0, 1 };
 
@@ -68,7 +69,7 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         levelVariables.Init();
-        levelVariables.currentSceneIndex = 0;
+        runVariables.currentSceneIndex = 0;
         levelVariables.currentLevelIndex = 0;
         levelVariables.levelPP = 0;
         runVariables.Init();
@@ -105,7 +106,7 @@ public class GameManager : Singleton<GameManager>
         int currIdx = currentInventorySlot;
         List<int> res = new List<int>();
 
-        while (res.Count <= activeSlots.Count)
+        while (res.Count < activeSlots.Count)
         {
             if (runVariables.consumableObjects[currIdx].count > 0)
             {
@@ -116,6 +117,10 @@ public class GameManager : Singleton<GameManager>
 
             if (currIdx == currentInventorySlot) break;
         }
+        while (res.Count < (runVariables.upgradeBought? 3: 2))
+        {
+            res.Add(-1);
+        }
 
         activeSlots = res;
         Debug.Log(string.Join(",", activeSlots));
@@ -124,10 +129,25 @@ public class GameManager : Singleton<GameManager>
         updateInventory.Invoke();
     }
 
-    public void UseCurrentConsumable()
+    public void UseCurrentConsumable(int slot)
     {
-        runVariables.consumableObjects[currentInventorySlot].Consume();
-        useConsumable.Invoke();
+        
+        if (runVariables.upgradeBought && activeSlots[slot] != -1)
+        {
+            runVariables.consumableObjects[activeSlots[slot]].Consume();
+        }
+        else if (!runVariables.upgradeBought && activeSlots[0] != -1)
+        {
+            runVariables.consumableObjects[activeSlots[0]].Consume();
+        }
+        
+        // Blank cleaned slots
+        if (activeSlots[runVariables.upgradeBought? slot: 0] != -1 &&
+         runVariables.consumableObjects[activeSlots[runVariables.upgradeBought? slot: 0]].count <= 0)
+        {
+            activeSlots[runVariables.upgradeBought? slot: 0] = -1;
+        }
+        useConsumable.Invoke(slot);
     }
 
     public void IncreaseJob()

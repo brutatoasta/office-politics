@@ -29,10 +29,15 @@ public class ActionManager : MonoBehaviour
 
     }
 
-    public void OnUseConsumableAction(InputAction.CallbackContext context)
+    public void OnUseConsumable1Action(InputAction.CallbackContext context)
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (context.started && scene.name != "PowerUpScene") GameManager.instance.UseCurrentConsumable();
+        if (context.started && scene.name != "PowerUpScene") GameManager.instance.UseCurrentConsumable(0);
+    }
+    public void OnUseConsumable2Action(InputAction.CallbackContext context)
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        if (context.started && scene.name != "PowerUpScene") GameManager.instance.UseCurrentConsumable(1);
     }
 
     public void OnCycleConsumableAction(InputAction.CallbackContext context)

@@ -90,10 +90,10 @@ public class SceneExit : MonoBehaviour
             // }
             // fade to black
 
-            if (levelVariables.currentSceneIndex < scenes.Length)
+            if (GameManager.instance.runVariables.currentSceneIndex < scenes.Length)
             {
-                nextScene = scenes[levelVariables.currentSceneIndex];
-                levelVariables.currentSceneIndex++;
+                nextScene = scenes[GameManager.instance.runVariables.currentSceneIndex];
+                GameManager.instance.runVariables.currentSceneIndex++;
                 // fading in and out
                 transition.SetTrigger("Start");
                 // Start the coroutine to load the next scene after a delay

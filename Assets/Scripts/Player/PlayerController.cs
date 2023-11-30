@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool canDash = true;
     bool canParry = true;
-    bool invincible = false;
+    
 
     public bool touching = false;
     new Collider2D collider;
@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void UseConsumable()
+    void UseConsumable(int _)
     {
         // audioSource.PlayOneShot(playerConstants.useConsumeableClip);
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Arrow") && !invincible)
+        if (col.gameObject.CompareTag("Arrow") && !GameManager.instance.invincible)
         {
             if (col.gameObject.name.Contains("JobArrowTutorial"))
             {
@@ -280,7 +280,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator HurtPlayerShader()
     {
-        invincible = true;
+        GameManager.instance.invincible = true;
         playerConstants.moveSpeed -= 10;
         for (int i = 0; i < 6; i++)
         {
@@ -288,7 +288,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.1f);
         }
         playerConstants.moveSpeed += 10;
-        invincible = false;
+        GameManager.instance.invincible = false;
     }
 
     public void OnOvertime()
