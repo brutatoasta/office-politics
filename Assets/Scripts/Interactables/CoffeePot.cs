@@ -21,6 +21,9 @@ public class CoffeePot : BaseInteractable
             playerHand.sprite = GetComponent<SpriteRenderer>().sprite;
             playerHand.color = GetComponent<SpriteRenderer>().color;
             sprite.enabled = true;
+
+            // temporary
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
         }
 
     }

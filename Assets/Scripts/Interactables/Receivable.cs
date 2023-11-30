@@ -70,6 +70,24 @@ public class Receivable : BaseInteractable
             // calculate score and tasks
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
+                // check which task and play the sfx accordingly - Natthan
+                if (heldType == TaskName.FetchCoffee)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                }
+                else if (heldType == TaskName.RefillCoffee)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                }
+                else if (heldType == TaskName.FetchTea)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                }
+                else if (heldType == TaskName.PrepRefreshment)
+                {
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                }
+
                 // decrease task count
                 GameManager.instance.levelVariables.Succeed(heldType);
                 GameManager.instance.showPerformancePoint.Invoke();
