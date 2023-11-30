@@ -133,6 +133,7 @@ public class Receivable : BaseInteractable
                 }
 
                 // Play "interactionInvalid" sound - Natthan
+                // Todo: can add more specific sounds in the future
                 GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.interactionInvalid);
             }
 
