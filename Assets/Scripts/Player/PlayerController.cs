@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     bool canMove = true;
     bool canDash = true;
     bool canParry = true;
-    
+
 
     public bool touching = false;
 
@@ -250,8 +250,8 @@ public class PlayerController : MonoBehaviour
 
 
     void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
-    void UseConsumable() => GameManager.instance.PlayAudioElement(audioElements.useConsumable);
-    void CycleConsumable() => GameManager.instance.PlayAudioElement(audioElements.cycleConsumable);
+    void UseConsumable(int _) => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
+    void CycleConsumable() => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
 
 
 
