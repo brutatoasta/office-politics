@@ -58918,10 +58918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messages:
   - actorId: 0
-    message: "Hey! Welcome to Taichill Games. I believe I interviewed you and emailed
-      you prior to today. I\u2019m Lisa and I will be helping you to settle in at
-      our company. Here\u2019s Steve, the Team Lead in charge of you while you\u2019re
-      here."
+    message: "HR: Hey! Welcome to Taichill Games.I\u2019m Lisa and I will be onboarding
+      you with Steve, your Team Lead."
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -58936,10 +58934,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: 'Since you don''t meet our requirement of 20 year experience in C# and
-      Unity, we will have to start you off at the basic level. For four days, you
-      will be put under probation to see if you have what it takes to be an intern
-      at our company. '
+    message: 'Since you don''t meet our basic requirement of 20 YOE in Unity, you
+      have to start with the basics. For four days, you will be put under probation
+      to see if you have what it takes to be an intern at our company. '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -58949,10 +58946,9 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: "We\u2019ve noticed that your resume states that you are a fast learner,
-      so we will expect you to pick up new tasks along the way quickly! If not, your
-      boss will give you more chances to practice the task, until you can get it
-      right. "
+    message: 'Your resume says that you are a fast learner, so we expect you to pick
+      up new tasks along the way quickly! If not, your boss will give you more chances
+      to practice the task, until you can get it right.  '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -58980,13 +58976,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: Move to the bubble with the coffee sign, press J to pick up the cup
-      of coffee
+    message: 'Move to the bubble with the coffee, press J to pick up the cup of coffee '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: Now, move to the colleague to and press J to pass him the coffee
+    message: Find the colleague by looking for the same coffee bubble, and press
+      J to pass him the coffee
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
