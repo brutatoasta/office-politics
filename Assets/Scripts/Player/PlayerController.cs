@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
     bool canDash = true;
     bool canParry = true;
 
-
-    public bool touching = false;
     new Collider2D collider;
     bool interactLock = false;
     // Start is called before the first frame update
