@@ -86,7 +86,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: ab13116e66e77324782d1f776d80e4c2, type: 3}
   pourCoffee:
     audioType: 8
-    audioClip: {fileID: 8300000, guid: ed4ee1c75ef5e404ea86b8d2961f4bd7, type: 3}
+    audioClip: {fileID: 8300000, guid: 50c05aa6974c3b045ac9e291c80c48ff, type: 3}
   serveCoffee:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 60259c401c4cf414db656bd9253f9e88, type: 3}
@@ -105,3 +105,9 @@ MonoBehaviour:
   jamMachine:
     audioType: 8
     audioClip: {fileID: 8300000, guid: cf245e50a5dd74a4a958a95009bb07b9, type: 3}
+  throwTrash:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 21c9b58bff55d6648856713c0e92ec72, type: 3}
+  interactionInvalid:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 2bf8080eaa0f20943b2410c39a13be47, type: 3}
