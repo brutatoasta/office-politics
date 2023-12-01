@@ -2894,6 +2894,10 @@ PrefabInstance:
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1609886895}
+    - target: {fileID: 8191497623588659280, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: -602049472, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29552,6 +29556,10 @@ PrefabInstance:
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1611955801}
+    - target: {fileID: 8191497623588659280, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: -602049472, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29916,6 +29924,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment (1)
@@ -64267,6 +64279,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment
@@ -64630,6 +64646,10 @@ PrefabInstance:
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1240854299}
+    - target: {fileID: 8191497623588659280, guid: e7c5bfda312452f4cb67665c10214b13, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: -602049472, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

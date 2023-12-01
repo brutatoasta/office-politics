@@ -2743,6 +2743,10 @@ PrefabInstance:
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1609886895}
+    - target: {fileID: 8191497623588659280, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: -602049472, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3706,6 +3710,10 @@ PrefabInstance:
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1716999524}
+    - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 755b08d2e45e73948ba8aafb9a77f25d, type: 3}
     - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_Name
       value: ToPrepMeeting
@@ -13635,6 +13643,10 @@ PrefabInstance:
       propertyPath: taskName
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment (1)
@@ -62394,7 +62406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
   taskName: 3
-  optionalSprite: {fileID: 0}
+  optionalSprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
 --- !u!61 &2065081228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62431,7 +62443,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8125, y: 0.75}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -62481,7 +62493,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1790733358, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -63197,6 +63209,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6313157569298371780, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment
@@ -63553,6 +63569,10 @@ PrefabInstance:
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1240854299}
+    - target: {fileID: 8191497623588659280, guid: e7c5bfda312452f4cb67665c10214b13, type: 3}
+      propertyPath: optionalSprite
+      value: 
+      objectReference: {fileID: -602049472, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

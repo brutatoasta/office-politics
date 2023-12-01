@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6085087040779317978
 Transform:
   m_ObjectHideFlags: 0
@@ -252,3 +252,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 1902328133661569050}
   taskName: 8
+  optionalSprite: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}

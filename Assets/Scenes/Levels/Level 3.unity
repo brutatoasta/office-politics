@@ -2823,14 +2823,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1303924912}
     m_Modifications:
-    - target: {fileID: 567219367991948512, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
-      propertyPath: m_Size.y
-      value: 3.3179913
-      objectReference: {fileID: 0}
-    - target: {fileID: 567219367991948512, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.37666607
-      objectReference: {fileID: 0}
     - target: {fileID: 6314478634137982117, guid: c8cce2c8c3e0f80419ed68bd093d1be6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.08
@@ -3757,20 +3749,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
-      propertyPath: taskName
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1716999524}
     - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_Name
       value: ToPrepMeeting
-      objectReference: {fileID: 0}
-    - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -62757,7 +62741,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
   taskName: 3
-  optionalSprite: {fileID: 0}
+  optionalSprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
 --- !u!61 &2065081228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -62794,7 +62778,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8125, y: 0.75}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -62844,7 +62828,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1790733358, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -63479,14 +63463,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1235605933}
     m_Modifications:
-    - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.875
-      objectReference: {fileID: 0}
-    - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.81
@@ -63531,14 +63507,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToPrepRefreshment
       objectReference: {fileID: 0}
-    - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8300185227093477929, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -63838,14 +63806,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1357811633}
     m_Modifications:
-    - target: {fileID: 567219367991948512, guid: e7c5bfda312452f4cb67665c10214b13, type: 3}
-      propertyPath: m_Size.y
-      value: 3.6664944
-      objectReference: {fileID: 0}
-    - target: {fileID: 567219367991948512, guid: e7c5bfda312452f4cb67665c10214b13, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.50832653
-      objectReference: {fileID: 0}
     - target: {fileID: 6314478634137982117, guid: e7c5bfda312452f4cb67665c10214b13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.16
@@ -63975,7 +63935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
   taskName: 5
-  optionalSprite: {fileID: 0}
+  optionalSprite: {fileID: 21300000, guid: 755b08d2e45e73948ba8aafb9a77f25d, type: 3}
 --- !u!1001 &6290294752409637512
 PrefabInstance:
   m_ObjectHideFlags: 0

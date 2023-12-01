@@ -63122,7 +63122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
   taskName: 3
-  optionalSprite: {fileID: 0}
+  optionalSprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
 --- !u!61 &2065081228
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -63159,7 +63159,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8125, y: 0.75}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -63209,7 +63209,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1790733358, guid: e55630479cfbb1945b8990dfb786d507, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -64429,7 +64429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
   taskName: 5
-  optionalSprite: {fileID: 0}
+  optionalSprite: {fileID: 21300000, guid: 755b08d2e45e73948ba8aafb9a77f25d, type: 3}
 --- !u!1001 &6290294752409637512
 PrefabInstance:
   m_ObjectHideFlags: 0
