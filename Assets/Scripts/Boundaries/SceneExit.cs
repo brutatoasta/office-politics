@@ -93,6 +93,11 @@ public class SceneExit : MonoBehaviour
             if (GameManager.instance.runVariables.currentSceneIndex < scenes.Length)
             {
                 nextScene = scenes[GameManager.instance.runVariables.currentSceneIndex];
+                if (nextScene == "Cutscene")
+                {
+                    GameManager.instance.levelVariables.ExitLevel();
+                }
+
                 GameManager.instance.runVariables.currentSceneIndex++;
                 // fading in and out
                 transition.SetTrigger("Start");
