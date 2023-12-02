@@ -58516,21 +58516,25 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: 'Since you don''t meet our basic requirement of 20 YOE in Unity, you
-      have to start with the basics. For four days, you will be put under probation
-      to see if you have what it takes to be an intern at our company. '
+    message: Since you don't meet our basic requirement of 20 YOE in Unity, you have
+      to start with the basics.
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: Press tab to check your tasklist for the day
+    message: For four days, you will be put under probation to see if you have what
+      it takes to be an intern at our company.
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: 'Your resume says that you are a fast learner, so we expect you to pick
-      up new tasks along the way quickly! If not, your boss will give you more chances
-      to practice the task, until you can get it right.  '
+    message: Please press tab now to check your tasklist for the day
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - actorId: 0
+    message: 'We believe in learning by doing, so your team lead will regularly give
+      you more tasks to complete. '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -58552,25 +58556,20 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
   - actorId: 0
-    message: Uh-oh, it looks like you were arrowed with one more task! Check your
-      task list to see what new task you got.
+    message: 'Uh-oh, it looks like you were arrowed with one more task! Check your
+      task list to see what new task you got. '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: 'Move to the bubble with the coffee, press J to pick up the cup of coffee '
+    message: "Why don\u2019t you try fetching Joshua some coffee? Hint: press J to
+      interact with objects and colleagues. "
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: Find the colleague by looking for the same coffee bubble, and press
-      J to pass him the coffee
-    triggerNextEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - actorId: 0
-    message: Good job! You have now successfully completed the task. Check your task
-      list to see the extra coffee task has been gone!
+    message: Good job! Check your task list to see the extra coffee task has been
+      gone!
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -58580,31 +58579,25 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: You are rewarded performance points for each task you complete, you
-      can get some refreshment at the canteen.
+    message: 'You must finish all tasks before you can leave the office for the day. '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: "You will only be allowed to leave after you have completed all the
-      tasks and the day is over, but feel free to stay back and help your colleagues.
-      Oh, just don\u2019t get too stressed or else.. "
-    triggerNextEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - actorId: 1
-    message: Or else what?
+    message: To increase your chances of success, press SPACE to use your ability
+      and U to consume a powerup.
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: "Never mind.. We certainly don\u2019t want to overwork an intern on
-      his first day. Right Steve?"
+    message: 'When the timer in the top right corner is up, every second that you
+      OT will add stress in the top left stress bar. '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
-  - actorId: 2
-    message: Hmph
+  - actorId: 0
+    message: Complete more tasks to earn more performance points, but make sure not
+      to be overstressed.
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -58620,7 +58613,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 5a805caebb5823c468b4cc2aa0302bfc, type: 3}
   - name: Steve
     sprite: {fileID: 21300000, guid: b8c068dfd8fb4574ea1eec83865c716a, type: 3}
-  messagePauses: 090000000a000000
+  messagePauses: 0a000000
 --- !u!61 &1936507762
 BoxCollider2D:
   m_ObjectHideFlags: 0
