@@ -44,9 +44,9 @@ public class Timer : MonoBehaviour
     {
         return value switch
         {
-            float val when val / initialTime >= 2 / 3 => Color.green,
-            float val when val / initialTime >= 1 / 3 => Color.yellow,
-            float val when val / initialTime < 1 / 3 => Color.red,
+            float val when val / initialTime >= 2f / 3f => Color.green,
+            float val when val / initialTime >= 1f / 3f => Color.yellow,
+            float val when val / initialTime < 1f / 3f => Color.red,
             _ => Color.black,
         };
     }
