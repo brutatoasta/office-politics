@@ -14320,6 +14320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToPrepRefreshment (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8300185227093477929, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -64132,6 +64136,10 @@ PrefabInstance:
     - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_Name
       value: ToPrepRefreshment
+      objectReference: {fileID: 0}
+    - target: {fileID: 6807512673193397710, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
