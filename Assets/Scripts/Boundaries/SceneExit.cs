@@ -79,12 +79,21 @@ public class SceneExit : MonoBehaviour
                 nextScene = SceneNames.Levels[levelVariables.currentLevelIndex];
                 GameManager.instance.LevelStart();
             }
-            else if ((currentScene.name != SceneNames.Level4) && SceneNames.Levels.Contains(currentScene.name))
+            else if (SceneNames.Levels.Contains(currentScene.name))
             {
-                // its currently either level 1, 2, or 3.
-                // load cutscene
+
                 GameManager.instance.levelVariables.ExitLevel();
-                nextScene = SceneNames.Cutscene;
+                if (currentScene.name == SceneNames.Level4)
+                {
+                    nextScene = SceneNames.GoodEnding;
+                }
+                else
+                {
+                    // its currently either level 1, 2, or 3.
+                    // load cutscene
+                    nextScene = SceneNames.Cutscene;
+                }
+
             }
             // fading in and out
             transition.SetTrigger("Start");
