@@ -77,7 +77,7 @@ public class Printer : BaseInteractable
                 // depositing PrintDoc
                 GameManager.instance.SetHeld(null);
                 playerHand.sprite = null;
-
+                playerHand.color = Color.white;
                 //Debug.Log($"Dropped {held.name} into printer!");
                 progressBar.SetActive(true);
                 progressBarAnimator.SetTrigger("photocopyProgress");

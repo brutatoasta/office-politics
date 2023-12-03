@@ -38,6 +38,7 @@ public class DeliverDoc : BaseInteractable
             Debug.Log($"Dropped {held.name} into colleague!");
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
+            playerHand.color = Color.white;
             GameManager.instance.levelVariables.Succeed(TaskName.DeliverDoc);
 
             // Natthan

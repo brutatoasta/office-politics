@@ -56,6 +56,7 @@ public class Trashbin : BaseInteractable
             // drop the item in!
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
+            playerHand.color = Color.white;
 
             Debug.Log($"Dropped {held.name} into me!");
 
