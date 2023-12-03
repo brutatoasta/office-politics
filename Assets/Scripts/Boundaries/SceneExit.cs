@@ -1,14 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneExit : MonoBehaviour
 {
-    private string[] scenes = { "Level 1", "Cutscene", "PowerUpScene", "Level 2", "Cutscene", "PowerUpScene", "Level 3", "Cutscene", "PowerUpScene", "Level 4", "Cutscene" };
+    #region Variables
+
+    // private string[] scenes = { "Level 1", "Cutscene", "PowerUpScene", "Level 2", "Cutscene", "PowerUpScene", "Level 3", "Cutscene", "PowerUpScene", "Level 4", "Cutscene" };
     public LevelVariables levelVariables;
     public Animator transition;
+    public GameObject controlsPanel;
+    public GameObject shade;
+    Scene currentScene;
+    private string nextScene;
+    #endregion
     public void PlayGame()
     {
         GameManager.instance.LevelStart();
@@ -23,8 +30,7 @@ public class SceneExit : MonoBehaviour
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
         Application.Quit();
     }
-    public GameObject controlsPanel;
-    public GameObject shade;
+
     public void Controls()
     {
         // Ensure the panel is initially at scale zero
@@ -56,79 +62,49 @@ public class SceneExit : MonoBehaviour
         // Load the next scene after the delay
         SceneManager.LoadSceneAsync(nextScene);
     }
-    private string nextScene;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Scene scene = SceneManager.GetActiveScene();
+        currentScene = SceneManager.GetActiveScene();
         if (collision.CompareTag("Player"))
         {
             // load next scene based on current scene
-
-            // switch (scene.name)
-            // {
-            //     case "PowerUpScene":
-            //         nextScene = "Map";
-            //         // change some scriptable object values
-            //         break;
-            //     case "Map":
-            //         // might need a transition scene for night to day 
-            //         nextScene = "Cutscene";
-            //         GameManager.instance.LevelStart();
-            //         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.levelComplete);
-            //         // change some scriptable object values
-            //         break;
-            //     case "Cutscene":
-            //         // might need a transition scene for night to day 
-            //         nextScene = "PowerUpScene";
-            //         GameManager.instance.LevelStart();
-            //         // change some scriptable object values
-            //         break;
-            //     default:
-            //         // no op
-            //         Debug.Log("didnt change scene");
-            //         break;
-            // }
-            // fade to black
-
-            if (GameManager.instance.runVariables.currentSceneIndex < scenes.Length)
+            if (currentScene.name == SceneNames.Cutscene)
             {
-                nextScene = scenes[GameManager.instance.runVariables.currentSceneIndex];
-                if (nextScene == "Cutscene")
-                {
-                    GameManager.instance.levelVariables.ExitLevel();
-                }
+                nextScene = SceneNames.PowerUpScene;
+                levelVariables.currentLevelIndex++; // since we've left the level, we can increment the currentLevelIndex
+            }
+            else if (currentScene.name == SceneNames.PowerUpScene)
+            {   // change to some level
+                nextScene = SceneNames.Levels[levelVariables.currentLevelIndex];
+                GameManager.instance.LevelStart();
+            }
+            else if ((currentScene.name != SceneNames.Level4) && SceneNames.Levels.Contains(currentScene.name))
+            {
+                // its currently either level 1, 2, or 3.
+                // load cutscene
+                GameManager.instance.levelVariables.ExitLevel();
+                nextScene = SceneNames.Cutscene;
+            }
+            // fading in and out
+            transition.SetTrigger("Start");
+            // Start the coroutine to load the next scene after a delay
+            StartCoroutine(LoadNextSceneAfterDelay(nextScene, 1f));
 
-                GameManager.instance.runVariables.currentSceneIndex++;
-                // fading in and out
-                transition.SetTrigger("Start");
-                // Start the coroutine to load the next scene after a delay
-                StartCoroutine(LoadNextSceneAfterDelay(nextScene, 1f));
-            }
-            else
-            {
-                Debug.Log("All scenes loaded.");
-            }
-            switch (nextScene)
-            {
-                case "Level 1":
-                    levelVariables.currentLevelIndex = 0;
-                    GameManager.instance.LevelStart();
-                    break;
-                case "Level 2":
-                    levelVariables.currentLevelIndex = 1;
-                    GameManager.instance.LevelStart();
-                    break;
-                case "Level 3":
-                    levelVariables.currentLevelIndex = 2;
-                    GameManager.instance.LevelStart();
-                    break;
-                case "Level 4":
-                    levelVariables.currentLevelIndex = 3;
-                    GameManager.instance.LevelStart();
-                    break;
-                default:
-                    break;
-            }
         }
     }
+}
+
+
+public static class SceneNames
+{
+    public static readonly string Level1 = "Level 1";
+    public static readonly string Level2 = "Level 2";
+    public static readonly string Level3 = "Level 3";
+    public static readonly string Level4 = "Level 4";
+    public static readonly string Cutscene = "Cutscene";
+    public static readonly string PowerUpScene = "PowerUpScene";
+    public static readonly string GoodEnding = "GoodEnding";
+    public static readonly string BadEnding = "BadEnding";
+    public static readonly List<string> Levels = new() { Level1, Level2, Level3, Level4 };
 }

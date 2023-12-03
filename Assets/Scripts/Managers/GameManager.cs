@@ -253,12 +253,4 @@ public class GameManager : Singleton<GameManager>
         levelVariables.evadeType = evadeType;
         updateEvade.Invoke(evadeType);
     }
-
-    void OnSceneLoaded()
-    {
-        // check which scene
-        // if Map.scene, start timer after 3 seconds
-        // invoke gameplay event?
-
-    }
 }
