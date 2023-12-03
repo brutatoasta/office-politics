@@ -183,6 +183,9 @@ public class HUDManager : MonoBehaviour
     public void UpdateEvade(bool isDash)
     {
         GameManager.instance.UpdateEvadeType(isDash ? EvadeType.Dash : EvadeType.Parry);
+
+        // natthan - select parry or dash
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
 
     public void BuyUpgrade()
@@ -198,6 +201,9 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.CycleInventory();
         }
         UpdateShop();
+
+        // natthan - upgrade backpack
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
 
     public void BuyConsumable(int consumableIndex)
@@ -211,6 +217,8 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.updateInventory.Invoke();
         UpdateShop();
 
+        // natthan
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
 
     public void UpdateShop()
@@ -233,6 +241,9 @@ public class HUDManager : MonoBehaviour
     {
         shopUI.SetActive(false);
         GameManager.instance.playerUnFreeze.Invoke();
+
+        // natthan - close pantry shop
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
 
     public void OnPlayerEvade(float cooldownTime)

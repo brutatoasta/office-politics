@@ -78,6 +78,7 @@ public class GameManager : Singleton<GameManager>
         endingVariables.Init();
         Debug.Log(string.Join(",", activeSlots));
 
+        //  natthan
         PlayAudioElement(audioElements.startMenuBGM);
     }
 
