@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class GoodEnding : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -48,6 +48,10 @@ public class GoodEnding : MonoBehaviour
         letterIcon.SetActive(false);
         letter.SetActive(true);
         GenerateLetter();
+    }
+    public void AcceptOffer()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 
 }
