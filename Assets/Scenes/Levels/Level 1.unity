@@ -27951,7 +27951,7 @@ PrefabInstance:
     - target: {fileID: 6346254474792105659, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2e6958213a47bdf43ab995e045e4d9ee, type: 3}
+      objectReference: {fileID: 21300000, guid: 6f6c191e878b3664dabcd211056b3104, type: 3}
     - target: {fileID: 6855691210256059400, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.94
@@ -31315,7 +31315,7 @@ PrefabInstance:
     - target: {fileID: 6346254474792105659, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9a7b2d8fcaaa70148b4fe0027ac7e49d, type: 3}
+      objectReference: {fileID: 21300000, guid: d9435a141ca7bae41ae2f013d8450403, type: 3}
     - target: {fileID: 6855691210256059400, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.02
@@ -31837,6 +31837,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 242191341}
     m_Modifications:
+    - target: {fileID: 1218367350829683105, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2216036074100626657, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3273127028457144219, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.01
@@ -31881,7 +31889,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss Office
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 494942244825814778, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+    - {fileID: 188737557032654862, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -35558,11 +35568,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1806234398589273908, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1836934256030775413, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8699465534859503180, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
       propertyPath: m_Name
       value: Shred & Laminate Room
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1002877105758614290, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
+    - {fileID: 442796223841163024, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

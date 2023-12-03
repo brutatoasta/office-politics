@@ -2084,6 +2084,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8046816592442987433, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
     - target: {fileID: 8156460548488091828, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
       propertyPath: m_Name
       value: PhotocopyMachine (1)
@@ -2395,6 +2399,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8046816592442987433, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
     - target: {fileID: 8156460548488091828, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
       propertyPath: m_Name
       value: PhotocopyMachine (2)
@@ -3647,17 +3655,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1186909388911925230, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
   m_PrefabInstance: {fileID: 212372165}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &337405591 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7836859588852218882, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-  m_PrefabInstance: {fileID: 750319937}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b4149f0c79f874d8d18b6a4064451c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &350250882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3969,6 +3966,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8046816592442987433, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
     - target: {fileID: 8156460548488091828, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
       propertyPath: m_Name
       value: PhotocopyMachine
@@ -11177,17 +11178,9 @@ PrefabInstance:
       objectReference: {fileID: 494830508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2534864206141791133, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1806847131}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
---- !u!224 &750319938 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2534864206141791133, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-  m_PrefabInstance: {fileID: 750319937}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &754171222 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 756625728557963881, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
@@ -37547,7 +37540,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 690e5d117b5309847b66ec7b7c71fcb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -58279,7 +58272,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 750319938}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1924384774971749654, guid: 2b029adaa57e8e7448abce221a1a4865, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58330,11 +58323,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b029adaa57e8e7448abce221a1a4865, type: 3}
---- !u!4 &1806847131 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1924384774971749654, guid: 2b029adaa57e8e7448abce221a1a4865, type: 3}
-  m_PrefabInstance: {fileID: 1806847130}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1806847132 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5638072270223107932, guid: 2b029adaa57e8e7448abce221a1a4865, type: 3}
@@ -59467,7 +59455,7 @@ PrefabInstance:
     - target: {fileID: 2670764534922000859, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 337405591}
+      objectReference: {fileID: 0}
     - target: {fileID: 3265215980486700150, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: playPause.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -64216,3 +64204,4 @@ SceneRoots:
   - {fileID: 1380412213}
   - {fileID: 1936507760}
   - {fileID: 951263662}
+  - {fileID: 1806847130}
