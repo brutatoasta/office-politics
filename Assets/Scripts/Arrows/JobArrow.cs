@@ -43,7 +43,7 @@ public class JobArrow : BaseArrow
     {
         if (isTrackingPlayer)
         {
-            Seek(player.transform);
+            Pursue(player.transform);
         }
         else
         {
@@ -51,6 +51,22 @@ public class JobArrow : BaseArrow
         }
     }
 
+    public void Pursue(Transform target)
+    {
+        Vector2 desired =  player.gameObject.GetComponent<Rigidbody2D>().velocity + (Vector2)(target.position - transform.position);
+        desired = desired.normalized * weaponGameConstants.jobArrowSpeed;
+
+        Vector3 steering = desired - rb.velocity;
+        steering = Vector2.ClampMagnitude(steering, weaponGameConstants.jobArrowMaxForce);
+
+        rb.AddForce(steering, ForceMode2D.Impulse);
+
+        rb.velocity = Vector2.ClampMagnitude(rb.velocity, weaponGameConstants.jobArrowSpeed);
+
+        float rot = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, rot + 45 - 180);
+
+    }
     public void Seek(Transform target)
     {
         Vector2 desired = (Vector2)(target.position - transform.position);

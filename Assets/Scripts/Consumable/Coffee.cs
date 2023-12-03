@@ -14,6 +14,7 @@ public class Coffee : ABCConsumable
     public override void ConsumeEffect()
     {
         GameManager.instance.StartCoroutine(TempIncreaseMovementSpeed());
+        GameManager.instance.consumableEfffect.Invoke(ConsumableType.Coffee);
     }
     IEnumerator TempIncreaseMovementSpeed()
     {

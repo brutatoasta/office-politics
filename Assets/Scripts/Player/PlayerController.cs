@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     // Player Constants
     public PlayerConstants playerConstants;
     public WeaponGameConstants arrowConstants;
+    public ParticleSystem trailParticles;
+    public ParticleSystem coffeeParticles;
+    public ParticleSystem kitkatParticles;
 
     Vector2 movementInput;
     SpriteRenderer playerSprite;
@@ -28,6 +31,9 @@ public class PlayerController : MonoBehaviour
     bool canParry = true;
 
     bool interactLock = false;
+
+    bool trailActive = false;
+    float coffeeActiveTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,10 +99,26 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
         animator.SetBool("holding", GameManager.instance.held != null);
 
+
         // control hand position
         handAnimator.SetFloat("playerVelocityX", rb.velocity.x);
         handAnimator.SetFloat("playerVelocityY", rb.velocity.y);
         handAnimator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
+
+        // Particles
+        if (rb.velocity.magnitude > 0.3 && !trailActive) {
+            trailParticles.Play();
+            trailActive = true;
+        }
+        if (rb.velocity.magnitude <= 0.3 && trailActive) {
+            trailParticles.Stop();
+            trailActive = false;
+        }
+
+        // Coffe Particles
+        if (coffeeActiveTime >= 20f) coffeeParticles.Play();
+        if (coffeeActiveTime <= 0f) coffeeParticles.Stop();
+        if (coffeeActiveTime > 0) coffeeActiveTime -= Time.deltaTime;
     }
 
     public void MoveCheck(Vector2 movement)
@@ -223,11 +245,11 @@ public class PlayerController : MonoBehaviour
         switch (consumableType)
         {
             case ConsumableType.KitKat:
-                //TODO: Visual Effects if any
+                kitkatParticles.Play();
                 break;
 
             case ConsumableType.Coffee:
-                //TODO: Visual Effects if any
+                coffeeActiveTime = 20f;
                 break;
 
             case ConsumableType.Adderall:
@@ -239,6 +261,13 @@ public class PlayerController : MonoBehaviour
                 break;
 
         }
+    }
+
+    IEnumerator CoffeeVisuals()
+    {
+        coffeeParticles.Play();
+        yield return new WaitForSecondsRealtime(20f);
+        coffeeParticles.Stop();
     }
 
     IEnumerator InvincibilityVisuals()

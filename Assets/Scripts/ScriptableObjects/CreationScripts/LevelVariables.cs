@@ -69,6 +69,10 @@ public class LevelVariables : ScriptableObject
         // let evadeType be determined by player
         stressPoints = 0;
         maxStressPoints = 50;
+
+        GameManager.instance.playerConstants.moveSpeed = 50;
+        GameManager.instance.playerConstants.maxMoveSpeed = 60;
+
         todo = TaskConstants.todos[currentLevelIndex];
         for (int i = 0; i < todo.Length; i++)
         {

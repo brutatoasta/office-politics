@@ -18,6 +18,7 @@ public class KitKat : ABCConsumable
                                                                 GameManager.instance.levelVariables.stressPoints - 10:
                                                                 0;
         GameManager.instance.IncreaseStress();
+        GameManager.instance.consumableEfffect.Invoke(ConsumableType.KitKat);
     }
 
 }
