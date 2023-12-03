@@ -102,6 +102,16 @@ public class SceneExit : MonoBehaviour
 
         }
     }
+    public void StartBadEnding()
+    {
+        transition.SetTrigger("Start");
+        // Start the coroutine to load the next scene after a delay
+        StartCoroutine(LoadNextSceneAfterDelay(SceneNames.BadEnding, 1f));
+    }
+    void Awake()
+    {
+        GameManager.instance.gameOver.AddListener(StartBadEnding);
+    }
 }
 
 

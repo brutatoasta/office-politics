@@ -206,7 +206,7 @@ public class GameManager : Singleton<GameManager>
     }
     public void GameOver()
     {
-        Time.timeScale = 0;
+        // goto badending
         gameOver.Invoke();
     }
 
