@@ -6,6 +6,7 @@ public class Entrance : MonoBehaviour
 {
     public GameObject sceneExit;
     public EdgeCollider2D edgeCollider2D;
+    bool entryTrigger = true;
 
     void Start()
     {
@@ -14,10 +15,13 @@ public class Entrance : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        sceneExit.SetActive(true);
-        GameManager.instance.StartTimer();
-
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBgmIntensity1);
+        if (entryTrigger)
+        {
+            sceneExit.SetActive(true);
+            GameManager.instance.StartTimer();
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBgmIntensity1);
+            entryTrigger = false;
+        }
     }
 
     public void OpenDoor()

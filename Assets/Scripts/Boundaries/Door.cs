@@ -24,13 +24,14 @@ public class Door : MonoBehaviour
 
     private bool playerIsLeftOfDoor;
     private bool playerIsDownOfDoor;
-    private bool evaluatePlayerSide(Collider2D collision)
+    private bool EvaluatePlayerSide(Collider2D collision)
     {
         if (isTopDown)
         {
             playerIsDownOfDoor = collision.transform.position.y - gameObject.transform.position.y < 0;
             return playerIsDownOfDoor == upIsInside;
-        } else
+        }
+        else
         {
             playerIsLeftOfDoor = collision.transform.position.x - gameObject.transform.position.x < 0;
             return playerIsLeftOfDoor == rightIsInside;
@@ -42,8 +43,8 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             // implement xnor logic for sideways first
-            
-            isOutside = evaluatePlayerSide(collision);
+
+            isOutside = EvaluatePlayerSide(collision);
             if (!fromInside)
             {
                 if (isOutside)
@@ -54,7 +55,8 @@ public class Door : MonoBehaviour
                 {
                     fromInside = !fromInside;
                 }
-            } else
+            }
+            else
             {
                 if (!isOutside)
                 {

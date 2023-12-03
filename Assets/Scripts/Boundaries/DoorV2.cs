@@ -9,17 +9,6 @@ public class DoorV2 : MonoBehaviour
     public bool isTopSideDoor;
     public bool isRightSideDoor;
     public UnityEvent<bool> NotifyRoom;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private bool playerIsInsideRoom;
     private bool IsPlayerInsideRoom(Collider2D collision)
