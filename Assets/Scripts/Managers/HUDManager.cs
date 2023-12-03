@@ -229,7 +229,11 @@ public class HUDManager : MonoBehaviour
         upgradedGroup.SetActive(GameManager.instance.runVariables.upgradeBought);
     }
 
-    public void DisableShop() => shopUI.SetActive(false);
+    public void DisableShop()
+    {
+        shopUI.SetActive(false);
+        GameManager.instance.playerUnFreeze.Invoke();
+    }
 
     public void OnPlayerEvade(float cooldownTime)
     {
@@ -238,13 +242,13 @@ public class HUDManager : MonoBehaviour
 
     IEnumerator CooldownAnimation(float cooldownTime)
     {
-        
+
         float timePassed = 0f;
         cooldownSlider.value = (1f - (timePassed / cooldownTime)) * GameManager.instance.cooldownPercent;
 
         yield return new WaitForSecondsRealtime(
-            GameManager.instance.levelVariables.evadeType == EvadeType.Dash?
-                GameManager.instance.playerConstants.dashTime:
+            GameManager.instance.levelVariables.evadeType == EvadeType.Dash ?
+                GameManager.instance.playerConstants.dashTime :
                 GameManager.instance.playerConstants.parryTime
         );
 

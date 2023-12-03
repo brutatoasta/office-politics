@@ -10,7 +10,7 @@ public class Shop : BaseInteractable
     public override void Start()
     {
         base.Start();
-        
+
     }
     protected override bool CanInteract()
     {
@@ -20,8 +20,7 @@ public class Shop : BaseInteractable
     protected override void OnInteract()
     {
         shopUI.SetActive(true);
+        GameManager.instance.playerFreeze.Invoke();
     }
-    
-
 }
 

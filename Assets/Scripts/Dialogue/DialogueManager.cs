@@ -16,13 +16,14 @@ public class DialogueManager : MonoBehaviour
     int[] currentMessagePauses;
     int activeMessage = 0;
     public static bool isActive = false;
+
     public void OpenDialogue(Message[] messages, Actor[] actors, int[] messagePauses)
     {
         currentMessages = messages;
         currentActors = actors;
         currentMessagePauses = messagePauses;
         isActive = true;
-
+        GameManager.instance.playerFreeze.Invoke();
         Debug.Log("Started conversation! Loaded messages: " + messages.Length);
         DisplayMessage();
         //animate open backgroundbox
@@ -58,6 +59,7 @@ public class DialogueManager : MonoBehaviour
             {
                 activeMessage = 0;
             }
+            GameManager.instance.playerUnFreeze.Invoke();
         }
     }
     void AnimateTextColour()

@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     Vector3 teleportToBossRoom = new(-43, -3, 0);
 
     public TrailRenderer trail;
-
-    bool canMove = true;
+    [SerializeField]
+    public bool canMove = true;
     bool canDash = true;
     bool canParry = true;
 
@@ -45,7 +45,8 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.updateInventory.AddListener(CycleConsumable);
         GameManager.instance.consumableEfffect.AddListener(ApplyConsumableEffect);
-
+        GameManager.instance.playerFreeze.AddListener(AcquireInteractLock);
+        GameManager.instance.playerUnFreeze.AddListener(ReleaseInteractLock);
         GameManager.instance.TimerStop.AddListener(OnOvertime);
     }
 
@@ -79,16 +80,6 @@ public class PlayerController : MonoBehaviour
                 // Stop walking sound - Natthan
                 GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
             }
-        }
-        if (DialogueManager.isActive == true)
-        {
-            canMove = false;
-            interactLock = true;
-        }
-        if (DialogueManager.isActive == false)
-        {
-            canMove = true;
-            interactLock = false;
         }
     }
 

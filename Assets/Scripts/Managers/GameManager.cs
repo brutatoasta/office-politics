@@ -13,7 +13,7 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
     }
-
+    #region Variables
     // events
     // public UnityEvent runStart; // start the level (not pantry or hostel)
     public UnityEvent gameRestart; // go back to main menu
@@ -47,6 +47,8 @@ public class GameManager : Singleton<GameManager>
     // UI
     public UnityEvent<EvadeType> updateEvade;
     public UnityEvent<float> playerEvade;
+    public UnityEvent playerFreeze;
+    public UnityEvent playerUnFreeze;
 
     // Scriptable Objects
     public AudioElementGameEvent audioElementGameEvent;
@@ -65,9 +67,8 @@ public class GameManager : Singleton<GameManager>
 
     public Sprite kitKatSprite;
     public Sprite coffeeSprite;
-
     public GameObject held;
-
+    #endregion
 
     void Start()
     {
@@ -81,12 +82,6 @@ public class GameManager : Singleton<GameManager>
 
         PlayAudioElement(audioElements.startMenuBGM);
     }
-
-    // public void RunStart()
-    // {
-    //     runVariables.Init();
-    //     runStart.Invoke();
-    // }
 
     public void LevelStart()
     {
@@ -254,13 +249,5 @@ public class GameManager : Singleton<GameManager>
     {
         levelVariables.evadeType = evadeType;
         updateEvade.Invoke(evadeType);
-    }
-
-    void OnSceneLoaded()
-    {
-        // check which scene
-        // if Map.scene, start timer after 3 seconds
-        // invoke gameplay event?
-
     }
 }
