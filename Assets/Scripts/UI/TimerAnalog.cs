@@ -21,7 +21,7 @@ public class TimerAnalog : MonoBehaviour
     float elapsedRealSeconds, elapsedInGameHours, currentHour, currentMinutes = 0f;
     public RectTransform minuteHand;
     public RectTransform hourHand;
-    public Image background;
+    // public Image background;
 
     #endregion
 
@@ -30,6 +30,8 @@ public class TimerAnalog : MonoBehaviour
         GameManager.instance.TimerStart.AddListener(OnTimerStart);
         GameManager.instance.TimerStop.AddListener(OnTimerStop);
         // GameManager.instance.TimerUpdate.AddListener(OnTimerUpdate);
+        minuteHand = transform.GetChild(1).GetComponent<RectTransform>();
+        hourHand = transform.GetChild(2).GetComponent<RectTransform>();
     }
 
     private void OnTimerStart() => _isRunning = true;
@@ -72,6 +74,6 @@ public class TimerAnalog : MonoBehaviour
         {
             GameManager.instance.OnStopTimer();
         }
-        background.color = ChangeColor(elapsedRealSeconds);
+        // background.color = ChangeColor(elapsedRealSeconds);
     }
 }
