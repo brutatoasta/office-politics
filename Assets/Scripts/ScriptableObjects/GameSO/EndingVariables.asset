@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1249cfca4cd1c47b53c13461451d47, type: 3}
   m_Name: EndingVariables
   m_EditorClassIdentifier: 
-  Slacker: 0
-  Ninja: 0
+  Slacker: 1
+  Ninja: 1
   SustainableWarrior: 1
-  BigEarner: 0
-  Workaholic: 0
+  BigEarner: 1
+  Workaholic: 1
   OTCount: 0
   TaichiMaster: 1
-  stunCount: 5
+  stunCount: 0
   Perfectionist: 1
-  successCount: 11
-  Reincarnation: 0
-  finalScore: 6500
+  successCount: 0
+  Reincarnation: 1
+  finalScore: 9000

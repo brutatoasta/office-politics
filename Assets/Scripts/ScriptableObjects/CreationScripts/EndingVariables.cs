@@ -23,7 +23,7 @@ public class EndingVariables : ScriptableObject
 
     public void Init()
     {
-        Slacker = false;
+        Slacker = true;
         Ninja = true;
         SustainableWarrior = true;
         BigEarner = false;
@@ -62,6 +62,10 @@ public class EndingVariables : ScriptableObject
         {
             TaichiMaster = true;
         }
+        if (OTCount >= 3)
+        {
+            Workaholic = true;
+        }
         if (Slacker && Ninja && SustainableWarrior && BigEarner && Workaholic && TaichiMaster && Perfectionist)
         {
             Reincarnation = true;
@@ -70,42 +74,42 @@ public class EndingVariables : ScriptableObject
         string description = "";
         if (Slacker)
         {
-            description += "Slacker                                  $500\n";
+            description += "\nSlacker    -------------------------------------------------------------------    $500\n";
             description += "(Finish while the clock is still green)\n";
         }
         if (Ninja)
         {
-            description += "Ninja                                    $500\n";
+            description += "\nNinja    ----------------------------------------------------------------------    $500\n";
             description += "(Get hit by zero arrow)\n";
         }
         if (SustainableWarrior)
         {
-            description += "Sustainable Warrior                      $500\n";
+            description += "\nSustainable Warrior    ---------------------------------------------------------    $500\n";
             description += "(Throw nothing into the trash)\n";
         }
         if (BigEarner)
         {
-            description += "Big Earner                               $500\n";
+            description += "\nBig Earner    ----------------------------------------------------------------    $500\n";
             description += "(Earn 1000PP in one day)\n";
         }
         if (Workaholic)
         {
-            description += "Workaholic                               $500\n";
+            description += "\nWorkaholic    ---------------------------------------------------------------     $500\n";
             description += "(OT 3 or more times)\n";
         }
         if (TaichiMaster)
         {
-            description += "Taichi Master                            $500\n";
+            description += "\nTaichi Master    -------------------------------------------------------------    $500\n";
             description += "(Stun the boss more than 5 times)\n";
         }
         if (Perfectionist)
         {
-            description += "Perfectionist                            $500\n";
+            description += "\nPerfectionist    --------------------------------------------------------------    $500\n";
             description += "(Complete tasks without failure 10 times in a row)\n";
         }
         if (Reincarnation)
         {
-            description += "That Time I got Reincarnated as an Intern $500\n";
+            description += "\nThat Time I got Reincarnated as an Intern    ------------------------------------    $500\n";
             description += "(Get all the achievements in a single playthrough)\n";
         }
         return description;

@@ -82,6 +82,11 @@ public class SceneExit : MonoBehaviour
             else if (SceneNames.Levels.Contains(currentScene.name))
             {
 
+                if (GameManager.instance.overtime)
+                {
+                    GameManager.instance.endingVariables.Slacker = false;
+                    GameManager.instance.endingVariables.OTCount++;
+                }
                 GameManager.instance.levelVariables.ExitLevel();
                 if (currentScene.name == SceneNames.Level4)
                 {
