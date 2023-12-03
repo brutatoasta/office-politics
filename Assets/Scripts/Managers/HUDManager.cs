@@ -202,8 +202,8 @@ public class HUDManager : MonoBehaviour
         }
         UpdateShop();
 
-        // natthan - upgrade backpack
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
+        // natthan - purchase backpack upgrade 
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
     }
 
     public void BuyConsumable(int consumableIndex)
@@ -217,8 +217,8 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.updateInventory.Invoke();
         UpdateShop();
 
-        // natthan
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
+        // natthan - purchase consumable
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
     }
 
     public void UpdateShop()

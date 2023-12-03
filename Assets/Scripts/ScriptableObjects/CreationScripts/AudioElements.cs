@@ -38,6 +38,7 @@ public class AudioElements : ScriptableObject
     public AudioElement cycleConsumable;
     public AudioElement showTaskDetails;
     public AudioElement hideTaskDetails;
+    public AudioElement purchaseItem;
 
     // Player SFX
     public AudioElement playerWalk;
