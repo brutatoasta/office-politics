@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stressArrowSpeed: 50
   jobArrowSpeed: 10
-  fanArrowSpeed: 20
+  fanArrowSpeed: 15
   jobArrowMaxForce: 0.2
-  fanArrowDamage: 0
+  fanArrowDamage: 5
   stressArrowDamage: 5
   jobArrowDamage: 5
