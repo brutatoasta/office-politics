@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.enemyGetStunned);
 
         // stop the enemy first
-        float existingSpeed = gameObject.GetComponent<AIPath>().maxSpeed;
+        //float existingSpeed = gameObject.GetComponent<AIPath>().maxSpeed;
         gameObject.GetComponent<AIPath>().maxSpeed = 0;
         animator.SetBool("isStun", true);
 
@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //resume walking
-        gameObject.GetComponent<AIPath>().maxSpeed = existingSpeed;
+        gameObject.GetComponent<AIPath>().maxSpeed = constants.speed;
         animator.SetBool("isStun", false);
 
         // resume enemy weapon

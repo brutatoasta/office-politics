@@ -295,6 +295,11 @@ public class PlayerController : MonoBehaviour
             {
                 GameManager.instance.IncreaseJob();
             }
+            else if (col.gameObject.name.Contains("FanArrow"))
+            {
+                GameManager.instance.levelVariables.stressPoints += arrowConstants.fanArrowDamage;
+                GameManager.instance.IncreaseStress();
+            }
             else if (col.gameObject.name.Contains("StressArrow"))
             {
                 GameManager.instance.levelVariables.stressPoints += arrowConstants.stressArrowDamage;
