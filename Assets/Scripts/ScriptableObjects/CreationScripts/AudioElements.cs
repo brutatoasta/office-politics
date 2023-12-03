@@ -39,6 +39,7 @@ public class AudioElements : ScriptableObject
     public AudioElement showTaskDetails;
     public AudioElement hideTaskDetails;
     public AudioElement purchaseItem;
+    public AudioElement overtimeStart;
 
     // Player SFX
     public AudioElement playerWalk;

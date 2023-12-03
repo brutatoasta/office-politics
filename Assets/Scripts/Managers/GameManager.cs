@@ -78,7 +78,7 @@ public class GameManager : Singleton<GameManager>
         endingVariables.Init();
         Debug.Log(string.Join(",", activeSlots));
 
-        //  natthan
+        //  natthan - game start bgm
         PlayAudioElement(audioElements.startMenuBGM);
     }
 
@@ -215,8 +215,10 @@ public class GameManager : Singleton<GameManager>
         overtime = true;
         TimerStop?.Invoke();
 
-
         if (levelVariables.IsQuotaComplete()) doorOpen.Invoke();
+
+        // natthan - overtime start
+        PlayAudioElement(audioElements.overtimeStart);
     }
     public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);
 
