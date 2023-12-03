@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 [CreateAssetMenu(fileName = "RunVariables", menuName = "ScriptableObjects/RunVariables")]
 public class RunVariables : ScriptableObject
 {
     // Tracks dynamic values for each Run
-    [SerializeField]
+    // inventory
     public ABCConsumable[] consumableObjects;
     public int performancePoints;
     public bool upgradeBought;
@@ -15,6 +12,7 @@ public class RunVariables : ScriptableObject
 
     public void Init()
     {
+        // TODO: remove the consumables, let them be 0
         // start of whole game, not level
         consumableObjects = new ABCConsumable[]
         { new KitKat(20, 5), new Coffee(4, 10), new Adderall(3, 15), new Starman(1, 20) };

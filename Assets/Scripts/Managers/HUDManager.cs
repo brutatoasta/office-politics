@@ -40,7 +40,7 @@ public class HUDManager : MonoBehaviour
 
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
-        GameManager.instance.gameOver.AddListener(OnGameOver);
+        // GameManager.instance.gameOver.AddListener(OnGameOver); //TODO
         GameManager.instance.playerEvade.AddListener(OnPlayerEvade);
         GameManager.instance.updateEvade.AddListener(UpdateCooldownSprite);
 

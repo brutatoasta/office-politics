@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 [CreateAssetMenu(fileName = "LevelVariables", menuName = "ScriptableObjects/LevelVariables")]
 public class LevelVariables : ScriptableObject
@@ -15,7 +12,7 @@ public class LevelVariables : ScriptableObject
     public int stressPoints;
     public int maxStressPoints;
     public int currentLevelIndex;
-    public bool isQuotaComplete()
+    public bool IsQuotaComplete()
     {
         foreach (TaskItem taskItem in todo)
         {
@@ -53,11 +50,6 @@ public class LevelVariables : ScriptableObject
     }
     public void Fail(TaskName name)
     {
-        // perhaps subtract PP or reset streak
-        // levelPP -= todo[(int)name].performancePoints;
-        // increase stress
-        //stressPoints += todo[(int)name].stressDamage;
-        //GameManager.instance.IncreaseStress();
         for (int i = 0; i < todo.Length; i++)
         {
             if (todo[i].taskName.Equals(name))
@@ -76,11 +68,11 @@ public class LevelVariables : ScriptableObject
     public void Init()
     {
         // let evadeType be determined by player
-        stressPoints = 0;
-        maxStressPoints = 50;
-
-        GameManager.instance.playerConstants.moveSpeed = 50;
-        GameManager.instance.playerConstants.maxMoveSpeed = 60;
+        // stressPoints = 0;
+        // maxStressPoints = 50;
+        // TODO: this should be loaded from playerconstants, why is it writing into playerconstants
+        // GameManager.instance.playerConstants.moveSpeed = 50;
+        // GameManager.instance.playerConstants.maxMoveSpeed = 60;
 
         todo = TaskConstants.todos[currentLevelIndex];
         for (int i = 0; i < todo.Length; i++)
@@ -90,16 +82,16 @@ public class LevelVariables : ScriptableObject
         Debug.Log(todo);
     }
 
-    public void addRandomJob(int level)
+    public void AddRandomJob(int level)
     {
         todo = TaskConstants.todos[level];
 
         // randomly select an index
-        int i = UnityEngine.Random.Range(0, todo.Length);
+        int i = Random.Range(0, todo.Length);
         todo[i].current++;
     }
 
-    public void addCoffeeJob()
+    public void AddCoffeeJob()
     {
         for (int i = 0; i < todo.Length; i++)
         {

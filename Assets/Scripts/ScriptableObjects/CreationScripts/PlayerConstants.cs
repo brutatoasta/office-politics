@@ -8,7 +8,7 @@ public class PlayerConstants : ScriptableObject
     public float dashPower;
     public float dashTime;
     public float dashCooldown;
-    public float parryTime = 0.6f;
+    public float parryTime;
     public float parryRange;
     public float parryStartupTime;
     public float parryCooldown;
@@ -17,11 +17,7 @@ public class PlayerConstants : ScriptableObject
     public Material defaultMaterial;
 
     // starting values
-    public int stressPoint;
-    public int maxStressPoint;
-    public int sanityPoint;
-    public int performancePoints;
-    public int overtimeTick = 1;
+    public int overtimeTick;
 
     public Sprite parryIcon;
     public Sprite dashIcon;

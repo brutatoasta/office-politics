@@ -17,8 +17,6 @@ public class GameManager : Singleton<GameManager>
     // events
     // public UnityEvent runStart; // start the level (not pantry or hostel)
     public UnityEvent gameRestart; // go back to main menu
-    public UnityEvent gamePause; // 
-    public UnityEvent gamePlay; // 
 
     public UnityEvent levelStart;
 
@@ -151,12 +149,12 @@ public class GameManager : Singleton<GameManager>
 
     public void IncreaseJob()
     {
-        levelVariables.addRandomJob(levelVariables.currentLevelIndex);
+        levelVariables.AddRandomJob(levelVariables.currentLevelIndex);
     }
 
     public void IncreaseCoffeeJob()
     {
-        levelVariables.addCoffeeJob();
+        levelVariables.AddCoffeeJob();
     }
 
     public void IncreaseStress()
@@ -177,7 +175,6 @@ public class GameManager : Singleton<GameManager>
             Time.timeScale = 1;
             isPaused = false;
             // check if in a level
-            gamePlay.Invoke();
             // hide pause menu
 
             PlayAudioElement(audioElements.gameResume);
@@ -186,7 +183,6 @@ public class GameManager : Singleton<GameManager>
         {
             Time.timeScale = 0;
             isPaused = true;
-            gamePause.Invoke();
             // show pause menu
 
             PlayAudioElement(audioElements.gamePause);
@@ -219,14 +215,14 @@ public class GameManager : Singleton<GameManager>
         TimerStop?.Invoke();
 
 
-        if (levelVariables.isQuotaComplete()) doorOpen.Invoke();
+        if (levelVariables.IsQuotaComplete()) doorOpen.Invoke();
     }
     public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);
 
 
     public void DecreaseQuota()
     {
-        if (levelVariables.isQuotaComplete()) DoorOpen();
+        if (levelVariables.IsQuotaComplete()) DoorOpen();
     }
 
     public void DoorOpen()

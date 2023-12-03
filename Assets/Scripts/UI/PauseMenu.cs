@@ -10,20 +10,11 @@ public class PauseMenu : MonoBehaviour
         gameObject.SetActive(GameManager.instance.isPaused);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     public void toggleOnState()
     {
 
         gameObject.SetActive(GameManager.instance.isPaused);
-    }
-
-    public void onClickMainMenu()
-    {
-        GameManager.instance.GameOver();
     }
 }
