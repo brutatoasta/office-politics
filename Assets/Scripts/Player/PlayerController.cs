@@ -106,11 +106,13 @@ public class PlayerController : MonoBehaviour
         handAnimator.SetBool("playerVelXGreater", Math.Abs(rb.velocity.x) - Math.Abs(rb.velocity.y) > 0.3);
 
         // Particles
-        if (rb.velocity.magnitude > 0.3 && !trailActive) {
+        if (rb.velocity.magnitude > 0.3 && !trailActive)
+        {
             trailParticles.Play();
             trailActive = true;
         }
-        if (rb.velocity.magnitude <= 0.3 && trailActive) {
+        if (rb.velocity.magnitude <= 0.3 && trailActive)
+        {
             trailParticles.Stop();
             trailActive = false;
         }
@@ -284,6 +286,7 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Arrow") && !GameManager.instance.invincible)
         {
+            GameManager.instance.endingVariables.Ninja = false;
             if (col.gameObject.name.Contains("JobArrowTutorial"))
             {
                 GameManager.instance.IncreaseCoffeeJob();

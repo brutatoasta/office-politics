@@ -13,6 +13,7 @@ public class Trashbin : BaseInteractable
     public GameObject taskIcon;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
+    public EndingVariables endingVariables;
     TaskName heldType;
     GameObject held;
 
@@ -62,6 +63,7 @@ public class Trashbin : BaseInteractable
 
             // Natthan
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwTrash);
+            GameManager.instance.endingVariables.SustainableWarrior = false;
         }
     }
 

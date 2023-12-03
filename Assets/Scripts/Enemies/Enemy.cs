@@ -121,11 +121,13 @@ public class Enemy : MonoBehaviour
         // resume enemy weapon
         yield return new WaitForSeconds(6f); // because one enemy weapon cycle is 8s, cause enemy to miss next shooting chance
         gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
+
     }
 
     public void stunByArrow()
     {
         StartCoroutine(Stun());
+        GameManager.instance.endingVariables.stunCount++;
     }
     void ComputeVelocity()
     {

@@ -45,6 +45,11 @@ public class LevelVariables : ScriptableObject
                 break;
             }
         }
+        if (levelPP >= 1000)
+        {
+            GameManager.instance.endingVariables.BigEarner = true;
+        }
+        GameManager.instance.endingVariables.successCount++;
     }
     public void Fail(TaskName name)
     {
@@ -61,6 +66,10 @@ public class LevelVariables : ScriptableObject
                 GameManager.instance.IncreaseStress();
                 break;
             }
+        }
+        if (GameManager.instance.endingVariables.successCount <= 10)
+        {
+            GameManager.instance.endingVariables.successCount = 0;
         }
     }
 

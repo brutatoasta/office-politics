@@ -54,6 +54,7 @@ public class GameManager : Singleton<GameManager>
     public TaskConstants taskConstants;
     public RunVariables runVariables;
     public LevelVariables levelVariables;
+    public EndingVariables endingVariables;
     public AudioElements audioElements;
     public bool isPaused = false;
     public bool overtime = false;
@@ -75,6 +76,7 @@ public class GameManager : Singleton<GameManager>
         levelVariables.currentLevelIndex = 0;
         levelVariables.levelPP = 0;
         runVariables.Init();
+        endingVariables.Init();
         Debug.Log(string.Join(",", activeSlots));
 
         PlayAudioElement(audioElements.startMenuBGM);
@@ -119,7 +121,7 @@ public class GameManager : Singleton<GameManager>
 
             if (currIdx == currentInventorySlot) break;
         }
-        while (res.Count < (runVariables.upgradeBought? 3: 2))
+        while (res.Count < (runVariables.upgradeBought ? 3 : 2))
         {
             res.Add(-1);
         }
@@ -133,7 +135,7 @@ public class GameManager : Singleton<GameManager>
 
     public void UseCurrentConsumable(int slot)
     {
-        
+
         if (runVariables.upgradeBought && activeSlots[slot] != -1)
         {
             runVariables.consumableObjects[activeSlots[slot]].Consume();
@@ -142,12 +144,12 @@ public class GameManager : Singleton<GameManager>
         {
             runVariables.consumableObjects[activeSlots[0]].Consume();
         }
-        
+
         // Blank cleaned slots
-        if (activeSlots[runVariables.upgradeBought? slot: 0] != -1 &&
-         runVariables.consumableObjects[activeSlots[runVariables.upgradeBought? slot: 0]].count <= 0)
+        if (activeSlots[runVariables.upgradeBought ? slot : 0] != -1 &&
+         runVariables.consumableObjects[activeSlots[runVariables.upgradeBought ? slot : 0]].count <= 0)
         {
-            activeSlots[runVariables.upgradeBought? slot: 0] = -1;
+            activeSlots[runVariables.upgradeBought ? slot : 0] = -1;
         }
         useConsumable.Invoke(slot);
     }
@@ -252,5 +254,13 @@ public class GameManager : Singleton<GameManager>
     {
         levelVariables.evadeType = evadeType;
         updateEvade.Invoke(evadeType);
+    }
+
+    void OnSceneLoaded()
+    {
+        // check which scene
+        // if Map.scene, start timer after 3 seconds
+        // invoke gameplay event?
+
     }
 }
