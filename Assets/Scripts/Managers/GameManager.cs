@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 
@@ -17,11 +14,8 @@ public class GameManager : Singleton<GameManager>
     // events
     // public UnityEvent runStart; // start the level (not pantry or hostel)
     public UnityEvent gameRestart; // go back to main menu
-
     public UnityEvent levelStart;
-
     public UnityEvent interact;
-
     public UnityEvent gameOver;
     public UnityEvent doorOpen;
 
@@ -174,17 +168,12 @@ public class GameManager : Singleton<GameManager>
         {
             Time.timeScale = 1;
             isPaused = false;
-            // check if in a level
-            // hide pause menu
-
             PlayAudioElement(audioElements.gameResume);
         }
         else
         {
             Time.timeScale = 0;
             isPaused = true;
-            // show pause menu
-
             PlayAudioElement(audioElements.gamePause);
         }
     }

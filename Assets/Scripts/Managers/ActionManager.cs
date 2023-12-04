@@ -10,7 +10,7 @@ public class ActionManager : MonoBehaviour
     public UnityEvent evade;
     public UnityEvent playPause;
     public UnityEvent showTaskList;
-
+    
     public void OnInteractAction(InputAction.CallbackContext context)
     {
         if (context.started) interact.Invoke();

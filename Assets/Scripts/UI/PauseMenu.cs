@@ -1,20 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+
+    bool isPaused = false;
+    void Awake()
     {
-        gameObject.SetActive(GameManager.instance.isPaused);
+        gameObject.SetActive(isPaused);
     }
-
-
 
     public void toggleOnState()
     {
-
-        gameObject.SetActive(GameManager.instance.isPaused);
+        isPaused = !isPaused;
+        gameObject.SetActive(isPaused);
+        GameManager.instance.PlayPause();
+    }
+    public void OnResumeButtonClick()
+    {
+        isPaused = false;
+        gameObject.SetActive(isPaused);
+        GameManager.instance.PlayPause();
     }
 }
