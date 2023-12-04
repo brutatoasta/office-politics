@@ -129,6 +129,6 @@ public static class SceneNames
     public static readonly string Cutscene = "Cutscene";
     public static readonly string PowerUpScene = "PowerUpScene";
     public static readonly string GoodEnding = "GoodEnding";
-    public static readonly string BadEnding = "BadEnding";
+    public static readonly string BadEnding = "GameOver";
     public static readonly List<string> Levels = new() { Level1, Level2, Level3, Level4 };
 }
