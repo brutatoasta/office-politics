@@ -97,11 +97,6 @@ public class Receivable : BaseInteractable
                     sprite.enabled = true;
                 }
                 Debug.Log("increase score");
-                if (taskIcon != null)
-                {
-                    taskIcon.SetActive(false);
-                }
-
                 // TODO: if machine and not a person
                 if (animator != null)
                 {
