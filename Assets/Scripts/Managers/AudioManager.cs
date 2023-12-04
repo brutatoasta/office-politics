@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -48,7 +49,14 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (SceneManager.GetActiveScene().name == SceneNames.MainMenu)
+        {
+            PlayAudioElement(audioElements.startMenuBGM);
+        }
+        else if (SceneManager.GetActiveScene().name == SceneNames.Cutscene)
+        {
+            PlayAudioElement(audioElements.bedroomBGM);
+        }
     }
 
     public void PlayAudioElement(AudioElement audioElement)

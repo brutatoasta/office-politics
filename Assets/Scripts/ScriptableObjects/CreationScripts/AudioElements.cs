@@ -25,10 +25,11 @@ public class AudioElements : ScriptableObject
     // BGM
     public AudioElement startMenuBGM;
     public AudioElement pantryBGM;
-    public AudioElement gameplayBgmIntensity1;
-    public AudioElement gameplayBgmIntensity2;
-    public AudioElement gameplayBgmIntensity3;
+    public AudioElement gameplayBGMIntensity1;
+    public AudioElement gameplayBGMIntensity2;
+    public AudioElement gameplayBGMIntensity3;
     public AudioElement levelComplete;
+    public AudioElement bedroomBGM;
 
     // UI SFX
     public AudioElement menuClick;

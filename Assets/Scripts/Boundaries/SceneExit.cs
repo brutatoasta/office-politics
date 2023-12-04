@@ -126,6 +126,7 @@ public class SceneExit : MonoBehaviour
 
 public static class SceneNames
 {
+    public static readonly string MainMenu = "MainMenu";
     public static readonly string Level1 = "Level 1";
     public static readonly string Level2 = "Level 2";
     public static readonly string Level3 = "Level 3";

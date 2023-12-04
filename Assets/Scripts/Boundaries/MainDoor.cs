@@ -21,7 +21,7 @@ public class Entrance : MonoBehaviour
         {
             sceneExit.SetActive(true);
             GameManager.instance.StartTimer();
-            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBgmIntensity1);
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBGMIntensity1);
             entryTrigger = false;
         }
     }
