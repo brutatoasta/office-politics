@@ -58,6 +58,9 @@ public class Printer : BaseInteractable
             Debug.Log($"Fetched {held.name} from printer!");
             isDocumentReady = false;
             progressBar.SetActive(false);
+
+            // natthan - sfx for pick up document from printer
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
         else
         {
@@ -73,6 +76,9 @@ public class Printer : BaseInteractable
                 //Debug.Log($"Dropped {held.name} into printer!");
                 progressBar.SetActive(true);
                 progressBarAnimator.SetTrigger("photocopyProgress");
+
+                // natthan - sfx for photocopy
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.photocopyDocument);
 
                 // cook the doc
                 StartCoroutine(Cook());

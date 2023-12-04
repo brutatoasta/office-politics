@@ -207,7 +207,7 @@ public class GameManager : Singleton<GameManager>
 
         if (levelVariables.IsQuotaComplete()) doorOpen.Invoke();
 
-        // natthan - overtime start
+        // natthan - sfx for overtime start
         PlayAudioElement(audioElements.overtimeStart);
     }
     public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);

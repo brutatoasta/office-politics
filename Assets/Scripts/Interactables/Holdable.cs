@@ -20,7 +20,7 @@ public class Holdable : BaseInteractable
             playerHand.sprite = optionalSprite ?? GetComponent<SpriteRenderer>().sprite;
             playerHand.color = GetComponent<SpriteRenderer>().color;
 
-            // check which task and play the sfx accordingly - Natthan
+            // natthan - sfx for picking up item
             switch (taskName)
             {
                 case TaskName.FetchCoffee:
@@ -37,6 +37,16 @@ public class Holdable : BaseInteractable
                     break;
                 // natthan temporary - sound for picking up meeting documents
                 case TaskName.PrepMeeting:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                    break;
+                // natthan temporary - sound for picking up meeting documents
+                case TaskName.FetchDoc:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                    break;
+                case TaskName.Shred:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                    break;
+                case TaskName.Laminate:
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
                     break;
             }

@@ -73,6 +73,7 @@ public class AudioElements : ScriptableObject
     public AudioElement shredDocument;
     public AudioElement laminateDocument;
     public AudioElement jamMachine;
+    public AudioElement photocopyDocument;
     public AudioElement throwTrash;
     public AudioElement interactionInvalid;
 }
