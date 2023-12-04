@@ -9,6 +9,7 @@ public class RunVariables : ScriptableObject
     public int performancePoints;
     public bool upgradeBought;
     public int currentSceneIndex;
+    public float duration;
 
     public void Init()
     {
