@@ -42,7 +42,7 @@ public class LineController : MonoBehaviour
     {
         for (int i = 0; i < points.Length; i++)
         {
-            lineRenderer.SetPosition(i, points[i].position);
+            lineRenderer.SetPosition(i, (i ==0)? points[i].position + 100f * (points[i].position - points[i+1].position):points[i].position);
         }
     }
 }
