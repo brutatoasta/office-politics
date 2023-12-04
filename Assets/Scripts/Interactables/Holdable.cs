@@ -24,16 +24,16 @@ public class Holdable : BaseInteractable
             switch (taskName)
             {
                 case TaskName.FetchCoffee:
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourDrink);
                     break;
                 case TaskName.RefillCoffee:
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
                     break;
                 case TaskName.FetchTea:
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourDrink);
                     break;
                 case TaskName.PrepRefreshment:
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
                     break;
                 // natthan temporary - sound for picking up meeting documents
                 case TaskName.PrepMeeting:

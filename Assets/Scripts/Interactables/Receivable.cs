@@ -63,29 +63,26 @@ public class Receivable : BaseInteractable
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
                 // check which task and play the sfx accordingly - Natthan
-                if (heldType == TaskName.FetchCoffee)
+                switch (heldType)
                 {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
-                }
-                else if (heldType == TaskName.RefillCoffee)
-                {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
-                }
-                else if (heldType == TaskName.FetchTea)
-                {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
-                }
-                else if (heldType == TaskName.PrepRefreshment)
-                {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
-                }
-                else if (heldType == TaskName.Shred)
-                {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.shredDocument);
-                }
-                else if (heldType == TaskName.Laminate)
-                {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.laminateDocument);
+                    case TaskName.FetchCoffee:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
+                        break;
+                    case TaskName.RefillCoffee:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
+                        break;
+                    case TaskName.FetchTea:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
+                        break;
+                    case TaskName.PrepRefreshment:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
+                        break;
+                    case TaskName.Shred:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.shredDocument);
+                        break;
+                    case TaskName.Laminate:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.laminateDocument);
+                        break;
                 }
 
                 // decrease task count

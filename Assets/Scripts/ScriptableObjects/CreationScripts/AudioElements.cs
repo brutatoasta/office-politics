@@ -63,9 +63,9 @@ public class AudioElements : ScriptableObject
     // NPC SFX
 
     // Interaction SFX
-    public AudioElement pourCoffee;
-    public AudioElement serveCoffee;
-    public AudioElement spillCoffee;
+    public AudioElement pourDrink;
+    public AudioElement serveRefreshment;
+    public AudioElement spillDrink;
     public AudioElement pickUpDocument;
     public AudioElement shredDocument;
     public AudioElement laminateDocument;

@@ -61,7 +61,7 @@ public class ReceivableMeeting : BaseInteractable
                 // Natthan - refreshment and prep meeting
                 if (heldType == TaskName.PrepRefreshment)
                 {
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
                 }
                 else if (heldType == TaskName.PrepMeeting)
                 {

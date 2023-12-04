@@ -34,7 +34,7 @@ public class CoffeePot : BaseInteractable
             sprite.enabled = true;
 
             // temporary - Natthan
-            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
         }
         else
         {
