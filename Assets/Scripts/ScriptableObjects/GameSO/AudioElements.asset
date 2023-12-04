@@ -51,6 +51,12 @@ MonoBehaviour:
   hideTaskDetails:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 80114cbd30f0f784ba9418f9bd4fafc8, type: 3}
+  purchaseItem:
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: 7166c732e9e67d141910cb52209e87c2, type: 3}
+  overtimeStart:
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: a251b813900d45e47b86f63e21e8fe7c, type: 3}
   playerWalk:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 84876e3b88c77fa47b0b094e370875a3, type: 3}
@@ -111,3 +117,6 @@ MonoBehaviour:
   interactionInvalid:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 2bf8080eaa0f20943b2410c39a13be47, type: 3}
+  denyExit:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 957bba8f9afc291488bbaec64ec6abc6, type: 3}
