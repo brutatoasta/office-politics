@@ -18,6 +18,7 @@ public class RunVariables : ScriptableObject
         { new KitKat(20, 5), new Coffee(4, 10), new Adderall(3, 15), new Starman(1, 20) };
         upgradeBought = false;
         currentSceneIndex = 0;
+        performancePoints = 0;
     }
 }
 
