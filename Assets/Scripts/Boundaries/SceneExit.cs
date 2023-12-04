@@ -97,7 +97,7 @@ public class SceneExit : MonoBehaviour
             }
             else if (currentScene.name == SceneNames.PowerUpScene)
             {   // change to some level
-                nextScene = SceneNames.Levels[levelVariables.currentLevelIndex + 1];
+                nextScene = SceneNames.Levels[levelVariables.currentLevelIndex];
                 GameManager.instance.LevelStart();
             }
             else if (SceneNames.Levels.Contains(currentScene.name))
