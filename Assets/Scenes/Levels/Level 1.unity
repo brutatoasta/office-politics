@@ -4152,20 +4152,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
-      propertyPath: taskName
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6313157569298371780, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: bubbleObj
       value: 
       objectReference: {fileID: 1716999524}
     - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_Name
       value: ToPrepMeeting
-      objectReference: {fileID: 0}
-    - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31118,8 +31110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 1795541353}
   highlightMaterialIdx: 0
-  taskName: 3
   sprite: {fileID: 789323627}
+  refillCoffee: {fileID: 0}
 --- !u!61 &1175966957
 BoxCollider2D:
   m_ObjectHideFlags: 0

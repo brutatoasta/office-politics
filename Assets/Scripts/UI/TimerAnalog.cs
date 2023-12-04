@@ -14,12 +14,12 @@ public class TimerAnalog : MonoBehaviour
     minutesInHour = 60,
     workHours = 5 + 12 - 8, // 9h workday
     startHourOffset = 8f,
-    workdayDuration = 20f, // TODO: use GameSO or RunSO
     // day starts at 8 am, ends at 5pm
     // 9 hour workday
     hoursToDegrees = 360 / 12,
     minutesToDegrees = 360 / 60;
 
+    public float workdayDuration;
     float elapsedInGameHours, currentHour, currentMinutes = 0f;
     public float elapsedRealSeconds = 0f;
     public RectTransform minuteHand;
@@ -39,6 +39,7 @@ public class TimerAnalog : MonoBehaviour
         hourHand = transform.GetChild(2).GetComponent<RectTransform>();
         currentColor = Circle.color;
         hourHand.rotation = Quaternion.Euler(0, 0, -8 * hoursToDegrees);
+        workdayDuration = GameManager.instance.runVariables.duration;
     }
 
     private void OnTimerStart() => _isRunning = true;
