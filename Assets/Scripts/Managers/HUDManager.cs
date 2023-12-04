@@ -231,7 +231,7 @@ public class HUDManager : MonoBehaviour
         }
         UpdateShop();
 
-        // natthan - purchase backpack upgrade 
+        // natthan - sfx for purchasing backpack upgrade 
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
     }
 
@@ -246,7 +246,7 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.updateInventory.Invoke();
         UpdateShop();
 
-        // natthan - purchase consumable
+        // natthan - sfx for purchasing consumable
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
     }
 
@@ -271,7 +271,7 @@ public class HUDManager : MonoBehaviour
         shopUI.SetActive(false);
         GameManager.instance.playerUnFreeze.Invoke();
 
-        // natthan - close pantry shop
+        // natthan - sfx for closing pantry shop
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
 

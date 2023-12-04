@@ -63,6 +63,8 @@ public class AudioElements : ScriptableObject
     // NPC SFX
 
     // Interaction SFX
+    public AudioElement enterOffice;
+    public AudioElement denyExit;
     public AudioElement pourDrink;
     public AudioElement serveRefreshment;
     public AudioElement spillDrink;
@@ -72,5 +74,4 @@ public class AudioElements : ScriptableObject
     public AudioElement jamMachine;
     public AudioElement throwTrash;
     public AudioElement interactionInvalid;
-    public AudioElement denyExit;
 }

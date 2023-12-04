@@ -44,7 +44,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
   menuClick:
     audioType: 4
-    audioClip: {fileID: 8300000, guid: e630f7cd1ddafed4dad4b1300f4ca6f5, type: 3}
+    audioClip: {fileID: 8300000, guid: 0e77ae7856173d949aa8198db154fe30, type: 3}
   menuBack:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 97689cdbe6a851248ae9a854fe706a1c, type: 3}
@@ -102,13 +102,19 @@ MonoBehaviour:
   enemyGetStunned:
     audioType: 6
     audioClip: {fileID: 8300000, guid: ab13116e66e77324782d1f776d80e4c2, type: 3}
-  pourCoffee:
+  enterOffice:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 8a7aa775be02e6943a5948a2e4fb24d5, type: 3}
+  denyExit:
+    audioType: 8
+    audioClip: {fileID: 8300000, guid: 957bba8f9afc291488bbaec64ec6abc6, type: 3}
+  pourDrink:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 50c05aa6974c3b045ac9e291c80c48ff, type: 3}
-  serveCoffee:
+  serveRefreshment:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 60259c401c4cf414db656bd9253f9e88, type: 3}
-  spillCoffee:
+  spillDrink:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 589bccc710c2ea344a203faff67b14fb, type: 3}
   pickUpDocument:
@@ -129,6 +135,3 @@ MonoBehaviour:
   interactionInvalid:
     audioType: 8
     audioClip: {fileID: 8300000, guid: 2bf8080eaa0f20943b2410c39a13be47, type: 3}
-  denyExit:
-    audioType: 8
-    audioClip: {fileID: 8300000, guid: 957bba8f9afc291488bbaec64ec6abc6, type: 3}
