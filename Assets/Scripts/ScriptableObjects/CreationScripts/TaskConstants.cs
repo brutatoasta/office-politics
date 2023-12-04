@@ -14,36 +14,36 @@ public class TaskConstants : ScriptableObject
             
             new TaskItem[]
             {
-                new(1, 1, 5, TaskName.FetchTea, "Fetch tea for Siyang"),
-                new(1, 1, 5, TaskName.FetchCoffee, "Fetch coffee for Joshua"),
+                new(1, 100, 5, TaskName.FetchTea, "Fetch tea for Siyang"),
+                new(1, 100, 5, TaskName.FetchCoffee, "Fetch coffee for Joshua"),
             },
             // level 2
             new TaskItem[]
             {
-                new(1, 1, 5, TaskName.FetchTea, "Fetch tea for Natthan"),
-                new(1, 1, 5, TaskName.FetchCoffee, "Fetch coffee for Emmanuel"),
-                new(2, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
-                new(3, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
+                new(1, 100, 5, TaskName.FetchTea, "Fetch tea for Natthan"),
+                new(1, 100, 5, TaskName.FetchCoffee, "Fetch coffee for Emmanuel"),
+                new(2, 100, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
+                new(3, 100, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
 
             },
             // level 3
             new TaskItem[]
             {
-                new(1, 1, 5, TaskName.Shred, "Shred documents in the BOSS room"),
-                new(1, 1, 5, TaskName.Laminate, "Laminate documents in the BOSS room"),
-                new(1, 1, 5, TaskName.FetchDoc, "Fetch documents from Jolin for photocopy"),
-                new(1, 1, 5, TaskName.DeliverDoc, "Deliver photocopied documents back to Jolin"),
+                new(1, 100, 5, TaskName.Shred, "Shred documents in the BOSS room"),
+                new(1, 100, 5, TaskName.Laminate, "Laminate documents in the BOSS room"),
+                new(1, 100, 5, TaskName.FetchDoc, "Fetch documents from Jolin for photocopy"),
+                new(1, 100, 5, TaskName.DeliverDoc, "Deliver photocopied documents back to Jolin"),
             },
             // level 4
             new TaskItem[]
             {
-                new(1, 1,5, TaskName.Shred, "Shred documents in the BOSS room"),
-                new(1, 1,5, TaskName.Laminate, "Laminate documents in the BOSS room"),
-                new(2, 1, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
-                new(3, 1, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
-                new(1, 1,5, TaskName.FetchDoc, "Fetch documents from Sihan for photocopy"),
-                new(1, 1,5, TaskName.DeliverDoc, "Deliver photocopied documents back to Sihan"),
-                new(1, 1,5, TaskName.RefillCoffee, "Refill the empty coffee pot"),
+                new(1, 100,5, TaskName.Shred, "Shred documents in the BOSS room"),
+                new(1, 100,5, TaskName.Laminate, "Laminate documents in the BOSS room"),
+                new(2, 100, 5, TaskName.PrepRefreshment, "Prepare refreshment in the meeting room"),
+                new(3, 100, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room"),
+                new(1, 100,5, TaskName.FetchDoc, "Fetch documents from Sihan for photocopy"),
+                new(1, 100,5, TaskName.DeliverDoc, "Deliver photocopied documents back to Sihan"),
+                new(1, 100,5, TaskName.RefillCoffee, "Refill the empty coffee pot"),
             }
 
        };

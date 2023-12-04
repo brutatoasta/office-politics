@@ -55,6 +55,7 @@ public class LevelVariables : ScriptableObject
             if (todo[i].taskName.Equals(name))
             {
                 stressPoints += todo[i].stressDamage;
+                levelPP -= 50;
                 GameManager.instance.IncreaseStress();
                 break;
             }
