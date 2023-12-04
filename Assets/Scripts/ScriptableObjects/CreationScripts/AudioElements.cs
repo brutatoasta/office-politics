@@ -25,6 +25,7 @@ public class AudioElements : ScriptableObject
     // BGM
     public AudioElement startMenuBGM;
     public AudioElement pantryBGM;
+    public AudioElement lobbyBGM;
     public AudioElement gameplayBGMIntensity1;
     public AudioElement gameplayBGMIntensity2;
     public AudioElement gameplayBGMIntensity3;
