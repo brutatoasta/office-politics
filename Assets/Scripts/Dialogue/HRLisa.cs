@@ -9,7 +9,11 @@ public class HRLisa : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            trigger.StartDialogue();
+            // Trigger dialogue on collision with the player
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                trigger.StartDialogue();
+            }
         }
     }
 }
