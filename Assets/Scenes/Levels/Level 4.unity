@@ -10958,7 +10958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &747924645
 Transform:
   m_ObjectHideFlags: 0
@@ -11036,6 +11036,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1841547519580361872, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841547519580361872, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2534864206141791133, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11132,6 +11140,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6669558697707077797, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7718155176503045928, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -11143,6 +11155,14 @@ PrefabInstance:
     - target: {fileID: 7837635378903992681, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333647533873308574, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333647533873308574, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8799787717877300837, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Camera
@@ -16058,6 +16078,7 @@ MonoBehaviour:
   bubbleObj: {fileID: 1795541353}
   highlightMaterialIdx: 0
   taskName: 3
+  refillCoffee: {fileID: 0}
   sprite: {fileID: 789323627}
 --- !u!61 &1175966957
 BoxCollider2D:
@@ -16091,7 +16112,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17055261, y: -0.20953369}
+  m_Offset: {x: 0.067113996, y: -0.20953369}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16102,7 +16123,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6827681, y: 4.0008698}
+  m_Size: {x: 0.77143025, y: 4.0008698}
   m_EdgeRadius: 0
 --- !u!4 &1183562911 stripped
 Transform:

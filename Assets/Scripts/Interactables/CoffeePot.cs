@@ -6,11 +6,21 @@ using UnityEngine.Tilemaps;
 // Takes and handles input and movement for a player character
 public class CoffeePot : BaseInteractable
 {
-    public TaskName taskName;
-    private Holdable holdable;
-
+    //public TaskName taskName;
     public SpriteRenderer sprite;
     private GameObject held;
+    private Holdable holdable;
+    [SerializeField]
+    private GameObject refillCoffee;
+
+    private Sprite refillCoffeeSprite;
+
+
+    new void Awake()
+    {
+        base.Awake();
+        refillCoffeeSprite = refillCoffee.GetComponent<SpriteRenderer>().sprite;
+    }
     protected override void OnInteract()
     {
         // called when player presses interact key
@@ -19,9 +29,8 @@ public class CoffeePot : BaseInteractable
         {
             Debug.Log("Held me!");
             // add self to GameManager
-            GameManager.instance.SetHeld(gameObject);
-            playerHand.sprite = GetComponent<SpriteRenderer>().sprite;
-            playerHand.color = GetComponent<SpriteRenderer>().color;
+            GameManager.instance.SetHeld(refillCoffee);
+            playerHand.sprite = refillCoffeeSprite;
             sprite.enabled = true;
 
             // temporary - Natthan
@@ -33,7 +42,6 @@ public class CoffeePot : BaseInteractable
             sprite.enabled = false;
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
-            playerHand.color = Color.white;
             GameManager.instance.levelVariables.Succeed(TaskName.FetchCoffee);
 
             // Natthan
