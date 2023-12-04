@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem trailParticles;
     public ParticleSystem coffeeParticles;
     public ParticleSystem kitkatParticles;
+    public ParticleSystem adderallParticles;
 
     Vector2 movementInput;
     SpriteRenderer playerSprite;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     bool trailActive = false;
     float coffeeActiveTime = 0f;
+    float adderallActiveTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -108,10 +110,15 @@ public class PlayerController : MonoBehaviour
             trailActive = false;
         }
 
-        // Coffe Particles
+        // Coffee Particles
         if (coffeeActiveTime >= 20f) coffeeParticles.Play();
         if (coffeeActiveTime <= 0f) coffeeParticles.Stop();
         if (coffeeActiveTime > 0) coffeeActiveTime -= Time.deltaTime;
+
+        // Adderall Particles
+        if (adderallActiveTime >= 10f) adderallParticles.Play();
+        if (adderallActiveTime <= 0f) adderallParticles.Stop();
+        if (adderallActiveTime > 0) adderallActiveTime -= Time.deltaTime;
     }
 
     public void MoveCheck(Vector2 movement)
@@ -246,7 +253,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case ConsumableType.Adderall:
-                //TODO: Visual Effects if any
+                adderallActiveTime = 10f;
                 break;
 
             case ConsumableType.Starman:
@@ -256,12 +263,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator CoffeeVisuals()
-    {
-        coffeeParticles.Play();
-        yield return new WaitForSecondsRealtime(20f);
-        coffeeParticles.Stop();
-    }
+    
 
     IEnumerator InvincibilityVisuals()
     {

@@ -14,6 +14,7 @@ public class Adderall : ABCConsumable
         LoadSprite("Consumables/Pills"); // TODO: replace sprite
         oldCooldownParry = GameManager.instance.playerConstants.parryCooldown;
         oldCooldownDash = GameManager.instance.playerConstants.dashCooldown;
+        GameManager.instance.consumableEfffect.Invoke(ConsumableType.Coffee);
     }
     public override void ConsumeEffect()
     {
