@@ -62,7 +62,7 @@ public class Receivable : BaseInteractable
             // calculate score and tasks
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
-                // check which task and play the sfx accordingly - Natthan
+                // Natthan - sfx for placing valid item
                 switch (heldType)
                 {
                     case TaskName.FetchCoffee:
@@ -82,6 +82,8 @@ public class Receivable : BaseInteractable
                         break;
                     case TaskName.Laminate:
                         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.laminateDocument);
+                        break;
+                    default:
                         break;
                 }
 
@@ -116,9 +118,27 @@ public class Receivable : BaseInteractable
                     animator.SetTrigger("doFlinch");
                 }
 
-                // Play "interactionInvalid" sound - Natthan
-                // Todo: can add more specific sounds in the future
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.interactionInvalid);
+                // Natthan - sfx for placing invalid item
+                switch (heldType)
+                {
+                    case TaskName.Shred:
+                        if (gameObject.name == "Laminate Machine")
+                        {
+                            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.jamMachine);
+                        }
+                        break;
+                    case TaskName.Laminate:
+                        if (gameObject.name == "Shred Machine")
+                        {
+                            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.jamMachine);
+                        }
+                        break;
+                    default:
+                        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.interactionInvalid);
+                        break;
+                }
+
+
             }
 
         }
