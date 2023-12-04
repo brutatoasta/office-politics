@@ -31,6 +31,8 @@ public class AudioElements : ScriptableObject
     public AudioElement gameplayBGMIntensity3;
     public AudioElement levelComplete;
     public AudioElement bedroomBGM;
+    public AudioElement badEndingBGM;
+    public AudioElement goodEndingBGM;
 
     // UI SFX
     public AudioElement menuClick;

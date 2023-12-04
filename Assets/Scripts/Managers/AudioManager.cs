@@ -72,7 +72,11 @@ public class AudioManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == SceneNames.BadEnding)
         {
-            PlayAudioElement(audioElements.pantryBGM);
+            PlayAudioElement(audioElements.badEndingBGM);
+        }
+        else if (SceneManager.GetActiveScene().name == SceneNames.GoodEnding)
+        {
+            PlayAudioElement(audioElements.goodEndingBGM);
         }
     }
 

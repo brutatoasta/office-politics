@@ -36,6 +36,12 @@ MonoBehaviour:
   bedroomBGM:
     audioType: 0
     audioClip: {fileID: 8300000, guid: af800b23462068b40b4186744ddecb45, type: 3}
+  badEndingBGM:
+    audioType: 0
+    audioClip: {fileID: 8300000, guid: 0347ac1b850f29a4a8c90117e0aa68dd, type: 3}
+  goodEndingBGM:
+    audioType: 0
+    audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
   menuClick:
     audioType: 4
     audioClip: {fileID: 8300000, guid: e630f7cd1ddafed4dad4b1300f4ca6f5, type: 3}
