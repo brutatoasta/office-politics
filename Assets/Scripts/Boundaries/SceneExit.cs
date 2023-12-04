@@ -12,6 +12,7 @@ public class SceneExit : MonoBehaviour
     public LevelVariables levelVariables;
     public Animator transition;
     public GameObject controlsPanel;
+    public GameObject mapPanel;
     public GameObject shade;
     Scene currentScene;
     private string nextScene;
@@ -53,6 +54,26 @@ public class SceneExit : MonoBehaviour
         });
         shade.SetActive(false);
 
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
+    }
+    public void Map()
+    {
+        // Ensure the panel is initially at scale zero
+        mapPanel.transform.localScale = Vector3.zero;
+
+        // Activate the panel
+        mapPanel.SetActive(true);
+
+        // Start the opening animation
+        mapPanel.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
+    }
+    public void CloseMap()
+    {
+        mapPanel.LeanScale(Vector3.zero, 0.5f).setEaseInOutExpo().setOnComplete(() =>
+        {
+            mapPanel.SetActive(false);
+        });
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
     IEnumerator LoadNextSceneAfterDelay(string nextScene, float delay)
