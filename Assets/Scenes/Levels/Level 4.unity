@@ -3762,7 +3762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.318033
+      value: -6.12
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63446,7 +63446,7 @@ PrefabInstance:
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
+      objectReference: {fileID: 21300000, guid: 3450a47f903f861419663e75d2365815, type: 3}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_SortingOrder
       value: 13
@@ -63502,6 +63502,14 @@ PrefabInstance:
     - target: {fileID: 5892629561154869264, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.y
@@ -63705,7 +63713,7 @@ PrefabInstance:
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
+      objectReference: {fileID: 21300000, guid: 3450a47f903f861419663e75d2365815, type: 3}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_SortingOrder
       value: 12
@@ -63769,6 +63777,14 @@ PrefabInstance:
     - target: {fileID: 5892629561154869264, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63995,7 +64011,7 @@ PrefabInstance:
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
+      objectReference: {fileID: 21300000, guid: 3450a47f903f861419663e75d2365815, type: 3}
     - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_SortingOrder
       value: 13
@@ -64011,6 +64027,14 @@ PrefabInstance:
     - target: {fileID: 5294356537637664634, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_Offset.y
       value: -0.97362995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6053877360995230896, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.x

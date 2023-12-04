@@ -3814,7 +3814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.318033
+      value: -6.06
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -35540,8 +35540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 1795541353}
   highlightMaterialIdx: 0
-  taskName: 3
   sprite: {fileID: 789323627}
+  refillCoffee: {fileID: 0}
 --- !u!61 &1175966957
 BoxCollider2D:
   m_ObjectHideFlags: 0
