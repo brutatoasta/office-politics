@@ -7,8 +7,10 @@ using UnityEngine.Tilemaps;
 public class CoffeePot : BaseInteractable
 {
     public TaskName taskName;
+    private Holdable holdable;
 
     public SpriteRenderer sprite;
+    private GameObject held;
     protected override void OnInteract()
     {
         // called when player presses interact key
@@ -25,11 +27,40 @@ public class CoffeePot : BaseInteractable
             // temporary - Natthan
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
         }
+        else
+        {
+            // empty player's hand of deliverDoc
+            sprite.enabled = false;
+            GameManager.instance.SetHeld(null);
+            playerHand.sprite = null;
+            playerHand.color = Color.white;
+            GameManager.instance.levelVariables.Succeed(TaskName.FetchCoffee);
+
+            // Natthan
+
+        }
+
 
     }
 
     protected override bool CanInteract()
     {
-        return GameManager.instance.held == null;
+        held = GameManager.instance.held;
+        if (held == null)
+        {
+            return true;
+        }
+        else
+        {
+            holdable = held.GetComponent<Holdable>();
+            if (holdable)
+            {
+                return holdable.taskName == TaskName.FetchCoffee;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
