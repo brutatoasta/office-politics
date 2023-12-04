@@ -3131,17 +3131,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1186909388911925230, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
   m_PrefabInstance: {fileID: 212372165}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &337405591 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7836859588852218882, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-  m_PrefabInstance: {fileID: 750319937}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5b4149f0c79f874d8d18b6a4064451c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &350250882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26107,15 +26096,15 @@ PrefabInstance:
     - target: {fileID: 1622819738421793354, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: hourHand
       value: 
-      objectReference: {fileID: 750319938}
+      objectReference: {fileID: 0}
     - target: {fileID: 1622819738421793354, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: background
       value: 
-      objectReference: {fileID: 1843638854}
+      objectReference: {fileID: 0}
     - target: {fileID: 1622819738421793354, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: minuteHand
       value: 
-      objectReference: {fileID: 750319939}
+      objectReference: {fileID: 0}
     - target: {fileID: 1622819738421793354, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: initialTime
       value: 120
@@ -26130,6 +26119,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1767007288264802636, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841547519580361872, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841547519580361872, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1992181972196138148, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
@@ -26296,6 +26293,10 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6669558697707077797, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7013603568220314985, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Value
       value: -1
@@ -26344,6 +26345,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8333647533873308574, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8333647533873308574, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8799787717877300837, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_Camera
       value: 
@@ -26352,19 +26361,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 4334071762248291239, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
     - {fileID: 8078122355701370436, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+    - {fileID: 5178763633993630731, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
---- !u!224 &750319938 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5818058162673790174, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-  m_PrefabInstance: {fileID: 750319937}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &750319939 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 676766733368886357, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-  m_PrefabInstance: {fileID: 750319937}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &754171222 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 756625728557963881, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}
@@ -30223,6 +30223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 1795541353}
+  highlightMaterialIdx: 0
   taskName: 3
   sprite: {fileID: 789323627}
 --- !u!61 &1175966957
@@ -32801,6 +32802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   invalidInputs: 00000000
   validInputs: 03000000
   taskIcon: {fileID: 498885931}
@@ -54815,17 +54817,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1843638854 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 701557881801083588, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
-  m_PrefabInstance: {fileID: 750319937}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1846365886
 GameObject:
   m_ObjectHideFlags: 0
@@ -55605,7 +55596,7 @@ PrefabInstance:
     - target: {fileID: 2670764534922000859, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: m_ActionEvents.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 337405591}
+      objectReference: {fileID: 0}
     - target: {fileID: 3265215980486700150, guid: 9b3050649ed078c4e91508c31890c814, type: 3}
       propertyPath: playPause.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -59773,6 +59764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 157221668}
+  highlightMaterialIdx: 0
   invalidInputs: 00000000
   validInputs: 03000000
   deliverDoc: {fileID: 2065081226}
@@ -60011,6 +60003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   taskName: 3
   optionalSprite: {fileID: 0}
 --- !u!61 &2065081228
@@ -61175,6 +61168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   taskName: 7
   optionalSprite: {fileID: 0}
 --- !u!1 &4337958337037165083
@@ -61344,6 +61338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   taskName: 6
   optionalSprite: {fileID: 0}
 --- !u!1001 &6290294752409637512

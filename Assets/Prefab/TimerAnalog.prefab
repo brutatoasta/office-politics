@@ -126,8 +126,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 193ab0898b14a714899c74bc5c491261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerType: 1
+  _isRunning: 0
+  elapsedRealSeconds: 0
   minuteHand: {fileID: 0}
   hourHand: {fileID: 0}
+  Circle: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3763109322279794499
 GameObject:
   m_ObjectHideFlags: 0
