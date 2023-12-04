@@ -10,7 +10,7 @@ public class Starman : ABCConsumable
     {
         count = initCount;
         cost = initCost;
-        LoadSprite("Consumables/Choco"); // TODO: replace sprite
+        LoadSprite("Consumables/SuperStar"); // TODO: replace sprite
     }
     public override void ConsumeEffect()
     {

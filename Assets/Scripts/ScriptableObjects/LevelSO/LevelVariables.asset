@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0be639ebd39714ab402fbbe7dfcaf6, type: 3}
   m_Name: LevelVariables
   m_EditorClassIdentifier: 
-  evadeType: 1
+  evadeType: 0
   todo:
   - quota: 1
     performancePoints: 1
@@ -26,7 +26,7 @@ MonoBehaviour:
     stressDamage: 5
     taskName: 2
     taskString: Fetch coffee for Joshua
-  levelPP: 10
-  stressPoints: 2
+  levelPP: 0
+  stressPoints: 28
   maxStressPoints: 50
   currentLevelIndex: 0

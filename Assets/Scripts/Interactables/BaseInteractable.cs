@@ -9,6 +9,7 @@ public abstract class BaseInteractable : MonoBehaviour
     [NonSerialized] public SpriteRenderer playerHand;
     [NonSerialized] public Renderer spriteRenderer;
     public GameObject bubbleObj = null;
+    public int highlightMaterialIdx = 0;
 
     protected void Awake()
     {
@@ -37,7 +38,7 @@ public abstract class BaseInteractable : MonoBehaviour
             if (CanInteract())
             {
                 // turn on shader
-                spriteRenderer.material = GameManager.instance.taskConstants.highlightMaterial;
+                spriteRenderer.material = GameManager.instance.taskConstants.highlightMaterial[highlightMaterialIdx];
                 // subscribe to gamemanager's interact event
                 GameManager.instance.interact.AddListener(OnInteract);
             }

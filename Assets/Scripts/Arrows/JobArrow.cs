@@ -53,7 +53,7 @@ public class JobArrow : BaseArrow
 
     public void Pursue(Transform target)
     {
-        Vector2 desired =  player.gameObject.GetComponent<Rigidbody2D>().velocity + (Vector2)(target.position - transform.position);
+        Vector2 desired =  (0.5f * player.gameObject.GetComponent<Rigidbody2D>().velocity) + (Vector2)(target.position - transform.position);
         desired = desired.normalized * weaponGameConstants.jobArrowSpeed;
 
         Vector3 steering = desired - rb.velocity;

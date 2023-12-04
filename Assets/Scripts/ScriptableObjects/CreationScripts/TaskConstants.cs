@@ -48,7 +48,7 @@ public class TaskConstants : ScriptableObject
 
        };
 
-    public Material highlightMaterial;
+    public Material[] highlightMaterial;
     public Material defaultMaterial;
 
 }

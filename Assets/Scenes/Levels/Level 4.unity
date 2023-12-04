@@ -1738,6 +1738,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.03
+      objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.01
@@ -5809,6 +5817,14 @@ PrefabInstance:
     - target: {fileID: 2838321661930908863, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.11
       objectReference: {fileID: 0}
     - target: {fileID: 6346254474792105659, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_Sprite
@@ -12075,8 +12091,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3897797283531816300, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.72
+      value: 20.56
       objectReference: {fileID: 0}
     - target: {fileID: 4678694373713654194, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_TileAssetArray.Array.data[0].m_Data
@@ -13768,6 +13788,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.95
+      objectReference: {fileID: 0}
     - target: {fileID: 4678694373713654194, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_TileAssetArray.Array.data[1].m_Data
       value: 
@@ -13863,6 +13891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 892129691}
+  highlightMaterialIdx: 0
   fetchDoc: {fileID: 6725211463262450640}
 --- !u!1 &932299170
 GameObject:
@@ -14933,19 +14962,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4d184760b2023364e967258798dd8997, type: 3}
     - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.875
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.75
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.88
+      value: -6.8449
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.71
+      value: -7.6267
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14991,10 +15020,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8300185227093477929, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16391,6 +16416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 1795541353}
+  highlightMaterialIdx: 0
   taskName: 3
   sprite: {fileID: 789323627}
 --- !u!61 &1175966957
@@ -16729,6 +16755,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1990699342}
     m_Modifications:
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.35
+      objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.02
@@ -35007,6 +35041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   invalidInputs: 0000000001000000080000000700000002000000
   validInputs: 03000000
   taskIcon: {fileID: 498885931}
@@ -62780,6 +62815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 157221668}
+  highlightMaterialIdx: 0
   invalidInputs: 0000000001000000070000000800000006000000
   validInputs: 03000000
   deliverDoc: {fileID: 2065081226}
@@ -63018,6 +63054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   taskName: 3
   optionalSprite: {fileID: 21300000, guid: c4463b9d487912349adc92c968f56c99, type: 3}
 --- !u!61 &2065081228
@@ -63857,19 +63894,19 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 4d184760b2023364e967258798dd8997, type: 3}
     - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.875
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.75
+      value: 1.25
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.81
+      value: -10.8442
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.71
+      value: -7.6261
       objectReference: {fileID: 0}
     - target: {fileID: 6085087040779317978, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63915,10 +63952,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8300185227093477929, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: c621c4047cb399340848e83774a09ffd, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64184,6 +64217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   taskName: 6
   optionalSprite: {fileID: 0}
 --- !u!1 &4337958337037165083
@@ -64291,6 +64325,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3897797283531816300, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20.63
+      objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.99
@@ -64354,6 +64396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 0}
+  highlightMaterialIdx: 0
   taskName: 5
   optionalSprite: {fileID: 21300000, guid: 755b08d2e45e73948ba8aafb9a77f25d, type: 3}
 --- !u!1001 &6290294752409637512

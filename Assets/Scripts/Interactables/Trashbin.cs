@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 // Represents an interactable object that can receive items from players.
 // Shredder and Laminator
@@ -17,6 +19,8 @@ public class Trashbin : BaseInteractable
     TaskName heldType;
     GameObject held;
 
+    Light2D burnLight;
+
     new void Awake()
     {
         base.Awake();
@@ -27,6 +31,7 @@ public class Trashbin : BaseInteractable
         {
             taskIcon.SetActive(true);
         }
+        burnLight = transform.GetChild(1).GetComponent<Light2D>();
 
     }
     protected override bool CanInteract()
@@ -60,12 +65,28 @@ public class Trashbin : BaseInteractable
             playerHand.color = Color.white;
 
             Debug.Log($"Dropped {held.name} into me!");
+            StartCoroutine(BurnEffect());
 
             // Natthan
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwTrash);
             GameManager.instance.endingVariables.SustainableWarrior = false;
         }
     }
+
+    IEnumerator BurnEffect()
+    {
+        for (float i = 1; i> 0.3f; i-=0.01f)
+        {
+            burnLight.falloffIntensity = i;
+            yield return new WaitForSecondsRealtime(0.002f);
+        }
+        for (float i = 0.3f; i<1; i+=0.01f)
+        {
+            burnLight.falloffIntensity = i;
+            yield return new WaitForSecondsRealtime(0.01f);
+        }
+    }
+
 
     bool isValidInput(TaskName input)
     {
