@@ -21,21 +21,24 @@ public class Holdable : BaseInteractable
             playerHand.color = GetComponent<SpriteRenderer>().color;
 
             // check which task and play the sfx accordingly - Natthan
-            if (taskName == TaskName.FetchCoffee)
+            switch (taskName)
             {
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
-            }
-            else if (taskName == TaskName.RefillCoffee)
-            {
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
-            }
-            else if (taskName == TaskName.FetchTea)
-            {
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
-            }
-            else if (taskName == TaskName.PrepRefreshment)
-            {
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                case TaskName.FetchCoffee:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
+                    break;
+                case TaskName.RefillCoffee:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                    break;
+                case TaskName.FetchTea:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourCoffee);
+                    break;
+                case TaskName.PrepRefreshment:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveCoffee);
+                    break;
+                // natthan temporary - sound for picking up meeting documents
+                case TaskName.PrepMeeting:
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                    break;
             }
         }
     }
