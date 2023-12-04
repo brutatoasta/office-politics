@@ -42,7 +42,7 @@ public class CoffeePot : BaseInteractable
             sprite.enabled = false;
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
-            GameManager.instance.levelVariables.Succeed(TaskName.FetchCoffee);
+            GameManager.instance.levelVariables.Succeed(TaskName.RefillCoffee);
 
             // natthan temporary - sfx for placing coffee pot
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);

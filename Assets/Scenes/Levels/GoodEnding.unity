@@ -2863,6 +2863,7 @@ MonoBehaviour:
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
   transition: {fileID: 961022193}
   controlsPanel: {fileID: 0}
+  mapPanel: {fileID: 0}
   shade: {fileID: 0}
 --- !u!68 &427273883
 EdgeCollider2D:
@@ -3239,6 +3240,7 @@ MonoBehaviour:
   levelVariables: {fileID: 0}
   transition: {fileID: 961022193}
   controlsPanel: {fileID: 0}
+  mapPanel: {fileID: 0}
   shade: {fileID: 0}
 --- !u!1 &524559456
 GameObject:
@@ -6198,6 +6200,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1131747854557965763, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1567428540042414280, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -7795,6 +7801,7 @@ MonoBehaviour:
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
   transition: {fileID: 0}
   controlsPanel: {fileID: 0}
+  mapPanel: {fileID: 0}
   shade: {fileID: 0}
 --- !u!483693784 &786611482
 TilemapRenderer:

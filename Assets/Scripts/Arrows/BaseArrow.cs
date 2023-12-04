@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 public abstract class BaseArrow : MonoBehaviour, IArrow
@@ -37,7 +39,14 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
         if (collision.tag != "Enemy")
         {
             Debug.Log(gameObject.name + " has hit " + collision.gameObject.name);
-            Destroy(gameObject);
+            if(collision.gameObject.name == "Wall")
+            {
+                StartCoroutine(CollisionEffect());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
 
         }
         else
@@ -49,6 +58,16 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
                 Destroy(gameObject);
             }
         }
+    }
+
+    IEnumerator CollisionEffect()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+        yield return new WaitForSecondsRealtime(0.5f);
+        Destroy(gameObject);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
