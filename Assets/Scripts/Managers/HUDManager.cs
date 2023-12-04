@@ -228,11 +228,18 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.runVariables.performancePoints -= 50;
             GameManager.instance.activeSlots.Add(0);
             GameManager.instance.CycleInventory();
+
+            // natthan - sfx for purchasing backpack upgrade 
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
+        }
+        else
+        {
+            // natthan - sfx for not cannot purchase backpack upgrade
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cannotPurchaseItem);
         }
         UpdateShop();
 
-        // natthan - sfx for purchasing backpack upgrade 
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
+
     }
 
     public void BuyConsumable(int consumableIndex)
@@ -241,13 +248,20 @@ public class HUDManager : MonoBehaviour
         {
             GameManager.instance.runVariables.consumableObjects[consumableIndex].count += 1;
             GameManager.instance.runVariables.performancePoints -= GameManager.instance.runVariables.consumableObjects[consumableIndex].cost;
+
+            // natthan - sfx for purchasing consumable
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
+        }
+        else
+        {
+            // natthan - sfx for not cannot purchase consumable
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cannotPurchaseItem);
         }
 
         GameManager.instance.updateInventory.Invoke();
         UpdateShop();
 
-        // natthan - sfx for purchasing consumable
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
+
     }
 
     public void UpdateShop()

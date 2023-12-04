@@ -22,8 +22,8 @@ public class Shop : BaseInteractable
         shopUI.SetActive(true);
         GameManager.instance.playerFreeze.Invoke();
 
-        // natthan
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
+        // natthan - sfx for opening shop menu
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
     }
 }
 
