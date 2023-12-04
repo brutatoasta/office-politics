@@ -80,13 +80,15 @@ public class GameManager : Singleton<GameManager>
 
         //  natthan - game start bgm
         PlayAudioElement(audioElements.startMenuBGM);
+
+        gameRestart.AddListener(LevelStart);
     }
 
     public void LevelStart()
     {
         Debug.Log("InitCalled");
-        levelStart.Invoke();
-        UpdateTimer(120);
+        //levelStart.Invoke();
+        UpdateTimer(runVariables.duration);
         levelVariables.Init();
 
     }
