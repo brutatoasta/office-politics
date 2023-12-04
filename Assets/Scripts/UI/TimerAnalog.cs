@@ -38,6 +38,7 @@ public class TimerAnalog : MonoBehaviour
         minuteHand = transform.GetChild(1).GetComponent<RectTransform>();
         hourHand = transform.GetChild(2).GetComponent<RectTransform>();
         currentColor = Circle.color;
+        hourHand.rotation = Quaternion.Euler(0, 0, -8 * hoursToDegrees);
     }
 
     private void OnTimerStart() => _isRunning = true;
