@@ -2536,8 +2536,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.5266495, y: -1.7626499, z: 0}
-    m_Extent: {x: 16.00145, y: 4.80045, z: 0}
+    m_Center: {x: 2.5252, y: -1.77515, z: 0}
+    m_Extent: {x: 15.9972, y: 4.80515, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -4541,8 +4541,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.5300503, y: -1.7673, z: 0}
-    m_Extent: {x: 15.99955, y: 4.8099, z: 0}
+    m_Center: {x: 2.5321002, y: -1.76695, z: 0}
+    m_Extent: {x: 15.9993, y: 4.79695, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10443,8 +10443,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 2.5373, y: -1.76645, z: 0}
-    m_Extent: {x: 15.9998, y: 4.8102503, z: 0}
+    m_Center: {x: 2.5296998, y: -1.7768999, z: 0}
+    m_Extent: {x: 16.0056, y: 4.8048, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10597,8 +10597,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.027500033, y: -0.068400025, z: 0}
-    m_Extent: {x: 3.3358002, y: 2.1574998, z: 0}
+    m_Center: {x: -0.035599947, y: -0.07929993, z: 0}
+    m_Extent: {x: 3.3353, y: 2.1601, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10717,8 +10717,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.03425002, y: -0.078999996, z: 0}
-    m_Extent: {x: 3.46975, y: 2.2993, z: 0}
+    m_Center: {x: -0.03820002, y: -0.07894993, z: 0}
+    m_Extent: {x: 3.4710999, y: 2.29845, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -10827,7 +10827,6 @@ GameObject:
   - component: {fileID: 1772336201}
   - component: {fileID: 1772336200}
   - component: {fileID: 1772336199}
-  - component: {fileID: 1772336198}
   - component: {fileID: 1772336203}
   m_Layer: 0
   m_Name: Main Camera (1)
@@ -10836,102 +10835,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1772336198
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772336197}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1514127185809060872, guid: 92fa625113ae2df4a899ac39e4c47fa9, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1772336199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11796,8 +11699,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.044299603, y: 0.23130012, z: 0}
-    m_Extent: {x: 10.1998005, y: 5.7628, z: 0}
+    m_Center: {x: 0.039649963, y: 0.22519994, z: 0}
+    m_Extent: {x: 10.20675, y: 5.7592, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
