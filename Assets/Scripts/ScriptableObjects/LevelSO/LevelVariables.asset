@@ -22,11 +22,11 @@ MonoBehaviour:
     taskString: Fetch tea for Siyang
   - quota: 1
     performancePoints: 100
-    current: 0
+    current: 1
     stressDamage: 5
     taskName: 2
     taskString: Fetch coffee for Joshua
-  levelPP: 100
-  stressPoints: 9
+  levelPP: 0
+  stressPoints: 0
   maxStressPoints: 50
   currentLevelIndex: 0
