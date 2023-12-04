@@ -22,6 +22,7 @@ public class Entrance : MonoBehaviour
             sceneExit.SetActive(true);
             GameManager.instance.StartTimer();
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBGMIntensity1);
+            transform.GetChild(1).GetComponent<Animator>().SetBool("isDoorOpen", false);
             entryTrigger = false;
         }
     }
@@ -46,5 +47,6 @@ public class Entrance : MonoBehaviour
     public void OpenDoor()
     {
         edgeCollider2D.enabled = false;
+        transform.GetChild(1).GetComponent<Animator>().SetBool("isDoorOpen", true);
     }
 }
