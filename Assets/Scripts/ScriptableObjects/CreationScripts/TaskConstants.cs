@@ -86,5 +86,6 @@ public enum TaskName
     DeliverDoc,
     PrepMeeting,
     PrepRefreshment,
+    emptyCoffeePot,
     Default,
 }

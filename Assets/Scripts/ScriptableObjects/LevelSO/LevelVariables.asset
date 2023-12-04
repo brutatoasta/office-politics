@@ -12,21 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0be639ebd39714ab402fbbe7dfcaf6, type: 3}
   m_Name: LevelVariables
   m_EditorClassIdentifier: 
-  evadeType: 0
+  evadeType: 1
   todo:
   - quota: 1
-    performancePoints: 1
+    performancePoints: 100
     current: 1
     stressDamage: 5
     taskName: 4
     taskString: Fetch tea for Siyang
   - quota: 1
-    performancePoints: 1
-    current: 1
+    performancePoints: 100
+    current: 0
     stressDamage: 5
     taskName: 2
     taskString: Fetch coffee for Joshua
-  levelPP: 0
-  stressPoints: 28
+  levelPP: 100
+  stressPoints: 9
   maxStressPoints: 50
   currentLevelIndex: 0

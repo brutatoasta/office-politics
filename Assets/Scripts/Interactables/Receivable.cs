@@ -39,14 +39,7 @@ public class Receivable : BaseInteractable
         }
         else
         {
-            if (held.GetComponent<Holdable>() == null)
-            {
-                heldType = held.GetComponent<CoffeePot>().taskName;
-            }
-            else
-            {
-                heldType = held.GetComponent<Holdable>().taskName;
-            }
+            heldType = held.GetComponent<Holdable>().taskName;
             return _validInputs.Contains(heldType) || _invalidInputs.Contains(heldType);
         }
 
