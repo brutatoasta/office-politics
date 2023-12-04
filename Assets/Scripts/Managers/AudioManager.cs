@@ -49,13 +49,30 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // wanted to use switch-case, but it does not work with SceneNames.MainMenu because "A
+        // constant value of type 'string' is expected"
         if (SceneManager.GetActiveScene().name == SceneNames.MainMenu)
         {
             PlayAudioElement(audioElements.startMenuBGM);
         }
+        else if (SceneManager.GetActiveScene().name == SceneNames.PowerUpScene)
+        {
+            PlayAudioElement(audioElements.pantryBGM);
+        }
+        else if (SceneManager.GetActiveScene().name == SceneNames.Level1 ||
+            SceneManager.GetActiveScene().name == SceneNames.Level2 ||
+            SceneManager.GetActiveScene().name == SceneNames.Level3 ||
+            SceneManager.GetActiveScene().name == SceneNames.Level4)
+        {
+            PlayAudioElement(audioElements.lobbyBGM);
+        }
         else if (SceneManager.GetActiveScene().name == SceneNames.Cutscene)
         {
             PlayAudioElement(audioElements.bedroomBGM);
+        }
+        else if (SceneManager.GetActiveScene().name == SceneNames.BadEnding)
+        {
+            PlayAudioElement(audioElements.pantryBGM);
         }
     }
 
