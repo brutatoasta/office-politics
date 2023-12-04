@@ -4183,7 +4183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
-  transition: {fileID: 0}
+  transition: {fileID: 750319939}
   controlsPanel: {fileID: 0}
   shade: {fileID: 0}
 --- !u!68 &427273883
@@ -11229,6 +11229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b4149f0c79f874d8d18b6a4064451c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &750319939 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2511770140398852097, guid: 286588aa772d17d448dd230311e31c1d, type: 3}
+  m_PrefabInstance: {fileID: 750319937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &754171222 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 756625728557963881, guid: 2fed0bd344ba15d4caeae65e307482f3, type: 3}

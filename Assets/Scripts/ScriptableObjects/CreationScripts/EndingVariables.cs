@@ -23,7 +23,7 @@ public class EndingVariables : ScriptableObject
 
     public void Init()
     {
-        Slacker = true;
+        Slacker = false;
         Ninja = true;
         SustainableWarrior = true;
         BigEarner = false;
