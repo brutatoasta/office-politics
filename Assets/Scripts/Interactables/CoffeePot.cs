@@ -63,7 +63,7 @@ public class CoffeePot : BaseInteractable
             holdable = held.GetComponent<Holdable>();
             if (holdable)
             {
-                return holdable.taskName == TaskName.FetchCoffee;
+                return holdable.taskName == TaskName.RefillCoffee;
             }
             else
             {
