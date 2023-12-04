@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     int[] currentMessagePauses;
     int activeMessage = 0;
     public static bool isActive = false;
+    private bool startedNewConvo = false;
 
     public void OpenDialogue(Message[] messages, Actor[] actors, int[] messagePauses)
     {
@@ -73,9 +74,26 @@ public class DialogueManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown("j") && isActive == true)
+        // to ensure that the first line of convo is not skipped
+        // since the start to interact key is also j
+        if (!startedNewConvo)
         {
-            NextMessage();
+            if (Input.GetKeyUp(KeyCode.J))
+            {
+                startedNewConvo = true;
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown("j") && isActive == true)
+            {
+                NextMessage();
+            }
+            // reset startedNewConvo here
+            if (Input.GetKeyUp(KeyCode.J) && (activeMessage == 0 || currentMessagePauses.Contains<int>(activeMessage)))
+            {
+                startedNewConvo = false;
+            }
         }
     }
 }

@@ -5,15 +5,30 @@ using UnityEngine;
 public class HRLisa : MonoBehaviour
 {
     public DialogueTrigger trigger;
-    private void OnCollisionEnter2D(Collision2D collision)
+
+
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("Player")) //player
         {
-            // Trigger dialogue on collision with the player
-            if (Input.GetKeyDown(KeyCode.J))
-            {
-                trigger.StartDialogue();
-            }
+            GameManager.instance.interact.AddListener(OnInteract);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player")) //player
+        {
+            GameManager.instance.interact.RemoveListener(OnInteract);
+        }
+    }
+
+    private void OnInteract()
+    {
+        // Trigger dialogue on collision with the player
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            trigger.StartDialogue();
         }
     }
 }
