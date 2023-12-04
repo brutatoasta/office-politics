@@ -42,14 +42,7 @@ public class Printer : BaseInteractable
         }
         else
         {
-            if (held.GetComponent<Holdable>() == null)
-            {
-                heldType = held.GetComponent<CoffeePot>().taskName;
-            }
-            else
-            {
-                heldType = held.GetComponent<Holdable>().taskName;
-            }
+            heldType = held.GetComponent<Holdable>().taskName;
             return _validInputs.Contains(heldType);
         }
 
@@ -60,7 +53,6 @@ public class Printer : BaseInteractable
         // fetching doc
         if (GameManager.instance.held == null)
         {
-
             GameManager.instance.SetHeld(deliverDoc);
             playerHand.sprite = deliverDocSprite;
             Debug.Log($"Fetched {held.name} from printer!");
