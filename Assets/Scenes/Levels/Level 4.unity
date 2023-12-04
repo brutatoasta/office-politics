@@ -12777,7 +12777,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14966,6 +14966,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4d184760b2023364e967258798dd8997, type: 3}
+    - target: {fileID: 1329295111155599720, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.25
@@ -15136,6 +15140,14 @@ PrefabInstance:
     - target: {fileID: 341197747546519860, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 778605643440449343, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008679216644505683, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 8699465534859503180, guid: 1ae0836cbc174cc4582e90e7c857e3a4, type: 3}
       propertyPath: m_Name
@@ -53913,7 +53925,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -53973,9 +53985,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5125929390744820419, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5406681549918767816, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
       propertyPath: m_Name
       value: Boss Office
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217235248680622656, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -63259,6 +63279,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
+    - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4439403065606547164, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.6
@@ -63804,6 +63828,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 00bb1bc99e8a8324593d562bb21994ec, type: 3}
+    - target: {fileID: 1411404927211561991, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5254153518291866764, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -63898,6 +63926,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4d184760b2023364e967258798dd8997, type: 3}
+    - target: {fileID: 1329295111155599720, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2196351906785091163, guid: 706b42890e29b1249b806783e0f1513e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.25

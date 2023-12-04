@@ -28099,6 +28099,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6f6c191e878b3664dabcd211056b3104, type: 3}
+    - target: {fileID: 6346254474792105659, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: ec9883a4932ae174093be5d7a300464a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.94
@@ -31454,7 +31458,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2838321661930908863, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31463,6 +31467,10 @@ PrefabInstance:
     - target: {fileID: 3897797283531816300, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.y
       value: 20.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6346254474792105659, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.x
@@ -32033,9 +32041,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5125929390744820419, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5406681549918767816, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
       propertyPath: m_Name
       value: Boss Office
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217235248680622656, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 494942244825814778, guid: 4493057ceae7d384a96561ddcf03fa15, type: 3}
