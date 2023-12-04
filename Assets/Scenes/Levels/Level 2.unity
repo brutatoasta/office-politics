@@ -4416,6 +4416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.y
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 3b519ac3f40599d40b41f015d6abbf56, type: 3}
       propertyPath: m_LocalPosition.z
@@ -58311,10 +58312,6 @@ PrefabInstance:
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1601986626}
-    - target: {fileID: 3932428440592433837, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
-      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3932428440592433837, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ToggleAIPathParameter
