@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TaskGenerator : MonoBehaviour
 {
     // attached to tmp gameobject for task list UI
     TextMeshProUGUI taskList;
+    public GameObject iconsParent;
+    public GameObject iconsPrefab;
     void Start()
     {
         taskList = GetComponent<TextMeshProUGUI>();
@@ -21,8 +24,13 @@ public class TaskGenerator : MonoBehaviour
     void generateDescription()
     {
         string description = "To Do: \n";
+        int yPos = 0;
         foreach (TaskItem taskItem in GameManager.instance.levelVariables.todo)
         {
+            GameObject iconObj = Instantiate(iconsPrefab, new Vector3(0, -80 * yPos,0) + iconsParent.transform.position, Quaternion.identity);
+            iconObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(taskItem.taskIconPath);
+            iconObj.transform.SetParent(iconsParent.transform);
+
             if (taskItem.current == 0)
             {
                 description += StrikeOut(taskItem.taskString);
@@ -36,6 +44,7 @@ public class TaskGenerator : MonoBehaviour
                 description += taskItem.taskString + $" x{taskItem.current}";
             }
             description += "\n";
+            yPos++;
         }
         taskList.text = description;
     }

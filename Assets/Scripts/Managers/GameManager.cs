@@ -35,6 +35,8 @@ public class GameManager : Singleton<GameManager>
     // public UnityEvent<int, Transform> increasePerformancePoint;
     public UnityEvent onTaskSuccess;
     public UnityEvent showPerformancePoint;
+    public UnityEvent<int> animatePerformancePoint;
+    public UnityEvent<TaskItem> animateTaskAdd;
     public UnityEvent heldSet;
     // UI
     public UnityEvent<EvadeType> updateEvade;

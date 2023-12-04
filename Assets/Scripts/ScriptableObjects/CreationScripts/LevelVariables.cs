@@ -38,6 +38,7 @@ public class LevelVariables : ScriptableObject
                     todo[i].current--;
                     // add performance points for that task
                     levelPP += todo[i].performancePoints;
+                    GameManager.instance.animatePerformancePoint.Invoke(todo[i].performancePoints);
                 }
                 break;
             }
@@ -56,6 +57,7 @@ public class LevelVariables : ScriptableObject
             {
                 stressPoints += todo[i].stressDamage;
                 levelPP -= 50;
+                GameManager.instance.animatePerformancePoint.Invoke(-50);
                 GameManager.instance.IncreaseStress();
                 break;
             }
@@ -92,6 +94,7 @@ public class LevelVariables : ScriptableObject
         // randomly select an index
         int i = Random.Range(0, todo.Length);
         todo[i].current++;
+        GameManager.instance.animateTaskAdd.Invoke(todo[i]);
     }
 
     public void AddCoffeeJob()
@@ -101,6 +104,7 @@ public class LevelVariables : ScriptableObject
             if (todo[i].taskName.Equals(TaskName.FetchCoffee))
             {
                 todo[i].current++;
+                GameManager.instance.animateTaskAdd.Invoke(todo[i]);
                 break;
             }
         }

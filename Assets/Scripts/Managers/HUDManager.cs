@@ -32,6 +32,11 @@ public class HUDManager : MonoBehaviour
     public GameObject unUpgradedGroup;
     public GameObject upgradedGroup;
 
+    public GameObject performancePointsHUD;
+    public GameObject addPPprefab;
+    public GameObject addTaskPrefab;
+
+
     void Start()
     {
         GameManager.instance.updateInventory.AddListener(UpdateInventory);
@@ -40,6 +45,8 @@ public class HUDManager : MonoBehaviour
 
         GameManager.instance.increaseStress.AddListener(StressBarSlider);
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
+        GameManager.instance.animatePerformancePoint.AddListener(AnimatePerformancePoint);
+        GameManager.instance.animateTaskAdd.AddListener(AnimateTaskAdd);
         // GameManager.instance.gameOver.AddListener(OnGameOver); //TODO
         GameManager.instance.playerEvade.AddListener(OnPlayerEvade);
         GameManager.instance.updateEvade.AddListener(UpdateCooldownSprite);
@@ -136,6 +143,28 @@ public class HUDManager : MonoBehaviour
     public void PerformancePoint()
     {
         performancePointText.GetComponent<TextMeshProUGUI>().text = "Performance Point: " + GameManager.instance.levelVariables.levelPP;
+        StartCoroutine(UpdateHUDPP());
+    }
+
+    IEnumerator UpdateHUDPP()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        performancePointsHUD.GetComponent<TextMeshProUGUI>().text = "PP: " + GameManager.instance.levelVariables.levelPP;
+    }
+
+    public void AnimatePerformancePoint(int addAmnt)
+    {
+        GameObject addObj = Instantiate(addPPprefab, performancePointsHUD.transform);
+        addObj.transform.parent = transform;
+        addObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (addAmnt > 0 ? "+" : "") + addAmnt;
+        performancePointsHUD.GetComponent<Animator>().SetTrigger("Add");
+    }
+
+    public void AnimateTaskAdd(TaskItem taskItem)
+    {
+        GameObject addObj = Instantiate(addTaskPrefab, transform);
+        addObj.transform.SetParent(transform, false);
+        addObj.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(taskItem.taskIconPath + "Add");
     }
 
     public void TaskList()
