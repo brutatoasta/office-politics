@@ -225,7 +225,7 @@ public class HUDManager : MonoBehaviour
     {
         for (int i = 0; i < GameManager.instance.runVariables.consumableObjects.Length; i++)
         {
-            shopCounts[i].GetComponent<TextMeshProUGUI>().text = "x" + GameManager.instance.runVariables.consumableObjects[i].count;
+            shopCounts[i].GetComponent<TextMeshProUGUI>().text = "In Bag: " + GameManager.instance.runVariables.consumableObjects[i].count;
         }
 
         performancePointsShop.GetComponent<TextMeshProUGUI>().text = "Owned: " + GameManager.instance.runVariables.performancePoints + " PP";
