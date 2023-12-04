@@ -24,6 +24,7 @@ public class SceneExit : MonoBehaviour
         transition.SetTrigger("Start");
         StartCoroutine(LoadNextSceneAfterDelay("PowerUpScene", 0.5f));
 
+        // natthan - sfx for main menu click "start work"
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
     public void QuitGame()
@@ -44,6 +45,7 @@ public class SceneExit : MonoBehaviour
         controlsPanel.LeanScale(Vector3.one, 0.5f).setEaseInOutExpo();
         shade.SetActive(true);
 
+        // natthan - sfx for pause menu click "controls"
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
     public void CloseControls()
