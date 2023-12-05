@@ -4901,7 +4901,7 @@ Transform:
   m_GameObject: {fileID: 549417876}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -18, z: 0}
+  m_LocalPosition: {x: 4.5, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4972,8 +4972,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: -0.49942923, y: -2.000072}
+  - {x: -0.044259787, y: 0}
+  - {x: -0.04368949, y: -1.0678763}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -12568,7 +12568,7 @@ GameObject:
   - component: {fileID: 890088947}
   - component: {fileID: 890088946}
   m_Layer: 0
-  m_Name: PrinterToPantry
+  m_Name: PantryToPrinter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12583,7 +12583,7 @@ Transform:
   m_GameObject: {fileID: 890088944}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -18, z: 0}
+  m_LocalPosition: {x: 4.5, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12654,8 +12654,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.5, y: 0}
-  - {x: -0.49942923, y: -2.000072}
+  - {x: -0.012497902, y: 0}
+  - {x: -0.015384197, y: -1.0272441}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -35063,7 +35063,6 @@ MonoBehaviour:
   highlightMaterialIdx: 0
   invalidInputs: 0000000001000000080000000700000002000000
   validInputs: 03000000
-  taskIcon: {fileID: 498885931}
   sprite: {fileID: 1551490555}
 --- !u!212 &1551490555
 SpriteRenderer:
