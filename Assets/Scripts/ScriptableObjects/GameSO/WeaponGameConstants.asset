@@ -16,6 +16,6 @@ MonoBehaviour:
   jobArrowSpeed: 10
   fanArrowSpeed: 15
   jobArrowMaxForce: 0.2
-  fanArrowDamage: 5
-  stressArrowDamage: 5
-  jobArrowDamage: 5
+  fanArrowDamage: 12
+  stressArrowDamage: 16
+  jobArrowDamage: 0

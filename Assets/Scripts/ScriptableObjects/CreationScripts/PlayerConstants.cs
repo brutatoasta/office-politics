@@ -21,5 +21,12 @@ public class PlayerConstants : ScriptableObject
 
     public Sprite parryIcon;
     public Sprite dashIcon;
+    public void Init()
+    {
+        parryCooldown = 4f;
+        dashCooldown = 3f;
+        moveSpeed = 50;
+        maxMoveSpeed = 60;
+    }
 
 }

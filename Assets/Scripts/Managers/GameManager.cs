@@ -76,6 +76,8 @@ public class GameManager : Singleton<GameManager>
         Debug.Log(string.Join(",", activeSlots));
 
         gameRestart.AddListener(LevelStart);
+
+        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => CycleInventory(); 
     }
 
     public void LevelStart()

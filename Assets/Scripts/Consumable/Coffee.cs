@@ -20,7 +20,7 @@ public class Coffee : ABCConsumable
     {
         GameManager.instance.playerConstants.moveSpeed += 10;
         GameManager.instance.playerConstants.maxMoveSpeed += 10;
-        yield return new WaitForSecondsRealtime(20);
+        yield return new WaitForSecondsRealtime(5f);
         GameManager.instance.playerConstants.moveSpeed -= 10;
         GameManager.instance.playerConstants.maxMoveSpeed -= 10;
     }

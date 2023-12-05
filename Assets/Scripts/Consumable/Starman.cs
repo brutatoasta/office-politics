@@ -10,7 +10,7 @@ public class Starman : ABCConsumable
     {
         count = initCount;
         cost = initCost;
-        LoadSprite("Consumables/SuperStar"); // TODO: replace sprite
+        LoadSprite("Consumables/SuperStar");
     }
     public override void ConsumeEffect()
     {
@@ -21,7 +21,7 @@ public class Starman : ABCConsumable
     IEnumerator Invincibility()
     {
         GameManager.instance.invincible = true;
-        yield return new WaitForSecondsRealtime(10f);
+        yield return new WaitForSecondsRealtime(7f);
         GameManager.instance.invincible = false;
     }
 

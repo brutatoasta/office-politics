@@ -221,11 +221,11 @@ public class HUDManager : MonoBehaviour
     {
         if (
             !GameManager.instance.runVariables.upgradeBought &&
-            GameManager.instance.runVariables.performancePoints >= 50
+            GameManager.instance.runVariables.performancePoints >= 500
         )
         {
             GameManager.instance.runVariables.upgradeBought = true;
-            GameManager.instance.runVariables.performancePoints -= 50;
+            GameManager.instance.runVariables.performancePoints -= 500;
             GameManager.instance.activeSlots.Add(0);
             GameManager.instance.CycleInventory();
 

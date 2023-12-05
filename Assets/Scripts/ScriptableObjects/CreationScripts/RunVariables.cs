@@ -16,10 +16,11 @@ public class RunVariables : ScriptableObject
         // TODO: remove the consumables, let them be 0
         // start of whole game, not level
         consumableObjects = new ABCConsumable[]
-        { new KitKat(20, 5), new Coffee(4, 10), new Adderall(3, 15), new Starman(1, 20) };
+        { new KitKat(0, 150), new Coffee(0, 150), new Adderall(0, 200), new Starman(0, 300) };
         upgradeBought = false;
         currentSceneIndex = 0;
         performancePoints = 0;
+        GameManager.instance.playerConstants.Init();
     }
 }
 

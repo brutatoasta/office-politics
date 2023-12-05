@@ -22,9 +22,9 @@ public class Adderall : ABCConsumable
     }
     IEnumerator TempLowerCooldown()
     {
-        GameManager.instance.playerConstants.parryCooldown = 0.3f;
-        GameManager.instance.playerConstants.dashCooldown = 0.1f;
-        GameManager.instance.cooldownPercent = GameManager.instance.levelVariables.evadeType == EvadeType.Dash? 0.1f/oldCooldownDash: 0.3f/oldCooldownParry;
+        GameManager.instance.playerConstants.parryCooldown = 1f;
+        GameManager.instance.playerConstants.dashCooldown = 1f;
+        GameManager.instance.cooldownPercent = GameManager.instance.levelVariables.evadeType == EvadeType.Dash? 1f/oldCooldownDash: 1f/oldCooldownParry;
         GameManager.instance.consumableEfffect.Invoke(ConsumableType.Adderall);
         yield return new WaitForSecondsRealtime(10);
         GameManager.instance.cooldownPercent = 1f;
