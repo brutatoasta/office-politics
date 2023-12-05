@@ -42,6 +42,8 @@ public class DialogueManager : MonoBehaviour
         currentMessages[activeMessage].triggerNextEvent.Invoke();
 
         AnimateTextColour();
+
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuSelect);
     }
     public void NextMessage()
     {
