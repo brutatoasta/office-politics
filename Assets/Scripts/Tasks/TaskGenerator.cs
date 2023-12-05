@@ -6,6 +6,7 @@ public class TaskGenerator : MonoBehaviour
 {
     // attached to tmp gameobject for task list UI
     TextMeshProUGUI taskList;
+    bool iconIsGenerated;
     public GameObject iconsParent;
     public GameObject iconsPrefab;
     void Start()
@@ -26,9 +27,12 @@ public class TaskGenerator : MonoBehaviour
         int yPos = -5;
         foreach (TaskItem taskItem in GameManager.instance.levelVariables.todo)
         {
-            GameObject iconObj = Instantiate(iconsPrefab, new Vector3(0, yPos,0) + iconsParent.transform.position, Quaternion.identity);
-            iconObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(taskItem.taskIconPath);
-            iconObj.transform.SetParent(iconsParent.transform);
+            if (!iconIsGenerated)
+            {
+                GameObject iconObj = Instantiate(iconsPrefab, new Vector3(0, yPos,0) + iconsParent.transform.position, Quaternion.identity);
+                iconObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(taskItem.taskIconPath);
+                iconObj.transform.SetParent(iconsParent.transform);
+            }
 
             string description_to_add = "";
             if (taskItem.current == 0)
@@ -55,6 +59,7 @@ public class TaskGenerator : MonoBehaviour
             yPos++;
         }
         taskList.text = description;
+        iconIsGenerated = true;
     }
 
 
