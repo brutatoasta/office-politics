@@ -18,6 +18,7 @@ public class GameManager : Singleton<GameManager>
     public UnityEvent interact;
     public UnityEvent gameOver;
     public UnityEvent doorOpen;
+    public UnityEvent doorClose;
 
     // runVariables
     public UnityEvent updateInventory;
@@ -146,6 +147,7 @@ public class GameManager : Singleton<GameManager>
     public void IncreaseJob()
     {
         levelVariables.AddRandomJob(levelVariables.currentLevelIndex);
+        doorClose.Invoke();
     }
 
     public void IncreaseCoffeeJob()

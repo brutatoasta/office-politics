@@ -13,6 +13,7 @@ public class Entrance : MonoBehaviour
     void Start()
     {
         GameManager.instance.doorOpen.AddListener(OpenDoor);
+        GameManager.instance.doorClose.AddListener(CloseDoor);
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -48,5 +49,10 @@ public class Entrance : MonoBehaviour
     {
         edgeCollider2D.enabled = false;
         transform.GetChild(1).GetComponent<Animator>().SetBool("isDoorOpen", true);
+    }
+    public void CloseDoor()
+    {
+        edgeCollider2D.enabled = true;
+        transform.GetChild(1).GetComponent<Animator>().SetBool("isDoorOpen", false);
     }
 }

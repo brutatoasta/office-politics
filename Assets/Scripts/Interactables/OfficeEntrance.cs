@@ -9,6 +9,7 @@ public class OfficeEntrance : MonoBehaviour
     void Start()
     {
         GameManager.instance.doorOpen.AddListener(OpenDoor);
+        GameManager.instance.doorClose.AddListener(CloseDoor);
     }
 
     void OpenDoor()
@@ -16,9 +17,13 @@ public class OfficeEntrance : MonoBehaviour
         Debug.LogError("Quota");
         quotaFilled = true;
     }
-
-    public void OnCollisionEnter2D(Collision2D col)
+    void CloseDoor()
     {
-        if (quotaFilled) GameManager.instance.GameOver();
+        quotaFilled = false;
     }
+
+    // public void OnCollisionEnter2D(Collision2D col)
+    // {
+    //     if (quotaFilled) GameManager.instance.GameOver();
+    // }
 }
