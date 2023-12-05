@@ -116,10 +116,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
   prepareFanArrow:
     audioType: 6
-    audioClip: {fileID: 8300000, guid: 25d82423a2658594383dda8239b67559, type: 3}
+    audioClip: {fileID: 8300000, guid: fb293bc158aaf1842830332a7bf227ce, type: 3}
   throwFanArrow:
     audioType: 6
-    audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
+    audioClip: {fileID: 8300000, guid: 271f3691c7e73134e826ce006c4cf072, type: 3}
   enemyGetStunned:
     audioType: 6
     audioClip: {fileID: 8300000, guid: ab13116e66e77324782d1f776d80e4c2, type: 3}
