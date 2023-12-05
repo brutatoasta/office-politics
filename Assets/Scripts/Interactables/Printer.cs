@@ -59,8 +59,16 @@ public class Printer : BaseInteractable
             isDocumentReady = false;
             progressBar.SetActive(false);
 
-            // natthan - sfx for pick up document from printer
-            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+            if (heldType == TaskName.DeliverDoc)
+            {
+                // natthan - sfx for pick up document from printer
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+            }
+            else if (heldType == TaskName.RefillCoffee)
+            {
+                // natthan - sfx for pick up refilled coffee pot
+                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
+            }
         }
         else
         {
@@ -82,10 +90,10 @@ public class Printer : BaseInteractable
                     // natthan - sfx for photocopy
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.photocopyDocument);
                 }
-                else if (heldType == TaskName.RefillCoffee)
+                else if (heldType == TaskName.emptyCoffeePot)
                 {
                     // natthan temporary - sfx for refill coffee pot
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourDrink);
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.refillCoffeePot);
                 }
 
                 // cook the doc

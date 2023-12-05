@@ -68,6 +68,7 @@ public class AudioElements : ScriptableObject
     public AudioElement denyExit;
     public AudioElement pourDrink;
     public AudioElement serveRefreshment;
+    public AudioElement refillCoffeePot;
     public AudioElement spillDrink;
     public AudioElement pickUpDocument;
     public AudioElement shredDocument;
