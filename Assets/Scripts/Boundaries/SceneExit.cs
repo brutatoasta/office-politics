@@ -27,11 +27,7 @@ public class SceneExit : MonoBehaviour
         // natthan - sfx for main menu click "start work"
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
-    public void QuitGame()
-    {
-        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
-        Application.Quit();
-    }
+    public void QuitGame() => Application.Quit();
 
     public void Controls()
     {
