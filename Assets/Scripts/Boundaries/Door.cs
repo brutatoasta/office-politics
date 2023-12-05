@@ -4,7 +4,7 @@ using UnityEngine.Events;
 // controls bosses to stay in room
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public UnityEvent toggleBossBehaviour;
     private bool fromInside = false;
     private bool isOutside = true;

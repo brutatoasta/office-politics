@@ -1,7 +1,6 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
+
 public abstract class BaseArrow : MonoBehaviour, IArrow
 {
     public ArrowTypes type;
@@ -11,7 +10,7 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     public Rigidbody2D rb;
     [System.NonSerialized]
     public GameObject player;
-    // Start is called before the first frame update
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -36,10 +35,10 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     private bool arrowHasLeftBoss = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Enemy")
+        if (!collision.CompareTag("Enemy"))
         {
             Debug.Log(gameObject.name + " has hit " + collision.gameObject.name);
-            if(collision.gameObject.name == "Wall")
+            if (collision.gameObject.name == "Wall")
             {
                 StartCoroutine(CollisionEffect());
             }

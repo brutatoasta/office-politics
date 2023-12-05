@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GoodEnding : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public DialogueTrigger trigger;
     public GameObject gridScene;
     public GameObject phoneIcon;

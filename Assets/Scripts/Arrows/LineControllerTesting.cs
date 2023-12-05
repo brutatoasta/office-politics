@@ -9,7 +9,7 @@ public class LineControllerTesting : MonoBehaviour
     [SerializeField] private LineController lineController;
     private float timer;
     public UnityEvent launchArrow;
-    // Start is called before the first frame update
+
     private void Start()
     {
     }
