@@ -43,7 +43,7 @@ public class TaskConstants : ScriptableObject
                 new(2, 100, 5, TaskName.PrepMeeting, "Prepare Meeting Materials in the meeting room", "TaskIcons/PrepMeeting"),
                 new(1, 100,5, TaskName.FetchDoc, "Fetch documents from Sihan for photocopy", "TaskIcons/DeliverDoc"),
                 new(1, 100,5, TaskName.DeliverDoc, "Deliver photocopied documents back to Sihan", "TaskIcons/DeliverDoc"),
-                new(1, 100,5, TaskName.RefillCoffee, "Refill the empty coffee pot", "TaskIcons/RefillCoffee"),
+                new(1, 200,5, TaskName.RefillCoffee, "Refill the empty coffee pot", "TaskIcons/RefillCoffee"),
             }
 
        };
