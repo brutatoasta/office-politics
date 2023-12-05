@@ -11,11 +11,13 @@ public class ActionManager : MonoBehaviour
     public UnityEvent playPause;
     public UnityEvent showTaskList;
 
+    // J to interact
     public void OnInteractAction(InputAction.CallbackContext context)
     {
         if (context.started) interact.Invoke();
     }
 
+    // WASD movement
     public void OnMoveAction(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -29,30 +31,39 @@ public class ActionManager : MonoBehaviour
 
     }
 
+    // U for slot 1
     public void OnUseConsumable1Action(InputAction.CallbackContext context)
     {
         Scene scene = SceneManager.GetActiveScene();
         if (context.started && scene.name != "PowerUpScene") GameManager.instance.UseCurrentConsumable(0);
     }
+
+    // I for slot 2
     public void OnUseConsumable2Action(InputAction.CallbackContext context)
     {
         Scene scene = SceneManager.GetActiveScene();
         if (context.started && scene.name != "PowerUpScene") GameManager.instance.UseCurrentConsumable(1);
     }
 
+    // K to cycle inventory
     public void OnCycleConsumableAction(InputAction.CallbackContext context)
     {
         if (context.started) GameManager.instance.CycleInventory();
     }
 
+    // Space to evade
     public void OnEvadeAction(InputAction.CallbackContext context)
     {
         if (context.started) evade.Invoke();
     }
+
+    // Esc to pause
     public void OnPlayPauseAction(InputAction.CallbackContext context)
     {
         if (context.performed) playPause.Invoke();
     }
+
+    // Tab to open tasklist
     public void OnPullupTaskAction(InputAction.CallbackContext context)
     {
         if (context.performed) showTaskList.Invoke();

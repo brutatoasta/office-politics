@@ -33,7 +33,6 @@ public class GameManager : Singleton<GameManager>
 
     // scoring and tasks system
     public UnityEvent increaseStress;
-    // public UnityEvent<int, Transform> increasePerformancePoint;
     public UnityEvent onTaskSuccess;
     public UnityEvent showPerformancePoint;
     public UnityEvent<int> animatePerformancePoint;
@@ -80,6 +79,7 @@ public class GameManager : Singleton<GameManager>
         SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => CycleInventory();
     }
 
+    // Called Before Each Level
     public void LevelStart()
     {
         Debug.Log("InitCalled");
@@ -122,6 +122,7 @@ public class GameManager : Singleton<GameManager>
         updateInventory.Invoke();
     }
 
+    // Use consumable in given slot
     public void UseCurrentConsumable(int slot)
     {
 
@@ -143,28 +144,33 @@ public class GameManager : Singleton<GameManager>
         useConsumable.Invoke(slot);
     }
 
+    // Hit by Job arrow
     public void IncreaseJob()
     {
         levelVariables.AddRandomJob(levelVariables.currentLevelIndex);
         doorClose.Invoke();
     }
 
+    // Tutorial Job arrow
     public void IncreaseCoffeeJob()
     {
         levelVariables.AddCoffeeJob();
     }
 
+    // General method to increase stress & invoke event to notify
     public void IncreaseStress()
     {
         if (levelVariables.stressPoints >= levelVariables.maxStressPoints) GameOver();
         increaseStress.Invoke();
     }
 
+    // Function to raise event that is listened to by audio manager
     public void PlayAudioElement(AudioElement audioElement)
     {
         audioElementGameEvent.Raise(audioElement);
     }
 
+    // Toggle pause menu
     public void PlayPause()
     {
         if (isPaused)
@@ -181,7 +187,7 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-
+    // Restart the game after a run
     public void GameRestart()
     {
         gameRestart.Invoke();
@@ -192,6 +198,7 @@ public class GameManager : Singleton<GameManager>
         levelVariables.Init();
         SceneManager.LoadSceneAsync("MainMenu");
     }
+
     public void GameOver()
     {
         // goto badending
@@ -210,7 +217,7 @@ public class GameManager : Singleton<GameManager>
     }
     public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);
 
-
+    // Check whenever task is completed, open door if quota complete
     public void DecreaseQuota()
     {
         if (levelVariables.IsQuotaComplete()) DoorOpen();
@@ -221,17 +228,20 @@ public class GameManager : Singleton<GameManager>
         doorOpen.Invoke();
     }
 
+    // Bad ending return to mainMenu
     public void ReturnToMainMenu()
     {
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
+    // Notify whenever player held object changes
     public void SetHeld(GameObject newHeld)
     {
         held = newHeld;
         heldSet.Invoke();
     }
 
+    // Notify whenever evade type is changed
     public void UpdateEvadeType(EvadeType evadeType)
     {
         levelVariables.evadeType = evadeType;

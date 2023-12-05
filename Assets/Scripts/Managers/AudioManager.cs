@@ -80,6 +80,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Play given clip through correct audio source
     public void PlayAudioElement(AudioElement audioElement)
     {
         switch (audioElement.audioType)
