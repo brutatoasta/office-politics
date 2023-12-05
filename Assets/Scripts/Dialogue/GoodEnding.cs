@@ -34,19 +34,21 @@ public class GoodEnding : MonoBehaviour
     {
         string position = endingVariables.GetPosition();
         string achievementsDescription = endingVariables.GenerateDescription();
-        int compensation = endingVariables.ScoreCount(runVariables.performancePoints);
+        float ppcompensation = runVariables.performancePoints * endingVariables.performancePointsCompensation;
+        float compensation = endingVariables.ScoreCount() + ppcompensation;
         string description = "Dear Intern #24601, \nWe are delighted to offer you the position of " + position +
          " at TaiChill Games. We have been thoroughly impressed with your performance during your internship, and we believe that your skills and talents will contribute significantly to our team's success.\n\n";
         description += "Monthly Salary\n";
         description += "--------------------------------------------------------------------------------------\n";
         description += "Base Salary    ----------------------------------------------------------------    $5000\n";
         description += achievementsDescription;
-        description +=
-        description += "\nTotal Compensation    ----------------------------------------------------------    $";
+        description += "\nPerformance Point Compensation    ----------------------------------------------    $";
+        description += ppcompensation;
+        description += "\n\nTotal Compensation    ----------------------------------------------------------    $";
         description += compensation;
         description += "\n\nPlease sign and return the duplicate copy of this letter in confirmation of your understanding and acceptance.\n";
-        description += "\n Yours Sincerely";
-        description += "\n TaiChill Games";
+        description += "\n\nYours Sincerely";
+        description += "\nTaiChill Games";
         achievementList.text = description;
     }
     public void ShowLetterIcon()

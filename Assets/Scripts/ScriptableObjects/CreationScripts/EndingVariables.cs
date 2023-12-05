@@ -141,10 +141,10 @@ public class EndingVariables : ScriptableObject
             return "Overachieving Star Intern";
         }
     }
-    public int ScoreCount(int performancePoints)
+    public int ScoreCount()
     {
         int achievementCount = GetAchivementCount();
-        finalScore = achievementCount * achievementCompensation + baseSalary * performancePoints;
+        finalScore = achievementCount * achievementCompensation + baseSalary;
         return finalScore;
     }
 
