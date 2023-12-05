@@ -64,12 +64,12 @@ public class PlayerController : MonoBehaviour
                     rb.AddForce(movementInput * playerConstants.moveSpeed);
                 }
 
-                // play walking sound if player is moving - Natthan
+                // natthan - play walking sound if player is moving
                 if (rb.velocity != Vector2.zero)
                 {
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerWalk);
                 }
-                // stop the walking sound if the player is not moving (e.g. blocked by an obstacle) - Natthan
+                // natthan - stop the walking sound if the player is not moving (e.g. blocked by obstacle)
                 else if (rb.velocity == Vector2.zero)
                 {
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity = Vector2.zero;
 
-                // Stop walking sound - Natthan
+                // natthan - stop awalking sound
                 GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
             }
         }
@@ -263,7 +263,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
 
     IEnumerator InvincibilityVisuals()
     {

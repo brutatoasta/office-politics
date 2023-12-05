@@ -29,7 +29,7 @@ public class DeliverDoc : BaseInteractable
             GameManager.instance.SetHeld(fetchDoc);
             playerHand.sprite = fetchDocSprite;
 
-            // Natthan - sfx for picking up photocopy document
+            // natthan - sfx for picking up photocopy document
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pickUpDocument);
         }
         else
@@ -41,7 +41,7 @@ public class DeliverDoc : BaseInteractable
             playerHand.color = Color.white;
             GameManager.instance.levelVariables.Succeed(TaskName.DeliverDoc);
 
-            // Natthan - sfx for placing photocopy document
+            // natthan - sfx for placing photocopy document
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
         }
     }

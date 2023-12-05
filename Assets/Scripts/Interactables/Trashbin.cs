@@ -67,7 +67,7 @@ public class Trashbin : BaseInteractable
             Debug.Log($"Dropped {held.name} into me!");
             StartCoroutine(BurnEffect());
 
-            // Natthan
+            // natthan
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwTrash);
             GameManager.instance.endingVariables.SustainableWarrior = false;
         }
@@ -75,12 +75,12 @@ public class Trashbin : BaseInteractable
 
     IEnumerator BurnEffect()
     {
-        for (float i = 1; i> 0.3f; i-=0.01f)
+        for (float i = 1; i > 0.3f; i -= 0.01f)
         {
             burnLight.falloffIntensity = i;
             yield return new WaitForSecondsRealtime(0.002f);
         }
-        for (float i = 0.3f; i<1; i+=0.01f)
+        for (float i = 0.3f; i < 1; i += 0.01f)
         {
             burnLight.falloffIntensity = i;
             yield return new WaitForSecondsRealtime(0.01f);

@@ -58,7 +58,7 @@ public class ReceivableMeeting : BaseInteractable
             // calculate score and tasks
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
-                // Natthan - refreshment and prep meeting
+                // natthan - refreshment and prep meeting
                 if (heldType == TaskName.PrepRefreshment)
                 {
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);

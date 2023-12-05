@@ -62,7 +62,7 @@ public class Receivable : BaseInteractable
             // calculate score and tasks
             if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
-                // Natthan - sfx for placing valid item
+                // natthan - sfx for placing valid item
                 switch (heldType)
                 {
                     case TaskName.FetchCoffee:
@@ -118,7 +118,7 @@ public class Receivable : BaseInteractable
                     animator.SetTrigger("doFlinch");
                 }
 
-                // Natthan - sfx for placing invalid item
+                // natthan - sfx for placing invalid item
                 switch (heldType)
                 {
                     case TaskName.Shred:

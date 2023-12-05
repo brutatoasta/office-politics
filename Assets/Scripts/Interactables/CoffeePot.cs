@@ -33,7 +33,7 @@ public class CoffeePot : BaseInteractable
             playerHand.sprite = refillCoffeeSprite;
             sprite.enabled = true;
 
-            // natthan temporary - sfx for picking up coffee pot
+            // natthan - sfx for picking up coffee pot
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
         }
         else
@@ -44,7 +44,7 @@ public class CoffeePot : BaseInteractable
             playerHand.sprite = null;
             GameManager.instance.levelVariables.Succeed(TaskName.RefillCoffee);
 
-            // natthan temporary - sfx for placing coffee pot
+            // natthan - sfx for placing coffee pot
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
         }
     }
