@@ -18,7 +18,7 @@ public class Holdable : BaseInteractable
             playerHand.sprite = optionalSprite ?? GetComponent<SpriteRenderer>().sprite;
             playerHand.color = GetComponent<SpriteRenderer>().color;
 
-            // natthan - sfx for picking up item
+            // sfx for picking up item
             switch (taskName)
             {
                 case TaskName.FetchCoffee:

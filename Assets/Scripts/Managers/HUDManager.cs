@@ -186,7 +186,7 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
     }
-    
+
     public void FreezeTime() => Time.timeScale = 0;
     public void DisableTask() => taskList.SetActive(false);
     public void EnableTask() => taskList.SetActive(true);
@@ -198,7 +198,7 @@ public class HUDManager : MonoBehaviour
     {
         GameManager.instance.UpdateEvadeType(isDash ? EvadeType.Dash : EvadeType.Parry);
 
-        // natthan - select parry or dash
+        // select parry or dash
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
 
@@ -215,12 +215,12 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.activeSlots.Add(0);
             GameManager.instance.CycleInventory();
 
-            // natthan - sfx for purchasing backpack upgrade 
+            // sfx for purchasing backpack upgrade 
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
         }
         else
         {
-            // natthan - sfx for not cannot purchase backpack upgrade
+            // sfx for not cannot purchase backpack upgrade
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cannotPurchaseItem);
         }
         UpdateShop();
@@ -236,12 +236,12 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.runVariables.consumableObjects[consumableIndex].count += 1;
             GameManager.instance.runVariables.performancePoints -= GameManager.instance.runVariables.consumableObjects[consumableIndex].cost;
 
-            // natthan - sfx for purchasing consumable
+            // sfx for purchasing consumable
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.purchaseItem);
         }
         else
         {
-            // natthan - sfx for not cannot purchase consumable
+            // sfx for not cannot purchase consumable
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cannotPurchaseItem);
         }
 
@@ -274,7 +274,7 @@ public class HUDManager : MonoBehaviour
         shopUI.SetActive(false);
         GameManager.instance.playerUnFreeze.Invoke();
 
-        // natthan - sfx for closing pantry shop
+        // sfx for closing pantry shop
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
 

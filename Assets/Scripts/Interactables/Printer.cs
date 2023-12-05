@@ -61,12 +61,12 @@ public class Printer : BaseInteractable
 
                 if (heldType == TaskName.DeliverDoc)
                 {
-                    // natthan - sfx for pick up document from printer
+                    // sfx for pick up document from printer
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
                 }
                 else if (heldType == TaskName.RefillCoffee)
                 {
-                    // natthan - sfx for pick up refilled coffee pot
+                    // sfx for pick up refilled coffee pot
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
                 }
             }
@@ -89,12 +89,12 @@ public class Printer : BaseInteractable
 
                 if (heldType == TaskName.FetchDoc)
                 {
-                    // natthan - sfx for photocopy
+                    // sfx for photocopy
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.photocopyDocument);
                 }
                 else if (heldType == TaskName.emptyCoffeePot)
                 {
-                    // natthan temporary - sfx for refill coffee pot
+                    // temporary - sfx for refill coffee pot
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.refillCoffeePot);
                 }
 

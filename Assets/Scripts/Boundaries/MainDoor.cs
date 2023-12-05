@@ -24,14 +24,14 @@ public class Entrance : MonoBehaviour
             transform.GetChild(1).GetComponent<Animator>().SetBool("isDoorOpen", false);
             entryTrigger = false;
 
-            // natthan - sfx for close door
+            // sfx for close door
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.closeDoor);
         }
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        // natthan - deny exit sfx on collisions with the door after player enters the office.
+        // deny exit sfx on collisions with the door after player enters the office.
         // player entering the office counts as a collision, hence the first collision should be ignored.
         if (col.gameObject.CompareTag("Player"))
         {

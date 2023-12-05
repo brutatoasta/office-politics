@@ -226,7 +226,7 @@ public class GameManager : Singleton<GameManager>
     {
         overtime = true;
         TimerStop?.Invoke();
-        // natthan - sfx for overtime start
+        // sfx for overtime start
         PlayAudioElement(audioElements.overtimeStart);
     }
     public void UpdateTimer(float value) => TimerUpdate?.Invoke(value);
