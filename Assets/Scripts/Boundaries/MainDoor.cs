@@ -23,6 +23,9 @@ public class Entrance : MonoBehaviour
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.gameplayBGMIntensity1);
             transform.GetChild(1).GetComponent<Animator>().SetBool("isDoorOpen", false);
             entryTrigger = false;
+
+            // natthan - sfx for close door
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.closeDoor);
         }
     }
 

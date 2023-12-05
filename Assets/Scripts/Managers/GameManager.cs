@@ -129,10 +129,21 @@ public class GameManager : Singleton<GameManager>
         if (runVariables.upgradeBought && activeSlots[slot] != -1)
         {
             runVariables.consumableObjects[activeSlots[slot]].Consume();
+
+            // sfx for use consumable
+            PlayAudioElement(audioElements.useConsumable);
         }
         else if (!runVariables.upgradeBought && activeSlots[0] != -1)
         {
             runVariables.consumableObjects[activeSlots[0]].Consume();
+
+            // sfx for use consumable
+            PlayAudioElement(audioElements.useConsumable);
+        }
+        else
+        {
+            // sfx for cannot use consumable
+            PlayAudioElement(audioElements.cannotPurchaseItem);
         }
 
         // Blank cleaned slots
