@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
+
 
 // Takes and handles input and movement for a player character
 public class CoffeePot : BaseInteractable
@@ -43,6 +41,8 @@ public class CoffeePot : BaseInteractable
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
             GameManager.instance.levelVariables.Succeed(TaskName.RefillCoffee);
+            GameManager.instance.showPerformancePoint.Invoke();
+            GameManager.instance.DecreaseQuota();
 
             // natthan - sfx for placing coffee pot
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);

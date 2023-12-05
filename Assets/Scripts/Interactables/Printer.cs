@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Net;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 // Takes and handles input and movement for a player character
 public class Printer : BaseInteractable
@@ -51,24 +49,28 @@ public class Printer : BaseInteractable
     protected override void OnInteract()
     {
         // fetching doc
-        if (GameManager.instance.held == null)
+        if (held == null)
         {
-            GameManager.instance.SetHeld(deliverDoc);
-            playerHand.sprite = deliverDocSprite;
-            Debug.Log($"Fetched {held.name} from printer!");
-            isDocumentReady = false;
-            progressBar.SetActive(false);
+            if (isDocumentReady)
+            {
+                GameManager.instance.SetHeld(deliverDoc);
+                playerHand.sprite = deliverDocSprite;
+                Debug.Log($"Fetched {held.name} from printer!");
+                isDocumentReady = false;
+                progressBar.SetActive(false);
 
-            if (heldType == TaskName.DeliverDoc)
-            {
-                // natthan - sfx for pick up document from printer
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                if (heldType == TaskName.DeliverDoc)
+                {
+                    // natthan - sfx for pick up document from printer
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                }
+                else if (heldType == TaskName.RefillCoffee)
+                {
+                    // natthan - sfx for pick up refilled coffee pot
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
+                }
             }
-            else if (heldType == TaskName.RefillCoffee)
-            {
-                // natthan - sfx for pick up refilled coffee pot
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
-            }
+
         }
         else
         {
@@ -81,7 +83,7 @@ public class Printer : BaseInteractable
                 GameManager.instance.SetHeld(null);
                 playerHand.sprite = null;
                 playerHand.color = Color.white;
-                //Debug.Log($"Dropped {held.name} into printer!");
+
                 progressBar.SetActive(true);
                 progressBarAnimator.SetTrigger("photocopyProgress");
 

@@ -77,7 +77,7 @@ public class GameManager : Singleton<GameManager>
 
         gameRestart.AddListener(LevelStart);
 
-        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => CycleInventory(); 
+        SceneManager.sceneLoaded += (Scene scene, LoadSceneMode mode) => CycleInventory();
     }
 
     public void LevelStart()
@@ -119,7 +119,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         activeSlots = res;
-        Debug.Log(string.Join(",", activeSlots));
+        // Debug.Log(string.Join(",", activeSlots));
 
 
         updateInventory.Invoke();
@@ -208,9 +208,6 @@ public class GameManager : Singleton<GameManager>
     {
         overtime = true;
         TimerStop?.Invoke();
-
-        if (levelVariables.IsQuotaComplete()) doorOpen.Invoke();
-
         // natthan - sfx for overtime start
         PlayAudioElement(audioElements.overtimeStart);
     }

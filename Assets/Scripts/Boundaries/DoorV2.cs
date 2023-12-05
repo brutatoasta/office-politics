@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// controls bosses to stay in room
 public class DoorV2 : MonoBehaviour
 {
     public bool isTopDown;

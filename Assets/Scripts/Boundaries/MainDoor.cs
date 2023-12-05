@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 
+// controls player's entry and exit for that level 
 public class Entrance : MonoBehaviour
 {
     public GameObject sceneExit;
@@ -32,7 +30,7 @@ public class Entrance : MonoBehaviour
     {
         // natthan - deny exit sfx on collisions with the door after player enters the office.
         // player entering the office counts as a collision, hence the first collision should be ignored.
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
             if (firstCollision)
             {
