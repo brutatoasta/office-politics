@@ -34,6 +34,7 @@ public class AudioElements : ScriptableObject
     public AudioElement goodEndingBGM;
 
     // UI SFX
+    public AudioElement menuSelect;
     public AudioElement menuClick;
     public AudioElement menuBack;
     public AudioElement gamePause;
@@ -49,6 +50,9 @@ public class AudioElements : ScriptableObject
     public AudioElement levelComplete;
     public AudioElement cannotPurchaseItem;
     public AudioElement overtimeStart;
+    public AudioElement phoneCall;
+    public AudioElement stopPhoneCall;
+    public AudioElement pickUpPhone;
 
     // Player SFX
     public AudioElement playerWalk;

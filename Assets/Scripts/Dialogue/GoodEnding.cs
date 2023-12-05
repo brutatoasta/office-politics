@@ -24,6 +24,8 @@ public class GoodEnding : MonoBehaviour
         gridScene.SetActive(true);
         sceneAnimation.SetTrigger("PickupCall");
 
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.stopPhoneCall);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pickUpPhone);
     }
     public void Dialogue()
     {
