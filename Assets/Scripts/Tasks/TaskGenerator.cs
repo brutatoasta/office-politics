@@ -23,26 +23,35 @@ public class TaskGenerator : MonoBehaviour
     void GenerateDescription()
     {
         string description = "To Do: \n";
-        int yPos = 0;
+        int yPos = -5;
         foreach (TaskItem taskItem in GameManager.instance.levelVariables.todo)
         {
-            GameObject iconObj = Instantiate(iconsPrefab, new Vector3(0, -80 * yPos,0) + iconsParent.transform.position, Quaternion.identity);
+            GameObject iconObj = Instantiate(iconsPrefab, new Vector3(0, yPos,0) + iconsParent.transform.position, Quaternion.identity);
             iconObj.GetComponent<Image>().sprite = Resources.Load<Sprite>(taskItem.taskIconPath);
             iconObj.transform.SetParent(iconsParent.transform);
 
+            string description_to_add = "";
             if (taskItem.current == 0)
             {
-                description += StrikeOut(taskItem.taskString);
+                description_to_add += StrikeOut(taskItem.taskString);
             }
             else if (taskItem.current == 1) 
             {
-                description += taskItem.taskString;
+                description_to_add += taskItem.taskString;
             }
             else
             {
-                description += taskItem.taskString + $" x{taskItem.current}";
+                description_to_add += taskItem.taskString + $" x{taskItem.current}";
             }
-            description += "\n";
+            if (description_to_add.Length <= 24)
+            {
+                yPos -= 70;
+            }
+            else
+            {
+                yPos -= 115;
+            }
+            description += description_to_add + "\n";
             yPos++;
         }
         taskList.text = description;
