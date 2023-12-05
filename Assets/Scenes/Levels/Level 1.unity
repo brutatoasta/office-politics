@@ -66098,7 +66098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 2838321661573536589}
   highlightMaterialIdx: 0
-  invalidInputs: 
+  invalidInputs: 02000000
   validInputs: 04000000
   taskIcon: {fileID: 2838321661573536589}
   sprite: {fileID: 0}
@@ -66116,7 +66116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bubbleObj: {fileID: 2838321660963130250}
   highlightMaterialIdx: 0
-  invalidInputs: 
+  invalidInputs: 04000000
   validInputs: 02000000
   taskIcon: {fileID: 2838321660963130250}
   sprite: {fileID: 0}
