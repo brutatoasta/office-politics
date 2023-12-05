@@ -39,6 +39,9 @@ MonoBehaviour:
   goodEndingBGM:
     audioType: 0
     audioClip: {fileID: 8300000, guid: 04c394760bfbcdd48832d149b24da678, type: 3}
+  stopBGM:
+    audioType: 0
+    audioClip: {fileID: 8300000, guid: 97ecf302f496db74ab1d0612b23bfb7d, type: 3}
   menuSelect:
     audioType: 4
     audioClip: {fileID: 8300000, guid: b376d6d5836f35842b2e039071393db1, type: 3}
@@ -88,14 +91,17 @@ MonoBehaviour:
     audioType: 4
     audioClip: {fileID: 8300000, guid: a251b813900d45e47b86f63e21e8fe7c, type: 3}
   phoneCall:
-    audioType: 0
-    audioClip: {fileID: 0}
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: dafe4796af6bd2e4494ac1bd22a44cbd, type: 3}
   stopPhoneCall:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 97ecf302f496db74ab1d0612b23bfb7d, type: 3}
   pickUpPhone:
-    audioType: 0
-    audioClip: {fileID: 0}
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: 03fb21962ce86d842bf927d85134c28d, type: 3}
+  returnOffer:
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: 10f9b47c67e9c944687da362e560f8c4, type: 3}
   playerWalk:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 84876e3b88c77fa47b0b094e370875a3, type: 3}
