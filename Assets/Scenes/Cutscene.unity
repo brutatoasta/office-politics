@@ -2259,7 +2259,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 13
+  m_SortingOrder: 6
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2931,8 +2931,8 @@ Camera:
   m_GameObject: {fileID: 1479024287}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3182,9 +3182,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
   transition: {fileID: 1496440188}
-  controlsPanel: {fileID: 0}
-  mapPanel: {fileID: 0}
-  shade: {fileID: 0}
 --- !u!483693784 &1512308049
 TilemapRenderer:
   m_ObjectHideFlags: 0
