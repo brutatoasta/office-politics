@@ -86,8 +86,15 @@ public class AudioManager : MonoBehaviour
         switch (audioElement.audioType)
         {
             case AudioType.BGM:
-                bgmAudioSource.clip = audioElement.audioClip;
-                bgmAudioSource.Play();
+                if (audioElement.Equals(audioElements.badEndingBGM))
+                {
+                    bgmAudioSource.PlayOneShot(audioElement.audioClip);
+                }
+                else
+                {
+                    bgmAudioSource.clip = audioElement.audioClip;
+                    bgmAudioSource.Play();
+                }
                 break;
 
             case AudioType.gameplayBGMIntensity1:
