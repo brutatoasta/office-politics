@@ -119,7 +119,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         activeSlots = res;
-        Debug.Log(string.Join(",", activeSlots));
+        // Debug.Log(string.Join(",", activeSlots));
 
 
         updateInventory.Invoke();
