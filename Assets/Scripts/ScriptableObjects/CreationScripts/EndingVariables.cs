@@ -72,7 +72,7 @@ public class EndingVariables : ScriptableObject
         if (Slacker)
         {
             description += "\nSlacker    -------------------------------------------------------------------    $500\n";
-            description += "(Finish while the clock is still green)\n";
+            description += "(Leave work while the clock is still green)\n";
         }
         if (Ninja)
         {
