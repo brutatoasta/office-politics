@@ -160,6 +160,9 @@ public class GameManager : Singleton<GameManager>
     {
         levelVariables.AddRandomJob(levelVariables.currentLevelIndex);
         doorClose.Invoke();
+
+        // sfx for increase task quota
+        PlayAudioElement(audioElements.increaseTaskQuota);
     }
 
     // Tutorial Job arrow
