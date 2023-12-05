@@ -63,6 +63,7 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
     IEnumerator CollisionEffect()
     {
         GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         transform.GetChild(0).GetComponent<ParticleSystem>().Play();

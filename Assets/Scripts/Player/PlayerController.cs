@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Coffee Particles
-        if (coffeeActiveTime >= 20f) coffeeParticles.Play();
+        if (coffeeActiveTime >= 5f) coffeeParticles.Play();
         if (coffeeActiveTime <= 0f) coffeeParticles.Stop();
         if (coffeeActiveTime > 0) coffeeActiveTime -= Time.deltaTime;
 
@@ -249,7 +249,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case ConsumableType.Coffee:
-                coffeeActiveTime = 20f;
+                coffeeActiveTime = 5f;
                 break;
 
             case ConsumableType.Adderall:

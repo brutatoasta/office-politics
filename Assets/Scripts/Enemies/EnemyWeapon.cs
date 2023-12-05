@@ -10,7 +10,21 @@ public class EnemyWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("StartArrowSequenceWithPause", 0f,8f);
+        switch (arrow.name)
+        {
+            case "JobArrow":
+                InvokeRepeating("StartArrowSequenceWithPause", 0f,4f);
+            break;
+            case "StressArrow":
+                InvokeRepeating("StartArrowSequenceWithPause", 0f,3.2f);
+            break;
+            case "FanArrow":
+                InvokeRepeating("StartArrowSequenceWithPause", 0f,3f);
+            break;
+            default:
+                InvokeRepeating("StartArrowSequenceWithPause", 0f,4f);
+            break;
+        }
     }
 
     // Update is called once per frame

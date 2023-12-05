@@ -16,7 +16,7 @@ MonoBehaviour:
   maxMoveSpeed: 60
   dashPower: 30
   dashTime: 0.2
-  dashCooldown: 0.3
+  dashCooldown: 1
   parryTime: 0.6
   parryRange: 1.28
   parryStartupTime: 0
@@ -24,10 +24,6 @@ MonoBehaviour:
   hurtMaterial: {fileID: 2100000, guid: 8d2a0ed3539807c48a823177190cb114, type: 2}
   invincibleMaterial: {fileID: 2100000, guid: e565d58c745fe964e936aff6cdfcca4f, type: 2}
   defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  stressPoint: 0
-  maxStressPoint: 0
-  sanityPoint: 0
-  performancePoints: 0
   overtimeTick: 1
   parryIcon: {fileID: 21300000, guid: d7afece41c71d2e47ad8687311c9cab6, type: 3}
   dashIcon: {fileID: 21300000, guid: 6522d8ae393ca804db78a7b582b07919, type: 3}
