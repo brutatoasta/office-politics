@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class StressArrow : BaseArrow
 {
+    public ArrowType arrowType = ArrowType.StressArrow;
     public GameObject lineRenderer;
 
     public UnityEvent<Transform> StartLineRenderer;
@@ -17,7 +18,6 @@ public class StressArrow : BaseArrow
     private void Awake()
     {
         speed = weaponGameConstants.stressArrowSpeed;
-        throwArrowAudioElement = GameManager.instance.audioElements.throwStressArrow;
         trailRenderer = gameObject.GetComponent<TrailRenderer>();
         trailRenderer.enabled = false;
     }
@@ -25,6 +25,10 @@ public class StressArrow : BaseArrow
     {
         Instantiate(lineRenderer, this.transform);
         StartLineRenderer.Invoke(bossCoords);
+
+        // sfx for prepare stress arrow
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.prepareStressArrow);
+
         yield return new WaitForSeconds(2f);
         StopLineRenderer.Invoke(bossCoords);
         yield return new WaitForSeconds(0.1f);
@@ -32,6 +36,9 @@ public class StressArrow : BaseArrow
         Rigidbody2D arrowRigidBody = gameObject.AddComponent<Rigidbody2D>();
         arrowRigidBody.gravityScale = 0;
         Shoot(bossCoords, speed);
+
+        // sfx for throw stress arrow
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwStressArrow);
     }
 
     public void SpawnArrow(Transform bossCoords)

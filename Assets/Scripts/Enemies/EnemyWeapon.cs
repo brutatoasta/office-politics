@@ -7,6 +7,7 @@ public class EnemyWeapon : MonoBehaviour
     public GameObject arrow;
     public Transform arrowOrigin;
 
+
     void Start()
     {
         switch (arrow.name)
@@ -58,8 +59,9 @@ public class EnemyWeapon : MonoBehaviour
         Instantiate(arrow, arrowOrigin.position, Quaternion.identity);
     }
 }
-public enum ArrowTypes
+public enum ArrowType
 {
     JobArrow = 0,
-    StressArrow = 1
+    StressArrow = 1,
+    FanArrow = 2
 }

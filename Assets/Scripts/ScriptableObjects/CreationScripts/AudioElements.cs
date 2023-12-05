@@ -59,7 +59,12 @@ public class AudioElements : ScriptableObject
     public AudioElement playerGetHitIntensity3;
 
     // Enemy SFX
+    public AudioElement throwArrow;
+    public AudioElement throwJobArrow;
+    public AudioElement prepareStressArrow;
     public AudioElement throwStressArrow;
+    public AudioElement prepareFanArrow;
+    public AudioElement throwFanArrow;
     public AudioElement enemyGetStunned;
 
     // NPC SFX

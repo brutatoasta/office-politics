@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class JobArrow : BaseArrow
 {
-
+    public ArrowType arrowType = ArrowType.JobArrow;
     private float speed;
     private bool isTrackingPlayer = true;
     private GameObject trackedBoss;
@@ -10,14 +10,14 @@ public class JobArrow : BaseArrow
     private void Awake()
     {
         speed = weaponGameConstants.jobArrowSpeed;
-
-        // natthan temporary - sfx for job arrow
-        throwArrowAudioElement = GameManager.instance.audioElements.throwStressArrow;
     }
     public void SpawnArrow(Transform bossCoords)
     {
         Shoot(bossCoords, speed);
         GetComponent<PositionGameEventListener>().enabled = false;
+
+        // sfx for throw job arrow
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwJobArrow);
     }
 
     public override void OnParry()
@@ -78,6 +78,5 @@ public class JobArrow : BaseArrow
 
         float rot = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 45 - 180);
-
     }
 }

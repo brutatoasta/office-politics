@@ -5032,12 +5032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ab363d03b07554d84d3520e8d49d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
   weaponGameConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
-  throwArrowAudioElement:
-    audioType: 0
-    audioClip: {fileID: 0}
   rb: {fileID: 0}
+  arrowType: 1
   lineRenderer: {fileID: 2319745848702399258, guid: 4f7d90d2dcf9b3b44accc89498af3510, type: 3}
   StartLineRenderer:
     m_PersistentCalls:
