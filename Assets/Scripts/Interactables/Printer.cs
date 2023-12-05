@@ -24,7 +24,7 @@ public class Printer : BaseInteractable
     {
         base.Awake();
 
-        _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
+        _validInputs = new HashSet<TaskName>(validInputs);
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
         deliverDocSprite = deliverDoc.GetComponent<SpriteRenderer>().sprite;
         progressBar.SetActive(false);
@@ -74,7 +74,7 @@ public class Printer : BaseInteractable
         }
         else
         {
-            if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
+            if (IsValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
                 GameManager.instance.levelVariables.Succeed(heldType);
                 GameManager.instance.showPerformancePoint.Invoke();
@@ -103,7 +103,7 @@ public class Printer : BaseInteractable
             }
         }
     }
-    bool isValidInput(TaskName input)
+    bool IsValidInput(TaskName input)
     {
         return _validInputs.Contains(input);
     }
@@ -113,7 +113,5 @@ public class Printer : BaseInteractable
         //Debug.Log($"Waiting for {held.name} to finish processing");
         yield return new WaitForSeconds(cookTime);
         isDocumentReady = true;
-        Debug.Log("document ready");
-
     }
 }

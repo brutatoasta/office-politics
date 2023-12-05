@@ -5,7 +5,6 @@ using UnityEngine;
 public class OfficeEntrance : MonoBehaviour
 {
     public bool quotaFilled = false;
-    // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.doorOpen.AddListener(OpenDoor);
@@ -22,8 +21,4 @@ public class OfficeEntrance : MonoBehaviour
         quotaFilled = false;
     }
 
-    // public void OnCollisionEnter2D(Collision2D col)
-    // {
-    //     if (quotaFilled) GameManager.instance.GameOver();
-    // }
 }

@@ -1,14 +1,12 @@
 using System;
 using UnityEngine;
 
-
-// Takes and handles input and movement for a player character
 public abstract class BaseInteractable : MonoBehaviour
 {
     protected Animator animator;
     [NonSerialized] public SpriteRenderer playerHand;
     [NonSerialized] public Renderer spriteRenderer;
-    public GameObject bubbleObj = null;
+    public GameObject bubbleObj = null; // the bubble/task icon 
     public int highlightMaterialIdx = 0;
 
     protected void Awake()
@@ -25,7 +23,6 @@ public abstract class BaseInteractable : MonoBehaviour
 
     public void SetBubble()
     {
-    
         if (bubbleObj != null) bubbleObj.SetActive(CanInteract());
     }
 

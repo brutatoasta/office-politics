@@ -22,9 +22,6 @@ public class HUDManager : MonoBehaviour
     public GameObject[] shopCounts;
     public GameObject performancePointsShop;
     public GameObject shopUI;
-    // public bool ExitState = false;
-    // public Animator taskAnimator;
-
     public Slider cooldownSlider;
     public Slider cooldownBlockSlider;
     public Image evadeIcon;
@@ -187,26 +184,11 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
     }
-    public void FreezeTime()
-    {
-        Time.timeScale = 0;
-    }
-    public void DisableTask()
-    {
-        taskList.SetActive(false);
+    public void FreezeTime() => Time.timeScale = 0;
+    public void DisableTask() => taskList.SetActive(false);
+    public void EnableTask() => taskList.SetActive(true);
+    public void OnGameOver() => gameOverScreen.SetActive(true);
 
-    }
-    public void EnableTask()
-    {
-        taskList.SetActive(true);
-
-    }
-
-
-    public void OnGameOver()
-    {
-        gameOverScreen.SetActive(true);
-    }
 
 
     public void UpdateEvade(bool isDash)
@@ -289,10 +271,8 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
 
-    public void OnPlayerEvade(float cooldownTime)
-    {
-        StartCoroutine(CooldownAnimation(cooldownTime));
-    }
+    public void OnPlayerEvade(float cooldownTime) => StartCoroutine(CooldownAnimation(cooldownTime));
+
 
     IEnumerator CooldownAnimation(float cooldownTime)
     {
@@ -322,11 +302,8 @@ public class HUDManager : MonoBehaviour
             cooldownBlockSlider.value = 1f - GameManager.instance.cooldownPercent;
         }
     }
+    public void UpdateCooldownSprite(EvadeType evadeType) => evadeIcon.sprite = (evadeType == EvadeType.Dash) ? GameManager.instance.playerConstants.dashIcon : GameManager.instance.playerConstants.parryIcon;
 
-    public void UpdateCooldownSprite(EvadeType evadeType)
-    {
-        evadeIcon.sprite = (evadeType == EvadeType.Dash) ? GameManager.instance.playerConstants.dashIcon : GameManager.instance.playerConstants.parryIcon;
-    }
 
 
 }
