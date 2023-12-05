@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
         playerSprite = GetComponent<SpriteRenderer>();
         handAnimator = transform.GetChild(0).GetComponent<Animator>();
 
-        GameManager.instance.useConsumable.AddListener(UseConsumable);
+        // GameManager.instance.useConsumable.AddListener(UseConsumable);
         GameManager.instance.updateInventory.AddListener(CycleConsumable);
         GameManager.instance.consumableEfffect.AddListener(ApplyConsumableEffect);
         GameManager.instance.playerFreeze.AddListener(AcquireInteractLock);
@@ -236,8 +236,35 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
-    void UseConsumable(int _) => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
-    void CycleConsumable() => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
+
+    // void UseConsumable(int _)
+    // {
+    //     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
+    // }
+
+    void CycleConsumable()
+    {
+        bool hasEmptySlot = false;
+
+        foreach (int consumable in GameManager.instance.activeSlots)
+        {
+            if (consumable == -1)
+            {
+                hasEmptySlot = true;
+            }
+        }
+
+        if (hasEmptySlot && GameManager.instance.activeSlots[1] == -1)
+        {
+            // sfx for cannot cycle consumable
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cannotPurchaseItem);
+        }
+        else
+        {
+            // sfx for cycle consumable
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
+        }
+    }
 
     void ApplyConsumableEffect(ConsumableType consumableType)
     {
