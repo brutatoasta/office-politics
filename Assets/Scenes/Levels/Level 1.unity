@@ -155,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -10.428627, y: 1.4046643}
+  m_Offset: {x: -0.05007419, y: -0.4694206}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.79304504, y: 0.54453003}
+  m_Size: {x: 0.9222937, y: 0.51868}
   m_EdgeRadius: 0
 --- !u!1 &20010924
 GameObject:
@@ -34262,7 +34262,6 @@ MonoBehaviour:
   highlightMaterialIdx: 0
   invalidInputs: 00000000
   validInputs: 03000000
-  taskIcon: {fileID: 498885931}
   sprite: {fileID: 1551490555}
 --- !u!212 &1551490555
 SpriteRenderer:
@@ -34679,7 +34678,6 @@ MonoBehaviour:
   highlightMaterialIdx: 0
   invalidInputs: 04000000000000000100000006000000070000000300000005000000
   validInputs: 02000000
-  taskIcon: {fileID: 2036959270}
   sprite: {fileID: 0}
   finishTutorial:
     m_PersistentCalls:
@@ -66141,7 +66139,6 @@ MonoBehaviour:
   highlightMaterialIdx: 0
   invalidInputs: 02000000
   validInputs: 04000000
-  taskIcon: {fileID: 2838321661573536589}
   sprite: {fileID: 0}
 --- !u!114 &7538725409189533496
 MonoBehaviour:
@@ -66159,7 +66156,6 @@ MonoBehaviour:
   highlightMaterialIdx: 0
   invalidInputs: 04000000
   validInputs: 02000000
-  taskIcon: {fileID: 2838321660963130250}
   sprite: {fileID: 0}
 --- !u!4 &7681836945761110866
 Transform:
