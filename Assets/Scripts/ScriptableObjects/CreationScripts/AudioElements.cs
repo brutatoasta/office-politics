@@ -65,7 +65,7 @@ public class AudioElements : ScriptableObject
     // NPC SFX
 
     // Interaction SFX
-    public AudioElement enterOffice;
+    public AudioElement closeDoor;
     public AudioElement denyExit;
     public AudioElement pourDrink;
     public AudioElement serveRefreshment;
