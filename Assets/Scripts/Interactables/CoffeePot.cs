@@ -27,7 +27,7 @@ public class CoffeePot : BaseInteractable
         // if empty hand, put object into hand
         if (GameManager.instance.held == null)
         {
-            Debug.Log("Held me!");
+            //Debug.Log("Held me!");
             // add self to GameManager
             GameManager.instance.SetHeld(refillCoffee);
             playerHand.sprite = refillCoffeeSprite;
