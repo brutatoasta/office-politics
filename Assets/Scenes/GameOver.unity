@@ -2097,17 +2097,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &576927458 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2249239137134158026, guid: c8de7d31689f5f34184e5b770885d34d, type: 3}
-  m_PrefabInstance: {fileID: 2134274764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf0dcc81b80676341a3901f19da97fec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &717121246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2347,7 @@ GameObject:
   - component: {fileID: 1150427950}
   - component: {fileID: 1150427949}
   - component: {fileID: 1150427948}
+  - component: {fileID: 1150427952}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2449,6 +2439,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1150427952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150427947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e7af40b8bda32949b2d5fe1ba149dc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1158062839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3860,9 +3862,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 576927458}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: ReturnToMainMenu
+      - m_Target: {fileID: 1150427952}
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
