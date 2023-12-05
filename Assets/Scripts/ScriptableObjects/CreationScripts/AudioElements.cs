@@ -45,6 +45,7 @@ public class AudioElements : ScriptableObject
     public AudioElement purchaseItem;
     public AudioElement increaseTaskQuota;
     public AudioElement reduceTaskQuota;
+    public AudioElement taskComplete;
     public AudioElement cannotPurchaseItem;
     public AudioElement overtimeStart;
 
