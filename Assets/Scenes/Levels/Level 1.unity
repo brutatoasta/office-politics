@@ -4085,6 +4085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ToPrepMeeting
       objectReference: {fileID: 0}
+    - target: {fileID: 6807512673193397710, guid: 431123294b7801342ba6d2937a2219b6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4599,7 +4603,6 @@ GameObject:
   - component: {fileID: 494830507}
   - component: {fileID: 494830506}
   - component: {fileID: 494830511}
-  - component: {fileID: 494830512}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4759,23 +4762,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &494830512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 494830505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 858f2f20b1787684195c9c9c809d65e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelVariables: {fileID: 0}
-  transition: {fileID: 0}
-  controlsPanel: {fileID: 0}
-  mapPanel: {fileID: 0}
-  shade: {fileID: 0}
 --- !u!1 &498885931
 GameObject:
   m_ObjectHideFlags: 0
@@ -33754,7 +33740,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 494830512}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneExit, Assembly-CSharp
         m_MethodName: Controls
         m_Mode: 1
@@ -60526,6 +60512,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9a7b2d8fcaaa70148b4fe0027ac7e49d, type: 3}
+    - target: {fileID: 6346254474792105659, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_SortingOrder
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6855691210256059400, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.0828538

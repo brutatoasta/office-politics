@@ -19,13 +19,29 @@ MonoBehaviour:
     current: 1
     stressDamage: 5
     taskName: 4
-    taskString: Fetch tea for Siyang
+    taskString: Fetch tea for Natthan
+    taskIconPath: TaskIcons/FetchTea
   - quota: 1
     performancePoints: 100
     current: 1
     stressDamage: 5
     taskName: 2
-    taskString: Fetch coffee for Joshua
+    taskString: Fetch coffee for Emmanuel
+    taskIconPath: TaskIcons/FetchCoffee
+  - quota: 3
+    performancePoints: 100
+    current: 3
+    stressDamage: 5
+    taskName: 8
+    taskString: Prepare refreshment in the meeting room
+    taskIconPath: TaskIcons/PrepRefreshment
+  - quota: 2
+    performancePoints: 100
+    current: 2
+    stressDamage: 5
+    taskName: 7
+    taskString: Prepare Meeting Materials in the meeting room
+    taskIconPath: TaskIcons/PrepMeeting
   levelPP: 0
   stressPoints: 0
   maxStressPoints: 50
