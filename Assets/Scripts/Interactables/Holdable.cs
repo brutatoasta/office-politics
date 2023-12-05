@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 // Takes and handles input and movement for a player character
 public class Holdable : BaseInteractable
 {
@@ -14,7 +13,6 @@ public class Holdable : BaseInteractable
         // if empty hand, put object into hand
         if (GameManager.instance.held == null)
         {
-            Debug.Log("Held me!");
             // add self to GameManager
             GameManager.instance.SetHeld(gameObject);
             playerHand.sprite = optionalSprite ?? GetComponent<SpriteRenderer>().sprite;

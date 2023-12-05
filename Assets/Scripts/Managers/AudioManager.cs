@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         interactionSfxAudioSource = transform.Find("Interaction SFX").GetComponent<AudioSource>();
     }
 
-    // Start is called before the first frame update
+
     void Start()
     {
         // wanted to use switch-case, but it does not work with SceneNames.MainMenu because "A

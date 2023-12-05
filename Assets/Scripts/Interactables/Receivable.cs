@@ -8,7 +8,6 @@ public class Receivable : BaseInteractable
     // shredder can accept both valid and invalid inputs
     public TaskName[] invalidInputs;
     public TaskName[] validInputs;
-    public GameObject taskIcon;
     public SpriteRenderer sprite;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
@@ -21,9 +20,9 @@ public class Receivable : BaseInteractable
 
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
-        if (taskIcon != null)
+        if (bubbleObj != null)
         {
-            taskIcon.SetActive(true);
+            bubbleObj.SetActive(true);
         }
 
     }
@@ -60,7 +59,7 @@ public class Receivable : BaseInteractable
             //Debug.Log($"Dropped {held.name} into me!");
 
             // calculate score and tasks
-            if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
+            if (IsValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
                 // natthan - sfx for placing valid item
                 switch (heldType)
@@ -96,13 +95,13 @@ public class Receivable : BaseInteractable
                     sprite.enabled = true;
                 }
                 Debug.Log("increase score");
-                // TODO: if machine and not a person
+                // if machine and not a person
                 if (animator != null)
                 {
                     animator.SetTrigger("doWiggle");
                 }
                 // putting papers/refreshment has no fail condition, but maybe put this in another method/switch statement based on validInputs
-                if (anyAreValidInput(new[] { TaskName.PrepMeeting, TaskName.PrepRefreshment }))
+                if (AnyAreValidInput(new[] { TaskName.PrepMeeting, TaskName.PrepRefreshment }))
                 {
                     sprite.enabled = true;
                 }
@@ -144,12 +143,12 @@ public class Receivable : BaseInteractable
         }
     }
 
-    bool isValidInput(TaskName input)
+    bool IsValidInput(TaskName input)
     {
         return _validInputs.Contains(input);
     }
 
-    bool allAreValidInput(TaskName[] inputs)
+    bool AllAreValidInput(TaskName[] inputs)
     {
         foreach (TaskName value in inputs)
         {
@@ -161,7 +160,7 @@ public class Receivable : BaseInteractable
         }
         return true;
     }
-    bool anyAreValidInput(TaskName[] inputs)
+    bool AnyAreValidInput(TaskName[] inputs)
     {
         foreach (TaskName value in inputs)
         {

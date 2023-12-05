@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AudioElementGameEvent", menuName = "ScriptableObjects/AudioElementGameEvent", order = 3)]
+[CreateAssetMenu(fileName = "AudioElementGameEvent", menuName = "ScriptableObjects/AudioElementGameEvent")]
 public class AudioElementGameEvent : GameEvent<AudioElement>
 {
     /* Description:

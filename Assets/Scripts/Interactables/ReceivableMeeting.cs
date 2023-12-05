@@ -56,7 +56,7 @@ public class ReceivableMeeting : BaseInteractable
             playerHand.color = Color.white;
 
             // calculate score and tasks
-            if (isValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
+            if (IsValidInput(heldType)) // not just holdable class, but specfically accept toShred and toLaminate types 
             {
                 // natthan - refreshment and prep meeting
                 if (heldType == TaskName.PrepRefreshment)
@@ -100,12 +100,12 @@ public class ReceivableMeeting : BaseInteractable
         }
     }
 
-    bool isValidInput(TaskName input)
+    bool IsValidInput(TaskName input)
     {
         return _validInputs.Contains(input);
     }
 
-    bool allAreValidInput(TaskName[] inputs)
+    bool AllAreValidInput(TaskName[] inputs)
     {
         foreach (TaskName value in inputs)
         {
@@ -117,7 +117,8 @@ public class ReceivableMeeting : BaseInteractable
         }
         return true;
     }
-    bool anyAreValidInput(TaskName[] inputs)
+
+    private bool AnyAreValidInput(TaskName[] inputs)
     {
         foreach (TaskName value in inputs)
         {

@@ -12,6 +12,6 @@ public class LightingManager : MonoBehaviour
         miniGlobal.SetActive(true);
     }
 
-    // Update is called once per frame
+
     public void TurnOffLights() => miniGlobal.SetActive(false);
 }

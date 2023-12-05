@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 using UnityEngine.Events;
 
 // Represents an interactable object that can receive items from players.

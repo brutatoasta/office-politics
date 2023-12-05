@@ -1,8 +1,4 @@
-using Pathfinding;
-using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class FanArrow : BaseArrow
 {
@@ -32,7 +28,7 @@ public class FanArrow : BaseArrow
         Vector2 new_direction_norm = new Vector2(bx,by);
 
         rb.velocity = new_direction_norm * speed;
-        //rb.velocity = new Vector2(10,10);
+
 
         float rot = Mathf.Atan2(-new_direction_norm.y, -new_direction_norm.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 45);

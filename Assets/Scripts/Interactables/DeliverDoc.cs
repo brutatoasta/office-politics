@@ -1,5 +1,3 @@
-using System;
-using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -24,7 +22,6 @@ public class DeliverDoc : BaseInteractable
         // if empty hand, put object into hand
         if (GameManager.instance.held == null)
         {
-            Debug.Log($"Fetched {fetchDoc.name} from colleague!");
             // add self to GameManager
             GameManager.instance.SetHeld(fetchDoc);
             playerHand.sprite = fetchDocSprite;
@@ -35,7 +32,6 @@ public class DeliverDoc : BaseInteractable
         else
         {
             // empty player's hand of deliverDoc
-            Debug.Log($"Dropped {held.name} into colleague!");
             GameManager.instance.SetHeld(null);
             playerHand.sprite = null;
             playerHand.color = Color.white;

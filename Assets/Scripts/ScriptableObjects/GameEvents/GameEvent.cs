@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
 public class GameEvent<T> : ScriptableObject
 {
     private readonly List<GameEventListener<T>> eventListeners =
-        new List<GameEventListener<T>>();
+        new();
 
     public void Raise(T data)
     {

@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 [CreateAssetMenu(fileName = "EndingVariables", menuName = "ScriptableObjects/EndingVariables")]
 public class EndingVariables : ScriptableObject
@@ -72,7 +68,7 @@ public class EndingVariables : ScriptableObject
         if (Reincarnation) ReincarnationCount++;
     }
 
-    public string generateDescription()
+    public string GenerateDescription()
     {
         if (successCount >= 10)
         {

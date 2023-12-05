@@ -10,7 +10,6 @@ public class CoffeePot : BaseInteractable
     private Holdable holdable;
     [SerializeField]
     private GameObject refillCoffee;
-
     private Sprite refillCoffeeSprite;
 
 
@@ -25,7 +24,6 @@ public class CoffeePot : BaseInteractable
         // if empty hand, put object into hand
         if (GameManager.instance.held == null)
         {
-            //Debug.Log("Held me!");
             // add self to GameManager
             GameManager.instance.SetHeld(refillCoffee);
             playerHand.sprite = refillCoffeeSprite;

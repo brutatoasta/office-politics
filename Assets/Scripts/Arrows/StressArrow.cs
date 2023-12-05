@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class StressArrow : BaseArrow
 {
     public GameObject lineRenderer;
-    // Start is called before the first frame update
+
     public UnityEvent<Transform> StartLineRenderer;
     public UnityEvent<Transform> StopLineRenderer;
     private float speed;

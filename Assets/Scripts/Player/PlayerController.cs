@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     bool trailActive = false;
     float coffeeActiveTime = 0f;
     float adderallActiveTime = 0f;
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -235,7 +235,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
     void UseConsumable(int _) => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
     void CycleConsumable() => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
@@ -262,8 +261,6 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-
 
     IEnumerator InvincibilityVisuals()
     {

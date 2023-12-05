@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GoodEnding : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     public DialogueTrigger trigger;
     public GameObject gridScene;
     public GameObject phoneIcon;
@@ -32,7 +32,7 @@ public class GoodEnding : MonoBehaviour
 
     {
         string position = endingVariables.GetPosition();
-        string achievementsDescription = endingVariables.generateDescription();
+        string achievementsDescription = endingVariables.GenerateDescription();
         int compensation = endingVariables.ScoreCount();
         string description = "Dear Intern #24601, \nWe are delighted to offer you the position of " + position +
          " at TaiChill Games. We have been thoroughly impressed with your performance during your internship, and we believe that your skills and talents will contribute significantly to our team's success.\n\n";

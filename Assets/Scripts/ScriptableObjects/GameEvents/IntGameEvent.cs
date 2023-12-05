@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 // no arguments
-[CreateAssetMenu(fileName = "IntGameEvent", menuName = "ScriptableObjects/IntGameEvent", order = 3)]
+[CreateAssetMenu(fileName = "IntGameEvent", menuName = "ScriptableObjects/IntGameEvent")]
 public class IntGameEvent : GameEvent<int>
 {
     // leave empty

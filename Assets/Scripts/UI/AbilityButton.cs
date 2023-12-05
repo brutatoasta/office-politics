@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AbilityButton : MonoBehaviour
 {
@@ -9,7 +6,6 @@ public class AbilityButton : MonoBehaviour
     public bool isDash;
     void Start()
     {
-        // bgImg = GetComponent<Image>();
         UpdateBgColor(GameManager.instance.levelVariables.evadeType);
         GameManager.instance.updateEvade.AddListener(UpdateBgColor);
     }
