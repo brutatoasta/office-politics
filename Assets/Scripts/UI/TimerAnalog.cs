@@ -93,9 +93,11 @@ public class TimerAnalog : MonoBehaviour
         }
         if (currentColor != ChangeColor(elapsedRealSeconds))
         {
-            // @Natthan this is where you can call the sounds
             currentColor = ChangeColor(elapsedRealSeconds);
             StartCoroutine(TimerShader(currentColor));
+
+            // sfx for warn time running out
+            GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.warnTime);
         }
     }
     IEnumerator TimerShader(Color color)

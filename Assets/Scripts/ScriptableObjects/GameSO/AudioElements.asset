@@ -63,6 +63,9 @@ MonoBehaviour:
   purchaseItem:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 7166c732e9e67d141910cb52209e87c2, type: 3}
+  warnTime:
+    audioType: 4
+    audioClip: {fileID: 8300000, guid: cc9911bb253af154396699d8d89d177c, type: 3}
   increaseTaskQuota:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 98532cd973e20794e8722ae4747a1d33, type: 3}

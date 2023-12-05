@@ -42,6 +42,7 @@ public class AudioElements : ScriptableObject
     public AudioElement showTaskDetails;
     public AudioElement hideTaskDetails;
     public AudioElement purchaseItem;
+    public AudioElement warnTime;
     public AudioElement increaseTaskQuota;
     public AudioElement reduceTaskQuota;
     public AudioElement taskComplete;
