@@ -77,8 +77,16 @@ public class Printer : BaseInteractable
                 progressBar.SetActive(true);
                 progressBarAnimator.SetTrigger("photocopyProgress");
 
-                // natthan - sfx for photocopy
-                GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.photocopyDocument);
+                if (heldType == TaskName.FetchDoc)
+                {
+                    // natthan - sfx for photocopy
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.photocopyDocument);
+                }
+                else if (heldType == TaskName.RefillCoffee)
+                {
+                    // natthan temporary - sfx for refill coffee pot
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.pourDrink);
+                }
 
                 // cook the doc
                 StartCoroutine(Cook());

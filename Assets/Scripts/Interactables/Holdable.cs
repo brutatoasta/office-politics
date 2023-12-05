@@ -35,14 +35,14 @@ public class Holdable : BaseInteractable
                 case TaskName.PrepRefreshment:
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.serveRefreshment);
                     break;
-                // natthan temporary - sound for picking up meeting documents
+                // natthan temporary - sound for picking up meeting document
                 case TaskName.PrepMeeting:
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
                     break;
-                // natthan temporary - sound for picking up meeting documents
-                case TaskName.FetchDoc:
-                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
-                    break;
+                // // natthan temporary - sound for picking up photocopy document
+                // case TaskName.FetchDoc:
+                //     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
+                //     break;
                 case TaskName.Shred:
                     GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
                     break;
