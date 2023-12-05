@@ -45,12 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3273d87abe8674aa7f2f38ce1d6111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  weaponGameConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
-  throwArrowAudioElement:
-    audioType: 0
-    audioClip: {fileID: 0}
-  rb: {fileID: 0}
+  arrowType: 2
   arrow: {fileID: -9099797192318318027, guid: 3b8d06c059607564b8922f0f4c419d70, type: 3}
 --- !u!114 &-7660807751019610072
 MonoBehaviour:

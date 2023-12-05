@@ -4987,11 +4987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97e69bcea6ce3748bbd94401a2e0789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   weaponGameConstants: {fileID: 11400000, guid: b21d007327e0e9044a5bcd527f1309cd, type: 2}
-  throwArrowAudioElement:
-    audioType: 0
-    audioClip: {fileID: 0}
   rb: {fileID: 7616305652816618990}
 --- !u!50 &7616305652816618990
 Rigidbody2D:

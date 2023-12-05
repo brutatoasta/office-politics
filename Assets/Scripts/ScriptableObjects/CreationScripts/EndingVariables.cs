@@ -79,7 +79,7 @@ public class EndingVariables : ScriptableObject
         if (Slacker)
         {
             description += "\nSlacker    -------------------------------------------------------------------    $500\n";
-            description += "(Finish while the clock is still green)\n";
+            description += "(Leave work while the clock is still green for at least 1 day)\n";
         }
         if (Ninja)
         {
@@ -89,7 +89,7 @@ public class EndingVariables : ScriptableObject
         if (SustainableWarrior)
         {
             description += "\nSustainable Warrior    ---------------------------------------------------------    $500\n";
-            description += "(Throw nothing into the trash)\n";
+            description += "(Throw nothing into the trash for a single playthrough)\n";
         }
         if (BigEarner)
         {
