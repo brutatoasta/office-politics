@@ -38,6 +38,9 @@ public class LevelVariables : ScriptableObject
                     // add performance points for that task
                     levelPP += todo[i].performancePoints;
                     GameManager.instance.animatePerformancePoint.Invoke(todo[i].performancePoints);
+
+                    // sfx for reduce task quota
+                    GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.reduceTaskQuota);
                 }
                 break;
             }
