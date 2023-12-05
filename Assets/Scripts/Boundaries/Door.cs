@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+// controls bosses to stay in room
 public class Door : MonoBehaviour
 {
     // Start is called before the first frame update
