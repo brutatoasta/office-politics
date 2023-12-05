@@ -175,6 +175,7 @@ public class HUDManager : MonoBehaviour
             Time.timeScale = 1;
             isShown = false;
             taskAnimator.Play("TaskExit");
+            Debug.Log("open task list animation played");
 
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
         }
