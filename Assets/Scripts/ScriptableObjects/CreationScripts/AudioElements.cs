@@ -32,6 +32,7 @@ public class AudioElements : ScriptableObject
     public AudioElement bedroomBGM;
     public AudioElement badEndingBGM;
     public AudioElement goodEndingBGM;
+    public AudioElement stopBGM;
 
     // UI SFX
     public AudioElement menuSelect;
@@ -53,6 +54,7 @@ public class AudioElements : ScriptableObject
     public AudioElement phoneCall;
     public AudioElement stopPhoneCall;
     public AudioElement pickUpPhone;
+    public AudioElement returnOffer;
 
     // Player SFX
     public AudioElement playerWalk;

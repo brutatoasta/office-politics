@@ -64,13 +64,18 @@ public class GoodEnding : MonoBehaviour
         letterIcon.SetActive(false);
         letter.SetActive(true);
         GenerateLetter();
+
+        // sfx for open email
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.stopBGM);
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.returnOffer);
     }
     public void AcceptOffer()
     {
         endingVariables.firstTimeGame = false;
         SceneManager.LoadSceneAsync("MainMenu");
+
+        // sfx for open email
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
-
-
 }
-
