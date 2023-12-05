@@ -181,10 +181,22 @@ public class Enemy : MonoBehaviour
 
     public void ToggleAIPathParameter()
     {
+        float chasingSlowdownDistance;
+        float chasingEndReachedDistance;
+        if (gameObject.GetComponent<EnemyWeapon>().arrow.name.Contains("FanArrow")) 
+        {
+            chasingSlowdownDistance = 4;
+            chasingEndReachedDistance = 4;
+        }
+        else
+        {
+            chasingSlowdownDistance = 2;
+            chasingEndReachedDistance = 3;
+        }
         if (isChasing)
         {
-            gameObject.GetComponent<AIPath>().slowdownDistance = 2;
-            gameObject.GetComponent<AIPath>().endReachedDistance = 3;
+            gameObject.GetComponent<AIPath>().slowdownDistance = chasingSlowdownDistance;
+            gameObject.GetComponent<AIPath>().endReachedDistance = chasingEndReachedDistance;
         }
         else
         {
