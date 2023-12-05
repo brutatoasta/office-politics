@@ -29,7 +29,6 @@ public class AudioElements : ScriptableObject
     public AudioElement gameplayBGMIntensity1;
     public AudioElement gameplayBGMIntensity2;
     public AudioElement gameplayBGMIntensity3;
-    public AudioElement levelComplete;
     public AudioElement bedroomBGM;
     public AudioElement badEndingBGM;
     public AudioElement goodEndingBGM;
@@ -46,6 +45,7 @@ public class AudioElements : ScriptableObject
     public AudioElement increaseTaskQuota;
     public AudioElement reduceTaskQuota;
     public AudioElement taskComplete;
+    public AudioElement levelComplete;
     public AudioElement cannotPurchaseItem;
     public AudioElement overtimeStart;
 

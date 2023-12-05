@@ -234,7 +234,13 @@ public class GameManager : Singleton<GameManager>
     // Check whenever task is completed, open door if quota complete
     public void DecreaseQuota()
     {
-        if (levelVariables.IsQuotaComplete()) DoorOpen();
+        if (levelVariables.IsQuotaComplete())
+        {
+            DoorOpen();
+
+            // sfx for level complete
+            PlayAudioElement(audioElements.levelComplete);
+        }
     }
 
     public void DoorOpen()
