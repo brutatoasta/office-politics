@@ -23,13 +23,13 @@ public class FanArrowManager : MonoBehaviour
         // sfx for throw fan arrow
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwFanArrow);
 
-        for (int i = -2; i < 3; i++)
+        for (int i = -1; i < 2; i++)
         {
             // initialise a new arrow
             FanArrow newArrow = Instantiate(arrow, bossCoords);
 
             // adjust its angle and shoot
-            newArrow.Shoot2(bossCoords, i * 7f);
+            newArrow.Shoot2(bossCoords, i * 15f);
         }
         Destroy(gameObject);
     }
