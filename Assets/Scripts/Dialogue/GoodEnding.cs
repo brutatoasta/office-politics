@@ -61,9 +61,10 @@ public class GoodEnding : MonoBehaviour
     }
     public void AcceptOffer()
     {
-        GameManager.instance.endingVariables.OverallAchievementCount();
+        endingVariables.firstTimeGame = false;
         SceneManager.LoadSceneAsync("MainMenu");
     }
+
 
 }
 
