@@ -1031,6 +1031,7 @@ MonoBehaviour:
   sceneAnimation: {fileID: 40004728}
   achievementList: {fileID: 1207179851}
   endingVariables: {fileID: 11400000, guid: d8286d0b8cba0da438788ca271bd7361, type: 2}
+  runVariables: {fileID: 0}
   letter: {fileID: 1551034733}
   letterIcon: {fileID: 242191900}
   dialogueBox: {fileID: 1687746570}
@@ -1823,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &242191901
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2863,9 +2864,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
   transition: {fileID: 961022193}
-  controlsPanel: {fileID: 0}
-  mapPanel: {fileID: 0}
-  shade: {fileID: 0}
 --- !u!68 &427273883
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3240,9 +3238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelVariables: {fileID: 0}
   transition: {fileID: 961022193}
-  controlsPanel: {fileID: 0}
-  mapPanel: {fileID: 0}
-  shade: {fileID: 0}
 --- !u!1 &524559456
 GameObject:
   m_ObjectHideFlags: 0
@@ -7805,9 +7800,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
   transition: {fileID: 0}
-  controlsPanel: {fileID: 0}
-  mapPanel: {fileID: 0}
-  shade: {fileID: 0}
 --- !u!483693784 &786611482
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -10322,6 +10314,7 @@ MonoBehaviour:
   sceneAnimation: {fileID: 40004728}
   achievementList: {fileID: 1207179851}
   endingVariables: {fileID: 11400000, guid: d8286d0b8cba0da438788ca271bd7361, type: 2}
+  runVariables: {fileID: 11400000, guid: 587172da43e93a84687d0e923c85a70b, type: 2}
   letter: {fileID: 1551034733}
   letterIcon: {fileID: 242191900}
   dialogueBox: {fileID: 1687746570}

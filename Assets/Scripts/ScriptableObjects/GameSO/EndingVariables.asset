@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad1249cfca4cd1c47b53c13461451d47, type: 3}
   m_Name: EndingVariables
   m_EditorClassIdentifier: 
-  Slacker: 1
+  Slacker: 0
   Ninja: 1
   SustainableWarrior: 1
   BigEarner: 0
@@ -21,7 +21,10 @@ MonoBehaviour:
   TaichiMaster: 0
   stunCount: 0
   Perfectionist: 0
-  successCount: 5
+  successCount: 0
   Reincarnation: 0
-  finalScore: 6500
-  firstTimeGame: 1
+  finalScore: 4000
+  achievementCompensation: 500
+  performancePointsCompensation: 0.25
+  baseSalary: 5000
+  firstTimeGame: 0

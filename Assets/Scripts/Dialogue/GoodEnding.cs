@@ -14,6 +14,7 @@ public class GoodEnding : MonoBehaviour
     public Animator sceneAnimation;
     public TextMeshProUGUI achievementList;
     public EndingVariables endingVariables;
+    public RunVariables runVariables;
     public GameObject letter;
     public GameObject letterIcon;
     public GameObject dialogueBox;
@@ -33,16 +34,17 @@ public class GoodEnding : MonoBehaviour
     {
         string position = endingVariables.GetPosition();
         string achievementsDescription = endingVariables.GenerateDescription();
-        int compensation = endingVariables.ScoreCount();
+        int compensation = endingVariables.ScoreCount(runVariables.performancePoints);
         string description = "Dear Intern #24601, \nWe are delighted to offer you the position of " + position +
          " at TaiChill Games. We have been thoroughly impressed with your performance during your internship, and we believe that your skills and talents will contribute significantly to our team's success.\n\n";
         description += "Monthly Salary\n";
         description += "--------------------------------------------------------------------------------------\n";
-        description += "Base Salary    ---------------------------------------------------------------    $5000\n";
+        description += "Base Salary    ----------------------------------------------------------------    $5000\n";
         description += achievementsDescription;
-        description += "\nTotal Compensation    --------------------------------------------------------    $";
+        description +=
+        description += "\nTotal Compensation    ----------------------------------------------------------    $";
         description += compensation;
-        description += "\n\n Please sign and return the duplicate copy of this letter in confirmation of your understanding and acceptance.\n";
+        description += "\n\nPlease sign and return the duplicate copy of this letter in confirmation of your understanding and acceptance.\n";
         description += "\n Yours Sincerely";
         description += "\n TaiChill Games";
         achievementList.text = description;

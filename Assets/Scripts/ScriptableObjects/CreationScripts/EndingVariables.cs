@@ -16,6 +16,9 @@ public class EndingVariables : ScriptableObject
     public int successCount;
     public bool Reincarnation;
     public int finalScore;
+    public int achievementCompensation;
+    public float performancePointsCompensation;
+    public int baseSalary;
     public bool firstTimeGame;
 
     public void Init()
@@ -31,6 +34,9 @@ public class EndingVariables : ScriptableObject
         Perfectionist = false;
         successCount = 0;
         Reincarnation = false;
+        baseSalary = 5000;
+        achievementCompensation = 500;
+        performancePointsCompensation = 0.25f;
     }
 
     public int GetAchivementCount()
@@ -69,10 +75,11 @@ public class EndingVariables : ScriptableObject
         }
 
         string description = "";
+
         if (Slacker)
         {
             description += "\nSlacker    -------------------------------------------------------------------    $500\n";
-            description += "(Leave work while the clock is still green)\n";
+            description += "(Finish while the clock is still green)\n";
         }
         if (Ninja)
         {
@@ -86,12 +93,12 @@ public class EndingVariables : ScriptableObject
         }
         if (BigEarner)
         {
-            description += "\nBig Earner    ----------------------------------------------------------------    $500\n";
+            description += "\nBig Earner    -----------------------------------------------------------------    $500\n";
             description += "(Earn 1000PP in one day)\n";
         }
         if (Workaholic)
         {
-            description += "\nWorkaholic    ---------------------------------------------------------------     $500\n";
+            description += "\nWorkaholic    -----------------------------------------------------------------     $500\n";
             description += "(OT 3 or more times)\n";
         }
         if (TaichiMaster)
@@ -101,12 +108,12 @@ public class EndingVariables : ScriptableObject
         }
         if (Perfectionist)
         {
-            description += "\nPerfectionist    --------------------------------------------------------------    $500\n";
+            description += "\nPerfectionist    ----------------------------------------------------------------    $500\n";
             description += "(Complete tasks without failure 10 times in a row)\n";
         }
         if (Reincarnation)
         {
-            description += "\nThat Time I got Reincarnated as an Intern    ------------------------------------    $500\n";
+            description += "\nThat Time I got Reincarnated as an Intern    --------------------------------------    $500\n";
             description += "(Get all the achievements in a single playthrough)\n";
         }
         return description;
@@ -119,25 +126,25 @@ public class EndingVariables : ScriptableObject
 
         if (achievementCount >= 0 && achievementCount <= 2)
         {
-            return "Executive Intern";
+            return "Normie Intern";
         }
         else if (achievementCount >= 3 && achievementCount <= 5)
         {
-            return "Associate";
+            return "'Cs gets Degrees' Intern";
         }
         else if (achievementCount >= 6 && achievementCount <= 7)
         {
-            return "Specialist";
+            return "'Why you never get A' Intern";
         }
         else
         {
-            return "Vice President";
+            return "Overachieving Star Intern";
         }
     }
-    public int ScoreCount()
+    public int ScoreCount(int performancePoints)
     {
         int achievementCount = GetAchivementCount();
-        finalScore = achievementCount * 500 + 5000;
+        finalScore = achievementCount * achievementCompensation + baseSalary * performancePoints;
         return finalScore;
     }
 
