@@ -12,7 +12,6 @@ public class Trashbin : BaseInteractable
     // shredder can accept both valid and invalid inputs
     public TaskName[] invalidInputs;
     public TaskName[] validInputs;
-    public GameObject taskIcon;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
     public EndingVariables endingVariables;
@@ -27,9 +26,9 @@ public class Trashbin : BaseInteractable
 
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
-        if (taskIcon != null)
+        if (bubbleObj != null)
         {
-            taskIcon.SetActive(true);
+            bubbleObj.SetActive(true);
         }
         burnLight = transform.GetChild(1).GetComponent<Light2D>();
 

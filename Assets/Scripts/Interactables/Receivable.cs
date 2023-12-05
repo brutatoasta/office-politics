@@ -8,7 +8,6 @@ public class Receivable : BaseInteractable
     // shredder can accept both valid and invalid inputs
     public TaskName[] invalidInputs;
     public TaskName[] validInputs;
-    public GameObject taskIcon;
     public SpriteRenderer sprite;
     private HashSet<TaskName> _invalidInputs;
     private HashSet<TaskName> _validInputs; // hashset for faster checks
@@ -21,9 +20,9 @@ public class Receivable : BaseInteractable
 
         _validInputs = new HashSet<TaskName>(validInputs); // TODO: no need multiple inputs
         _invalidInputs = new HashSet<TaskName>(invalidInputs);
-        if (taskIcon != null)
+        if (bubbleObj != null)
         {
-            taskIcon.SetActive(true);
+            bubbleObj.SetActive(true);
         }
 
     }
