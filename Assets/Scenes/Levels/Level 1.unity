@@ -34595,10 +34595,10 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.23115063, y: 0.21777487}
+  m_Offset: {x: 0.056357384, y: 0.02841568}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -34609,7 +34609,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5873013, y: 1.9980497}
+  m_Size: {x: 1.2377148, y: 1.6193314}
   m_EdgeRadius: 0
 --- !u!212 &1592966394
 SpriteRenderer:
@@ -58308,19 +58308,7 @@ MonoBehaviour:
     message: All the best!
     triggerNextEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000, guid: f810598a001649b45abe041be1322147, type: 2}
-          m_TargetAssemblyTypeName: GameEvent`1[[UnityEngine.Object, UnityEngine
-          m_MethodName: Raise
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
   actors:
   - name: Lisa Tan (HR)
     sprite: {fileID: 21300000, guid: a44ec5bc3ec1304419bc75c77b2a3c12, type: 3}
@@ -60536,6 +60524,18 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2908032955118599681, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_Size.y
+      value: 3.6855211
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908032955118599681, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908032955118599681, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.3957057
+      objectReference: {fileID: 0}
+    - target: {fileID: 2908032955118599681, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.5625
       objectReference: {fileID: 0}
@@ -60637,9 +60637,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7538725407953334285, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
-    - {fileID: 3715771553515227962, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
-    - {fileID: 6115575366773630429, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
-    - {fileID: 4678694373713654194, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6855691210256059400, guid: 8597d23c631a97b4cb02232ea3049934, type: 3}
