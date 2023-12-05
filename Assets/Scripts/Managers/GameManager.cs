@@ -239,12 +239,6 @@ public class GameManager : Singleton<GameManager>
         doorOpen.Invoke();
     }
 
-    // Bad ending return to mainMenu
-    public void ReturnToMainMenu()
-    {
-        SceneManager.LoadSceneAsync("MainMenu");
-    }
-
     // Notify whenever player held object changes
     public void SetHeld(GameObject newHeld)
     {

@@ -5,6 +5,6 @@ public class MainMenuButton : MonoBehaviour
     {
         Time.timeScale = 1;
         GameManager.instance.levelVariables.currentLevelIndex = 0;
-        GameManager.instance.ReturnToMainMenu();
+        GameManager.instance.GameRestart();
     }
 }
