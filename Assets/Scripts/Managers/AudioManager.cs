@@ -77,6 +77,7 @@ public class AudioManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == SceneNames.GoodEnding)
         {
             PlayAudioElement(audioElements.goodEndingBGM);
+            PlayAudioElement(audioElements.phoneCall);
         }
     }
 
@@ -113,7 +114,23 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case AudioType.userInterfaceSFX:
-                userInterfaceSfxAudioSource.PlayOneShot(audioElement.audioClip);
+                if (audioElement.Equals(audioElements.phoneCall))
+                {
+                    userInterfaceSfxAudioSource.clip = audioElements.phoneCall.audioClip;
+
+                    if (!userInterfaceSfxAudioSource.isPlaying)
+                    {
+                        userInterfaceSfxAudioSource.Play();
+                    }
+                }
+                else if (audioElement.Equals(audioElements.stopPhoneCall))
+                {
+                    userInterfaceSfxAudioSource.clip = audioElements.stopPhoneCall.audioClip;
+                }
+                else
+                {
+                    userInterfaceSfxAudioSource.PlayOneShot(audioElement.audioClip);
+                }
                 break;
 
             case AudioType.playerSFX:
