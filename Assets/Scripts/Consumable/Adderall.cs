@@ -6,19 +6,24 @@ public class Adderall : ABCConsumable
 {
     public float oldCooldownParry;
     public float oldCooldownDash;
+
+    // Constructor sets sprite and caches old cooldown values
     public Adderall(int initCount, int initCost)
     {
         count = initCount;
         cost = initCost;
-        LoadSprite("Consumables/Pills"); // TODO: replace sprite
+        LoadSprite("Consumables/Pills");
         oldCooldownParry = GameManager.instance.playerConstants.parryCooldown;
         oldCooldownDash = GameManager.instance.playerConstants.dashCooldown;
-        GameManager.instance.consumableEfffect.Invoke(ConsumableType.Coffee);
     }
+
+    // Implementation of abstract class for effect
     public override void ConsumeEffect()
     {
         GameManager.instance.StartCoroutine(TempLowerCooldown());
     }
+
+    // Coroutine to lower cooldown
     IEnumerator TempLowerCooldown()
     {
         GameManager.instance.playerConstants.parryCooldown = 1f;

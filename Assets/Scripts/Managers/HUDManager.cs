@@ -44,23 +44,15 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.showPerformancePoint.AddListener(PerformancePoint);
         GameManager.instance.animatePerformancePoint.AddListener(AnimatePerformancePoint);
         GameManager.instance.animateTaskAdd.AddListener(AnimateTaskAdd);
-        // GameManager.instance.gameOver.AddListener(OnGameOver); //TODO
         GameManager.instance.playerEvade.AddListener(OnPlayerEvade);
         GameManager.instance.updateEvade.AddListener(UpdateCooldownSprite);
 
         UpdateShop();
         UpdateInventory();
         UpdateCooldownSprite(GameManager.instance.levelVariables.evadeType);
-
-        // current.sprite = GameManager.instance.runVariables.consumableObjects[0].sprite;
-        // next.sprite = GameManager.instance.runVariables.consumableObjects[1].sprite;
-
-        // currSlot = 0;
-        // nextSlot = 1;
-
-        // countText.GetComponent<TextMeshProUGUI>().text = "" + GameManager.instance.runVariables.consumableObjects[0].count;
     }
 
+    // Update HUD inventory after cycle/ purchase
     public void UpdateInventory()
     {
         if (GameManager.instance.runVariables.upgradeBought)
@@ -115,6 +107,7 @@ public class HUDManager : MonoBehaviour
         }
     }
 
+    // use consumable fade effect, update shop and inventory
     public void UseConsumable(int slot)
     {
 
@@ -125,6 +118,7 @@ public class HUDManager : MonoBehaviour
         UpdateInventory();
     }
 
+    // Coroutine for use consumable fade effect
     IEnumerator Fade(int slot)
     {
         for (float alpha = 0.5f; alpha >= -0.05f; alpha -= 0.05f)
@@ -133,22 +127,28 @@ public class HUDManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.05f);
         }
     }
+
+    // Control Stress bar
     public void StressBarSlider()
     {
         slider.value = GameManager.instance.levelVariables.stressPoints;
     }
+
+    // Performance points text in Task List (deprecated)
     public void PerformancePoint()
     {
         performancePointText.GetComponent<TextMeshProUGUI>().text = "Performance Point: " + GameManager.instance.levelVariables.levelPP;
         StartCoroutine(UpdateHUDPP());
     }
 
+    // update HUD performance points
     IEnumerator UpdateHUDPP()
     {
         yield return new WaitForSecondsRealtime(1f);
         performancePointsHUD.GetComponent<TextMeshProUGUI>().text = "PP: " + GameManager.instance.levelVariables.levelPP;
     }
 
+    // Add PP animation
     public void AnimatePerformancePoint(int addAmnt)
     {
         GameObject addObj = Instantiate(addPPprefab, performancePointsHUD.transform);
@@ -157,6 +157,7 @@ public class HUDManager : MonoBehaviour
         performancePointsHUD.GetComponent<Animator>().SetTrigger("Add");
     }
 
+    // add task Animation
     public void AnimateTaskAdd(TaskItem taskItem)
     {
         GameObject addObj = Instantiate(addTaskPrefab, transform);
@@ -164,6 +165,7 @@ public class HUDManager : MonoBehaviour
         addObj.transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load<Sprite>(taskItem.taskIconPath + "Add");
     }
 
+    // Contol task list
     public void TaskList()
     {
         // taskList.SetActive(true);
@@ -172,7 +174,6 @@ public class HUDManager : MonoBehaviour
             Time.timeScale = 1;
             isShown = false;
             taskAnimator.Play("TaskExit");
-            Debug.Log("open task list animation played");
 
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
         }
@@ -185,13 +186,14 @@ public class HUDManager : MonoBehaviour
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.showTaskDetails);
         }
     }
+    
     public void FreezeTime() => Time.timeScale = 0;
     public void DisableTask() => taskList.SetActive(false);
     public void EnableTask() => taskList.SetActive(true);
     public void OnGameOver() => gameOverScreen.SetActive(true);
 
 
-
+    // Update HUD with evade type
     public void UpdateEvade(bool isDash)
     {
         GameManager.instance.UpdateEvadeType(isDash ? EvadeType.Dash : EvadeType.Parry);
@@ -200,6 +202,7 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuClick);
     }
 
+    // Buy backpack from shop and notify game manager
     public void BuyUpgrade()
     {
         if (
@@ -225,6 +228,7 @@ public class HUDManager : MonoBehaviour
 
     }
 
+    // Buy a consumable and notify game manager
     public void BuyConsumable(int consumableIndex)
     {
         if (GameManager.instance.runVariables.performancePoints >= GameManager.instance.runVariables.consumableObjects[consumableIndex].cost)
@@ -247,6 +251,7 @@ public class HUDManager : MonoBehaviour
 
     }
 
+    // Update shop UI with current values
     public void UpdateShop()
     {
         for (int i = 0; i < GameManager.instance.runVariables.consumableObjects.Length; i++)
@@ -263,6 +268,7 @@ public class HUDManager : MonoBehaviour
         upgradedGroup.SetActive(GameManager.instance.runVariables.upgradeBought);
     }
 
+    // X button to close shop
     public void DisableShop()
     {
         shopUI.SetActive(false);
@@ -272,9 +278,10 @@ public class HUDManager : MonoBehaviour
         GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.menuBack);
     }
 
+    // Start cooldown on HUD
     public void OnPlayerEvade(float cooldownTime) => StartCoroutine(CooldownAnimation(cooldownTime));
 
-
+    // Cooldown coroutine
     IEnumerator CooldownAnimation(float cooldownTime)
     {
 
@@ -296,6 +303,7 @@ public class HUDManager : MonoBehaviour
         yield return null;
     }
 
+    // If adderall is active, show reduced cooldown
     public void UpdateCooldownBlock(ConsumableType consumableType)
     {
         if (consumableType == ConsumableType.Adderall)
@@ -303,6 +311,8 @@ public class HUDManager : MonoBehaviour
             cooldownBlockSlider.value = 1f - GameManager.instance.cooldownPercent;
         }
     }
+
+    // Update sprite when evade type changes
     public void UpdateCooldownSprite(EvadeType evadeType) => evadeIcon.sprite = (evadeType == EvadeType.Dash) ? GameManager.instance.playerConstants.dashIcon : GameManager.instance.playerConstants.parryIcon;
 
 
