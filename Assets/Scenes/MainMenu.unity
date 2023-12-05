@@ -812,6 +812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365638725}
+  - component: {fileID: 365638726}
   m_Layer: 5
   m_Name: Achievements
   m_TagString: Untagged
@@ -846,6 +847,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &365638726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365638724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b972e4e9fb7f945976975b5d9b52e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NinjaImage: {fileID: 1379419712}
+  SlackerImage: {fileID: 1198736371}
+  SustainableWarriorImage: {fileID: 1286863026}
+  BigEarnerImage: {fileID: 1938028087}
+  WorkaholicImage: {fileID: 1140612321}
+  TaichiMasterImage: {fileID: 2107069539}
+  PerfectionistImage: {fileID: 547814635}
+  ReincarnationImage: {fileID: 1912206742}
+  endingVariables: {fileID: 11400000, guid: d8286d0b8cba0da438788ca271bd7361, type: 2}
 --- !u!1 &419416353
 GameObject:
   m_ObjectHideFlags: 0

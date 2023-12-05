@@ -5,7 +5,6 @@ public class LevelVariables : ScriptableObject
 {
     // Tracks dynamic values for each Level
     public EvadeType evadeType;
-    [SerializeField]
     public TaskItem[] todo;
 
     public int levelPP;
@@ -71,14 +70,8 @@ public class LevelVariables : ScriptableObject
     public void Init()
     {
         // let evadeType be determined by player
-        // stressPoints = 0;
-        // maxStressPoints = 50;
-        // TODO: this should be loaded from playerconstants, why is it writing into playerconstants
-        // GameManager.instance.playerConstants.moveSpeed = 50;
-        // GameManager.instance.playerConstants.maxMoveSpeed = 60;
         levelPP = 0;
         stressPoints = 0;
-        //currentLevelIndex = 0;
         todo = TaskConstants.todos[currentLevelIndex];
         for (int i = 0; i < todo.Length; i++)
         {

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,16 +12,16 @@ public class EnemyWeapon : MonoBehaviour
         switch (arrow.name)
         {
             case "JobArrow":
-                InvokeRepeating("StartArrowSequenceWithPause", 0f, 4f);
+                InvokeRepeating(nameof(StartArrowSequenceWithPause), 0f, 4f);
                 break;
             case "StressArrow":
-                InvokeRepeating("StartArrowSequenceWithPause", 0f, 3.2f);
+                InvokeRepeating(nameof(StartArrowSequenceWithPause), 0f, 3.2f);
                 break;
             case "FanArrow":
-                InvokeRepeating("StartArrowSequenceWithPause", 0f, 3f);
+                InvokeRepeating(nameof(StartArrowSequenceWithPause), 0f, 3f);
                 break;
             default:
-                InvokeRepeating("StartArrowSequenceWithPause", 0f, 4f);
+                InvokeRepeating(nameof(StartArrowSequenceWithPause), 0f, 4f);
                 break;
         }
     }
@@ -52,7 +51,6 @@ public class EnemyWeapon : MonoBehaviour
     }
     public void PauseArrowShooting(bool isChasing)
     {
-        //gameObject.GetComponent<EnemyWeapon>().enabled = !gameObject.GetComponent<EnemyWeapon>().enabled;
         gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
     }
     public void Shoot()

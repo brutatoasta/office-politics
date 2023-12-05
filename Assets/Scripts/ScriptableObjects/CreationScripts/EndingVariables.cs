@@ -16,15 +16,7 @@ public class EndingVariables : ScriptableObject
     public int successCount;
     public bool Reincarnation;
     public int finalScore;
-
-    public int SlackerCount;
-    public int NinjaCount;
-    public int SustainableWarriorCount;
-    public int BigEarnerCount;
-    public int WorkaholicCount;
-    public int TaichiMasterCount;
-    public int PerfectionistCount;
-    public int ReincarnationCount;
+    public bool firstTimeGame;
 
     public void Init()
     {
@@ -56,17 +48,6 @@ public class EndingVariables : ScriptableObject
 
         return achievementCount;
     }
-    public void OverallAchievementCount()
-    {
-        if (Slacker) SlackerCount++;
-        if (Ninja) NinjaCount++;
-        if (SustainableWarrior) SustainableWarriorCount++;
-        if (BigEarner) BigEarnerCount++;
-        if (Workaholic) WorkaholicCount++;
-        if (TaichiMaster) TaichiMasterCount++;
-        if (Perfectionist) PerfectionistCount++;
-        if (Reincarnation) ReincarnationCount++;
-    }
 
     public string GenerateDescription()
     {
@@ -91,7 +72,7 @@ public class EndingVariables : ScriptableObject
         if (Slacker)
         {
             description += "\nSlacker    -------------------------------------------------------------------    $500\n";
-            description += "(Finish while the clock is still green)\n";
+            description += "(Leave work while the clock is still green)\n";
         }
         if (Ninja)
         {

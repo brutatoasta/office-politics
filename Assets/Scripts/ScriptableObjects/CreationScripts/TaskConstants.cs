@@ -27,8 +27,8 @@ public class TaskConstants : ScriptableObject
             // level 3
             new TaskItem[]
             {
-                new(1, 100, 5, TaskName.Shred, "Shred documents in the BOSS room", "TaskIcons/Shred"),
-                new(1, 100, 5, TaskName.Laminate, "Laminate documents in the BOSS room", "TaskIcons/Laminate"),
+                new(2, 100, 5, TaskName.Shred, "Shred documents in the BOSS room", "TaskIcons/Shred"),
+                new(2, 100, 5, TaskName.Laminate, "Laminate documents in the BOSS room", "TaskIcons/Laminate"),
                 new(1, 100, 5, TaskName.FetchDoc, "Fetch documents from Jolin for photocopy", "TaskIcons/DeliverDoc"),
                 new(1, 100, 5, TaskName.DeliverDoc, "Deliver photocopied documents back to Jolin", "TaskIcons/DeliverDoc"),
             },
