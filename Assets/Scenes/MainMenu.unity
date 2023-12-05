@@ -1417,7 +1417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858f2f20b1787684195c9c9c809d65e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelVariables: {fileID: 0}
+  levelVariables: {fileID: 11400000, guid: a85acbb7bc05a654ca361e70019b0b1e, type: 2}
   transition: {fileID: 761041594}
   controlsPanel: {fileID: 1469121315}
   mapPanel: {fileID: 1006961308}

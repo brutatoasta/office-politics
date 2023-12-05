@@ -155,7 +155,7 @@ public class HUDManager : MonoBehaviour
     public void AnimatePerformancePoint(int addAmnt)
     {
         GameObject addObj = Instantiate(addPPprefab, performancePointsHUD.transform);
-        addObj.transform.parent = transform;
+        addObj.transform.SetParent(transform, false);
         addObj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (addAmnt > 0 ? "+" : "") + addAmnt;
         performancePointsHUD.GetComponent<Animator>().SetTrigger("Add");
     }
