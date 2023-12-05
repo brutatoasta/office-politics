@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -12,8 +11,8 @@ public class TaskGenerator : MonoBehaviour
     void Start()
     {
         taskList = GetComponent<TextMeshProUGUI>();
-        generateDescription();
-        GameManager.instance.onTaskSuccess.AddListener(generateDescription);
+        GenerateDescription();
+        GameManager.instance.onTaskSuccess.AddListener(GenerateDescription);
     }
     private string StrikeOut(string text)
     {
@@ -21,7 +20,7 @@ public class TaskGenerator : MonoBehaviour
         const string STRIKE_END = "</s>";
         return STRIKE_START + text + STRIKE_END;
     }
-    void generateDescription()
+    void GenerateDescription()
     {
         string description = "To Do: \n";
         int yPos = 0;

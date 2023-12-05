@@ -9,6 +9,7 @@ public class WeaponGameConstants : ScriptableObject
     public float fanArrowSpeed;
     public float jobArrowMaxForce;
 
+    // Arrow Damage
     public int fanArrowDamage;
     public int stressArrowDamage;
     public int jobArrowDamage;

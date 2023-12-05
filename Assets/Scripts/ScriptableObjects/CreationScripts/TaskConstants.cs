@@ -6,12 +6,10 @@ public class TaskConstants : ScriptableObject
 {
     // this is the readonly stuff
     // each TaskItem array must have TaskItems in order and at the index of enum as they are accessed via enum, and 
-    // TODO: read from CSV
     // unity does not serialize multidimensional arrays/matrices
     public static TaskItem[][] todos = new TaskItem[][]
        {
             // level 1
-            
             new TaskItem[]
             {
                 new(1, 100, 5, TaskName.FetchTea, "Fetch tea for Siyang", "TaskIcons/FetchTea"),
@@ -45,9 +43,8 @@ public class TaskConstants : ScriptableObject
                 new(1, 100,5, TaskName.DeliverDoc, "Deliver photocopied documents back to Sihan", "TaskIcons/DeliverDoc"),
                 new(1, 200,5, TaskName.RefillCoffee, "Refill the empty coffee pot", "TaskIcons/RefillCoffee"),
             }
-
        };
-
+    // Materials for blinking shaders
     public Material[] highlightMaterial;
     public Material defaultMaterial;
 
@@ -71,12 +68,10 @@ public struct TaskItem
         this.taskName = taskName;
         this.taskString = taskString;
         this.taskIconPath = taskIconPath;
-        // this = new(); // mystery
     }
 }
 
 // Name of task. We have separate enum for the interactable type and taskname because one task can have multiple interactions required.
-// 
 public enum TaskName
 {
     Shred,

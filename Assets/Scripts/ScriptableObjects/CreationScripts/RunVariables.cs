@@ -8,12 +8,11 @@ public class RunVariables : ScriptableObject
     public ABCConsumable[] consumableObjects;
     public int performancePoints;
     public bool upgradeBought;
-    public int currentSceneIndex;
-    public float duration;
+    public int currentSceneIndex; //
+    public float duration;  // how many real world seconds each level lasts
 
     public void Init()
     {
-        // TODO: remove the consumables, let them be 0
         // start of whole game, not level
         consumableObjects = new ABCConsumable[]
         { new KitKat(0, 150), new Coffee(0, 150), new Adderall(0, 200), new Starman(0, 300) };
@@ -32,8 +31,8 @@ public enum EvadeType
 
 public enum ConsumableType
 {
-    KitKat = 0,
-    Coffee = 1,
-    Adderall = 2,
-    Starman = 3,
+    KitKat,
+    Coffee,
+    Adderall,
+    Starman,
 }

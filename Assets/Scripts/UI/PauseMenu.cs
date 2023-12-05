@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
-
-
     bool isPaused = false;
     void Awake()
     {

@@ -53,7 +53,7 @@ public abstract class BaseArrow : MonoBehaviour, IArrow
             if (arrowHasLeftBoss)
             {
                 Enemy EnemyComponent = collision.GetComponent<Enemy>();
-                EnemyComponent.stunByArrow(); //should probably be a Unity Event since referencing another script hmmm TODO tmr i need to sleep now!!
+                EnemyComponent.stunByArrow();
                 Destroy(gameObject);
             }
         }

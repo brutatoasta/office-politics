@@ -235,7 +235,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     void OnDrawGizmosSelected() => Gizmos.DrawWireSphere(transform.position, playerConstants.parryRange);
     void UseConsumable(int _) => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.useConsumable);
     void CycleConsumable() => GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.cycleConsumable);
@@ -262,8 +261,6 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-
 
     IEnumerator InvincibilityVisuals()
     {
