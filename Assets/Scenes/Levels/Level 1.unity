@@ -58285,20 +58285,32 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
+    message: If you do the task wrongly, (e.g. pass tea to Joshua), you will be deducted
+      Performance Points.
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - actorId: 0
+    message: If the wrong item was picked up, you can dispose of it in the TrASh
+      can in the Main Office.
+    triggerNextEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - actorId: 0
     message: To increase your chances of success, press SPACE to use your ability
       and U to consume a powerup.
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: 'When the timer in the top right corner is up, every second that you
-      OT will add stress in the top left stress bar. '
+    message: 'Our working hours are from 8am to 5pm, and every second that you OT
+      will add stress in the top left stress bar. '
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
   - actorId: 0
-    message: Complete more tasks to earn more performance points, but make sure not
-      to be overstressed.
+    message: If you have completed your tasks, you will not receive any additional
+      performance points.
     triggerNextEvent:
       m_PersistentCalls:
         m_Calls: []
