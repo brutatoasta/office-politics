@@ -30,6 +30,8 @@ Office Politics is a single ~~player~~ intern top-down 2D action game where youâ
 
 - **K** to cycle between Consumables.
 - **Mouse 1** click to select menu buttons.
+- **Tab** to view tasklist
+- **Esc** to pause and resume the game.
 
 ![Screenshot of keyboard controls](docs/images/keyboard.png)
 

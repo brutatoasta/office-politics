@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,18 +6,18 @@ using UnityEngine.UI;
 public class Achievements : MonoBehaviour
 {
     // Start is called before the first frame update
-    public UnityEngine.UI.Image NinjaImage;
-    public UnityEngine.UI.Image SlackerImage;
-    public UnityEngine.UI.Image SustainableWarriorImage;
-    public UnityEngine.UI.Image BigEarnerImage;
-    public UnityEngine.UI.Image WorkaholicImage;
-    public UnityEngine.UI.Image TaichiMasterImage;
-    public UnityEngine.UI.Image PerfectionistImage;
-    public UnityEngine.UI.Image ReincarnationImage;
+    public Image NinjaImage;
+    public Image SlackerImage;
+    public Image SustainableWarriorImage;
+    public Image BigEarnerImage;
+    public Image WorkaholicImage;
+    public Image TaichiMasterImage;
+    public Image PerfectionistImage;
+    public Image ReincarnationImage;
     public EndingVariables endingVariables;
     public TextMeshProUGUI positionText;
 
-    private Dictionary<UnityEngine.UI.Image, bool> imageVariableMap = new Dictionary<UnityEngine.UI.Image, bool>();
+    private Dictionary<Image, bool> imageVariableMap = new();
     void Start()
     {
         AddToMap();
@@ -57,7 +55,7 @@ public class Achievements : MonoBehaviour
         imageVariableMap.Add(ReincarnationImage, endingVariables.Reincarnation);
     }
 
-    void SetOpacity(UnityEngine.UI.Image image, float alpha)
+    void SetOpacity(Image image, float alpha)
     {
         Color color = image.color;
         color.a = alpha;
