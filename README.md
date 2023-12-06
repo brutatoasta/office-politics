@@ -37,7 +37,8 @@ Office Politics is a single ~~player~~ intern top-down 2D action game where youâ
 
 ### Gameplay
 
-A link to your gameplay recording video
+[Gameplay Video](https://sutdapac-my.sharepoint.com/:v:/g/personal/sihan_tao_mymail_sutd_edu_sg/ES-F2NVok2lOkbIO40k0NmgBtTmIinkmLPmg4rXLxhictw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=VACDXl)
 
+[Game Design Document](docs/2023_GDD_Group_3.pdf)
 ### Other information
 
