@@ -58473,6 +58473,10 @@ PrefabInstance:
       propertyPath: arrow
       value: 
       objectReference: {fileID: 5917662536098192051, guid: 493ae09969db39449b92fcb91efeaed1, type: 3}
+    - target: {fileID: 6524494953299247503, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8dfd9c4850d7c5d48b1892a897e2857f, type: 2}
     - target: {fileID: 7237201132361172765, guid: 5a5cba4deeaa038498b43033962a7f19, type: 3}
       propertyPath: m_Name
       value: MainOfficeBoss
