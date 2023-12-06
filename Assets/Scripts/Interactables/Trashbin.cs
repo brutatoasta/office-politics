@@ -64,7 +64,7 @@ public class Trashbin : BaseInteractable
             Debug.Log($"Dropped {held.name} into me!");
             StartCoroutine(BurnEffect());
 
-            // natthan
+            // sfx for throw trash
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.throwTrash);
             GameManager.instance.endingVariables.SustainableWarrior = false;
         }

@@ -92,8 +92,7 @@ public class ReceivableMeeting : BaseInteractable
                 Debug.Log("decrease score");
 
 
-                // Play "interactionInvalid" sound - Natthan
-                // Todo: can add more specific sounds in the future
+                // Sfx for interaction invalid
                 GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.interactionInvalid);
             }
 
