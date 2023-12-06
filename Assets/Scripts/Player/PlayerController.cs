@@ -137,6 +137,9 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         interactLock = true;
+
+        // stop remaining walking sound when open shop
+        GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.playerStop);
     }
     public void ReleaseInteractLock()
     {
