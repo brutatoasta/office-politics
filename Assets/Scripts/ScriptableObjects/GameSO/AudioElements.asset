@@ -50,7 +50,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 0e77ae7856173d949aa8198db154fe30, type: 3}
   menuBack:
     audioType: 4
-    audioClip: {fileID: 8300000, guid: 97689cdbe6a851248ae9a854fe706a1c, type: 3}
+    audioClip: {fileID: 8300000, guid: bb12db53275cf0c49bcdb3618cbba3b2, type: 3}
   gamePause:
     audioType: 4
     audioClip: {fileID: 8300000, guid: 4abf793ec87e5a54d96a04790774fdbf, type: 3}
@@ -110,7 +110,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 97ecf302f496db74ab1d0612b23bfb7d, type: 3}
   playerDash:
     audioType: 5
-    audioClip: {fileID: 8300000, guid: 2923c8516cafd494586d3dffd59b8e51, type: 3}
+    audioClip: {fileID: 8300000, guid: f55815e2f2093d846aa70dd32185744c, type: 3}
   playerParry:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 2c0a0781639ebeb479072ca17b7aa5e9, type: 3}
@@ -119,10 +119,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: bc3b906b9c1bfbb49baf25de03fce989, type: 3}
   useConsumable:
     audioType: 5
-    audioClip: {fileID: 8300000, guid: 78dbaa4c5cae3ac46b81e33b949d0488, type: 3}
+    audioClip: {fileID: 8300000, guid: 7158c98bd1a38144cb1eac55e10c545d, type: 3}
   playerGetHitIntensity1:
     audioType: 5
-    audioClip: {fileID: 8300000, guid: ec9ece6ed6fa44543bbf9bde85a5e665, type: 3}
+    audioClip: {fileID: 8300000, guid: c822f00faece9fa4abd4055095efc3c5, type: 3}
   playerGetHitIntensity2:
     audioType: 5
     audioClip: {fileID: 8300000, guid: 7c47e59e6dcadeb4d8101d4149bc98c3, type: 3}
@@ -134,10 +134,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
   throwJobArrow:
     audioType: 6
-    audioClip: {fileID: 8300000, guid: cd4bf065bd3441044af0d10a24fb0a6b, type: 3}
+    audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
   prepareStressArrow:
     audioType: 6
-    audioClip: {fileID: 8300000, guid: 8623eb356db430d4fa7b8363c0d289cc, type: 3}
+    audioClip: {fileID: 8300000, guid: 48eb842e81b879e4f96629e55296d9d9, type: 3}
   throwStressArrow:
     audioType: 6
     audioClip: {fileID: 8300000, guid: 09fdad6cd27614c47a8219dfca51ea8d, type: 3}
