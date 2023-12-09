@@ -119,7 +119,7 @@ public class Enemy : MonoBehaviour
         animator.SetBool("isStun", false);
 
         // resume enemy weapon
-        yield return new WaitForSeconds(2f); // because one enemy weapon cycle is 8s, cause enemy to miss next shooting chance
+        yield return new WaitForSeconds(2f); // cause enemy to miss next shooting chance
         gameObject.GetComponent<EnemyWeapon>().enabled = isChasing;
 
     }

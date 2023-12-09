@@ -21,6 +21,7 @@ public abstract class BaseInteractable : MonoBehaviour
         GameManager.instance.heldSet.AddListener(SetBubble);
     }
 
+    // Activate task icon bubble if the player can interact with the object
     public void SetBubble()
     {
         if (bubbleObj != null) bubbleObj.SetActive(CanInteract());

@@ -36,6 +36,8 @@ public class DeliverDoc : BaseInteractable
             playerHand.sprite = null;
             playerHand.color = Color.white;
             GameManager.instance.levelVariables.Succeed(TaskName.DeliverDoc);
+            GameManager.instance.showPerformancePoint.Invoke();
+            GameManager.instance.DecreaseQuota();
 
             // sfx for placing photocopy document
             GameManager.instance.PlayAudioElement(GameManager.instance.audioElements.hideTaskDetails);
